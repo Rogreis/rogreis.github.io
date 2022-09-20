@@ -1,6 +1,7 @@
 
 function ExpandIndex()
 {
+    console.log("ExpandIndex");
     var toggler = document.getElementsByClassName("caret"); 
     var expandables = document.getElementsByClassName("expandable"); 
     var i; 
