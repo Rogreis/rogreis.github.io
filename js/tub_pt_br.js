@@ -28,7 +28,7 @@ function StartPage() {
 
 function LoadColumnLeft(typeData) {
     console.log("LoadColumnLeft " + "  typeData: " + typeData);
-    loadDoc('leftColumn', 'content/toc.html')
+    loadDoc('leftColumn', 'content/TocTable.html')
     ExpandIndex();
 }
 
