@@ -20,25 +20,24 @@ function ExpandIndex()
 
 
 function StartPage() {
-    alert("Start page");
+    console.log("Start page");
     LoadColumnLeft("index");
     //$("#leftColumn").load("content/index.txt");    
-    //ExpandIndex();
 }
 
 function LoadColumnLeft(typeData) {
-    alert(typeData);
+    console.log("LoadColumnLeft " + "  typeData: " + typeData);
     loadDoc('leftColumn', 'content/toc.html')
-    //$("#leftColumn").load("content/index.txt");    
-    //ExpandIndex();
+    ExpandIndex();
 }
 
 function loadDoc(divID, url) {
+    console.log("loadDoc " + divID + "  url: " + url);
     const xhttp = new XMLHttpRequest();
     xhttp.onload = function() {
       document.getElementById(divID).innerHTML = this.responseText;
     }
-    xhttp.open("GET", "url");
+    xhttp.open("GET", url);
     xhttp.send();
   }
   
