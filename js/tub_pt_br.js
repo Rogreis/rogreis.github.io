@@ -28,6 +28,17 @@ function StartPage() {
 
 function LoadColumnLeft(typeData) {
     alert(typeData);
+    loadDoc('leftColumn', 'content/toc.html')
     //$("#leftColumn").load("content/index.txt");    
     //ExpandIndex();
 }
+
+function loadDoc(divID, url) {
+    const xhttp = new XMLHttpRequest();
+    xhttp.onload = function() {
+      document.getElementById("demo").innerHTML = this.responseText;
+    }
+    xhttp.open("GET", "ajax_info.txt");
+    xhttp.send();
+  }
+  
