@@ -1,0 +1,102 @@
+div { 
+  text-align: justify; 
+  text-justify: inter-word; 
+} 
+sup  {font-size: 9px;  color: #666666;}
+.userfont { 
+    <!-- font-family: 'EB Garamond';font-size: 22px; -->
+    <!-- font-family: 'Times New Roman';font-size: 16px; -->
+    font-family: 'Roboto Serif Medium';font-size: 16px;");
+} 
+
+
+<!-- Use colors from: https://www.w3schools.com/tags/ref_colornames.asp -->
+.ParagraphStarted
+{
+  background-color: FloralWhite; 
+  color: black;
+}
+.ParagraphWorking
+{
+  background-color: LemonChiffon; 
+  color: black;
+}
+.ParagraphDoubt
+{
+  background-color: FireBrick; 
+  color: white;
+}
+
+.ParagraphOk
+{
+  background-color: Aquamarine; 
+  color: black;
+}
+
+.list-group{ 
+    max-height: 85vh; 
+    margin-bottom: 5px; 
+    overflow-y:auto; 
+    -webkit-overflow-scrolling: touch; 
+} 
+a:link { 
+  color: white; 
+  background-color: transparent; 
+  text-decoration: none; 
+} 
+ 
+a:visited { 
+  color: white; 
+  background-color: transparent; 
+  text-decoration: none; 
+} 
+ 
+a:hover { 
+  color: bisque; 
+  background-color: transparent; 
+  text-decoration: underline; 
+} 
+ 
+a:active { 
+  color: blue; 
+  background-color: transparent; 
+  text-decoration: none; 
+} 
+
+ul, #myUL { 
+  list-style-type: none; 
+} 
+ 
+#myUL { 
+  margin: 0; 
+  padding: 0; 
+} 
+ 
+.caret { 
+  cursor: pointer; 
+  -webkit-user-select: none; /* Safari 3.1+ */ 
+  -moz-user-select: none; /* Firefox 2+ */ 
+  -ms-user-select: none; /* IE 10+ */ 
+  user-select: none; 
+} 
+ 
+.caret::before { 
+  content: "\25B6"; 
+  color: black; 
+  display: inline-block; 
+  margin-right: 6px; 
+} 
+ 
+.caret-down::before { 
+  -ms-transform: rotate(90deg); /* IE 9 */ 
+  -webkit-transform: rotate(90deg); /* Safari */' 
+  transform: rotate(90deg);   
+} 
+ 
+.nested { 
+  display: none; 
+} 
+ 
+.active { 
+  display: block; 
+} 
