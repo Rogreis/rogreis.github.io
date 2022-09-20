@@ -36,9 +36,9 @@ function LoadColumnLeft(typeData) {
 function loadDoc(divID, url) {
     const xhttp = new XMLHttpRequest();
     xhttp.onload = function() {
-      document.getElementById("demo").innerHTML = this.responseText;
+      document.getElementById(divID).innerHTML = this.responseText;
     }
-    xhttp.open("GET", "ajax_info.txt");
+    xhttp.open("GET", "url");
     xhttp.send();
   }
   
