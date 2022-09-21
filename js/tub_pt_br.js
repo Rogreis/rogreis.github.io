@@ -5,8 +5,8 @@ function ExpandIndex()
     var toggler = document.getElementsByClassName("caret"); 
     var expandables = document.getElementsByClassName("expandable"); 
     var i; 
-    console.log("toggler" + toggler.length);
-    console.log("expandables" + expandables.length);
+    console.log("toggler      " + toggler.length);
+    console.log("expandables  " + expandables.length);
     
     for (i = 0; i < expandables.length; i++) { 
         expandables[i].parentElement.querySelector(".nested").classList.toggle("active"); 
@@ -29,17 +29,29 @@ function StartPage() {
 }
 
 function LoadColumnLeft(typeData) {
-    console.log("LoadColumnLeft " + "  typeData: " + typeData);
-    loadDoc('leftColumn', 'content/TocTable.html')
-}
-
-function loadDoc(divID, url) {
     console.log("loadDoc " + divID + "  url: " + url);
     const xhttp = new XMLHttpRequest();
     xhttp.onload = function() {
-      document.getElementById(divID).innerHTML = this.responseText;
+      document.getElementById('leftColumn').innerHTML = this.responseText;
       console.log("Toc Loaded");
       ExpandIndex();
+    }
+    xhttp.open("GET", 'content/TocTable.html');
+    xhttp.send();
+}
+
+function loadDoc(url, hash) {
+    console.log("loadDoc url: " + url + "  hash: " + hash);
+    const xhttp = new XMLHttpRequest();
+    xhttp.onload = function() 
+    {
+      document.getElementById('rightColumn').innerHTML = this.responseText;
+      if (hash) 
+    {
+      console.log("hash is not null");
+      location.hash = "#" + hash;
+    }      
+    console.log("Doc loaded " + url);
     }
     xhttp.open("GET", url);
     xhttp.send();
