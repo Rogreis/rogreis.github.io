@@ -1,0 +1,41 @@
+:root {
+  --font: 'Roboto Serif Medium';
+  --fontSize: 20px;
+}
+
+.parStarted, .parWorking, .parDoubt, .parOk, .parClosed
+{
+ font-family: var(--font);
+ font-size: var(--fontSize);
+ text-align: justify; 
+ text-justify: inter-word; 
+ padding-top: 15px;
+ padding-right: 15px;
+ padding-bottom: 15px;
+ padding-left: 15px;
+}
+
+.parStarted
+{
+  background-color: FloralWhite; 
+}
+
+.parWorking
+{
+  background-color: LemonChiffon; 
+}
+.parDoubt
+{
+  background-color: FireBrick; 
+  color: white;
+}
+
+.parOk
+{
+  background-color: Aquamarine; 
+}
+
+.parClosed
+{
+}
+

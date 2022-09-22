@@ -1,67 +1,91 @@
-div { 
-  text-align: justify; 
-  text-justify: inter-word; 
-} 
-sup  {font-size: 9px;  color: #666666;}
+:root {
+  --font: 'Roboto Serif Medium';
+  --fontSize: 22px;
+}
 
-.userfont { 
-    <!-- font-family: 'EB Garamond';font-size: 22px; -->
-    <!-- font-family: 'Times New Roman';font-size: 16px; -->
-    font-family: 'Roboto Serif Medium';font-size: 16px;");
-} 
+.ub-bg-dark {
+  --bs-bg-opacity: 1;
+  background-color: rgba(var(--bs-dark-rgb),var(--bs-bg-opacity))!important;
+}
+.ub-text-white {
+  --bs-text-opacity: 1;
+  color: rgba(var(--bs-white-rgb),var(--bs-text-opacity))!important;
+}
 
 
-<!-- Use colors from: https://www.w3schools.com/tags/ref_colornames.asp -->
-.ParagraphStarted
+.parStarted, .parWorking, .parDoubt, .parOk, .parClosed
+{
+ font-family: var(--font);
+ font-size: var(--fontSize);
+ text-align: justify; 
+ text-justify: inter-word; 
+ padding-top: 15px;
+ padding-right: 15px;
+ padding-bottom: 15px;
+ padding-left: 15px;
+}
+
+.parStarted
 {
   background-color: FloralWhite; 
-  color: black;
 }
-.ParagraphWorking
+a.parStarted:link  {text-decoration: none; color: black; background-color: FloralWhite;}
+a.parStarted:visited {text-decoration: none; color: black;}
+a.parStarted:hover {text-decoration: underline; color: black;}
+a.parStarted:active {text-decoration: none; color: black;}
+
+.parWorking
 {
   background-color: LemonChiffon; 
-  color: black;
 }
-.ParagraphDoubt
+a.parWorking:link  {text-decoration: none; color: black;}
+a.parWorking:visited {text-decoration: none; color: black;}
+a.parWorking:hover {text-decoration: underline; color: black;}
+a.parWorking:active {text-decoration: none; color: black;}
+
+.parDoubt
 {
   background-color: FireBrick; 
   color: white;
 }
+a.parDoubt:link  {text-decoration: none; color: white; background-color: FireBrick;}
+a.parDoubt:visited {text-decoration: none; color: white; background-color: FireBrick;}
+a.parDoubt:hover {text-decoration: underline; color: white; background-color: FireBrick;}
+a.parDoubt:active {text-decoration: none; color: white; background-color: FireBrick;}
 
-.ParagraphOk
+.parOk
 {
   background-color: Aquamarine; 
-  color: black;
 }
+a.parOk:link  {text-decoration: none; color: black;}
+a.parOk:visited {text-decoration: none; color: black;}
+a.parOk:hover {text-decoration: underline; color: black;}
+a.parOk:active {text-decoration: none; color: black;}
+
+.parClosed
+{
+  color: rgba(var(--bs-white-rgb),var(--bs-text-opacity))!important;
+  background-color: rgba(var(--bs-dark-rgb),var(--bs-bg-opacity))!important;
+}
+
+a.parClosed:link  {text-decoration: none; color: white;}
+a.parClosed:visited {text-decoration: none; color: white;}
+a.parClosed:hover {text-decoration: underline; color: white;}
+a.parClosed:active {text-decoration: none; color: white;}
+
+ul li {
+  background: rgba(var(--bs-dark-rgb),var(--bs-bg-opacity))!important;
+  color:  rgba(var(--bs-white-rgb),var(--bs-text-opacity))!important;
+  padding: 5px;
+}
+
+sup  {font-size: 9px;  color: #666666;}
 
 .list-group{ 
     max-height: 85vh; 
     margin-bottom: 5px; 
     overflow-y:auto; 
     -webkit-overflow-scrolling: touch; 
-} 
-a:link { 
-  color: white; 
-  background-color: transparent; 
-  text-decoration: none; 
-} 
- 
-a:visited { 
-  color: white; 
-  background-color: transparent; 
-  text-decoration: none; 
-} 
- 
-a:hover { 
-  color: bisque; 
-  background-color: transparent; 
-  text-decoration: underline; 
-} 
- 
-a:active { 
-  color: blue; 
-  background-color: transparent; 
-  text-decoration: none; 
 } 
 
 ul, #myUL { 

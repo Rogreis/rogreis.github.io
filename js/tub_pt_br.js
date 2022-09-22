@@ -29,7 +29,7 @@ function StartPage() {
 }
 
 function LoadColumnLeft(typeData) {
-    console.log("loadDoc " + divID + "  url: " + url);
+    console.log("loadDoc typeData: " + typeData);
     const xhttp = new XMLHttpRequest();
     xhttp.onload = function() {
       document.getElementById('leftColumn').innerHTML = this.responseText;
