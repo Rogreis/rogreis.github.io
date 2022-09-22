@@ -48,7 +48,7 @@ function loadDoc(url, hash) {
       document.getElementById('rightColumn').innerHTML = this.responseText;
       if (hash) 
     {
-      console.log("hash is not null");
+      console.log("hash: " + hash);
       location.hash = "#" + hash;
     }      
     console.log("Doc loaded " + url);

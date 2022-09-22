@@ -1,6 +1,6 @@
 :root {
   --font: 'Roboto Serif Medium';
-  --fontSize: 22px;
+  --fontSize: 18px;
 }
 
 .ub-bg-dark {
@@ -73,11 +73,41 @@ a.parClosed:visited {text-decoration: none; color: white;}
 a.parClosed:hover {text-decoration: underline; color: white;}
 a.parClosed:active {text-decoration: none; color: white;}
 
-ul li {
-  background: rgba(var(--bs-dark-rgb),var(--bs-bg-opacity))!important;
-  color:  rgba(var(--bs-white-rgb),var(--bs-text-opacity))!important;
-  padding: 5px;
+.badgeStarted
+{
+  color: black;
+  background-color: FloralWhite; 
+  display:inline-block; width:100px
 }
+
+.badgeWorking
+{
+  color: black;
+  background-color: LemonChiffon; 
+  display:inline-block; width:100px
+}
+
+.badgeDoubt
+{
+  background-color: FireBrick; 
+  color: white;
+  display:inline-block; width:100px
+}
+
+.badgeOk
+{
+  color: black;
+  background-color: Aquamarine; 
+  display:inline-block; width:100px
+}
+
+.badgeClosed
+{
+  color: rgba(var(--bs-white-rgb),var(--bs-text-opacity))!important;
+  background-color: rgba(var(--bs-dark-rgb),var(--bs-bg-opacity))!important;
+  display:inline-block; width:100px
+}
+
 
 sup  {font-size: 9px;  color: #666666;}
 
@@ -87,6 +117,27 @@ sup  {font-size: 9px;  color: #666666;}
     overflow-y:auto; 
     -webkit-overflow-scrolling: touch; 
 } 
+
+.liIndex
+{
+  font-family: var(--font);
+  font-size: var(--fontSize);
+  text-indent: -20px;
+  padding-left: 20px;
+}
+
+a.liIndex:link  {text-decoration: none; color: white;}
+a.liIndex:visited {text-decoration: none; color: white;}
+a.liIndex:hover {text-decoration: underline; color: white;}
+a.liIndex:active {text-decoration: none; color: white;}
+
+ul li {
+  background: rgba(var(--bs-dark-rgb),var(--bs-bg-opacity))!important;
+  color:  rgba(var(--bs-white-rgb),var(--bs-text-opacity))!important;
+  padding: 1px;
+ }
+
+
 
 ul, #myUL { 
   list-style-type: none; 
