@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Bootstrap Example</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js"></script>
+
+<style>
+textarea {
+    resize: none; overflow: hidden; min-height: 150px; max-height: 300px;
+}
+</style>
+
+
+<script>
+function ChangeStatus(st)
+{
+	alert(st);
+}
+
+
+var minRows = 5;
+var maxRows = 26;
+function auto_grow(id) {
+    var t = document.getElementById(id);
+    alert("inside")
+    if (t.scrollTop == 0)   t.scrollTop=1;
+    while (t.scrollTop == 0) {
+        if (t.rows > minRows)
+                t.rows--; else
+            break;
+        t.scrollTop = 1;
+        if (t.rows < maxRows)
+                t.style.overflowY = "hidden";
+        if (t.scrollTop > 0) {
+            t.rows++;
+            break;
+        }
+    }
+    while(t.scrollTop > 0) {
+        if (t.rows < maxRows) {
+            t.rows++;
+            if (t.scrollTop == 0) t.scrollTop=1;
+        } else {
+            t.style.overflowY = "auto";
+            break;
+        }
+    }
+}
+
+
+</script>
+
+
+</head>
+<body>
+
+<div class="container mt-3">
+  <h2>Modal Scroll Example</h2>
+  <p>Click on the button to open the modal.</p>
+  
+  <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#myModal">
+    Open modal
+  </button>
+</div>
+
+
+<!-- The Modal -->
+<div class="modal" id="myModal">
+  <div class="modal-dialog modal-dialog-scrollable modal-xl">
+    <div class="modal-content">
+
+      <!-- Modal Header -->
+      <div class="modal-header">
+        <h4 class="modal-title">Edit 10:2-2</h4>
+        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+      </div>
+
+      <!-- Modal body -->
+      <div class="modal-body">
+	  
+    <div class="card">
+      <div class="card-body">
+        <textarea id="EditParagraph" class="form-control"  rows="15"> Há 360 milhões de anos as terras ainda se estavam elevando. A América do Norte e do Sul encontravam-se bem altas. A Europa ocidental e as Ilhas Britânicas estavam emergindo, exceto partes do País de Gales, que se achavam profundamente submersas. Não havia grandes lençóis de gelo durante estas idades. Os supostos depósitos glaciais que surgiram em conexão com esses estratos na Europa, África, China e Austrália são devidos às geleiras de montanha isoladas ou ao deslocamento de detritos glaciais de origem posterior. O clima mundial era oceânico, não continental. Os mares do sul eram então mais tépidos do que atualmente e se estendiam desde a América do Norte até as regiões polares. A corrente do Golfo corria pela parte central da América do Norte, sendo desviada na direção leste para banhar e aquecer as margens da Groenlândia, fazendo daquele continente, hoje coberto por um manto de gelo, um verdadeiro paraíso tropical.</textarea>
+      </div>
+    </div>
+	
+    <div class="card">
+      <div class="card-body">
+        <h4 class="card-title">Comments</h4>
+        <textarea id="CommentsParagraph" class="form-control" rows="5"></textarea>
+      </div>
+    </div>
+	
+    <div class="card">
+      <div class="card-body">
+        <h4 class="card-title">Translation Notes</h4>
+        <textarea id="TranslationNotesParagraph" class="form-control" rows="5"></textarea>
+      </div>
+    </div>
+	  
+	  
+
+      </div>
+
+
+      <!-- Modal footer -->
+      <div class="modal-footer">
+        <button type="button" class="btn btn-info" onclick="ChangeStatus(1)"      data-bs-dismiss="modal">Working</button>
+        <button type="button" class="btn btn-success" onclick="ChangeStatus(3)"   data-bs-dismiss="modal">Ok</button>
+        <button type="button" class="btn btn-danger" onclick="ChangeStatus(2)"    data-bs-dismiss="modal">Doubt</button>
+        <button type="button" class="btn btn-secondary" onclick="ChangeStatus(4)" data-bs-dismiss="modal">No More Edit</button>
+
+		<button type="button" class="btn" data-bs-dismiss="modal">Cancel</button>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+
+</body>
+</html>

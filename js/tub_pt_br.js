@@ -57,3 +57,28 @@ function loadDoc(url, hash) {
     xhttp.send();
   }
   
+  function ChangeStatus(st)
+  {
+    alert(st);
+  }
+
+  function openEdit()
+  {
+    console.log("inside open modal 3");
+
+
+    var options= {
+      show: true,
+      keyboard: false,
+      backdrop: 'static'
+    };
+    console.log(options);
+    modal= $('#editChildWindow');
+    modal.options= options;
+    modal.show();
+
+    //$('#editChildWindow').modal("show")
+
+  }
+
+  
