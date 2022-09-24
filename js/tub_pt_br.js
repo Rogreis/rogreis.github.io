@@ -90,11 +90,9 @@ function loadDoc(url, hash) {
   function loadEditData()
   {
     modalWaiting= $('#modalWaiting');
-    console.log(modalWaiting)
     modalWaiting.options= modalOptions;
-    console.log("2")
     modalWaiting.show();
-    console.log("3")
+    //console.log("3")
     delaySeconds(modalWaiting)
     return 0;
   }
@@ -102,6 +100,7 @@ function loadDoc(url, hash) {
   function delaySeconds(modal) {
     setTimeout(function () {
       modal.hide();
+      window.status='Edit text data loaded.'
       showEditData();
     }, 5000);
 }
@@ -120,13 +119,8 @@ function loadDoc(url, hash) {
 
   function openEdit()
   {
-
+    window.status='Loading edit text data...'
     ret= loadEditData();
-    if (ret == 0)
-    {
-    }
-
-        
   }
 
   
