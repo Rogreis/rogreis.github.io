@@ -25,7 +25,7 @@
     </div> 
     <div class="col-sm-4"> 
       <h4>Status de cada parágrafo:</h4> 
-      <p><span class="badge badgeStarted" width:180px>Started</span></p> 
+      <p><span class="badge badgeStarted">Started</span></p> 
       <p><span class="badge badgeWorking">Working</span></p> 
       <p><span class="badge badgeDoubt">Doubt</span></p> 
       <p><span class="badge badgeOk">Ok</span></p> 
@@ -48,7 +48,6 @@
 </div>  <!-- End left column --> 
  
 <!-- Modal edit window --> 
-
 <div class="modal" id="editChildWindow" data-backdrop="static">
     <div class="modal-dialog modal-dialog-scrollable modal-xl">
       <div class="modal-content">
@@ -56,50 +55,67 @@
         <!-- Modal Header -->
         <div class="modal-header">
           <h4 class="modal-title text-dark">Edit 10:2-2</h4>
-          <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+          <button type="button" class="btn-close" onclick="ChangeStatus(0)"></button>
         </div>
   
         <!-- Modal body -->
         <div class="modal-body">
         
-      <div class="card">
-        <div class="card-body">
-          <textarea id="EditParagraph" class="form-control"  rows="12"> Há 360 milhões de anos as terras ainda se estavam elevando. A América do Norte e do Sul encontravam-se bem altas. A Europa ocidental e as Ilhas Britânicas estavam emergindo, exceto partes do País de Gales, que se achavam profundamente submersas. Não havia grandes lençóis de gelo durante estas idades. Os supostos depósitos glaciais que surgiram em conexão com esses estratos na Europa, África, China e Austrália são devidos às geleiras de montanha isoladas ou ao deslocamento de detritos glaciais de origem posterior. O clima mundial era oceânico, não continental. Os mares do sul eram então mais tépidos do que atualmente e se estendiam desde a América do Norte até as regiões polares. A corrente do Golfo corria pela parte central da América do Norte, sendo desviada na direção leste para banhar e aquecer as margens da Groenlândia, fazendo daquele continente, hoje coberto por um manto de gelo, um verdadeiro paraíso tropical.</textarea>
+            <div class="card">
+                <div id= "divEditParagraph" class="card-body">
+                <textarea id="EditParagraph" rows="12">Há 360 milhões de anos as terras ainda se estavam elevando. A América do Norte e do Sul encontravam-se bem altas. A Europa ocidental e as Ilhas Britânicas estavam emergindo, exceto partes do País de Gales, que se achavam profundamente submersas. Não havia grandes lençóis de gelo durante estas idades. Os supostos depósitos glaciais que surgiram em conexão com esses estratos na Europa, África, China e Austrália são devidos às geleiras de montanha isoladas ou ao deslocamento de detritos glaciais de origem posterior. O clima mundial era oceânico, não continental. Os mares do sul eram então mais tépidos do que atualmente e se estendiam desde a América do Norte até as regiões polares. A corrente do Golfo corria pela parte central da América do Norte, sendo desviada na direção leste para banhar e aquecer as margens da Groenlândia, fazendo daquele continente, hoje coberto por um manto de gelo, um verdadeiro paraíso tropical.</textarea>
+                </div>
+            </div>
+            
+            <div class="card">
+                <div class="card-body">
+                 <h4 class="card-title text-dark">Comments</h4>
+                 <div class="spinner-border" role="status" id="waiting">
+                    <span class="sr-only">Loading...</span>
+                </div>
+                <textarea id="CommentsParagraph" rows="3"></textarea>
+                </div>
+            </div>
+            
+            <div class="card">
+                <div class="card-body">
+                <h4 class="card-title text-dark">Translation Notes</h4>
+                <textarea id="TranslationNotesParagraph" rows="3"></textarea>
+                </div>
+            </div>
+ 
         </div>
-      </div>
-      
-      <div class="card">
-        <div class="card-body">
-          <h4 class="card-title text-dark">Comments</h4>
-          <textarea id="CommentsParagraph" class="form-control" rows="3"></textarea>
-        </div>
-      </div>
-      
-      <div class="card">
-        <div class="card-body">
-          <h4 class="card-title text-dark">Translation Notes</h4>
-          <textarea id="TranslationNotesParagraph" class="form-control" rows="3"></textarea>
-        </div>
-      </div>
-        
-        
-  
-        </div>
-  
   
         <!-- Modal footer -->
         <div class="modal-footer">
-          <button type="button" class="btn btn-info" onclick="ChangeStatus(1)"      data-bs-dismiss="modal">Working</button>
-          <button type="button" class="btn btn-success" onclick="ChangeStatus(3)"   data-bs-dismiss="modal">Ok</button>
-          <button type="button" class="btn btn-danger" onclick="ChangeStatus(2)"    data-bs-dismiss="modal">Doubt</button>
-          <button type="button" class="btn btn-secondary" onclick="ChangeStatus(4)" data-bs-dismiss="modal">No More Edit</button>
-  
-          <button type="button" class="btn" data-bs-dismiss="modal">Cancel</button>
+          <button type="button" class="btn badgeWorking" onclick="ChangeStatus(1)">Working</button>
+          <button type="button" class="btn badgeDoubt"   onclick="ChangeStatus(2)">Doubt</button>
+          <button type="button" class="btn badgeOk"      onclick="ChangeStatus(3)">Ok</button>
+          <button type="button" class="btn badgeClosed"  onclick="ChangeStatus(4)">Close</button>
+          <button type="button" class="btn" onclick="ChangeStatus(0)">Cancel</button>
         </div>
   
       </div>
     </div>
- </div>
+</div>
+
+<!-- Modal loading -->
+<div class="modal" id="modalWaiting">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+        </div>
+        <div class="modal-body">
+          <button class="btn btn-primary" type="button" disabled>
+            <span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>
+            Loading...
+          </button>
+        </div>
+        <div class="modal-footer">
+        </div>
+      </div>
+    </div>
+</div>
   
 
 </BODY> 

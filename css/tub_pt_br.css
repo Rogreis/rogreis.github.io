@@ -80,12 +80,17 @@ a.parClosed:active {text-decoration: none; color: white;}
   display:inline-block; width:100px
 }
 
+
 .badgeWorking
 {
   color: black;
   background-color: LemonChiffon; 
   display:inline-block; width:100px
 }
+a.badgeWorking:link  {text-decoration: none; color: white;}
+a.badgeWorking:visited {text-decoration: none; color: white;}
+a.badgeWorking:hover {text-decoration: underline; color: white;}
+a.badgeWorking:active {text-decoration: none; color: white;}
 
 .badgeDoubt
 {
@@ -106,6 +111,13 @@ a.parClosed:active {text-decoration: none; color: white;}
   color: rgba(var(--bs-white-rgb),var(--bs-text-opacity))!important;
   background-color: rgba(var(--bs-dark-rgb),var(--bs-bg-opacity))!important;
   display:inline-block; width:100px
+}
+
+textarea {
+  background: transparent;
+  outline:none;
+  border:none;
+  width:100%;
 }
 
 
