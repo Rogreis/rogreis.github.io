@@ -48,8 +48,25 @@ function loadDoc(url, hash) {
   }
   
   var modal;
-  var textEditaData= {status: 3, nt: "nada a observar", comment: "Aqui temos uma mudança",
-  text: "XXXXXXXX Há 360 milhões de anos as terras ainda se estavam elevando. A América do Norte e do Sul encontravam-se bem altas. A Europa ocidental e as Ilhas Britânicas estavam emergindo, exceto partes do País de Gales, que se achavam profundamente submersas. Não havia grandes lençóis de gelo durante estas idades. Os supostos depósitos glaciais que surgiram em conexão com esses estratos na Europa, África, China e Austrália são devidos às geleiras de montanha isoladas ou ao deslocamento de detritos glaciais de origem posterior. O clima mundial era oceânico, não continental. Os mares do sul eram então mais tépidos do que atualmente e se estendiam desde a América do Norte até as regiões polares. A corrente do Golfo corria pela parte central da América do Norte, sendo desviada na direção leste para banhar e aquecer as margens da Groenlândia, fazendo daquele continente, hoje coberto por um manto de gelo, um verdadeiro paraíso tropical."
+  var textEditaData= 
+  {
+    paperNo: -1,
+    sectionNo: -1,
+    paragraphNo: -1,
+    status: 3, 
+    nt: "nada a observar", 
+    comment: "Aqui temos uma mudança",
+    text: "XXXXXXXX Há 360 milhões de anos as terras ainda se estavam elevando. A América do Norte e do Sul encontravam-se bem altas. A Europa ocidental e as Ilhas Britânicas estavam emergindo, exceto partes do País de Gales, que se achavam profundamente submersas. Não havia grandes lençóis de gelo durante estas idades. Os supostos depósitos glaciais que surgiram em conexão com esses estratos na Europa, África, China e Austrália são devidos às geleiras de montanha isoladas ou ao deslocamento de detritos glaciais de origem posterior. O clima mundial era oceânico, não continental. Os mares do sul eram então mais tépidos do que atualmente e se estendiam desde a América do Norte até as regiões polares. A corrente do Golfo corria pela parte central da América do Norte, sendo desviada na direção leste para banhar e aquecer as margens da Groenlândia, fazendo daquele continente, hoje coberto por um manto de gelo, um verdadeiro paraíso tropical.",
+
+    ident()
+    {
+        return textEditaData.paperNo.toString() + ':' + textEditaData.sectionNo.toString() + '.' + textEditaData.paragraphNo.toString();
+    },
+
+    pageDivId()
+    {
+      return 'd' + textEditaData.paperNo.toString() + '_' + textEditaData.sectionNo.toString() + '_' + textEditaData.paragraphNo.toString();
+    }
   }
 
 
@@ -77,7 +94,11 @@ function loadDoc(url, hash) {
         $("#divEditParagraph").attr('class', 'card-body parClosed');
         $("#EditParagraph").attr('class', 'parClosed');
         break;
-    }
+      case 9:
+        updatePageData();
+        modal.hide();
+        break;
+      }
   }
 
   var modalOptions= {
@@ -102,12 +123,19 @@ function loadDoc(url, hash) {
       modal.hide();
       window.status='Edit text data loaded.'
       showEditData();
-    }, 5000);
+    }, 1000);
 }
+
+  function updatePageData()
+  {
+    console.log('updatePageData: ' + textEditaData.pageDivId());
+    $("#" + textEditaData.pageDivId()).html(textEditaData.text);
+  }
 
   function showEditData()
   {
     ChangeStatus(textEditaData.status);
+    $("#EditTitle").html('Edit ' + textEditaData.ident());
     $("#EditParagraph").val(textEditaData.text);
     $("#CommentsParagraph").val(textEditaData.comment);
     $("#TranslationNotesParagraph").val(textEditaData.nt);
@@ -117,8 +145,13 @@ function loadDoc(url, hash) {
     modal.show();
   }
 
-  function openEdit()
+  function openEdit(parIdent)
   {
+    const words = parIdent.split(';');
+    textEditaData.paperNo= parseInt(words[0]);
+    textEditaData.sectionNo= parseInt(words[1]);
+    textEditaData.paragraphNo= parseInt(words[2]);
+    console.log('Ident: ' + textEditaData.ident());
     window.status='Loading edit text data...'
     ret= loadEditData();
   }

@@ -11,6 +11,11 @@
     <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.1/dist/jquery.min.js"></script>   
     <link href="css/tub_pt_br.css" rel="stylesheet">    
     <script src="js/tub_pt_br.js"></script>  
+
+    <script type="module">
+        import { Octokit } from "https://cdn.skypack.dev/@octokit/core";
+    </script>
+
 </head>  
  
 <body class="bg-dark text-white" onload="StartPage()"> 
@@ -54,7 +59,7 @@
   
         <!-- Modal Header -->
         <div class="modal-header">
-          <h4 class="modal-title text-dark">Edit 10:2-2</h4>
+          <h4 id="EditTitle" class="modal-title text-dark">Edit 10:2-2</h4>
           <button type="button" class="btn-close" onclick="ChangeStatus(0)"></button>
         </div>
   
@@ -87,9 +92,10 @@
         <div class="modal-footer">
           <button type="button" class="btn badgeWorking" onclick="ChangeStatus(1)">Working</button>
           <button type="button" class="btn badgeDoubt"   onclick="ChangeStatus(2)">Doubt</button>
-          <button type="button" class="btn badgeOk"      onclick="ChangeStatus(3)">Ok</button>
+          <button type="button" class="btn badgeOk"      onclick="ChangeStatus(3)">Finished</button>
           <button type="button" class="btn badgeClosed"  onclick="ChangeStatus(4)">Close</button>
-          <button type="button" class="btn" onclick="ChangeStatus(0)">Cancel</button>
+          <button type="button" class="btn"              onclick="ChangeStatus(9)">Ok</button>
+          <button type="button" class="btn"              onclick="ChangeStatus(0)">Cancel</button>
         </div>
   
       </div>
