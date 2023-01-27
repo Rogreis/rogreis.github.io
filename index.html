@@ -19,14 +19,14 @@
 </head>  
  
 <body class="bg-dark text-white" onload="StartPage()"> 
-<div class="container-fluid mt-5 bg-dark text-white">  
+<div class="container-fluid mt-5 bg-dark text-white overflow-hidden">  
  
 	<div class="container-fluid p-5 bg-primary text-white text-left">  
   <div class="row"> 
     <div class="col-sm-8"> 
 	  <h1>O Livro de Urântia - Tradução/Revisão PT BR</h1>   
-      <h4>PT-BR version: 22-09-2022 02:54:42 - Trabalho iniciado em 2006, ainda em andamento<a class="page-link" href="https://sxs.urantia.org/Eng/Por/titles">Urantia Foundation Multi Language link</a></h4> 
-      <button type="button" class="btn btn-info btn-lg" id="openModel" onclick="openEdit()">Open Modal</button>
+      <h4>PT-BR version: 19-11-2022 12:30 - Trabalho iniciado em 2006, ainda em andamento<a class="page-link" href="https://sxs.urantia.org/Eng/Por/titles">Urantia Foundation Multi Language link</a></h4> 
+      <!-- <button type="button" class="btn btn-info btn-lg" id="openModel" onclick="openEdit()">Open Modal</button> -->
     </div> 
     <div class="col-sm-4"> 
       <h4>Status de cada parágrafo:</h4> 
@@ -39,14 +39,14 @@
   </div> 
 	</div>  
  
-<div class="container-fluid mt-5 ">  
+<div class="container-fluid mt-5">  
     <div class="row">  
  
-        <div id="leftColumn" class="col-sm-3 black"> <!-- Start left column --> 
+        <div id="leftColumn" class="col-sm-3 black  overflow-auto"> <!-- Start left column --> 
         <h3>Index</h3>  
         </div> <!-- End left column --> 
  
-        <div id= "rightColumn" class="col-sm-9 black"> <!-- Start text column --> 
+        <div id= "rightColumn" class="col-sm-9 black  overflow-auto"> <!-- Start text column --> 
         </div> <!-- End text column --> 
  
     </div>  <!-- End row --> 
