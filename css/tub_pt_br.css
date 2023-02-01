@@ -1,188 +1,334 @@
 :root {
-  --font: 'Roboto Serif Medium';
-  --fontSize: 18px;
+    --font: 'Roboto Serif Medium';
+    --fontSize: 18px;
 }
 
 .ub-bg-dark {
-  --bs-bg-opacity: 1;
-  background-color: rgba(var(--bs-dark-rgb),var(--bs-bg-opacity))!important;
+    --bs-bg-opacity: 1;
+    background-color: rgba(var(--bs-dark-rgb), var(--bs-bg-opacity))!important;
 }
+
 .ub-text-white {
-  --bs-text-opacity: 1;
-  color: rgba(var(--bs-white-rgb),var(--bs-text-opacity))!important;
+    --bs-text-opacity: 1;
+    color: rgba(var(--bs-white-rgb), var(--bs-text-opacity))!important;
 }
 
-
-.parStarted, .parWorking, .parDoubt, .parOk, .parClosed
-{
- font-family: var(--font);
- font-size: var(--fontSize);
- text-align: justify; 
- text-justify: inter-word; 
- padding-top: 15px;
- padding-right: 15px;
- padding-bottom: 15px;
- padding-left: 15px;
+.parStarted,
+.parWorking,
+.parDoubt,
+.parOk,
+.parClosed {
+    font-family: var(--font);
+    font-size: var(--fontSize);
+    text-align: justify;
+    text-justify: inter-word;
+    padding-top: 15px;
+    padding-right: 15px;
+    padding-bottom: 15px;
+    padding-left: 15px;
 }
 
-.parStarted
-{
-  background-color: FloralWhite; 
-}
-a.parStarted:link  {text-decoration: none; color: black; background-color: FloralWhite;}
-a.parStarted:visited {text-decoration: none; color: black;}
-a.parStarted:hover {text-decoration: underline; color: black;}
-a.parStarted:active {text-decoration: none; color: black;}
-
-.parWorking
-{
-  background-color: LemonChiffon; 
-}
-a.parWorking:link  {text-decoration: none; color: black;}
-a.parWorking:visited {text-decoration: none; color: black;}
-a.parWorking:hover {text-decoration: underline; color: black;}
-a.parWorking:active {text-decoration: none; color: black;}
-
-.parDoubt
-{
-  background-color: FireBrick; 
-  color: white;
-}
-a.parDoubt:link  {text-decoration: none; color: white; background-color: FireBrick;}
-a.parDoubt:visited {text-decoration: none; color: white; background-color: FireBrick;}
-a.parDoubt:hover {text-decoration: underline; color: white; background-color: FireBrick;}
-a.parDoubt:active {text-decoration: none; color: white; background-color: FireBrick;}
-
-.parOk
-{
-  background-color: Aquamarine; 
-}
-a.parOk:link  {text-decoration: none; color: black;}
-a.parOk:visited {text-decoration: none; color: black;}
-a.parOk:hover {text-decoration: underline; color: black;}
-a.parOk:active {text-decoration: none; color: black;}
-
-.parClosed
-{
-  color: rgba(var(--bs-white-rgb),var(--bs-text-opacity))!important;
-  background-color: rgba(var(--bs-dark-rgb),var(--bs-bg-opacity))!important;
+.parStarted {
+    background-color: FloralWhite;
 }
 
-a.parClosed:link  {text-decoration: none; color: white;}
-a.parClosed:visited {text-decoration: none; color: white;}
-a.parClosed:hover {text-decoration: underline; color: white;}
-a.parClosed:active {text-decoration: none; color: white;}
-
-.badgeStarted
-{
-  color: black;
-  background-color: FloralWhite; 
-  display:inline-block; width:100px
+a.parStarted:link {
+    text-decoration: none;
+    color: black;
+    background-color: FloralWhite;
 }
 
-
-.badgeWorking
-{
-  color: black;
-  background-color: LemonChiffon; 
-  display:inline-block; width:100px
-}
-a.badgeWorking:link  {text-decoration: none; color: white;}
-a.badgeWorking:visited {text-decoration: none; color: white;}
-a.badgeWorking:hover {text-decoration: underline; color: white;}
-a.badgeWorking:active {text-decoration: none; color: white;}
-
-.badgeDoubt
-{
-  background-color: FireBrick; 
-  color: white;
-  display:inline-block; width:100px
+a.parStarted:visited {
+    text-decoration: none;
+    color: black;
 }
 
-.badgeOk
-{
-  color: black;
-  background-color: Aquamarine; 
-  display:inline-block; width:100px
+a.parStarted:hover {
+    text-decoration: underline;
+    color: black;
 }
 
-.badgeClosed
-{
-  color: rgba(var(--bs-white-rgb),var(--bs-text-opacity))!important;
-  background-color: rgba(var(--bs-dark-rgb),var(--bs-bg-opacity))!important;
-  display:inline-block; width:100px
+a.parStarted:active {
+    text-decoration: none;
+    color: black;
+}
+
+.parWorking {
+    background-color: LemonChiffon;
+}
+
+a.parWorking:link {
+    text-decoration: none;
+    color: black;
+}
+
+a.parWorking:visited {
+    text-decoration: none;
+    color: black;
+}
+
+a.parWorking:hover {
+    text-decoration: underline;
+    color: black;
+}
+
+a.parWorking:active {
+    text-decoration: none;
+    color: black;
+}
+
+.parDoubt {
+    background-color: FireBrick;
+    color: white;
+}
+
+a.parDoubt:link {
+    text-decoration: none;
+    color: white;
+    background-color: FireBrick;
+}
+
+a.parDoubt:visited {
+    text-decoration: none;
+    color: white;
+    background-color: FireBrick;
+}
+
+a.parDoubt:hover {
+    text-decoration: underline;
+    color: white;
+    background-color: FireBrick;
+}
+
+a.parDoubt:active {
+    text-decoration: none;
+    color: white;
+    background-color: FireBrick;
+}
+
+.parOk {
+    background-color: Aquamarine;
+}
+
+a.parOk:link {
+    text-decoration: none;
+    color: black;
+}
+
+a.parOk:visited {
+    text-decoration: none;
+    color: black;
+}
+
+a.parOk:hover {
+    text-decoration: underline;
+    color: black;
+}
+
+a.parOk:active {
+    text-decoration: none;
+    color: black;
+}
+
+.parClosed {
+    color: rgba(var(--bs-white-rgb), var(--bs-text-opacity))!important;
+    background-color: rgba(var(--bs-dark-rgb), var(--bs-bg-opacity))!important;
+}
+
+a.parClosed:link {
+    text-decoration: none;
+    color: white;
+}
+
+a.parClosed:visited {
+    text-decoration: none;
+    color: white;
+}
+
+a.parClosed:hover {
+    text-decoration: underline;
+    color: white;
+}
+
+a.parClosed:active {
+    text-decoration: none;
+    color: white;
+}
+
+.badgeStarted {
+    color: black;
+    background-color: FloralWhite;
+    display: inline-block;
+    width: 100px
+}
+
+.badgeWorking {
+    color: black;
+    background-color: LemonChiffon;
+    display: inline-block;
+    width: 100px
+}
+
+a.badgeWorking:link {
+    text-decoration: none;
+    color: white;
+}
+
+a.badgeWorking:visited {
+    text-decoration: none;
+    color: white;
+}
+
+a.badgeWorking:hover {
+    text-decoration: underline;
+    color: white;
+}
+
+a.badgeWorking:active {
+    text-decoration: none;
+    color: white;
+}
+
+.badgeDoubt {
+    background-color: FireBrick;
+    color: white;
+    display: inline-block;
+    width: 100px
+}
+
+.badgeOk {
+    color: black;
+    background-color: Aquamarine;
+    display: inline-block;
+    width: 100px
+}
+
+.badgeClosed {
+    color: rgba(var(--bs-white-rgb), var(--bs-text-opacity))!important;
+    background-color: rgba(var(--bs-dark-rgb), var(--bs-bg-opacity))!important;
+    display: inline-block;
+    width: 100px
 }
 
 textarea {
-  background: transparent;
-  outline:none;
-  border:none;
-  width:100%;
+    background: transparent;
+    outline: none;
+    border: none;
+    width: 100%;
 }
 
-
-sup  {font-size: 9px;  color: #666666;}
-
-.list-group{ 
-    max-height: 85vh; 
-    margin-bottom: 5px; 
-    overflow-y:auto; 
-    -webkit-overflow-scrolling: touch; 
-} 
-
-.liIndex
-{
-  font-family: var(--font);
-  font-size: var(--fontSize);
+sup {
+    font-size: 9px;
+    color: #666666;
 }
 
-a.liIndex:link  {text-decoration: none; color: white;}
-a.liIndex:visited {text-decoration: none; color: white;}
-a.liIndex:hover {text-decoration: underline; color: white;}
-a.liIndex:active {text-decoration: none; color: white;}
+.list-group {
+    max-height: 85vh;
+    margin-bottom: 5px;
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+}
+
+.liIndex {
+    font-family: var(--font);
+    font-size: var(--fontSize);
+}
+
+a.liIndex:link {
+    text-decoration: none;
+    color: white;
+}
+
+a.liIndex:visited {
+    text-decoration: none;
+    color: white;
+}
+
+a.liIndex:hover {
+    text-decoration: underline;
+    color: white;
+}
+
+a.liIndex:active {
+    text-decoration: none;
+    color: white;
+}
 
 ul li {
-  background: rgba(var(--bs-dark-rgb),var(--bs-bg-opacity))!important;
-  color:  rgba(var(--bs-white-rgb),var(--bs-text-opacity))!important;
-  padding: 1px;
- }
+    background: rgba(var(--bs-dark-rgb), var(--bs-bg-opacity))!important;
+    color: rgba(var(--bs-white-rgb), var(--bs-text-opacity))!important;
+    padding: 1px;
+}
 
+.splitLeft {
+    height: 100%;
+    width: 25%;
+    position: fixed;
+    z-index: 1;
+    top: 2;
+    overflow-x: hidden;
+    padding-top: 0px;
+}
 
+.splitRight {
+    height: 100%;
+    width: 75%;
+    position: fixed;
+    z-index: 1;
+    top: 2;
+    overflow-x: hidden;
+    padding-top: 0px;
+}
 
-ul, #myUL { 
-  list-style-type: none; 
-} 
- 
-#myUL { 
-  margin: 0; 
-  padding: 0; 
-} 
- 
-.caret { 
-  cursor: pointer; 
-  -webkit-user-select: none; /* Safari 3.1+ */ 
-  -moz-user-select: none; /* Firefox 2+ */ 
-  -ms-user-select: none; /* IE 10+ */ 
-  user-select: none; 
-} 
- 
-.caret::before { 
-  content: "\25B6"; 
-  color: black; 
-  display: inline-block; 
-  margin-right: 6px; 
-} 
- 
-.caret-down::before { 
-  -ms-transform: rotate(90deg); /* IE 9 */ 
-  -webkit-transform: rotate(90deg); /* Safari */' 
-  transform: rotate(90deg);   
-} 
- 
-.nested { 
-  display: none; 
-} 
- 
-.active { 
-  display: block; 
-} 
+.left {
+    left: 0;
+}
+
+.right {
+    right: 0;
+}
+
+ul,
+#myUL {
+    list-style-type: none;
+}
+
+#myUL {
+    margin: 0;
+    padding: 0;
+}
+
+.caret {
+    cursor: pointer;
+    -webkit-user-select: none;
+    /* Safari 3.1+ */
+    -moz-user-select: none;
+    /* Firefox 2+ */
+    -ms-user-select: none;
+    /* IE 10+ */
+    user-select: none;
+}
+
+.caret::before {
+    content: "\25B6";
+    color: black;
+    display: inline-block;
+    margin-right: 6px;
+}
+
+.caret-down::before {
+    -ms-transform: rotate(90deg);
+    /* IE 9 */
+    -webkit-transform: rotate(90deg);
+    /* Safari */
+    ' 
+ transform: rotate(90deg);
+}
+
+.nested {
+    display: none;
+}
+
+.active {
+    display: block;
+}
