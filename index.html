@@ -1,120 +1,41 @@
-﻿<!DOCTYPE html>
-
-<head>
-    <meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
-    <title>Paper 1</title>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet">
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.1/dist/jquery.min.js"></script>
-    <link href="css/tub_pt_br.css" rel="stylesheet">
-    <script src="js/tub_pt_br.js"></script>
-
-    <script type="module">
-        import { Octokit } from "https://cdn.skypack.dev/@octokit/core";
-    </script>
-
-</head>
-
-<html>
-
-<body class="bg-dark text-white" onload="StartPage()">
-
-    <nav class="navbar navbar-expand-sm bg-primary text-white">
-        <div class="container-fluid">
-            <ul class="navbar-nav">
-                <li class="nav-item bg-primary text-white">
-                    <span>O Livro de Urântia - Tradução/Revisão PT BR -  v 01/02/2023 -- Status....: </span>
-                </li>
-                <li class="nav-item bg-primary text-white">
-                    <span class="nav-link badge badgeStarted">Started</span>
-                    <span class="badge badgeWorking">Working</span>
-                    <span class="badge badgeDoubt">Doubt</span>
-                    <span class="badge badgeOk">Ok</span>
-                    <span class="badge badgeClosed">Closed</span>
-                </li>
-            </ul>
-        </div>
-    </nav>
-
-
-
-    <div id="leftColumn" class="black splitLeft left mt-5 overflow-auto">
-        <h3>Table of Contents</h3>
-    </div>
-    <div id="rightColumn" class="black splitRight right mt-5 overflow-auto">
-    </div>
-
-    <!-- Modal edit window -->
-    <div class="modal" id="editChildWindow" data-backdrop="static">
-        <div class="modal-dialog modal-dialog-scrollable modal-xl">
-            <div class="modal-content">
-
-                <!-- Modal Header -->
-                <div class="modal-header">
-                    <h4 id="EditTitle" class="modal-title text-dark">Edit 10:2-2</h4>
-                    <button type="button" class="btn-close" onclick="ChangeStatus(0)"></button>
-                </div>
-
-                <!-- Modal body -->
-                <div class="modal-body">
-
-                    <div class="card">
-                        <div id="divEditParagraph" class="card-body">
-                            <textarea id="EditParagraph" rows="12">Há 360 milhões de anos as terras ainda se estavam elevando. A América do Norte e do Sul encontravam-se bem altas. A Europa ocidental e as Ilhas Britânicas estavam emergindo, exceto partes do País de Gales, que se achavam profundamente submersas. Não havia grandes lençóis de gelo durante estas idades. Os supostos depósitos glaciais que surgiram em conexão com esses estratos na Europa, África, China e Austrália são devidos às geleiras de montanha isoladas ou ao deslocamento de detritos glaciais de origem posterior. O clima mundial era oceânico, não continental. Os mares do sul eram então mais tépidos do que atualmente e se estendiam desde a América do Norte até as regiões polares. A corrente do Golfo corria pela parte central da América do Norte, sendo desviada na direção leste para banhar e aquecer as margens da Groenlândia, fazendo daquele continente, hoje coberto por um manto de gelo, um verdadeiro paraíso tropical.</textarea>
-                        </div>
-                    </div>
-
-                    <div class="card">
-                        <div class="card-body">
-                            <h4 class="card-title text-dark">Comments</h4>
-                            <textarea id="CommentsParagraph" rows="3"></textarea>
-                        </div>
-                    </div>
-
-                    <div class="card">
-                        <div class="card-body">
-                            <h4 class="card-title text-dark">Translation Notes</h4>
-                            <textarea id="TranslationNotesParagraph" rows="3"></textarea>
-                        </div>
-                    </div>
-
-                </div>
-
-                <!-- Modal footer -->
-                <div class="modal-footer">
-                    <button type="button" class="btn badgeWorking" onclick="ChangeStatus(1)">Working</button>
-                    <button type="button" class="btn badgeDoubt" onclick="ChangeStatus(2)">Doubt</button>
-                    <button type="button" class="btn badgeOk" onclick="ChangeStatus(3)">Finished</button>
-                    <button type="button" class="btn badgeClosed" onclick="ChangeStatus(4)">Close</button>
-                    <button type="button" class="btn" onclick="ChangeStatus(9)">Ok</button>
-                    <button type="button" class="btn" onclick="ChangeStatus(0)">Cancel</button>
-                </div>
-
-            </div>
-        </div>
-    </div>
-
-    <!-- Modal loading -->
-    <div class="modal" id="modalWaiting">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="modal-header">
-                </div>
-                <div class="modal-body">
-                    <button class="btn btn-primary" type="button" disabled>
-            <span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>
-            Loading...
-          </button>
-                </div>
-                <div class="modal-footer">
-                </div>
-            </div>
-        </div>
-    </div>
-
-
-</BODY>
-
-</HTML>
+﻿<!DOCTYPE html> 
+<head>  
+	<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">  
+	<title>Paper 1</title>  
+	<meta charset="utf-8">  
+	<meta name="viewport" content="width=device-width, initial-scale=1">  
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet">  
+	<link href="css/tub_pt_br.css" rel="stylesheet">  
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js"></script> 
+	<script src="https://cdn.jsdelivr.net/npm/jquery@3.6.1/dist/jquery.min.js"></script> 
+	<script src="js/tub_pt_br.js"></script> 
+	<script type="module">  
+		import { Octokit } from "https://cdn.skypack.dev/@octokit/core";  
+	</script>  
+</head>  
+<html> 
+	<body class="bg-dark text-white" onload="StartPage()"> 
+		<nav class="navbar navbar-expand-sm bg-primary text-white"> 
+			<div class="container-fluid"> 
+				<ul class="navbar-nav"> 
+					<li class="nav-item bg-primary text-white"> 
+						<span>O Livro de Urântia - Tradução/Revisão PT BR -  v Week 6-08/02/2023&nbsp;&nbsp;&nbsp;Status:&nbsp;</span> 
+					</li> 
+					<li class="nav-item bg-primary text-white"> 
+						<span class="nav-link badge badgeStarted">Started</span>&nbsp;
+						<span class="badge badgeWorking">Working</span>&nbsp;
+						<span class="badge badgeDoubt">Doubt</span>&nbsp;
+						<span class="badge badgeOk">Ok</span>&nbsp;
+						<span class="badge badgeClosed">Closed</span>
+					</li> 
+				</ul> 
+			</div> 
+		</nav> 
+		<div id="leftColumn" class="black splitLeft left mt-0 overflow-auto"> 
+			<h3>Table of Contents</h3> 
+		</div> 
+		<div id="rightColumn" class="black splitRight right mt-0 overflow-auto"> 
+		</div> 
+		 
+	</BODY> 
+</HTML> 

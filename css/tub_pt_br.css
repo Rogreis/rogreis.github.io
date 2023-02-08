@@ -261,7 +261,7 @@ ul li {
 }
 
 .splitLeft {
-    height: 90%;
+    height: 95%;
     width: 25%;
     position: fixed;
     z-index: 1;
@@ -271,7 +271,7 @@ ul li {
 }
 
 .splitRight {
-    height: 90%;
+    height: 95%;
     width: 75%;
     position: fixed;
     z-index: 1;
