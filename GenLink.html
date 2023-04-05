@@ -4,9 +4,32 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Link Generator</title>
+
+    <style>
+        .fieldstable {
+            border-collapse: collapse;
+            width: 200px;
+        }
+        table {
+            border-collapse: collapse;
+            width: 800px;
+        }
+        td {
+            padding: 20px;
+            text-align: left;
+        }
+		input{
+            width: 80px;
+            text-align: right;
+        }
+	
+	
+    </style>
+
+
     <script>
 	
-	const stringList = [
+	const stringListPT = [
 	   "introducao",
 	   "documento-1-o-pai-universal",
 	   "documento-2-natureza-de-deus",
@@ -205,34 +228,470 @@
 	   "documento-195-depois-pentecostes",
 	   "documento-196-fe-jesus"  
 	];
+
+	const stringListSPInt = [
+		"prologo",
+		"documento-1-el-padre-universal",
+		"documento-2-la-naturaleza-de-dios",
+		"documento-3-los-atributos-de-dios",
+		"documento-4-la-relacion-de-dios-con-el-universo",
+		"documento-5-la-relacion-de-dios-con-el-individuo",
+		"documento-6-el-hijo-eterno",
+		"documento-7-la-relacion-del-hijo-eterno-con-el-universo",
+		"documento-8-el-espiritu-infinito",
+		"documento-9-la-relacion-del-espiritu-infinito-con-el-universo",
+		"documento-10-la-trinidad-del-paraiso",
+		"documento-11-la-isla-eterna-del-paraiso",
+		"documento-12-el-universo-de-universos",
+		"documento-13-las-esferas-sagradas-del-paraiso",
+		"documento-14-el-universo-central-y-divino",
+		"documento-15-los-siete-superuniversos",
+		"documento-16-los-siete-espiritus-maestros",
+		"documento-17-los-siete-grupos-de-espiritus-supremos",
+		"documento-18-las-personalidades-supremas-de-la-trinidad",
+		"documento-19-los-seres-de-igual-rango-con-origen-en-la-trinidad",
+		"documento-20-los-hijos-de-dios-del-paraiso",
+		"documento-21-los-hijos-creadores-del-paraiso",
+		"documento-22-los-hijos-trinizados-de-dios",
+		"documento-23-los-mensajeros-solitarios",
+		"documento-24-las-personalidades-mas-altas-del-espiritu-infinito",
+		"documento-25-las-huestes-de-mensajeros-del-espacio",
+		"documento-26-los-espiritus-ministrantes-del-universo-central",
+		"documento-27-el-ministerio-de-las-supernafines-primarias",
+		"documento-28-los-espiritus-ministrantes-de-los-superuniversos",
+		"documento-29-los-directores-del-poder-del-universo",
+		"documento-30-las-personalidades-del-gran-universo",
+		"documento-31-el-cuerpo-de-la-finalizacion",
+		"documento-32-la-evolucion-de-los-universos-locales",
+		"documento-33-la-administracion-del-universo-local",
+		"documento-34-el-espiritu-madre-del-universo-local",
+		"documento-35-los-hijos-de-dios-de-los-universos-locales",
+		"documento-36-los-portadores-de-vida",
+		"documento-37-las-personalidades-del-universo-local",
+		"documento-38-los-espiritus-ministrantes-del-universo-local",
+		"documento-39-las-huestes-seraficas",
+		"documento-40-los-hijos-de-dios-ascendentes",
+		"documento-41-los-aspectos-fisicos-del-universo-local",
+		"documento-42-la-energia-la-mente-y-la-materia",
+		"documento-43-las-constelaciones",
+		"documento-44-los-artesanos-celestiales",
+		"documento-45-la-administracion-del-sistema-local",
+		"documento-46-la-sede-del-sistema-local",
+		"documento-47-los-siete-mundos-mansion",
+		"documento-48-la-vida-en-la-morontia",
+		"documento-49-los-mundos-habitados",
+		"documento-50-los-principes-planetarios",
+		"documento-51-los-adanes-planetarios",
+		"documento-52-las-epocas-planetarias-de-los-mortales",
+		"documento-53-la-rebelion-de-lucifer",
+		"documento-54-los-problemas-de-la-rebelion-de-lucifer",
+		"documento-55-las-esferas-de-luz-y-vida",
+		"documento-56-la-unidad-universal",
+		"documento-57-el-origen-de-urantia",
+		"documento-58-el-establecimiento-de-la-vida-en-urantia",
+		"documento-59-la-era-de-la-vida-marina-en-urantia",
+		"documento-60-urantia-durante-la-era-de-la-primera-vida-terrestre",
+		"documento-61-la-era-de-los-mamiferos-en-urantia",
+		"documento-62-las-razas-de-los-albores-del-primer-hombre",
+		"documento-63-la-primera-familia-humana",
+		"documento-64-las-razas-evolutivas-de-color",
+		"documento-65-el-sobrecontrol-de-la-evolucion",
+		"documento-66-el-principe-planetario-de-urantia",
+		"documento-67-la-rebelion-planetaria",
+		"documento-68-llos-albores-de-la-civilizacion",
+		"documento-69-las-instituciones-humanas-primitivas",
+		"documento-70-la-evolucion-del-gobierno-humano",
+		"documento-71-el-desarrollo-del-estado",
+		"documento-72-el-gobierno-de-un-planeta-vecino",
+		"documento-73-el-jardin-del-eden",
+		"documento-74-adan-y-eva",
+		"documento-75-la-falta-de-adan-y-eva",
+		"documento-76-el-segundo-jardin",
+		"documento-77-las-criaturas-intermedias",
+		"documento-78-la-raza-violeta-despues-de-los-dias-de-adan",
+		"documento-79-la-expansion-andita-en-oriente",
+		"documento-80-la-expansion-andita-en-occidente",
+		"documento-81-el-desarrollo-de-la-civilizacion-moderna",
+		"documento-82-la-evolucion-del-matrimonio",
+		"documento-83-la-institucion-del-matrimonio",
+		"documento-84-el-matrimonio-y-la-vida-de-familia",
+		"documento-85-los-origenes-de-la-adoracion",
+		"documento-86-la-evolucion-inicial-de-la-religion",
+		"documento-87-los-cultos-los-fantasmas",
+		"documento-88-los-fetiches-los-amuletos-y-la-magia",
+		"documento-89-el-pecado-el-sacrificio-y-la-expiacion",
+		"documento-90-el-chamanismo-los-curanderos-y-los-sacerdotes",
+		"documento-91-la-evolucion-de-la-oracion",
+		"documento-92-la-evolucion-posterior-de-la-religion",
+		"documento-93-maquiventa-melquisedec",
+		"documento-94-las-ensenanzas-de-melquisedec-en-oriente",
+		"documento-95-las-ensenanzas-de-melquisedec-en-el-levante",
+		"documento-96-yahve-el-dios-de-los-hebreos",
+		"documento-97-la-evolucion-del-concepto-de-dios-entre-los-hebreos",
+		"documento-98-las-ensenanzas-de-melquisedec-en-occidente",
+		"documento-99-los-problemas-sociales-de-la-religion",
+		"documento-100-la-religion-en-la-experiencia-humana",
+		"documento-101-la-naturaleza-real-de-la-religion",
+		"documento-102-los-fundamentos-de-la-fe-religiosa",
+		"documento-103-la-realidad-de-la-experiencia-religiosa",
+		"documento-104-el-crecimiento-del-concepto-de-trinidad",
+		"documento-105-la-deidad-y-la-realidad",
+		"documento-106-los-niveles-de-realidad-en-el-universo",
+		"documento-107-el-origen-y-la-naturaleza-de-los-ajustadores-del",
+		"documento-108-la-mision-y-el-ministerio-de-los-ajustadores-del",
+		"documento-109-la-relacion-de-los-ajustadores-con-las-criaturas-del",
+		"documento-110-la-relacion-de-los-ajustadores-con-los-mortales",
+		"documento-111-el-ajustador-y-el-alma",
+		"documento-112-la-supervivencia-de-la-personalidad",
+		"documento-113-las-guardianas-seraficas-del-destino",
+		"documento-114-el-gobierno-planetario-serafico",
+		"documento-115-el-ser-supremo",
+		"documento-116-el-supremo-todopoderoso",
+		"documento-117-dios-el-supremo",
+		"documento-118-el-supremo-y-el-ultimo-el-tiempo-y-el-espacio",
+		"documento-119-los-otorgamientos-de-cristo-miguel",
+		"documento-120-el-otorgamiento-de-miguel-en-urantia",
+		"documento-121-la-epoca-del-otorgamiento-de-miguel",
+		"documento-122-el-nacimiento-y-la-infancia-de-jesus",
+		"documento-123-los-comienzos-de-la-ninez-de-jesus",
+		"documento-124-el-final-de-la-ninez-de-jesus",
+		"documento-125-jesus-en-jerusalen",
+		"documento-126-los-dos-anos-cruciales",
+		"documento-127-los-anos-de-la-adolescencia",
+		"documento-128-jesus-comienza-su-vida-adulta",
+		"documento-129-jesus-prosigue-su-vida-adulta",
+		"documento-130-de-camino-roma",
+		"documento-131-las-religiones-del-mundo",
+		"documento-132-la-estancia-en-roma",
+		"documento-133-la-vuelta-de-roma",
+		"documento-134-los-anos-de-transicion",
+		"documento-135-juan-el-bautista",
+		"documento-136-el-bautismo-y-los-cuarenta-dias",
+		"documento-137-la-espera-en-galilea",
+		"documento-138-la-formacion-de-los-mensajeros-del-reino",
+		"documento-139-los-doce-apostoles",
+		"documento-140-la-ordenacion-de-los-doce",
+		"documento-141-empieza-la-obra-publica",
+		"documento-142-la-pascua-en-jerusalen",
+		"documento-143-el-paso-por-samaria",
+		"documento-144-en-gilboa-y-en-la-decapolis",
+		"documento-145-cuatro-dias-intensos-en-cafarnaum",
+		"documento-146-la-primera-gira-de-predicacion-en-galilea",
+		"documento-147-el-parentesis-de-la-visita-jerusalen",
+		"documento-148-la-formacion-de-evangelistas-en-betsaida",
+		"documento-149-la-segunda-gira-de-predicacion",
+		"documento-150-la-tercera-gira-de-predicacion",
+		"documento-151-la-temporada-de-ensenanza-la-orilla-del-mar",
+		"documento-152-los-antecedentes-de-la-crisis-de-cafarnaum",
+		"documento-153-la-crisis-de-cafarnaum",
+		"documento-154-los-ultimos-dias-en-cafarnaum",
+		"documento-155-la-huida-por-el-norte-de-galilea",
+		"documento-156-la-estancia-en-tiro-y-sidon",
+		"documento-157-en-cesarea-de-filipo",
+		"documento-158-el-monte-de-la-transfiguracion",
+		"documento-159-la-gira-por-la-decapolis",
+		"documento-160-rodan-de-alejandria",
+		"documento-161-otras-conversaciones-con-rodan",
+		"documento-162-en-la-fiesta-de-los-tabernaculos",
+		"documento-163-la-ordenacion-de-los-setenta-en-magadan",
+		"documento-164-en-la-fiesta-de-la-consagracion",
+		"documento-165-empieza-la-mision-en-perea",
+		"documento-166-la-ultima-visita-al-norte-de-perea",
+		"documento-167-la-visita-filadelfia",
+		"documento-168-la-resurreccion-de-lazaro",
+		"documento-169-las-ultimas-ensenanzas-en-pella",
+		"documento-170-el-reino-de-los-cielos",
+		"documento-171-en-el-camino-jerusalen",
+		"documento-172-la-entrada-en-jerusalen",
+		"documento-173-el-lunes-en-jerusalen",
+		"documento-174-el-martes-por-la-manana-en-el-templo",
+		"documento-175-el-ultimo-discurso-en-el-templo",
+		"documento-176-el-martes-por-la-noche-en-el-monte-olivete",
+		"documento-177-el-miercoles-dia-de-descanso",
+		"documento-178-el-ultimo-dia-en-el-campamento",
+		"documento-179-la-ultima-cena",
+		"documento-180-el-discurso-de-despedida",
+		"documento-181-las-advertencias-y-exhortaciones-finales",
+		"documento-182-en-getsemani",
+		"documento-183-la-traicion-y-el-arresto-de-jesus",
+		"documento-184-ante-el-tribunal-del-sanedrin",
+		"documento-185-el-juicio-ante-pilatos",
+		"documento-186-poco-antes-de-la-crucifixion",
+		"documento-187-la-crucifixion",
+		"documento-188-en-la-tumba",
+		"documento-189-la-resurreccion",
+		"documento-190-las-apariciones-de-jesus-en-la-morontia",
+		"documento-191-las-apariciones-los-apostoles-y-otros-lideres",
+		"documento-192-las-apariciones-en-galilea",
+		"documento-193-las-apariciones-finales-y-la-ascension",
+		"documento-194-el-otorgamiento-del-espiritu-de-la-verdad",
+		"documento-195-despues-de-pentecostes"
+	];
+
+	const stringListEN = [
+		"foreword",
+		"paper-1-universal-father",
+		"paper-2-nature-god",
+		"paper-3-attributes-god",
+		"paper-4-gods-relation-universe",
+		"paper-5-gods-relation-individual",
+		"paper-6-eternal-son",
+		"paper-7-relation-eternal-son-universe",
+		"paper-8-infinite-spirit",
+		"paper-9-relation-infinite-spirit-universe",
+		"paper-10-paradise-trinity",
+		"paper-11-eternal-isle-paradise",
+		"paper-12-universe-universes",
+		"paper-13-sacred-spheres-paradise",
+		"paper-14-central-and-divine-universe",
+		"paper-15-seven-superuniverses",
+		"paper-16-seven-master-spirits",
+		"paper-17-seven-supreme-spirit-groups",
+		"paper-18-supreme-trinity-personalities",
+		"paper-19-co-ordinate-trinity-origin-beings",
+		"paper-20-paradise-sons-god",
+		"paper-21-paradise-creator-sons",
+		"paper-22-trinitized-sons-god",
+		"paper-23-solitary-messengers",
+		"paper-24-higher-personalities-infinite-spirit",
+		"paper-25-messenger-hosts-space",
+		"paper-26-ministering-spirits-central-universe",
+		"paper-27-ministry-primary-supernaphim",
+		"paper-28-ministering-spirits-superuniverses",
+		"paper-29-universe-power-directors",
+		"paper-30-personalities-grand-universe",
+		"paper-31-corps-finality",
+		"paper-32-evolution-local-universes",
+		"paper-33-administration-local-universe",
+		"paper-34-local-universe-mother-spirit",
+		"paper-35-local-universe-sons-god",
+		"paper-36-life-carriers",
+		"paper-37-personalities-local-universe",
+		"paper-38-ministering-spirits-local-universe",
+		"paper-39-seraphic-hosts",
+		"paper-40-ascending-sons-god",
+		"paper-41-physical-aspects-local-universe",
+		"paper-42-energy-mind-and-matter",
+		"paper-43-constellations",
+		"paper-44-celestial-artisans",
+		"paper-45-local-system-administration",
+		"paper-46-local-system-headquarters",
+		"paper-47-seven-mansion-worlds",
+		"paper-48-morontia-life",
+		"paper-49-inhabited-worlds",
+		"paper-50-planetary-princes",
+		"paper-51-planetary-adams",
+		"paper-52-planetary-mortal-epochs",
+		"paper-53-lucifer-rebellion",
+		"paper-54-problems-lucifer-rebellion",
+		"paper-55-spheres-light-and-life",
+		"paper-56-universal-unity",
+		"paper-57-origin-urantia",
+		"paper-58-life-establishment-urantia",
+		"paper-59-marine-life-era-urantia",
+		"paper-60-urantia-during-early-land-life-era",
+		"paper-61-mammalian-era-urantia",
+		"paper-62-dawn-races-early-man",
+		"paper-63-first-human-family",
+		"paper-64-evolutionary-races-color",
+		"paper-65-overcontrol-evolution",
+		"paper-66-planetary-prince-urantia",
+		"paper-67-planetary-rebellion",
+		"paper-68-dawn-civilization",
+		"paper-69-primitive-human-institutions",
+		"paper-70-evolution-human-government",
+		"paper-71-development-state",
+		"paper-72-government-neighboring-planet",
+		"paper-73-garden-eden",
+		"paper-74-adam-and-eve",
+		"paper-75-default-adam-and-eve",
+		"paper-76-second-garden",
+		"paper-77-midway-creatures",
+		"paper-78-violet-race-after-days-adam",
+		"paper-79-andite-expansion-in-orient",
+		"paper-80-andite-expansion-in-occident",
+		"paper-81-development-modern-civilization",
+		"paper-82-evolution-marriage",
+		"paper-83-marriage-institution",
+		"paper-84-marriage-and-family-life",
+		"paper-85-origins-worship",
+		"paper-86-early-evolution-religion",
+		"paper-87-ghost-cults",
+		"paper-88-fetishes-charms-and-magic",
+		"paper-89-sin-sacrifice-and-atonement",
+		"paper-90-shamanism-medicine-men-and-priests",
+		"paper-91-evolution-prayer",
+		"paper-92-later-evolution-religion",
+		"paper-93-machiventa-melchizedek",
+		"paper-94-melchizedek-teachings-in-orient",
+		"paper-95-melchizedek-teaching-in-levant",
+		"paper-96-yahweh-god-hebrews",
+		"paper-97-evolution-god-concept-among-hebrews",
+		"paper-98-melchizedek-teachings-in-occident",
+		"paper-99-social-problems-religion",
+		"paper-100-religion-in-human-experience",
+		"paper-101-real-nature-religion",
+		"paper-102-foundations-religious-faith",
+		"paper-103-reality-religious-experience",
+		"paper-104-growth-trinity-concept",
+		"paper-105-deity-and-reality",
+		"paper-106-universe-levels-reality",
+		"paper-107-origin-and-nature-thought-adjusters",
+		"paper-108-mission-and-ministry-thought-adjusters",
+		"paper-109-relation-adjusters-universe-creatures",
+		"paper-110-relation-adjusters-individual-mortals",
+		"paper-111-adjuster-and-soul",
+		"paper-112-personality-survival",
+		"paper-113-seraphic-guardians-destiny",
+		"paper-114-seraphic-planetary-government",
+		"paper-115-supreme-being",
+		"paper-116-almighty-supreme",
+		"paper-117-god-supreme",
+		"paper-118-supreme-and-ultimate-time-and-space",
+		"paper-119-bestowals-christ-michael",
+		"paper-120-bestowal-michael-urantia",
+		"paper-121-times-michaels-bestowal",
+		"paper-122-birth-and-infancy-jesus",
+		"paper-123-early-childhood-jesus",
+		"paper-124-later-childhood-jesus",
+		"paper-125-jesus-jerusalem",
+		"paper-126-two-crucial-years",
+		"paper-127-adolescent-years",
+		"paper-128-jesus-early-manhood",
+		"paper-129-later-adult-life-jesus",
+		"paper-130-way-rome",
+		"paper-131-worlds-religions",
+		"paper-132-sojourn-rome",
+		"paper-133-return-rome",
+		"paper-134-transition-years",
+		"paper-135-john-baptist",
+		"paper-136-baptism-and-forty-days",
+		"paper-137-tarrying-time-in-galilee",
+		"paper-138-training-kingdoms-messengers",
+		"paper-139-twelve-apostles",
+		"paper-140-ordination-twelve",
+		"paper-141-beginning-public-work",
+		"paper-142-passover-jerusalem",
+		"paper-143-going-through-samaria",
+		"paper-144-gilboa-and-in-decapolis",
+		"paper-145-four-eventful-days-capernaum",
+		"paper-146-first-preaching-tour-galilee",
+		"paper-147-interlude-visit-jerusalem",
+		"paper-148-training-evangelists-bethsaida",
+		"paper-149-second-preaching-tour",
+		"paper-150-third-preaching-tour",
+		"paper-151-tarrying-and-teaching-seaside",
+		"paper-152-events-leading-capernaum-crisis",
+		"paper-153-crisis-capernaum",
+		"paper-154-last-days-capernaum",
+		"paper-155-fleeing-through-northern-galilee",
+		"paper-156-sojourn-tyre-and-sidon",
+		"paper-157-caesarea-philippi",
+		"paper-158-mount-transfiguration",
+		"paper-159-decapolis-tour",
+		"paper-160-rodan-alexandria",
+		"paper-161-further-discussions-rodan",
+		"paper-162-feast-tabernacles",
+		"paper-163-ordination-seventy-magadan",
+		"paper-164-feast-dedication",
+		"paper-165-perean-mission-begins",
+		"paper-166-last-visit-northern-perea",
+		"paper-167-visit-philadelphia",
+		"paper-168-resurrection-lazarus",
+		"paper-169-last-teaching-pella",
+		"paper-170-kingdom-heaven",
+		"paper-171-way-jerusalem",
+		"paper-172-going-jerusalem",
+		"paper-173-monday-in-jerusalem",
+		"paper-174-tuesday-morning-in-temple",
+		"paper-175-last-temple-discourse",
+		"paper-176-tuesday-evening-mount-olivet",
+		"paper-177-wednesday-rest-day",
+		"paper-178-last-day-camp",
+		"paper-179-last-supper",
+		"paper-180-farewell-discourse",
+		"paper-181-final-admonitions-and-warnings",
+		"paper-182-in-gethsemane",
+		"paper-183-betrayal-and-arrest-jesus",
+		"paper-184-sanhedrin-court",
+		"paper-185-trial-pilate",
+		"paper-186-just-crucifixion",
+		"paper-187-crucifixion",
+		"paper-188-time-tomb",
+		"paper-189-resurrection",
+		"paper-190-morontia-appearances-jesus",
+		"paper-191-appearances-apostles-and-other-leaders",
+		"paper-192-appearances-in-galilee",
+		"paper-193-final-appearances-and-ascension",
+		"paper-194-bestowal-spirit-truth",
+		"paper-195-after-pentecost",
+		"paper-196-faith-jesus"
+	];
+
 	
-        function generateLink() {
+        function generateLinks() {
             const paper = document.getElementById("paper").value;
             const section = document.getElementById("section").value;
             const paragraph = document.getElementById("paragraph").value;
 
-            const link = `https://www.urantia.org/pt/o-livro-de-urantia/${stringList[paper]}/#U${paper}_${section}_${paragraph}`;
-            document.getElementById("generatedLink").href = link;
-            document.getElementById("generatedLink").innerText = link;
+            const linkPT = `https://www.urantia.org/pt/o-livro-de-urantia/${stringListPT[paper]}/#U${paper}_${section}_${paragraph}`;
+            document.getElementById("generatedLinkPT").href = linkPT;
+            document.getElementById("generatedLinkPT").innerText = linkPT;
+			
+            const linkSPInt = `https://www.urantia.org/es-int/el-libro-de-urantia-internacional/${stringListSPInt[paper]}/#U${paper}_${section}_${paragraph}`;
+            document.getElementById("generatedLinkSPInt").href = linkSPInt;
+            document.getElementById("generatedLinkSPInt").innerText = linkSPInt;
+
+            const linkEN = `https://www.urantia.org/pt/o-livro-de-urantia/${stringListEN[paper]}/#U${paper}_${section}_${paragraph}`;
+            document.getElementById("generatedLinkEN").href = linkEN;
+            document.getElementById("generatedLinkEN").innerText = linkEN;
+			
+			
         }
     </script>
 </head>
 <body>
     <h1>Urantia Book Link Generator</h1>
-    <form onsubmit="event.preventDefault(); generateLink();">
-        <label for="paper">Paper:</label>
-        <input type="number" id="paper" name="paper" required>
-        <br><br>
-        <label for="section">Section:</label>
-        <input type="number" id="section" name="section" required>
-        <br><br>
-        <label for="paragraph">Paragraph:</label>
-        <input type="number" id="paragraph" name="paragraph" required>
-        <br><br>
-        <button type="submit">Generate Link</button>
+    <form onsubmit="event.preventDefault(); generateLinks();">
+		<table class="fieldstable">
+			<tr>
+				<td><label for="paper">Paper:</label></td>
+				<td><input type="number" id="paper" name="paper" required value=0></td>
+			</tr>
+			<tr>
+				<td><label for="section">Section:</label></td>
+				<td><input type="number" id="section" name="section" required value=0></td>
+			</tr>
+			<tr>
+				<td><label for="paragraph">Paragraph:</label></td>
+				<td><input type="number" id="paragraph" name="paragraph" required value=0></td>
+			</tr>
+		</table>
+		
+		<br><br>
+		<button type="submit">Generate Link</button>
     </form>
     <br>
-    <p>Generated link:</p>
-    <a id="generatedLink" href="#" target="_blank"></a>
+    <p>Generated links:</p>
+	
+		<table>
+			<tr>
+				<td><label for="generatedLinkPT">Português:</label></td>
+				<td><a id="generatedLinkPT" href="#" target="_blank"></a></td>
+			</tr>
+			<tr>
+				<td><label for="generatedLinkSPInt">Espanhol Internacional:</label></td>
+				<td><a id="generatedLinkSPInt" href="#" target="_blank"></a></td>
+			</tr>
+			<tr>
+				<td><label for="generatedLinkEN">Inglês:</label></td>
+				<td><a id="generatedLinkEN" href="#" target="_blank"></a></td>
+			</tr>
+		</table>
+	
+	
+    
+    
+    
 </body>
 </html>
