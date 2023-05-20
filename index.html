@@ -12,6 +12,49 @@
 	<script type="module">  
 		import { Octokit } from "https://cdn.skypack.dev/@octokit/core";  
 	</script>  
+<style type="text/css">  
+:root { 
+ font-family: var(--font);
+ font-size: var(--fontSize);
+} 
+.parStarted, .parWorking, .parDoubt, .parOk 
+{  
+ font-family: var(--font);
+ font-size: var(--fontSize);
+ text-align: justify;   
+}  
+ 
+.parStarted { color:black; background-color:FloralWhite; }
+a.parStarted { text-decoration: none; }
+a.parStarted:hover { text-decoration: underline; }
+ 
+.parWorking { color:black; background-color:LemonChiffon; }
+a.parWorking { text-decoration: none; }
+a.parWorking:hover { text-decoration: underline; }
+ 
+.parDoubt { color:white; background-color:FireBrick; }
+a.parDoubt { text-decoration: none; }
+a.parDoubt:hover { text-decoration: underline; }
+ 
+.parOk { color:black; background-color:Aquamarine; }
+a.parOk { text-decoration: none; }
+a.parOk:hover { text-decoration: underline; }
+ 
+sup  {font-size: 9px;  color: #666666;}  
+i, b, em  {  
+ font-family: var(--font);
+ font-size: var(--fontSize);
+ color: #FF33CC;  
+ font-weight: bold;  
+}  
+table {  
+    border: 0px solid;  
+    border-collapse: collapse;  
+}  
+td { padding: 15px; border: none;}
+.TextRemoved { color:#ff3333 } 
+.TextInserted { color:#66ff33 } 
+</style>  
 </head>  
 <html> 
 	<body class="bg-dark text-white" onload="StartPage()"> 
@@ -19,7 +62,7 @@
 			<div class="container-fluid"> 
 				<ul class="navbar-nav"> 
 					<li class="nav-item bg-primary text-white"> 
-						<span>O Livro de Urântia - Tradução/Revisão PT BR -  v Week 19-10-05-2023&nbsp;&nbsp;&nbsp;Status:&nbsp;</span> 
+						<span>O Livro de Urântia - Tradução/Revisão PT BR -  v Week 20-20-05-2023&nbsp;&nbsp;&nbsp;Status:&nbsp;</span> 
 					</li> 
 					<li class="nav-item bg-primary text-white"> 
 						<span class="nav-link badge badgeStarted">Started</span>&nbsp;
