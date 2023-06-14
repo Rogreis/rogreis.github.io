@@ -61,6 +61,19 @@ function LoadColumnLeft(typeData) {
 }
 
 
+
+var urlCompare= "Button clicked!";
+
+function paperFromHash(inputString) {
+    var positionOfDoc = inputString.indexOf('/Doc');
+    return inputString.substring(positionOfDoc + 4, positionOfDoc + 7);
+}
+
+function loadCompare() {
+   var url= "Compare/Compare" + paperFromHash(urlCompare) + ".html";
+   loadDoc(url, '');
+}
+
 function loadDoc(url, hash) {
     const xhttp = new XMLHttpRequest();
     xhttp.onload = function() {
@@ -69,6 +82,7 @@ function loadDoc(url, hash) {
             location.hash = "#" + hash;
         }
     }
+    urlCompare= url;
     setCookie("LSTURL", url, 180)
     setCookie("LSTHSH", hash, 180)
     xhttp.open("GET", url);
