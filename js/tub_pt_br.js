@@ -60,18 +60,27 @@ function LoadColumnLeft(typeData) {
     xhttp.send();
 }
 
-
-
-var urlCompare= "Button clicked!";
-
 function paperFromHash(inputString) {
     var positionOfDoc = inputString.indexOf('/Doc');
     return inputString.substring(positionOfDoc + 4, positionOfDoc + 7);
 }
 
+var urlCompare= "";
+var urlCompareCopy= "";
+var compareLoaded= 0;
 function loadCompare() {
-   var url= "Compare/Compare" + paperFromHash(urlCompare) + ".html";
-   loadDoc(url, '');
+   if (compareLoaded === 0)
+   {
+    urlCompare= urlCompareCopy;
+    var url= "Compare/Compare" + paperFromHash(urlCompare) + ".html";
+    compareLoaded= 1;
+    loadDoc(url, '');
+   }
+   else
+   {
+    loadDoc(urlCompareCopy, '');
+    compareLoaded= 0;
+   }
 }
 
 function loadDoc(url, hash) {
@@ -82,7 +91,7 @@ function loadDoc(url, hash) {
             location.hash = "#" + hash;
         }
     }
-    urlCompare= url;
+    urlCompareCopy= url;
     setCookie("LSTURL", url, 180)
     setCookie("LSTHSH", hash, 180)
     xhttp.open("GET", url);
