@@ -1,3 +1,29 @@
+:root 
+{ 
+    --font: 'Roboto Slab', serif;
+    --fontSize: 16px;
+    --fontSectionTitle: 24px;
+} 
+
+
+h3
+{
+    font-family: var(--font);
+    font-size: var(--fontSectionTitle);
+    text-align: left;
+    color: gold;   
+}
+
+
+h4
+{
+    font-family: var(--font);
+    font-size: var(--fontSectionTitle);
+    text-align: left;
+    color: gold;   
+}
+
+
 .badgeStarted {
     color: black;
     background-color: FloralWhite;
@@ -52,6 +78,45 @@ a.badgeWorking:active {
     display: inline-block;
     width: 100px
 }
+
+.parStarted, .parWorking, .parDoubt, .parOk, .parClosed
+{  
+font-family: var(--font);
+font-size: var(--fontSize);
+text-align: justify;   
+}  
+
+.parStarted { color:black; background-color:FloralWhite; }
+a.parStarted { color:black; text-decoration: none; }
+a.parStarted:hover { text-decoration: underline; }
+
+.parWorking { color:black; background-color:LemonChiffon; }
+a.parWorking { color:black; text-decoration: none; }
+a.parWorking:hover { text-decoration: underline; }
+
+.parDoubt { color:white; background-color:FireBrick; }
+a.parDoubt { color:white; text-decoration: none; }
+a.parDoubt:hover { text-decoration: underline; }
+
+.parOk { color:black; background-color:Aquamarine; }
+a.parOk { color:black; text-decoration: none; }
+a.parOk:hover { text-decoration: underline; }
+
+sup  {font-size: 9px;  color: #666666;}  
+i, b, em  {  
+font-family: var(--font);
+font-size: var(--fontSize);
+color: #FF33CC;  
+font-weight: bold;  
+}  
+table {  
+    border: 0px solid;  
+    border-collapse: collapse;  
+}  
+td { padding: 15px; border: none;}
+.TextRemoved { color:#ff3333 } 
+.TextInserted { color:#66ff33 } 
+   
 
 textarea {
     background: transparent;
