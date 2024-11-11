@@ -102,6 +102,19 @@ a.parDoubt:hover { text-decoration: underline; }
 a.parOk { color:black; text-decoration: none; }
 a.parOk:hover { text-decoration: underline; }
 
+.parClosed 
+{ 
+    color: rgba(var(--bs-white-rgb), var(--bs-text-opacity))!important;
+    background-color: rgba(var(--bs-dark-rgb), var(--bs-bg-opacity))!important;
+}
+a.parClosed 
+{ 
+    color: rgba(var(--bs-white-rgb), var(--bs-text-opacity))!important;
+    text-decoration: none; 
+}
+a.parClosed:hover { text-decoration: underline; }
+
+
 sup  {font-size: 9px;  color: #666666;}  
 i, b, em  {  
 font-family: var(--font);
