@@ -40,20 +40,6 @@ function SubjectPageCallback(error, data) {
 
 
 
-function LoadTableOfContenstaData(typeData) {
-    const xhttp = new XMLHttpRequest();
-    xhttp.onload = function() {
-        document.getElementById('leftColumn').innerHTML = this.responseText;
-        ExpandIndex();
-        var url = getCookie("LSTURL");
-        var hash = getCookie("LSTHSH");
-        if (url != "" && hash != "") {
-            loadDoc(url, hash)
-        }
-    }
-    xhttp.open("GET", 'content/TocTable.html');
-    xhttp.send();
-}
 
 function loadAndUnzipJSON(url, callback) {
     const xhr = new XMLHttpRequest();

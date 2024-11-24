@@ -2,7 +2,7 @@ function ExpandIndex() {
     var toggler = document.getElementsByClassName("caret");
     var expandables = document.getElementsByClassName("expandable");
     var i;
-
+    StartPage
     for (i = 0; i < expandables.length; i++) {
         expandables[i].parentElement.querySelector(".nested").classList.toggle("active");
         expandables[i].classList.toggle("caret-down");
@@ -40,9 +40,25 @@ function getCookie(cname) {
     return "";
 }
 
+function LoadTableOfContentsData(typeData) {
+    const xhttp = new XMLHttpRequest();
+    xhttp.onload = function() {
+        document.getElementById('leftColumn').innerHTML = this.responseText;
+        ExpandIndex();
+        var url = getCookie("LSTURL");
+        var hash = getCookie("LSTHSH");
+        if (url != "" && hash != "") {
+            loadDoc(url, hash)
+        }
+    }
+    xhttp.open("GET", 'content/TocTable.html');
+    xhttp.send();
+    console.log("Carregoiu")
+}
+
 
 function StartPage() {
-    LoadTableOfContenstaData("index");
+    LoadTableOfContentsData("index");
 }
 
 
@@ -73,10 +89,19 @@ function loadDoc(url, hash) {
     const xhttp = new XMLHttpRequest();
     xhttp.onload = function() {
         document.getElementById('rightColumn').innerHTML = this.responseText;
-        if (hash) {
-            location.hash = "#" + hash;
+
+        // Assuming the anchor ID is within the loaded content
+        var anchor = document.getElementById(hash);
+      
+        // Scroll to the anchor smoothly (optional)
+        if (anchor) {
+          anchor.scrollIntoView({ behavior: 'smooth' });
+        } else {
+          // If the anchor is not found, try direct hash navigation
+          location.hash = "#" + hash;
         }
     }
+    
     urlCompareCopy= url;
     setCookie("LSTURL", url, 180)
     setCookie("LSTHSH", hash, 180)
