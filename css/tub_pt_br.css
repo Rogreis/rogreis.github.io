@@ -252,3 +252,15 @@ ul,
 .active {
     display: block;
 }
+
+
+.amadon_link {
+    color: gold;
+    text-decoration: none;
+ }
+ 
+ .amadon_link_visited {
+    color: magenta;
+    text-decoration: none;
+ }
+ 

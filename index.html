@@ -1,4 +1,5 @@
 ﻿<!DOCTYPE html> 
+<html lang="en" data-bs-theme="dark">
 <head>  
 	<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">  
 	<title>Paper 1</title>  
@@ -11,26 +12,51 @@
 	<script src="https://cdn.jsdelivr.net/npm/jquery@3.6.1/dist/jquery.min.js"></script> 
 	<script src="js/tub_pt_br.js"></script> 
 	<script type="module">  
-		import { Octokit } from "https://cdn.skypack.dev/@octokit/core";  
+		import { Octokit } from "https://cdn.skypack.dev/@octokit/core";
+		var tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'))
+        var tooltipList = tooltipTriggerList.map(function (tooltipTriggerEl) 
+		{
+          return new bootstrap.Tooltip(tooltipTriggerEl)
+        })		
 	</script>  
 </head>  
 <html> 
 	<body class="bg-dark text-white" onload="StartPage()"> 
 		<nav class="navbar navbar-expand-sm bg-primary text-white"> 
 			<div class="container-fluid"> 
-				<ul class="navbar-nav"> 
-					<li class="nav-item bg-primary text-white"> 
-						<span>O Livro de Urântia - Tradução/Revisão PT BR -  v 22/11/2024 09:37&nbsp;&nbsp;&nbsp;Status:&nbsp;</span> 
-					</li> 
-					<li class="nav-item bg-primary text-white"> 
-						<span class="nav-link badge badgeStarted">Started</span>&nbsp;
-						<span class="badge badgeWorking">Working</span>&nbsp;
-						<span class="badge badgeDoubt">Doubt</span>&nbsp;
-						<span class="badge badgeOk">Ok</span>&nbsp;
-						<span class="badge badgeClosed">Closed</span>
-					</li> 
-				</ul> 
-			</div> 
+				<table class="table table-borderless table-sm text-white table-responsive-sm">
+					<tbody>
+					<tr>
+						<td>
+						   <span>O Livro de Urântia</span> 
+						</td>
+						<td>
+						  <p class="mb-1">Significado da cor de fundo dos parágrafos:</p>
+						</td>
+						<td>
+							Outras funções
+						</td>
+					</tr>
+					  <tr>
+						<td>
+							<span>Tradução PT BR -  versão 22/11/2024 09:37</span> 
+						 </td>
+						 <td>
+						  <div class="d-flex flex-wrap gap-1">
+							<div class="badge badgeStarted p-1" title="Parágrafo ainda na versão 2007.">Started</div>
+							<div class="badge badgeWorking p-1" title="Trabalho de tradução em andamento.">Working</div>
+							<div class="badge badgeDoubt p-1" title="Há dúvidas sobre a tradução.">Doubt</div>
+							<div class="badge badgeOk p-1" title="Parágrafo finalizado, revisão necessária.">Ok</div>
+							<div class="badge badgeClosed p-1" title="Parágrafo fechado, talvez não ainda perfeito.">Closed</div>
+						  </div>
+						</td>
+						<td>
+							<a href="IndexSubject.html" class="btn btn-sm btn-warning">Assuntos</a>						
+						  </td>
+						  </tr>
+					</tbody>
+				  </table>
+	</div> 
 		</nav> 
 		<div id="leftColumn" class="black splitLeft left mt-0 overflow-auto"> 
 			<h3>Table of Contents</h3> 

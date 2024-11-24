@@ -42,23 +42,9 @@ function getCookie(cname) {
 
 
 function StartPage() {
-    LoadColumnLeft("index");
+    LoadTableOfContenstaData("index");
 }
 
-function LoadColumnLeft(typeData) {
-    const xhttp = new XMLHttpRequest();
-    xhttp.onload = function() {
-        document.getElementById('leftColumn').innerHTML = this.responseText;
-        ExpandIndex();
-        var url = getCookie("LSTURL");
-        var hash = getCookie("LSTHSH");
-        if (url != "" && hash != "") {
-            loadDoc(url, hash)
-        }
-    }
-    xhttp.open("GET", 'content/TocTable.html');
-    xhttp.send();
-}
 
 function paperFromHash(inputString) {
     var positionOfDoc = inputString.indexOf('/Doc');
