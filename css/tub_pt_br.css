@@ -259,8 +259,11 @@ ul,
     text-decoration: none;
  }
  
- .amadon_link_visited {
+ .amadon_link:visited {
     color: magenta;
-    text-decoration: none;
  }
  
+ .amadon_link:hover {
+    text-decoration: underline; /* Enables text decoration on hover */
+    color: orange; /* Optional: Change color on hover */
+}

@@ -124,7 +124,7 @@ function generateLinksHtml(links) {
             const [_, PPP, SSS, XXX] = match; // Extract PPP, SSS, and XXX
             // Append the formatted HTML link to the result
             //htmlLinks += `<a href="javascript:loadDoc('content/Doc${PPP}.html','p${PPP}_${SSS}_${XXX}')" class="amadon_link">${PPP}:${SSS}.${XXX}</a><br>`;
-            htmlLinks += `<a href="javascript:loadDoc('content/Doc${PPP.padStart(3, '0')}.html','p${PPP.padStart(3, '0')}_${SSS.padStart(3, '0')}_${XXX.padStart(3, '0')}')" class="amadon_link">${PPP}:${SSS}.${XXX}</a><br> `;
+            htmlLinks += `<a href="javascript:loadDoc('content/Doc${PPP.padStart(3, '0')}.html','p${PPP.padStart(3, '0')}_${SSS.padStart(3, '0')}_${XXX.padStart(3, '0')}')" class="amadon_link">${PPP}:${SSS}.${XXX}</a> `;
         } else {
             console.warn(`Invalid link format: "${link}"`);
         }
