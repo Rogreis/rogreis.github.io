@@ -3,7 +3,7 @@
  
 <head> 
 	<meta http-equiv="Content-Type" content="text/html; charset=windows-1252"> 
-	<title>Assuntos</title> 
+	<title>Busca</title> 
 	<meta charset="utf-8"> 
 	<meta name="viewport" content="width=device-width, initial-scale=1"> 
  
@@ -18,12 +18,12 @@
 <script>
 function leftTitle() 
 { 
-    return '<h3>Assuntos</h3>'; 
+    return '<h3>Busca</h3>'; 
 } 
 	</script> 
  
 <script src="js/tub_pt_br.js"></script> 
-<script src="js/indexSubject.js"></script> 
+<script src="js/indexSearch.js"></script> 
  
 </head> 
 <html> 
@@ -40,13 +40,13 @@ function leftTitle()
             <a class="nav-link  " aria-current="page" href="javascript:open_page('indexToc')">Documentos</a>
           </li> 
           <li class="nav-item bg-primary"> 
-            <a class="nav-link active " aria-current="page" href="javascript:open_page('indexSubject')"><h3>Assuntos</h3></a>
+            <a class="nav-link  " aria-current="page" href="javascript:open_page('indexSubject')">Assuntos</a>
           </li> 
           <li class="nav-item bg-primary"> 
             <a class="nav-link  disabled" aria-current="page" href="javascript:open_page('indexStudy')">Estudos</a>
           </li> 
           <li class="nav-item bg-primary"> 
-            <a class="nav-link  disabled" aria-current="page" href="javascript:open_page('indexSearch')">Busca</a>
+            <a class="nav-link active disabled" aria-current="page" href="javascript:open_page('indexSearch')"><h3>Busca</h3></a>
           </li> 
           <li class="nav-item bg-primary"> 
             <a class="nav-link  disabled" aria-current="page" href="javascript:open_page('indexTrack')">Trilha</a>
@@ -64,25 +64,6 @@ function leftTitle()
   </nav> 
  
 	<div id="leftColumn" class="black splitLeft left mt-0 overflow-auto"> 
-			<h3>Assuntos</h3>
-			<div id="searchData"> 
-				<form> 
-					<label for="searchInputBox">Busca nos assuntos:</label><br> 
-					<input  
-						type="text"  
-						id="searchInputBox"  
-						name="inputBox"  
-						style="width: 200px;" 
-						placeholder="Mínimo 3 letras e enter" 
-						> 
-						<br><label for="listBoxAssuntos">Assuntos encontrados:</label><br> 
-						<select id="listBoxAssuntos" size="6" style="width: 200px;"> 
-						</select> 
-				</form> 
-			</div> 
-			<div id="detailsList"> 
-			</div> 
- 
 	</div> 
 	<div id="rightColumn" class="black splitRight right mt-0 overflow-auto"> 
 	</div> 
@@ -153,30 +134,6 @@ function leftTitle()
 			</div> 
 		</div> 
 	</div> 
- 
- 
-		<script> 
-			// Ensure this script runs after the DOM is fully loaded 
-			document.addEventListener("DOMContentLoaded", () => { 
-				const inputBox = document.getElementById("searchInputBox"); 
-				inputBox.addEventListener("keydown", function handleEnter(event) { 
-					if (event.key === "Enter") { 
-						event.preventDefault(); 
-						findTitlesContainingSubstring(event.target.value); 
-					} 
-				}); 
-			}); 
- 
-			// Add event listener for double-click on the listbox items 
-			const listBox = document.getElementById("listBoxAssuntos"); 
- 
-			listBox.addEventListener("dblclick", function(event) { 
-				const selectedItem = listBox.options[listBox.selectedIndex]?.text; 
-				if (selectedItem) { 
-					showSubjectDetails(selectedItem); 
-				} 
-			}); 
-		</script> 
  
 </body>
 </html>

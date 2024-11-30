@@ -38,26 +38,6 @@ h4
     width: 100px
 }
 
-a.badgeWorking:link {
-    text-decoration: none;
-    color: white;
-}
-
-a.badgeWorking:visited {
-    text-decoration: none;
-    color: white;
-}
-
-a.badgeWorking:hover {
-    text-decoration: underline;
-    color: white;
-}
-
-a.badgeWorking:active {
-    text-decoration: none;
-    color: white;
-}
-
 .badgeDoubt {
     background-color: FireBrick;
     color: white;
@@ -266,4 +246,18 @@ ul,
  .amadon_link:hover {
     text-decoration: underline; /* Enables text decoration on hover */
     color: orange; /* Optional: Change color on hover */
+}
+
+
+#detailsList {
+    position: relative; /* Ensures proper placement within the document flow */
+    max-height: calc(100vh - 400px); /* Adjust the maximum height relative to the viewport */
+    overflow-y: auto; /* Adds a vertical scrollbar when content exceeds the height */
+    padding: 10px; /* Add padding for spacing */
+    box-sizing: border-box; /* Ensures padding is included in the total width/height */
+}
+#searchData {
+    margin-bottom: 10px; /* Add margin to separate the search box from the list */
+    padding: 10px; /* Add padding for spacing */
+    box-sizing: border-box; /* Ensures padding is included in the total width/height */
 }

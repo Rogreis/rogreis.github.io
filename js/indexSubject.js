@@ -1,13 +1,5 @@
 // Javascript specific for page indexSubject.html
 
-SubjectItems = [];
-
-
-function StartPageSubject() {
-    loadAndUnzipJSON('subject.zip', SubjectPageCallback)
-}
-
-
 class Item {
     constructor(title, details) {
         this.Title = title;
@@ -23,27 +15,32 @@ class Detail {
     }
 }
 
+SubjectItems = [];
+
+
+function StartPage() {
+    loadAndUnzipJSON('subject.zip', SubjectPageCallback)
+}
+
 
 function SubjectPageCallback(error, data) {
     if (error) {
         console.error("An error occurred while loading or parsing the JSON:", error.message);
     }
      else {
-        //console.log("Successfully loaded and parsed JSON");
+        console.log("Successfully loaded and parsed JSON");
 
         // Parse JSON data and map to Item class
         SubjectItems = data.map(item => new Item(item.Title, item.Details));
         // Print the total number of items in the array
-        //console.log("Total number of items:", SubjectItems.length);
+        console.log("Total number of items:", SubjectItems.length);
     }
 }
 
 
-
-
 function loadAndUnzipJSON(url, callback) {
     const xhr = new XMLHttpRequest();
-    //console.log('loadAndUnzipJSON: url= ' + url);
+    console.log('loadAndUnzipJSON: url= ' + url);
 
     xhr.open('GET', url, true);
     xhr.responseType = 'arraybuffer'; // Fetch the file as binary data
@@ -59,6 +56,8 @@ function loadAndUnzipJSON(url, callback) {
 
                 // Parse JSON into JavaScript object
                 const jsonObject = JSON.parse(jsonContent);
+                console.log('jsonObject loaded');
+
                 callback(null, jsonObject);
             } catch (error) {
                 callback(error, null);

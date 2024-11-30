@@ -1,19 +1,7 @@
-function ExpandIndex() {
-    var toggler = document.getElementsByClassName("caret");
-    var expandables = document.getElementsByClassName("expandable");
-    var i;
-    StartPage
-    for (i = 0; i < expandables.length; i++) {
-        expandables[i].parentElement.querySelector(".nested").classList.toggle("active");
-        expandables[i].classList.toggle("caret-down");
-    }
-
-    for (i = 0; i < toggler.length; i++) {
-        toggler[i].addEventListener("click", function() {
-            this.parentElement.querySelector(".nested").classList.toggle("active");
-            this.classList.toggle("caret-down");
-        });
-    }
+// Common functions for the TUB project
+function open_page(page_name)
+{
+    window.location.href = page_name + ".html";
 }
 
 
@@ -40,51 +28,8 @@ function getCookie(cname) {
     return "";
 }
 
-function LoadTableOfContentsData(typeData) {
-    const xhttp = new XMLHttpRequest();
-    xhttp.onload = function() {
-        document.getElementById('leftColumn').innerHTML = this.responseText;
-        ExpandIndex();
-        var url = getCookie("LSTURL");
-        var hash = getCookie("LSTHSH");
-        if (url != "" && hash != "") {
-            loadDoc(url, hash)
-        }
-    }
-    xhttp.open("GET", 'content/TocTable.html');
-    xhttp.send();
-    console.log("Carregoiu")
-}
 
-
-function StartPage() {
-    LoadTableOfContentsData("index");
-}
-
-
-function paperFromHash(inputString) {
-    var positionOfDoc = inputString.indexOf('/Doc');
-    return inputString.substring(positionOfDoc + 4, positionOfDoc + 7);
-}
-
-var urlCompare= "";
-var urlCompareCopy= "";
-var compareLoaded= 0;
-function loadCompare() {
-   if (compareLoaded === 0)
-   {
-    urlCompare= urlCompareCopy;
-    var url= "Compare/Compare" + paperFromHash(urlCompare) + ".html";
-    compareLoaded= 1;
-    loadDoc(url, '');
-   }
-   else
-   {
-    loadDoc(urlCompareCopy, '');
-    compareLoaded= 0;
-   }
-}
-
+// Load the document at the right column
 function loadDoc(url, hash) {
     const xhttp = new XMLHttpRequest();
     xhttp.onload = function() {
