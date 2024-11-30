@@ -1,3 +1,3 @@
 function StartPage() {
-    document.getElementById('leftColumn').innerHTML = leftTitle() + "Não implementada ainda";
+    document.getElementById('leftColumn').innerHTML = "Não implementada ainda";
 }

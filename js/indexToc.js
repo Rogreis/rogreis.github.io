@@ -9,7 +9,7 @@ function LoadTableOfContentsData() {
     console.log("LoadTableOfContentsData");
     const xhttp = new XMLHttpRequest();
     xhttp.onload = function() {
-        document.getElementById('leftColumn').innerHTML = leftTitle() + this.responseText;
+        document.getElementById('leftColumn').innerHTML = this.responseText;
         ExpandIndex();
         var url = getCookie("LSTURL");
         var hash = getCookie("LSTHSH");

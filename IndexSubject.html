@@ -15,12 +15,6 @@
 	<link href="css/tub_pt_br.css" rel="stylesheet"> 
 	<script src="https://cdn.jsdelivr.net/npm/jquery@3.6.1/dist/jquery.min.js"></script> 
  <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.10.1/jszip.min.js" crossorigin="anonymous"></script> 
-<script>
-function leftTitle() 
-{ 
-    return '<h3>Assuntos</h3>'; 
-} 
-	</script> 
  
 <script src="js/tub_pt_br.js"></script> 
 <script src="js/indexSubject.js"></script> 
@@ -57,13 +51,13 @@ function leftTitle()
         </div> 
         <div class="navbar-nav ms-auto"> 
 			    <button class="btn btn-primary" data-bs-toggle="modal" 
-				    data-bs-target="#myModal">Cores</button> 
+				    data-bs-target="#myModal" title="Clique para entender o significado das cores de functo de cada parágrafo.">Cores</button> 
         </div> 
       </div> 
     </div> 
   </nav> 
  
-	<div id="leftColumn" class="black splitLeft left mt-0 overflow-auto"> 
+	<div id="leftColumn" class="black splitLeft left mt-2 p-2 overflow-auto"> 
 			<h3>Assuntos</h3>
 			<div id="searchData"> 
 				<form> 
@@ -73,10 +67,10 @@ function leftTitle()
 						id="searchInputBox"  
 						name="inputBox"  
 						style="width: 200px;" 
-						placeholder="Mínimo 3 letras e enter" 
+						placeholder="Mínimo 3 letras e enter" title="Digite um mínimo de 3 letras do assunto a procurar e tecle enter." 
 						> 
 						<br><label for="listBoxAssuntos">Assuntos encontrados:</label><br> 
-						<select id="listBoxAssuntos" size="6" style="width: 200px;"> 
+						<select id="listBoxAssuntos" size="6" style="width: 200px;" title="Faça um duplo-clique num item para expandir os assuntos."> 
 						</select> 
 				</form> 
 			</div> 
@@ -147,7 +141,7 @@ function leftTitle()
  
 				<!-- Modal footer --> 
 				<div class="modal-footer"> 
-					<button type="button" class="btn btn-danger" data-bs-dismiss="modal">Close</button> 
+					<button type="button" class="btn btn-danger" data-bs-dismiss="modal">Fechar</button> 
 				</div> 
  
 			</div> 
