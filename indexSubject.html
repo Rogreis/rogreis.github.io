@@ -65,11 +65,11 @@
 						type="text"  
 						id="searchInputBox"  
 						name="inputBox"  
-						style="width: 200px;" 
+						style="width: 440px;" 
 						placeholder="Mínimo 3 letras e enter" title="Digite um mínimo de 3 letras do assunto a procurar e tecle enter." 
 						> 
 						<br><label for="listBoxAssuntos">Assuntos encontrados:</label><br> 
-						<select id="listBoxAssuntos" size="6" style="width: 200px;" title="Faça um duplo-clique num item para expandir os assuntos."> 
+						<select id="listBoxAssuntos" size="6" style="width: 440px;" title="Faça um duplo-clique num item para expandir os assuntos."> 
 						</select> 
 				</form> 
 			</div> 
@@ -159,7 +159,28 @@
 					} 
 				}); 
 			}); 
+
  
+			// Get the input element by its ID
+			const searchInputBox = document.getElementById('searchInputBox');
+
+			// Add an oninput event listener
+			searchInputBox.oninput = function () {
+					// Get the value of the input box
+					const value = searchInputBox.value;
+
+					// Check if the value has at least 3 characters
+					if (value.length >= 3) {
+						event.preventDefault(); 
+						findTitlesContainingSubstring(event.target.value); 
+					} else {
+						// Clear the list box
+						const listBox = document.getElementById('listBoxAssuntos');
+						listBox.innerHTML = '';
+					}
+				};
+
+
 			// Add event listener for double-click on the listbox items 
 			const listBox = document.getElementById("listBoxAssuntos"); 
  

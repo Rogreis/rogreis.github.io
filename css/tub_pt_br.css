@@ -240,6 +240,7 @@ ul,
  }
  
  .amadon_link:visited {
+    text-decoration: underline; /* Enables text decoration on hover */
     color: magenta;
  }
  
