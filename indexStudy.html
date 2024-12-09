@@ -37,7 +37,7 @@
             <a class="nav-link  " aria-current="page" href="javascript:open_page('indexSubject')">Assuntos</a>
           </li> 
           <li class="nav-item bg-primary"> 
-            <a class="nav-link active disabled" aria-current="page" href="javascript:open_page('indexStudy')"><h3>Estudos</h3></a>
+            <a class="nav-link active" aria-current="page" href="javascript:open_page('indexStudy')"><h3>Estudos</h3></a>
           </li> 
           <li class="nav-item bg-primary"> 
             <a class="nav-link  disabled" aria-current="page" href="javascript:open_page('indexSearch')">Busca</a>
@@ -58,6 +58,29 @@
   </nav> 
  
 	<div id="leftColumn" class="black splitLeft left mt-2 p-2 overflow-auto"> 
+		<div id="searchData"> 
+			<form> 
+
+				<button type="button" class="btn btn-warning">
+					<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-house-fill" viewBox="0 0 16 16">
+						<path fill-rule="evenodd" d="M8 3.293l6 6V13.5a1.5 1.5 0 0 1-1.5 1.5h-9A1.5 1.5 0 0 1 2 13.5V9.293l6-6zm5-.793V6l-2-2V2.5a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5v1.5z"/>
+					</svg>
+					Lista de Artigos
+				</button>
+
+				<label for="searchInputBox">Busca nos Títulos de assuntos:</label><br> 
+				<input  
+					type="text"  
+					id="searchInputBox"  
+					name="inputBox"  
+					style="width: 440px;" 
+					placeholder="Mínimo 3 letras e enter" title="Digite um mínimo de 3 letras do assunto a procurar e tecle enter." 
+					> 
+					<br><label for="listBoxAssuntos">Assuntos encontrados:</label><br> 
+			</form> 
+		</div> 
+		<div id="card-container"> 
+		</div> 
 	</div> 
 	<div id="rightColumn" class="black splitRight right mt-0 overflow-auto"> 
 	</div> 

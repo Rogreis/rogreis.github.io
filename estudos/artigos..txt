@@ -1,0 +1,9 @@
+Titulo: Questões de tradução
+SubTítulo: Observações sobre algumas palavras
+Sumário: Reflexões sobre algumas palavras ou expressões chaves na tradução para o Portugês PT-BR.
+Link: traducao
+
+Titulo: Processo da religião
+SubTítulo: Como acontece a religião pessoal
+Sumário: Sumário parcialmente gráfico do processo de avanço religioso descrito no documento 101.
+Link: religiao_processo
