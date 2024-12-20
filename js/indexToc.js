@@ -6,7 +6,6 @@ function StartPage() {
 
 
 function LoadTableOfContentsData() {
-    console.log("LoadTableOfContentsData");
     const xhttp = new XMLHttpRequest();
     xhttp.onload = function() {
         document.getElementById('leftColumn').innerHTML = this.responseText;

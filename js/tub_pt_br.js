@@ -53,3 +53,24 @@ function loadDoc(url, hash) {
     xhttp.open("GET", url);
     xhttp.send();
 }
+
+
+function generateUrlAndOpen(codeString) {
+    const separatorRegex = /[, .:;-]/;
+    const parts = codeString.split(separatorRegex).map(Number);
+  
+    if (!parts.every(part => Number.isInteger(part) && part >= 0 && part <= 196)) {
+      console.error('Invalid code string:', codeString);
+      return;
+    }
+  
+    // Format integers to 3 digits
+    const formattedParts = parts.map(part => part.toString().padStart(3, '0'));
+    const urlGithub = `https://github.com/Rogreis/PtAlternative/blob/correcoes/Doc${formattedParts[0]}/Par_${formattedParts.join('_')}.md`;
+  
+    // Set new hash
+    const hash = `p${parts.map(part => part.toString().padStart(3, '0')).join('_')}`;
+    setCookie("LSTHSH", hash, 180)
+
+    window.open(urlGithub, '_blank');
+  }
