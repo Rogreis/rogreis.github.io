@@ -2,6 +2,7 @@
 
 function StartPage() {
     LoadTableOfContentsData();
+    verifyAnchor();
 }
 
 
@@ -10,11 +11,6 @@ function LoadTableOfContentsData() {
     xhttp.onload = function() {
         document.getElementById('leftColumn').innerHTML = this.responseText;
         ExpandIndex();
-        var url = getCookie("LSTURL");
-        var hash = getCookie("LSTHSH");
-        if (url != "" && hash != "") {
-            loadDoc(url, hash)
-        }
     }
     xhttp.open("GET", 'content/TocTable.html');
     xhttp.send();
@@ -25,7 +21,6 @@ function ExpandIndex() {
     var toggler = document.getElementsByClassName("caret");
     var expandables = document.getElementsByClassName("expandable");
     var i;
-    StartPage
     for (i = 0; i < expandables.length; i++) {
         expandables[i].parentElement.querySelector(".nested").classList.toggle("active");
         expandables[i].classList.toggle("caret-down");
@@ -38,9 +33,6 @@ function ExpandIndex() {
         });
     }
 }
-
-
-
 
 function paperFromHash(inputString) {
     var positionOfDoc = inputString.indexOf('/Doc');

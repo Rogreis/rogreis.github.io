@@ -20,7 +20,35 @@ SubjectItems = [];
 
 function StartPage() {
     loadAndUnzipJSON('subject.zip', SubjectPageCallback)
+    verifyAnchor();
 }
+
+function get_subject_cookies() 
+{
+    console.log("load da página subject");
+
+    const subject_titles = getCookie('subject_titles');
+
+    if (typeof subject_titles === 'string' && subject_titles.trim().length >= 3) {
+        document.getElementById('searchInputBox').value = subject_titles;
+        console.log("subject_titles: ", subject_titles);
+        findTitlesContainingSubstring(subject_titles)
+    }
+    else return;
+
+    const subject_selectedTitle = getCookie('subject_selectedTitle');
+    if (typeof subject_selectedTitle === 'string' && subject_selectedTitle.trim() !== '') {
+        showSubjectDetails(subject_selectedTitle)
+    }
+
+
+
+    // setCookie("subject_titles", searchString, 180)
+    // setCookie("subject_selectedTitle", selectedTitle, 180)
+    // showSubjectDetails(selectedTitle)
+    // searchInputBox
+}
+
 
 
 function SubjectPageCallback(error, data) {
@@ -29,18 +57,17 @@ function SubjectPageCallback(error, data) {
     }
      else {
         console.log("Successfully loaded and parsed JSON");
-
         // Parse JSON data and map to Item class
         SubjectItems = data.map(item => new Item(item.Title, item.Details));
         // Print the total number of items in the array
         console.log("Total number of items:", SubjectItems.length);
+        get_subject_cookies() 
     }
 }
 
 
 function loadAndUnzipJSON(url, callback) {
     const xhr = new XMLHttpRequest();
-    console.log('loadAndUnzipJSON: url= ' + url);
 
     xhr.open('GET', url, true);
     xhr.responseType = 'arraybuffer'; // Fetch the file as binary data
@@ -56,7 +83,6 @@ function loadAndUnzipJSON(url, callback) {
 
                 // Parse JSON into JavaScript object
                 const jsonObject = JSON.parse(jsonContent);
-                console.log('jsonObject loaded');
 
                 callback(null, jsonObject);
             } catch (error) {
@@ -80,7 +106,7 @@ function findTitlesContainingSubstring(searchString) {
     if (searchString.length < 3) {
         return;
     }
-
+    setCookie("subject_titles", searchString, 180)
     // Convert search string to lowercase for case-insensitive matching
     const searchLower = searchString.toLowerCase();
 
@@ -89,7 +115,7 @@ function findTitlesContainingSubstring(searchString) {
         .filter(item => item.Title.toLowerCase().includes(searchLower))
         .map(item => item.Title); // Extract the Title property
 
-    //console.log("Assuntos encontrados: ", matchingTitles.length);
+    console.log("Assuntos encontrados: ", matchingTitles.length);
 
     // Clear and populate the listbox
     const listBox = document.getElementById("listBoxAssuntos");
@@ -135,31 +161,18 @@ function generateLinksHtml(links) {
 
 function showSubjectDetails(selectedTitle) {
 
-    //console.log("showSubjectDetails: ", selectedTitle);
 
     // Find the item with the selected title
     const selectedItem = SubjectItems.find(item => item.Title === selectedTitle);
-    //console.log("showSubjectDetails: ", selectedTitle);
     if (!selectedItem) {
         console.error("Item not found for title:", selectedTitle);
         return
     }
-    //console.log("selectedItem:", selectedItem);
+    setCookie("subject_selectedTitle", selectedTitle, 180)
 
     // Clear and populate the details list
     const detailsList = document.getElementById("detailsList");
-    //console.log("showSubjectDetails: ", selectedTitle);
     detailsList.innerHTML = "<h3 style=\"color:gold\">" + selectedTitle + "</h3><br>";
-
-    // console.log("Assunto encontrado:");
-    // console.log(`Title: ${selectedItem.Title}`);
-    // selectedItem.Details.forEach(detail => {
-    //     console.log(`  DetailType: ${detail.DetailType}`);
-    //     console.log(`  Text: ${detail.Text}`);
-    //     console.log(`  Links: ${detail.Links.join(', ')}`);
-    //     console.log(`  Links: ${generateLinksHtml(detail.Links)}`);
-    // });
-
 
     selectedItem.Details.forEach(detail => {
         const detailItem = document.createElement("blockquote");
