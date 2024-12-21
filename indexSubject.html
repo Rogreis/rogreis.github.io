@@ -165,20 +165,42 @@
 			const searchInputBox = document.getElementById('searchInputBox');
 
 			// Add an oninput event listener
-			searchInputBox.oninput = function () {
-					// Get the value of the input box
-					const value = searchInputBox.value;
+			document.addEventListener('DOMContentLoaded', function() {
+				const searchInputBox = document.getElementById('searchInputBox');
+				if (searchInputBox) {
+					searchInputBox.addEventListener('input', function(event) {
+						// Get the value of the input box
+						const value = searchInputBox.value;
 
-					// Check if the value has at least 3 characters
-					if (value.length >= 3) {
-						event.preventDefault(); 
-						findTitlesContainingSubstring(event.target.value); 
-					} else {
-						// Clear the list box
-						const listBox = document.getElementById('listBoxAssuntos');
-						listBox.innerHTML = '';
-					}
-				};
+						// Check if the value has at least 3 characters
+						if (value.length >= 3) {
+							event.preventDefault();
+							findTitlesContainingSubstring(event.target.value);
+						} else {
+							// Clear the list box
+							const listBox = document.getElementById('listBoxAssuntos');
+							if (listBox) {
+								listBox.innerHTML = '';
+							}
+						}
+					});
+				}
+		});
+
+			// searchInputBox.oninput = function () {
+			// 		// Get the value of the input box
+			// 		const value = searchInputBox.value;
+
+			// 		// Check if the value has at least 3 characters
+			// 		if (value.length >= 3) {
+			// 			event.preventDefault(); 
+			// 			findTitlesContainingSubstring(event.target.value); 
+			// 		} else {
+			// 			// Clear the list box
+			// 			const listBox = document.getElementById('listBoxAssuntos');
+			// 			listBox.innerHTML = '';
+			// 		}
+			// 	};
 
 
 			// Add event listener for double-click on the listbox items 
