@@ -1,0 +1,11 @@
+Titulo: A dinâmica das traduções para Português do Livro de Urântia
+SubTítulo: Uma Análise Conceitual de Termos-Chave na Tradução para o PT-BR
+Sumário: Este artigo explora a tradução de alguns conceitos fundamentais do Livro de Urântia para o português 
+do Brasil numa busca por precisão conceitual e fidelidade ao original, evitando-se interpretações estáticas ou redutoras. 
+A escolha de palavras influencia a compreensão de conceitos.
+Link: traducoes.md
+
+Titulo: Moral
+SubTítulo: Como acontece a religião pessoal
+Sumário: Sumário parcialmente gráfico do processo de avanço religioso descrito no documento 101.
+Link: religiao_processo
