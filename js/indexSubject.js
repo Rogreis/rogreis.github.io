@@ -23,10 +23,28 @@ function StartPage() {
     verifyAnchor();
 }
 
+function verifyAnchor() 
+{ 
+  console.log("verifyAnchor");
+  if (!hasAnchor())
+    {
+      // Load the document at the right column from cookies
+      var paper = getCookie("papersub");
+      var section = getCookie("sectionsub");
+      var paragraph = getCookie("paragraphsub");
+      if (typeof paper !== 'string' || paper.trim() === '' ||
+      typeof section !== 'string' || section.trim() === '' ||
+      typeof paragraph !== 'string' || paragraph.trim() === '') 
+      {
+        return;
+      }
+    loadDocByPaperSectionParagraph(paper, section, paragraph);
+  }
+}
+
+
 function get_subject_cookies() 
 {
-    console.log("load da página subject");
-
     const subject_titles = getCookie('subject_titles');
 
     if (typeof subject_titles === 'string' && subject_titles.trim().length >= 3) {
@@ -40,13 +58,6 @@ function get_subject_cookies()
     if (typeof subject_selectedTitle === 'string' && subject_selectedTitle.trim() !== '') {
         showSubjectDetails(subject_selectedTitle)
     }
-
-
-
-    // setCookie("subject_titles", searchString, 180)
-    // setCookie("subject_selectedTitle", selectedTitle, 180)
-    // showSubjectDetails(selectedTitle)
-    // searchInputBox
 }
 
 
@@ -191,3 +202,55 @@ function showSubjectDetails(selectedTitle) {
         detailsList.appendChild(detailItem);
     });
 }
+
+
+
+// Load the document at the right column
+function loadDocByPaperSectionParagraph(paper, section, paragraph) 
+{
+    const xhttp = new XMLHttpRequest();
+    xhttp.onload = function() {
+        document.getElementById('rightColumn').innerHTML = this.responseText;
+
+        // Assuming the anchor ID is within the loaded content
+        //hash = `U${paper}_${section}_${paragraph}`;
+        hash = `p${paper.toString().padStart(3, '0')}_${section.toString().padStart(3, '0')}_${paragraph.toString().padStart(3, '0')}`;
+        console.log("hash= " + hash);
+        var anchor = document.getElementById(hash);
+      
+        // Scroll to the anchor smoothly (optional)
+        if (anchor) {
+          anchor.scrollIntoView({ behavior: 'smooth' });
+        } else {
+          // If the anchor is not found, try direct hash navigation
+          location.hash = "#" + hash;
+        }
+    }
+    setCookie("papersub", paper, 180)
+    setCookie("sectionsub", section, 180)
+    setCookie("paragraphsub", paragraph, 180)
+    url= `content/Doc${paper.toString().padStart(3, '0')}.html`;
+    xhttp.open("GET", url);
+    xhttp.send();
+}
+
+
+function generateUrlAndOpen(codeString) {
+    const separatorRegex = /[, .:;-]/;
+    const parts = codeString.split(separatorRegex).map(Number);
+  
+    if (!parts.every(part => Number.isInteger(part) && part >= 0 && part <= 196)) {
+      console.error('Invalid code string:', codeString);
+      return;
+    }
+  
+    // Format integers to 3 digits
+    const formattedParts = parts.map(part => part.toString().padStart(3, '0'));
+    const urlGithub = `https://github.com/Rogreis/PtAlternative/blob/correcoes/Doc${formattedParts[0]}/Par_${formattedParts.join('_')}.md`;
+  
+    // Set new hash
+    const hash = `p${parts.map(part => part.toString().padStart(3, '0')).join('_')}`;
+    setCookie("LSTHSH", hash, 180)
+
+    window.open(urlGithub, '_blank');
+  }

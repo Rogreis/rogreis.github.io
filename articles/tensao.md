@@ -1,6 +1,6 @@
 # Significado da palavra "tensão"
 
-* **Sub-Título:**: Busca de um melhro entendimento sobre o uso do termo "tensão no Livro de Urântia"
+* **Sub-Título:**: 
 * **Autor(es):** Rogério Reis ds Silva.
 * **Primeira edição:** Dezembro/2024.
 * **Revisão:** -

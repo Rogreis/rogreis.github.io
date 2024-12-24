@@ -1,0 +1,78 @@
+divartigo/* Styles for study page */
+
+
+#divsumario
+{
+    padding-top: 5px;
+    padding-right: 10px;
+    padding-bottom: 10px;
+    padding-left: 10px;
+    width: 95%;
+    box-sizing: border-box; /* Important: Include padding in width calculation */
+}
+
+
+#divartigo
+{
+    padding-top: 20px;
+    padding-right: 20px;
+    padding-bottom: 20px;
+    padding-left: 20px;
+    width: 95%;
+    box-sizing: border-box; /* Important: Include padding in width calculation */
+}
+
+#divsumario a {
+    text-decoration: none;
+  }
+  
+#divsumario a:hover {
+    text-decoration: underline;
+  }
+  
+#divsumario h3 {
+    font-size: 1.2em;
+    font-weight: bold;
+  }
+  
+#divsumario h4 {
+    font-size: 1em;
+}
+
+
+
+#divartigo a {
+    text-decoration: none;
+  }
+  
+#divartigo a:hover {
+    text-decoration: underline;
+  }
+
+#divartigo h1 {
+    font-size: 1.2em;
+    font-weight: bold;
+  }
+  
+#divartigo h2 {
+    font-size: 1em;
+}
+
+
+#divartigo h3 {
+    font-size: 1.2em;
+    font-weight: bold;
+  }
+  
+#divartigo h4 {
+    font-size: 1em;
+}
+
+#divartigo i, b, em  {  
+font-family: var(--font);
+font-size: var(--fontSize);
+color: var(--textColorDark);
+font-weight: normal;
+
+} 
+

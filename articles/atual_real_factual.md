@@ -1,14 +1,14 @@
-# Significado da palavra "tensão"
+# Atual, Real e Factual
 
-* **Sub-Título:**: Busca de um melhro entendimento sobre o uso do termo "tensão no Livro de Urântia"
-* **Autor(es):** Rogério Reis ds Silva.
-* **Primeira edição:** Dezembro/2024.
-* **Revisão:** -
-* **Breve Descrição (opcional):** Um breve resumo do conteúdo do artigo (máximo de 2-3 linhas).
+## Descrição
 
-## Atual, Real e Factual
+Uma exploração das nuances entre "actual," "real" e "factual" em inglês, considerando tanto o uso comum quanto a perspectiva da filosofia aristotélico-tomista, com explicações em português e suas variações entre Portugal (pt-pt) e Brasil (pt-br).
 
-Vamos explorar as nuances entre "actual," "real" e "factual" em inglês, considerando tanto o uso comum quanto a perspectiva da filosofia aristotélico-tomista, com explicações em português e suas variações entre Portugal (pt-pt) e Brasil (pt-br).
+## Autor
+
+Rogério Reis ds Silva.
+
+Primeira edição em Dezembro-2024.
 
 ### Actual
 
