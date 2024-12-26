@@ -1,8 +1,20 @@
 // Common functions for the PT Alternative project
 
+// Get the anchor from the URL
+function getAnchor(url) {
+  try {
+    const urlObj = new URL(url);
+    return urlObj.hash.substring(1); // Remove o # inicial
+  } catch (error) {
+    return null;
+  }
+}
+
+// Verify if we have an anchor in the current URL
 function hasAnchor() {
     const currentUrl = window.location.href;
     const hasHash = currentUrl.indexOf('#') !== -1;
+    console.log('hasAnchor: ' + hasHash);
     return hasHash;
   }
   
@@ -43,18 +55,4 @@ function getCookie(cname) {
         }
     }
     return "";
-}
-
-
-// Legacy loadDoc function
-function loadDoc(url, hash)
-{
-  if (typeof hash !== 'string') {
-    return;
-  }
-  const parts = hash.split('_');
-  const paper = parseInt(parts[0].substring(1), 10); // Remove 'p' and parse
-  const section = parseInt(parts[1], 10);
-  const paragraph = parseInt(parts[2], 10);
-  loadDocByPaperSectionParagraph(paper, section, paragraph) ;
 }

@@ -3,6 +3,7 @@
 async function StartPage() {
     await LoadTableOfContentsData();
     verifyAnchor();
+    setCookie("PAGE", "indexToc", 180)
 }
 
 async function verifyAnchor() 
@@ -20,6 +21,14 @@ async function verifyAnchor()
         return;
       }
     await loadDocByPaperSectionParagraph(paper, section, paragraph);
+  }
+  else
+  {
+    const currentUrl = window.location.href;
+    anchor= getAnchor(currentUrl)
+    if (anchor) {
+      scrollToUrlAnchor(anchor) 
+    }
   }
 }
 
@@ -49,8 +58,8 @@ function ExpandIndex() {
             this.classList.toggle("caret-down");
         });
     }
-    console.log("before before scrollToTocAnchor");
-    scrollToTocAnchor();
+    console.log("ExpandIndex");
+    scrollToCookieAnchor();
   }
 
 function paperFromHash(inputString) {
@@ -58,27 +67,42 @@ function paperFromHash(inputString) {
     return inputString.substring(positionOfDoc + 4, positionOfDoc + 7);
 }
 
+// Create toc element id from the given url with anchor
+function scrollToUrlAnchor(urlAnchor) 
+{
+  const parts = urlAnchor.split('_');
+  const paper = parseInt(parts[0].substring(1), 10); // Remove 'p' and parse
+  const section = parseInt(parts[1], 10);
+  const paragraph = parseInt(parts[2], 10);
+  elementId= `toc_${paper.toString().padStart(3, '0')}_${section.toString().padStart(3, '0')}`; 
+  scrollTocTable(elementId)
+  loadDocByPaperSectionParagraph(paper, section, paragraph) 
+}
 
-function scrollToTocAnchor() {
+// Get the anchor from cookies
+function scrollToCookieAnchor() {
   var paper = getCookie("paper");
   var section = getCookie("section");
   if ( (typeof paper === 'string' && paper.trim() !== '') &&
        (typeof section === 'string' && section.trim() !== ''))
   {
-    anchorId= `toc_${paper.toString().padStart(3, '0')}_${section.toString().padStart(3, '0')}`; 
-    console.log("dentro scrollToTocAnchor anchorId= " + anchorId);
-    const element = document.getElementById(anchorId);
-    if (element) {
-      element.scrollIntoView({
-        behavior: 'smooth', // Para rolagem suave (opcional)
-        block: 'start' // Para alinhar o topo do elemento ao topo da tela
-      });
-    } else {
-      console.error(`Elemento com ID "${anchorId}" não encontrado.`);
-    }
-    }
+    elementId= `toc_${paper.toString().padStart(3, '0')}_${section.toString().padStart(3, '0')}`; 
+    scrollTocTable(elementId)
+  }
 }
 
+// Scroll to a specific element in the table of contents
+function scrollTocTable(elementId) {
+  console.log("scrollTocTable elementId= " + elementId);
+  const element = document.getElementById(elementId);
+  if (element) {
+    console.log("achou elementId");
+    element.scrollIntoView({
+      behavior: 'smooth', // Para rolagem suave (opcional)
+      block: 'start' // Para alinhar o topo do elemento ao topo da tela
+    });
+  } 
+}
 
 
 // Load the document at the right column
@@ -108,6 +132,19 @@ async function loadDocByPaperSectionParagraph(paper, section, paragraph)
     url= `content/Doc${paper.toString().padStart(3, '0')}.html`;
     xhttp.open("GET", url);
     xhttp.send();
+}
+
+// Legacy loadDoc function
+function loadDoc(url, hash)
+{
+  if (typeof hash !== 'string') {
+    return;
+  }
+  const parts = hash.split('_');
+  const paper = parseInt(parts[0].substring(1), 10); // Remove 'p' and parse
+  const section = parseInt(parts[1], 10);
+  const paragraph = parseInt(parts[2], 10);
+  loadDocByPaperSectionParagraph(paper, section, paragraph) ;
 }
 
 

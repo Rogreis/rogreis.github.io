@@ -6,19 +6,24 @@
     --lineHeight: 1.6; /* Important for readability */
     --textColorLight: #333; /* Dark gray for light mode */
     --textColorDark: #eee; /* Light gray/off-white for dark mode */
+    --baseFontSize: 1.2rem; /* Tamanho base da fonte, facilita o ajuste proporcional */
     --backgroundColorLight: #fff; /* White for light mode */
     /* --backgroundColorDark: #121212; Dark background */
     --background-color: rgba(var(--bs-dark-rgb), var(--bs-bg-opacity))!important;
 
-    --linkColor: #4287f5; /* Standard link color */
+    --linkColor: gold; /* Standard link color */
     --linkColorDark: #64b5f6; /* Lighter link color for dark mode */
 }
+
+.text-primary {
+    --bs-text-opacity: 1;
+    color: rgba(var(--bs-primary-rgb), var(--bs-text-opacity));
+  }
 
 body {
     font-family: var(--font);
     font-size: var(--fontSize);
     line-height: var(--lineHeight);
-    background-color: var(--background-color);
     transition: background-color 0.3s ease, color 0.3s ease; /* Smooth transitions for mode switching */
 }
 
@@ -86,7 +91,6 @@ h4
 
 .badgeClosed {
     color: rgba(var(--bs-white-rgb), var(--bs-text-opacity))!important;
-    background-color: var(--background-color);
     display: inline-block;
     width: 100px
 }
@@ -117,7 +121,6 @@ a.parOk:hover { text-decoration: underline; }
 .parClosed 
 { 
     color: rgba(var(--bs-white-rgb), var(--bs-text-opacity))!important;
-    background-color: var(--background-color);
 }
 a.parClosed 
 { 
@@ -166,23 +169,22 @@ textarea {
 
 a.liIndex:link {
     text-decoration: none;
-    background-color: var(--background-color);
-    color: white;
+    color: var(--textColorDark);
 }
 
 a.liIndex:visited {
     text-decoration: none;
-    color: white;
+    color: var(--textColorDark);
 }
 
 a.liIndex:hover {
     text-decoration: underline;
-    color: white;
+    color: var(--textColorDark);
 }
 
 a.liIndex:active {
     text-decoration: none;
-    color: white;
+    color: var(--textColorDark);
 }
 
 ul li {
@@ -243,6 +245,8 @@ ul,
     color: black;
     display: inline-block;
     margin-right: 6px;
+    --bs-text-opacity: 1;
+    color: rgba(var(--bs-body-color), var(--bs-text-opacity));
 }
 
 .caret-down::before {
@@ -251,6 +255,8 @@ ul,
     -webkit-transform: rotate(90deg);
     /* Safari */
  transform: rotate(90deg);
+ --bs-text-opacity: 1;
+ color: rgba(var(--bs-body-color), var(--bs-text-opacity));
 }
 
 .nested {

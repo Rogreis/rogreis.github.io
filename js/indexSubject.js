@@ -20,12 +20,12 @@ SubjectItems = [];
 
 function StartPage() {
     loadAndUnzipJSON('subject.zip', SubjectPageCallback)
+    afterLoadSettings();    
     verifyAnchor();
 }
 
 function verifyAnchor() 
 { 
-  console.log("verifyAnchor");
   if (!hasAnchor())
     {
       // Load the document at the right column from cookies
@@ -49,7 +49,6 @@ function get_subject_cookies()
 
     if (typeof subject_titles === 'string' && subject_titles.trim().length >= 3) {
         document.getElementById('searchInputBox').value = subject_titles;
-        console.log("subject_titles: ", subject_titles);
         findTitlesContainingSubstring(subject_titles)
     }
     else return;
@@ -67,11 +66,9 @@ function SubjectPageCallback(error, data) {
         console.error("An error occurred while loading or parsing the JSON:", error.message);
     }
      else {
-        console.log("Successfully loaded and parsed JSON");
         // Parse JSON data and map to Item class
         SubjectItems = data.map(item => new Item(item.Title, item.Details));
         // Print the total number of items in the array
-        console.log("Total number of items:", SubjectItems.length);
         get_subject_cookies() 
     }
 }
@@ -125,8 +122,6 @@ function findTitlesContainingSubstring(searchString) {
     matchingTitles = SubjectItems
         .filter(item => item.Title.toLowerCase().includes(searchLower))
         .map(item => item.Title); // Extract the Title property
-
-    console.log("Assuntos encontrados: ", matchingTitles.length);
 
     // Clear and populate the listbox
     const listBox = document.getElementById("listBoxAssuntos");
@@ -203,6 +198,19 @@ function showSubjectDetails(selectedTitle) {
     });
 }
 
+// Legacy loadDoc function
+function loadDoc(url, hash)
+{
+  if (typeof hash !== 'string') {
+    return;
+  }
+  const parts = hash.split('_');
+  const paper = parseInt(parts[0].substring(1), 10); // Remove 'p' and parse
+  const section = parseInt(parts[1], 10);
+  const paragraph = parseInt(parts[2], 10);
+  loadDocByPaperSectionParagraph(paper, section, paragraph) ;
+}
+
 
 
 // Load the document at the right column
@@ -215,7 +223,6 @@ function loadDocByPaperSectionParagraph(paper, section, paragraph)
         // Assuming the anchor ID is within the loaded content
         //hash = `U${paper}_${section}_${paragraph}`;
         hash = `p${paper.toString().padStart(3, '0')}_${section.toString().padStart(3, '0')}_${paragraph.toString().padStart(3, '0')}`;
-        console.log("hash= " + hash);
         var anchor = document.getElementById(hash);
       
         // Scroll to the anchor smoothly (optional)
@@ -254,3 +261,63 @@ function generateUrlAndOpen(codeString) {
 
     window.open(urlGithub, '_blank');
   }
+
+function afterLoadSettings() {
+
+
+    // listBox.addEventListener("dblclick", function(event) { 
+    //     const selectedItem = listBox.options[listBox.selectedIndex]?.text; 
+    //     if (selectedItem) { 
+    //         showSubjectDetails(selectedItem); 
+    //     } 
+    // }); 
+}
+
+
+    // Ensure this script runs after the DOM is fully loaded 
+    document.addEventListener("DOMContentLoaded", () => { 
+        const inputBox = document.getElementById("searchInputBox"); 
+        const listBox = document.getElementById("listBoxAssuntos"); 
+        console.log("addEventListener", inputBox);
+        console.log("addEventListener", listBox);
+
+        if (inputBox) {
+            inputBox.addEventListener("input", function handleInput(event) {
+                // Get the value of the input box
+                const value = searchInputBox.value;
+                console.log("Valor do inputBox:", value);
+
+                // Check if the value has at least 3 characters
+                if (value.length >= 3) {
+                    event.preventDefault(); 
+                    findTitlesContainingSubstring(event.target.value); 
+                } else {
+                    // Clear the list box
+                    const listBox = document.getElementById('listBoxAssuntos');
+                    listBox.innerHTML = '';
+                }
+            }); 
+            // Evento de tecla Enter no inputBox
+            inputBox.addEventListener("keydown", function handleEnter(event) { 
+                if (event.key === "Enter") { 
+                    event.preventDefault(); 
+                    findTitlesContainingSubstring(event.target.value); 
+                } 
+            }); 
+            } else {
+                    console.log("Elemento inputBox não encontrado")
+        }
+        console.log("vai para a list box");
+
+        // Evento de seleção em um listbox (select)
+        if (listBox) {
+            listBox.addEventListener("change", function handleListboxChange(event) {
+                const selectedText = event.target.options[event.target.selectedIndex].text; // Obtém o texto da opção selecionada
+                showSubjectDetails(selectedText); 
+            });
+        } else {
+            console.log("Elemento myListbox não encontrado")
+        }
+
+
+    }); 

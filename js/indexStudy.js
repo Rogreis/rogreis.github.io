@@ -30,6 +30,7 @@ function loadArticle(name)
   xhttp.send();
 }
 
+
 function showParagraph(paper, section, paragraph) {
   const currentDomain = window.location.hostname;
   const protocol = window.location.protocol;
