@@ -34,6 +34,32 @@ function open_page(page_name)
 }
 
 
+
+// Open a github page enabling the edition of the paragraph
+function generateUrlAndOpen(codeString) {
+  const separatorRegex = /[, .:;-]/;
+  const parts = codeString.split(separatorRegex).map(Number);
+
+  if (!parts.every(part => Number.isInteger(part) && part >= 0 && part <= 196)) {
+    console.error('Invalid code string:', codeString);
+    return;
+  }
+
+  // Format integers to 3 digits
+  const formattedParts = parts.map(part => part.toString().padStart(3, '0'));
+  const urlGithub = `https://github.com/Rogreis/PtAlternative/blob/correcoes/Doc${formattedParts[0]}/Par_${formattedParts.join('_')}.md`;
+
+  const paper = parseInt(parts[0]);
+  const section = parseInt(parts[1], 10);
+  const paragraph = parseInt(parts[2], 10);
+  setCookie("paper", paper, 180)
+  setCookie("section", section, 180)
+  setCookie("paragraph", paragraph, 180)
+    
+  window.open(urlGithub, '_blank');
+}
+
+
 function setCookie(cname, cvalue, exdays) {
     var d = new Date();
     d.setTime(d.getTime() + (exdays * 24 * 60 * 60 * 1000));

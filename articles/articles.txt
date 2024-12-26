@@ -1,3 +1,7 @@
+Título: Filodofia da Religião
+Sumário: Objetivos e tipo de conteúdo esperado para os artigos aqui publicados.
+Link: README.html
+
 Título: Tensão
 Sumário: Busca de um melhor entendimento sobre o uso do termo "tensão" no Livro de Urântia.
 Link: tensao.html

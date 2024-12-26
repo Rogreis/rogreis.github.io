@@ -20,7 +20,6 @@ SubjectItems = [];
 
 function StartPage() {
     loadAndUnzipJSON('subject.zip', SubjectPageCallback)
-    afterLoadSettings();    
     verifyAnchor();
 }
 
@@ -242,82 +241,50 @@ function loadDocByPaperSectionParagraph(paper, section, paragraph)
 }
 
 
-function generateUrlAndOpen(codeString) {
-    const separatorRegex = /[, .:;-]/;
-    const parts = codeString.split(separatorRegex).map(Number);
-  
-    if (!parts.every(part => Number.isInteger(part) && part >= 0 && part <= 196)) {
-      console.error('Invalid code string:', codeString);
-      return;
-    }
-  
-    // Format integers to 3 digits
-    const formattedParts = parts.map(part => part.toString().padStart(3, '0'));
-    const urlGithub = `https://github.com/Rogreis/PtAlternative/blob/correcoes/Doc${formattedParts[0]}/Par_${formattedParts.join('_')}.md`;
-  
-    // Set new hash
-    const hash = `p${parts.map(part => part.toString().padStart(3, '0')).join('_')}`;
-    setCookie("LSTHSH", hash, 180)
+// Ensure this script runs after the DOM is fully loaded 
+document.addEventListener("DOMContentLoaded", () => { 
+    const inputBox = document.getElementById("searchInputBox"); 
+    const listBox = document.getElementById("listBoxAssuntos"); 
+    console.log("addEventListener", inputBox);
+    console.log("addEventListener", listBox);
 
-    window.open(urlGithub, '_blank');
-  }
+    if (inputBox) {
+        inputBox.addEventListener("input", function handleInput(event) {
+            // Get the value of the input box
+            const value = searchInputBox.value;
+            console.log("Valor do inputBox:", value);
 
-function afterLoadSettings() {
-
-
-    // listBox.addEventListener("dblclick", function(event) { 
-    //     const selectedItem = listBox.options[listBox.selectedIndex]?.text; 
-    //     if (selectedItem) { 
-    //         showSubjectDetails(selectedItem); 
-    //     } 
-    // }); 
-}
-
-
-    // Ensure this script runs after the DOM is fully loaded 
-    document.addEventListener("DOMContentLoaded", () => { 
-        const inputBox = document.getElementById("searchInputBox"); 
-        const listBox = document.getElementById("listBoxAssuntos"); 
-        console.log("addEventListener", inputBox);
-        console.log("addEventListener", listBox);
-
-        if (inputBox) {
-            inputBox.addEventListener("input", function handleInput(event) {
-                // Get the value of the input box
-                const value = searchInputBox.value;
-                console.log("Valor do inputBox:", value);
-
-                // Check if the value has at least 3 characters
-                if (value.length >= 3) {
-                    event.preventDefault(); 
-                    findTitlesContainingSubstring(event.target.value); 
-                } else {
-                    // Clear the list box
-                    const listBox = document.getElementById('listBoxAssuntos');
-                    listBox.innerHTML = '';
-                }
-            }); 
-            // Evento de tecla Enter no inputBox
-            inputBox.addEventListener("keydown", function handleEnter(event) { 
-                if (event.key === "Enter") { 
-                    event.preventDefault(); 
-                    findTitlesContainingSubstring(event.target.value); 
-                } 
-            }); 
+            // Check if the value has at least 3 characters
+            if (value.length >= 3) {
+                event.preventDefault(); 
+                findTitlesContainingSubstring(event.target.value); 
             } else {
-                    console.log("Elemento inputBox não encontrado")
-        }
-        console.log("vai para a list box");
-
-        // Evento de seleção em um listbox (select)
-        if (listBox) {
-            listBox.addEventListener("change", function handleListboxChange(event) {
-                const selectedText = event.target.options[event.target.selectedIndex].text; // Obtém o texto da opção selecionada
-                showSubjectDetails(selectedText); 
-            });
+                // Clear the list box
+                const listBox = document.getElementById('listBoxAssuntos');
+                listBox.innerHTML = '';
+            }
+        }); 
+        // Evento de tecla Enter no inputBox
+        inputBox.addEventListener("keydown", function handleEnter(event) { 
+            if (event.key === "Enter") { 
+                event.preventDefault(); 
+                findTitlesContainingSubstring(event.target.value); 
+            } 
+        }); 
         } else {
-            console.log("Elemento myListbox não encontrado")
-        }
+                console.log("Elemento inputBox não encontrado")
+    }
+    console.log("vai para a list box");
+
+    // Evento de seleção em um listbox (select)
+    if (listBox) {
+        listBox.addEventListener("change", function handleListboxChange(event) {
+            const selectedText = event.target.options[event.target.selectedIndex].text; // Obtém o texto da opção selecionada
+            showSubjectDetails(selectedText); 
+        });
+    } else {
+        console.log("Elemento myListbox não encontrado")
+    }
 
 
-    }); 
+}); 

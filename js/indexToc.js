@@ -192,36 +192,33 @@ async function loadDocByPaperSectionParagraph(paper, section, paragraph)
     xhttp.send();
 }
 
+function isMobile() {
+  const userAgent = navigator.userAgent.toLowerCase();
+  return /android|webos|iphone|ipad|ipod|blackberry|iemobile|opera mini/.test(userAgent);
+}
+
+
 // Legacy loadDoc function
 function loadDoc(url, hash)
 {
+  console.log("loadDoc url: " + url);
+  console.log("loadDoc hash: " + hash);
   if (typeof hash !== 'string') {
     return;
   }
+  console.log("loadDoc hash: " + hash);
   const parts = hash.split('_');
   const paper = parseInt(parts[0].substring(1), 10); // Remove 'p' and parse
   const section = parseInt(parts[1], 10);
   const paragraph = parseInt(parts[2], 10);
+  console.log("loadDoc paper: " + paper + " section: " + section + " paragraph: " + paragraph);
+  if (isMobile()) {
+    console.log("Running on a mobile device.");
+    const currentUrl = 'https://rogreis.github.io/indexToc.html';
+    window.location.href= currentUrl;
+  } else {
+    console.log("Not running on a mobile device.");
+    // Desktop/other code here
+  }  
   loadDocByPaperSectionParagraph(paper, section, paragraph) ;
 }
-
-
-function generateUrlAndOpen(codeString) {
-    const separatorRegex = /[, .:;-]/;
-    const parts = codeString.split(separatorRegex).map(Number);
-  
-    if (!parts.every(part => Number.isInteger(part) && part >= 0 && part <= 196)) {
-      console.error('Invalid code string:', codeString);
-      return;
-    }
-  
-    // Format integers to 3 digits
-    const formattedParts = parts.map(part => part.toString().padStart(3, '0'));
-    const urlGithub = `https://github.com/Rogreis/PtAlternative/blob/correcoes/Doc${formattedParts[0]}/Par_${formattedParts.join('_')}.md`;
-  
-    // Set new hash
-    const hash = `p${parts.map(part => part.toString().padStart(3, '0')).join('_')}`;
-    setCookie("LSTHSH", hash, 180)
-
-    window.open(urlGithub, '_blank');
-  }
