@@ -124,6 +124,13 @@ font-weight: normal;
   #rightColumn, #rightColumn * {
     visibility: visible;
   }
+  #divartigo  h1, h2, h3, h4, h5, h6 {
+    font-weight: bold;
+    color: black;
+    background-color: white;
+    line-height: 1.2; /* Melhora a legibilidade com espaçamento entre linhas */
+  }
+      
   #rightColumn {
     position: absolute;
     left: 0;

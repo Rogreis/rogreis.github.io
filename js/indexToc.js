@@ -6,30 +6,45 @@ async function StartPage() {
     setCookie("PAGE", "indexToc", 180)
 }
 
+async function loadDocFromCookie() {
+    const paper = getCookie("paper");
+    const section = getCookie("section");
+    const paragraph = getCookie("paragraph");
+    if (typeof paper !== 'string' || paper.trim() === '' ||
+      typeof section !== 'string' || section.trim() === '' ||
+      typeof paragraph !== 'string' || paragraph.trim() === '') {
+      return;
+    }
+    await loadDocByPaperSectionParagraph(paper, section, paragraph);
+  }
+
 async function verifyAnchor() 
 { 
   if (!hasAnchor())
     {
       // Load the document at the right column from cookies
-      var paper = getCookie("paper");
-      var section = getCookie("section");
-      var paragraph = getCookie("paragraph");
-      if (typeof paper !== 'string' || paper.trim() === '' ||
-      typeof section !== 'string' || section.trim() === '' ||
-      typeof paragraph !== 'string' || paragraph.trim() === '') 
-      {
-        return;
-      }
-    await loadDocByPaperSectionParagraph(paper, section, paragraph);
+      await loadDocFromCookie(); 
   }
   else
   {
     const currentUrl = window.location.href;
     anchor= getAnchor(currentUrl)
     if (anchor) {
-      scrollToUrlAnchor(anchor) 
+      const parts = anchor.split('_');
+      const paper = parseInt(parts[0].substring(1), 10); // Remove 'p' and parse
+      const section = parseInt(parts[1], 10);
+      const paragraph = parseInt(parts[2], 10);
+      console.log("verifyAnchor anchor: " + anchor);
+      console.log("verifyAnchor paper: " + paper);
+      console.log("verifyAnchor section: " + section);
+      console.log("verifyAnchor paragraph: " + paragraph);
+      setCookie("paper", paper, 180)
+      setCookie("section", section, 180)
+      setCookie("paragraph", paragraph, 180)
     }
   }
+
+  //expandCurrentTocElement(); 
 }
 
 async function LoadTableOfContentsData() {
@@ -43,14 +58,15 @@ async function LoadTableOfContentsData() {
 }
 
 
-function ExpandIndex() {
+async function ExpandIndex() {
     var toggler = document.getElementsByClassName("caret");
-    var expandables = document.getElementsByClassName("expandable");
+    //var expandables = document.getElementsByClassName("expandable");
     var i;
-    for (i = 0; i < expandables.length; i++) {
-        expandables[i].parentElement.querySelector(".nested").classList.toggle("active");
-        expandables[i].classList.toggle("caret-down");
-    }
+
+    // for (i = 0; i < expandables.length; i++) {
+    //     expandables[i].parentElement.querySelector(".nested").classList.toggle("active");
+    //     expandables[i].classList.toggle("caret-down");
+    // }
 
     for (i = 0; i < toggler.length; i++) {
         toggler[i].addEventListener("click", function() {
@@ -59,49 +75,91 @@ function ExpandIndex() {
         });
     }
     console.log("ExpandIndex");
-    scrollToCookieAnchor();
+    expandCurrentTocElement(); 
+    await loadDocFromCookie()
   }
 
-function paperFromHash(inputString) {
-    var positionOfDoc = inputString.indexOf('/Doc');
-    return inputString.substring(positionOfDoc + 4, positionOfDoc + 7);
+
+function toggleCaret(partElement) {
+  // 1. Find the span element within partElement.
+  // We use querySelector here, which finds the *first* matching element.
+  // If you have multiple spans and need a specific one, you might need
+  // to adjust the selector (e.g., using a class or other attribute).
+  console.log("toggleCaret: " + partElement);
+  const spanElement = partElement.querySelector('span'); // Or a more specific selector like 'span.my-caret'
+  console.log("toggleCaret: " + spanElement);
+
+  // Check if the span element exists before trying to toggle the class.
+  if (spanElement) {
+    // 2. Toggle the 'caret-down' class.
+    spanElement.parentElement.querySelector(".nested").classList.toggle("active");
+    spanElement.classList.toggle('caret-down');
+    console.log("achou o span");
+  } else {
+    console.error("Span element not found within partElement.");
+  }
 }
 
-// Create toc element id from the given url with anchor
-function scrollToUrlAnchor(urlAnchor) 
+// Expand the current TOC element based on the current URL or cookies
+function expandCurrentTocElement() 
 {
-  const parts = urlAnchor.split('_');
-  const paper = parseInt(parts[0].substring(1), 10); // Remove 'p' and parse
-  const section = parseInt(parts[1], 10);
-  const paragraph = parseInt(parts[2], 10);
-  elementId= `toc_${paper.toString().padStart(3, '0')}_${section.toString().padStart(3, '0')}`; 
-  scrollTocTable(elementId)
-  loadDocByPaperSectionParagraph(paper, section, paragraph) 
-}
+    const currentUrl = window.location.href;
+    anchor= getAnchor(currentUrl)
+    paper= -1;
+    section= 0;
+    if (anchor) {
+      const parts = anchor.split('_');
+      paper = parseInt(parts[0].substring(1), 10); // Remove 'p' and parse
+      console.log("expandCurrentTocElement1 paper: " + paper);
+    }
+     else
+     {
+        paper = parseInt(getCookie("paper"), 10);
+        console.log("expandCurrentTocElement2 paper: " + paper);
+     }
 
-// Get the anchor from cookies
-function scrollToCookieAnchor() {
-  var paper = getCookie("paper");
-  var section = getCookie("section");
-  if ( (typeof paper === 'string' && paper.trim() !== '') &&
-       (typeof section === 'string' && section.trim() !== ''))
-  {
-    elementId= `toc_${paper.toString().padStart(3, '0')}_${section.toString().padStart(3, '0')}`; 
-    scrollTocTable(elementId)
-  }
-}
+     if (paper == 0) {
+      const intro = document.getElementById("toc_000_000");
+      toggleCaret(intro);
+    }
+    if (paper > 0 && paper < 32) {
+      const part1 = document.getElementById("part1");
+      toggleCaret(part1);
+    }
+    if (paper > 31 && paper < 57) {
+      const part2 = document.getElementById("part2");
+      toggleCaret(part2);
+    }
+    if (paper > 56 && paper < 120) {
+      const part3 = document.getElementById("part3");
+      if (!part3)
+        console.log("part3 não encontrado");
+      toggleCaret(part3);
+    }
+    if (paper > 119) {
+      const part4 = document.getElementById("part4");
+      toggleCaret(part4);
+    }
 
-// Scroll to a specific element in the table of contents
-function scrollTocTable(elementId) {
-  console.log("scrollTocTable elementId= " + elementId);
-  const element = document.getElementById(elementId);
-  if (element) {
-    console.log("achou elementId");
-    element.scrollIntoView({
-      behavior: 'smooth', // Para rolagem suave (opcional)
-      block: 'start' // Para alinhar o topo do elemento ao topo da tela
-    });
-  } 
+    toc_element_id= `toc_${paper.toString().padStart(3, '0')}_${section.toString().padStart(3, '0')}`;
+    console.log("expandCurrentTocElement toc_element_id: " + toc_element_id);
+    const toc_element= document.getElementById(toc_element_id);
+    if (toc_element)
+    {
+      console.log("expandCurrentTocElement achou toc_element: " + toc_element);
+      toggleCaret(toc_element);
+      toc_element.scrollIntoView({
+        behavior: 'smooth', // Para rolagem suave (opcional)
+        block: 'start' // Para alinhar o topo do elemento ao topo da tela
+      });
+  
+    }
+    else
+    {
+      console.log("expandCurrentTocElement toc_element não encontrado");
+    }
+
+
 }
 
 
