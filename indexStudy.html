@@ -1,156 +1,143 @@
-﻿<!DOCTYPE html> 
+﻿<!DOCTYPE html>  
 <html lang="en" data-bs-theme="dark">
- 
-<head> 
-	<meta http-equiv="Content-Type" content="text/html; charset=windows-1252"> 
-	<title>Estudos</title> 
-	<meta charset="utf-8"> 
-	<meta name="viewport" content="width=device-width, initial-scale=1"> 
- 
-	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"> 
-	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script> 
- 
- 
-	<link href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@400;700&display=swap" rel="stylesheet"> 
-	<link href="css/tub_pt_br.css" rel="stylesheet"> 
-	<script src="https://cdn.jsdelivr.net/npm/jquery@3.6.1/dist/jquery.min.js"></script> 
- <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.10.1/jszip.min.js" crossorigin="anonymous"></script> 
- 
-<script src="js/tub_pt_br.js"></script> 
+  
+<head>  
+	<meta http-equiv="Content-Type" content="text/html; charset=windows-1252">  
+	<title>Artigos</title> 
+	<meta charset="utf-8">  
+	<meta name="viewport" content="width=device-width, initial-scale=1">  
+  
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">  
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>  
+  
+  
+	<link href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@400;700&display=swap" rel="stylesheet">  
+	<script src="https://cdn.jsdelivr.net/npm/jquery@3.6.1/dist/jquery.min.js"></script>  
+ <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.10.1/jszip.min.js" crossorigin="anonymous"></script>  
+  
+<link href="css/tub_pt_br.css" rel="stylesheet">  
+<link href="css/indexStudy.css" rel="stylesheet">
+<script src="js/tub_pt_br.js"></script>  
 <script src="js/indexStudy.js"></script> 
- 
 </head> 
-<html> 
-<body onload="StartPage()"> 
-  <nav class="navbar navbar-expand-lg bg-primary navbar-dark"> 
-    <div class="container-fluid"> 
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse"  
-        data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation"> 
-        <span class="navbar-toggler-icon"></span>    
-      </button> 
-      <div class="collapse navbar-collapse" id="navbarNav"> 
-        <ul class="navbar-nav me-auto bg-primary"> 
-          <li class="nav-item bg-primary"> 
-            <a class="nav-link  " aria-current="page" href="javascript:open_page('indexToc')">Documentos</a>
-          </li> 
-          <li class="nav-item bg-primary"> 
-            <a class="nav-link  " aria-current="page" href="javascript:open_page('indexSubject')">Assuntos</a>
-          </li> 
-          <li class="nav-item bg-primary"> 
-            <a class="nav-link active" aria-current="page" href="javascript:open_page('indexStudy')"><h3>Estudos</h3></a>
-          </li> 
-          <li class="nav-item bg-primary"> 
-            <a class="nav-link  disabled" aria-current="page" href="javascript:open_page('indexSearch')">Busca</a>
-          </li> 
-          <li class="nav-item bg-primary"> 
-            <a class="nav-link  disabled" aria-current="page" href="javascript:open_page('indexTrack')">Trilha</a>
-          </li> 
-		</ul>    
-        <div class="navbar-nav ms-auto "> 
-          <h5 class="navbar-brand">O Livro de Urântia - Tradução PT BR - 30/11/2024</h5> 
-        </div> 
-        <div class="navbar-nav ms-auto"> 
-			    <button class="btn btn-primary" data-bs-toggle="modal" 
-				    data-bs-target="#myModal" title="Clique para entender o significado das cores de functo de cada parágrafo.">Cores</button> 
-        </div> 
-      </div> 
-    </div> 
-  </nav> 
- 
-	<div id="leftColumn" class="black splitLeft left mt-2 p-2 overflow-auto"> 
-		<div id="searchData"> 
-			<form> 
+  <nav class="navbar navbar-expand-lg bg-primary navbar-dark">  
+    <div class="container-fluid">  
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse"   
+        data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">  
+        <span class="navbar-toggler-icon"></span>     
+      </button>  
+      <div class="collapse navbar-collapse" id="navbarNav">  
+        <ul class="navbar-nav me-auto bg-primary">  
+          <li class="nav-item bg-primary">  
+            <a class="nav-link" aria-current="page" href="javascript:open_page('indexToc')"><spam class="navinactive">Documentos</spam></a> 
+          </li>  
+          <li class="nav-item bg-primary">  
+            <a class="nav-link" aria-current="page" href="javascript:open_page('indexSubject')"><spam class="navinactive">Assuntos</spam></a> 
+          </li>  
+          <li class="nav-item bg-primary">  
+            <a class="nav-link active" aria-current="page" href="javascript:open_page('indexStudy')"><spam class="navactive">Artigos</spam></a> 
+          </li>  
+		</ul>     
+        <div class="navbar-nav ms-auto ">  
+          <spam class= "navinactive">O Livro de Urântia - Tradução PT BR - 25/12/2024</spam>  
+        </div>  
+        <div class="navbar-nav ms-auto">  
+			<button class="btn btn-primary" onclick="window.print()" title="Imprime o texto do artigo selecionado." >Imprimir</button>
 
-				<button type="button" class="btn btn-warning">
-					<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-house-fill" viewBox="0 0 16 16">
-						<path fill-rule="evenodd" d="M8 3.293l6 6V13.5a1.5 1.5 0 0 1-1.5 1.5h-9A1.5 1.5 0 0 1 2 13.5V9.293l6-6zm5-.793V6l-2-2V2.5a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5v1.5z"/>
-					</svg>
-					Lista de Artigos
-				</button>
-
-				<label for="searchInputBox">Busca nos Títulos de assuntos:</label><br> 
-				<input  
-					type="text"  
-					id="searchInputBox"  
-					name="inputBox"  
-					style="width: 440px;" 
-					placeholder="Mínimo 3 letras e enter" title="Digite um mínimo de 3 letras do assunto a procurar e tecle enter." 
-					> 
-					<br><label for="listBoxAssuntos">Assuntos encontrados:</label><br> 
-			</form> 
-		</div> 
-		<div id="card-container"> 
-		</div> 
+			<button class="btn btn-primary" data-bs-toggle="modal"  
+				data-bs-target="#myModal" title="Clique para entender o significado das cores de fundo de cada parágrafo.">Cores</button>  
+        </div>  
+      </div>  
+    </div>  
+  </nav>  
+ 
+<html>  
+<body onload="StartPage()">  
+<div id="leftColumn" class="black splitLeft left mt-2 p-2 overflow-auto">  
+<div id="divsumario"> 
+<div id="divsumario">
+<a href="javascript:loadArticle('README.html')"><h4>Como criar artigos</h4></a>  
+<div id="divsumario">Objetivos e tipo de conteúdo esperado para os artigos aqui publicados.
+</div><br /><br />
+<a href="javascript:loadArticle('tensao.html')"><h4>Tensão</h4></a>  
+<div id="divsumario">Busca de um melhor entendimento sobre o uso do termo "tensão" no Livro de Urântia.
+</div><br /><br />
+<a href="javascript:loadArticle('atual_real_factual.html')"><h4>Atual, Real e Factual</h4></a>  
+<div id="divsumario">Uma exploração das nuances entre "actual," "real" e "factual" em inglês, considerando tanto o uso comum quanto a perspectiva da filosofia aristotélico-tomista.
+</div><br /><br />
+<a href="javascript:loadArticle('moral.html')"><h4>Moral</h4></a>  
+<div id="divsumario">Uma investigação sobre o entendimento da ética e da moral no Livro de Urântia.
+</div><br /><br />
+</div> 
+</div>
+</div>
+	<div id="rightColumn" class="black splitRight right mt-0 overflow-auto">  
+	<div id="divartigo"> 
 	</div> 
-	<div id="rightColumn" class="black splitRight right mt-0 overflow-auto"> 
-	</div> 
- 
-	<!-- The Modal --> 
-	<div class="modal" id="myModal"> 
-		<div class="modal-dialog"> 
-			<div class="modal-content"> 
- 
-				<!-- Modal Header --> 
-				<div class="modal-header"> 
-					<h4 class="modal-title">Significado das cores de fundo</h4> 
-					<button type="button" class="btn-close" data-bs-dismiss="modal"></button> 
-				</div> 
- 
-				<!-- Modal body --> 
-				<div class="modal-body"> 
- 
-					<table class="table"> 
-						<thead> 
-							<tr> 
-								<th>Cor de fundo</th> 
-								<th>Significado</th> 
-							</tr> 
-						</thead> 
-						<tbody> 
-							<tr> 
-								<td> 
-									<div class="badge badgeStarted">Iniciado</div> 
-								</td> 
-								<td>Parágrafo ainda na versão 2007</td> 
-							</tr> 
-							<tr> 
-								<td> 
-									<div class="badge badgeWorking">Em trabalho</div> 
-								</td> 
-								<td>Trabalho de tradução em andamento</td> 
-							</tr> 
-							<tr> 
-								<td> 
-									<div class="badge badgeDoubt">Em dúvida</div> 
-								</td> 
-								<td>Há dúvidas sobre a tradução</td> 
-							</tr> 
-							<tr> 
-								<td> 
-									<div class="badge badgeOk">Ok</div> 
-								</td> 
-								<td>Parágrafo finalizado, revisão final necessária</td> 
-							</tr> 
-							<tr> 
-								<td> 
-									<div class="badge badgeClosed">Fechado</div> 
-								</td> 
-								<td>Parágrafo fechado, talvez não ainda perfeito</td> 
-							</tr> 
-						</tbody> 
-					</table> 
- 
- 
-				</div> 
- 
-				<!-- Modal footer --> 
-				<div class="modal-footer"> 
-					<button type="button" class="btn btn-danger" data-bs-dismiss="modal">Fechar</button> 
-				</div> 
- 
-			</div> 
-		</div> 
-	</div> 
+	</div>  
+<div class="modal" id="myModal">  
+		<div class="modal-dialog">  
+			<div class="modal-content">  
+  
+				<!-- Modal Header -->  
+				<div class="modal-header">  
+					<h4 class="modal-title">Significado das cores de fundo</h4>  
+					<button type="button" class="btn-close" data-bs-dismiss="modal"></button>  
+				</div>  
+  
+				<!-- Modal body -->  
+				<div class="modal-body">  
+  
+					<table class="table">  
+						<thead>  
+							<tr>  
+								<th>Cor de fundo</th>  
+								<th>Significado</th>  
+							</tr>  
+						</thead>  
+						<tbody>  
+							<tr>  
+								<td>  
+									<div class="badge badgeStarted">Iniciado</div>  
+								</td>  
+								<td>4987 Parágrafo(s) ainda na versão 2007.</td>  
+							</tr>  
+							<tr>  
+								<td>  
+									<div class="badge badgeWorking">Em trabalho</div>  
+								</td>  
+								<td>13018 Parágrafo(s) com tradução em andamento.</td>  
+							</tr>  
+							<tr>  
+								<td>  
+									<div class="badge badgeDoubt">Em dúvida</div>  
+								</td>  
+								<td>0 Parágrafo(s) com dúvidas.</td>  
+							</tr>  
+							<tr>  
+								<td>  
+									<div class="badge badgeOk">Ok</div>  
+								</td>  
+								<td>168 Parágrafo(s) finalizado(s).</td>  
+							</tr>  
+							<tr>  
+								<td>  
+									<div class="badge badgeClosed">Fechado</div>  
+								</td>  
+								<td>2455 Parágrafo(s) fechado(s).</td>  
+							</tr>  
+						</tbody>  
+					</table>  
+				</div>  
+  
+				<!-- Modal footer -->  
+				<div class="modal-footer">  
+					<button type="button" class="btn btn-danger" data-bs-dismiss="modal">Fechar</button>  
+				</div>  
+  
+			</div>  
+		</div>  
+	</div>  
  
 </body>
 </html>
