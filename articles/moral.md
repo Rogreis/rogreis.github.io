@@ -1,5 +1,7 @@
 # Conceito de moral no LU
 
+> Trabalho em progresso.
+
 ## Definição
 
 > 16:7-10 (193.9) Os atos morais são aquelas atuações humanas caracterizadas pela mais alta inteligência, dirigidas pela discriminação seletiva na escolha de fins superiores, bem como na seleção de meios morais para atingir esses fins. Tal conduta é virtuosa. A suprema virtude, então, será escolher, sinceramente, fazer a vontade do Pai no céu.

@@ -1,14 +1,6 @@
-Título: Filodofia da Religião
+Título: Como escrever artigos.
 Sumário: Objetivos e tipo de conteúdo esperado para os artigos aqui publicados.
 Link: README.html
-
-Título: Tensão
-Sumário: Busca de um melhor entendimento sobre o uso do termo "tensão" no Livro de Urântia.
-Link: tensao.html
-
-Título:  Atual, Real e Factual
-Sumário: Uma exploração das nuances entre "actual," "real" e "factual" em inglês, considerando tanto o uso comum quanto a perspectiva da filosofia aristotélico-tomista.
-Link: atual_real_factual.html
 
 Título: Moral
 Sumário: Uma investigação sobre o entendimento da ética e da moral no Livro de Urântia.

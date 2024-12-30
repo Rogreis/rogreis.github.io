@@ -1,65 +1,47 @@
-# Investigações teológicas - Livro de Urântia
+# Como escrever artigos
 
 O objetivo deste local é colecionar artigos de investigação que explorem o conteúdo doutrinal do Livro de Urântia. Ao contrário de simples resumos de contéudo, esta compilação visa fornecer acesso a análises mais aprofundadas, estudos comparativos e investigações acadêmicas sobre os diversos temas abordados na obra.
 
 ## Introdução
 
-A teologia, em sua essência, busca compreender a natureza de Deus, a relação entre Deus e a humanidade e as implicações dessa relação para a vida humana e o universo. A investigação teológica, por sua vez, emprega métodos críticos e sistemáticos para explorar as crenças, doutrinas e práticas religiosas, buscando uma compreensão mais profunda e abrangente da fé. O Livro de Urântia acrescenta a essa compreensão uma ênfase na dimensão experiencial da fé, definindo teologia como o estudo das ações e reações do espírito humano, combinando aspectos psicológicos e filosóficos, ver <a href="javascript:showParagraph(116,7,6)">116:7-6</a>. Assim, a investigação teológica, segundo o LU, não se limita a reafirmar o que diretamente o livro apresenta, mas se aventura na exploração de novas perspectivas e na busca por respostas a questões complexas, sempre em diálogo com o conteúdo do livro, a experiência pessoal e o contexto contemporâneo. Ela se distingue da mera exposição doutrinária por sua ênfase na análise, interpretação e contextualização, utilizando ferramentas como a hermenêutica, a história, a filosofia e outras disciplinas relevantes.
+A **teologia**, em sua essência, busca compreender a natureza de Deus, a relação entre Deus e a humanidade e as implicações dessa relação para a vida humana e o universo.
 
-## Possibilidade de uma teologia urantiana
+A **investigação teológica**, por sua vez, emprega métodos críticos e sistemáticos para explorar as crenças, doutrinas e práticas religiosas, buscando uma compreensão mais profunda e abrangente da fé.
 
-A aparente discrepância entre a definição usual de teologia e a apresentada pelo LU em <a href="javascript:showParagraph(116,7,6)">116:7-6</a> pode ser resolvida ao compreendermos que o LU está focando em um aspecto específico da teologia: sua dimensão subjetiva e experiencial. Enquanto a definição geral abrange o estudo objetivo de Deus e da religião, o LU concentra-se na experiência religiosa individual e em como essa experiência se manifesta nas "ações e reações do espírito humano".
+O **Livro de Urântia** acrescenta a essa compreensão uma ênfase na dimensão experiencial da fé, definindo teologia como o estudo das ações e reações do espírito humano, combinando aspectos psicológicos e filosóficos, conforme escrito em **<a href="javascript:showParagraph(103,6,1)">103:6-1</a>**, combinação esta feita de forma sistemática.
 
-Podemos compatibilizar as duas perspectivas da seguinte forma:
+Assim, a **investigação teológica**, uma forma sistemática de se tentar entender o conteúdo deste livro, deve ser algo mais do que resumos, textuais ou gráficos, mas aventuras na exploração de novas perspectivas e na busca por respostas a questões complexas, sempre em diálogo com o conteúdo do livro, a experiência pessoal e o contexto contemporâneo. Ela se distingue da mera exposição doutrinária por sua ênfase na análise, interpretação e contextualização, utilizando ferramentas como a hermenêutica, a história, a filosofia e outras disciplinas relevantes.
 
-1. A teologia, em um sentido amplo, busca compreender a natureza de Deus e a relação entre Deus e a humanidade. Isso inclui o estudo de doutrinas, crenças e práticas religiosas, como apontado na definição geral.
+## Motivação
 
-2. O Livro de Urântia acrescenta uma dimensão importante a essa compreensão, enfatizando a experiência religiosa individual. Ao definir teologia como o "estudo das ações e reações do espírito humano", o LU destaca que a compreensão de Deus não é apenas um exercício intelectual, mas também uma experiência pessoal e transformadora.
+Em **<a href="javascript:showParagraph(103,1,3)" title="Abrir o parágrafo 103:1-3">103:1-3</a>** aparece o motivo principal que leva pessoas a buscarem tal tipo de trabalho. Este motivo é o de expor com clareza e de maneira fortemente embasada no texto principal como algumas pessoas pensaram e, desta forma, convidar o leitor a uma reflexão sobre sua própria forma de entendimento.
 
-3. A relação entre psicologia e filosofia na teologia, segundo o LU, reflete a interação entre a experiência subjetiva (psicologia) e a busca por uma compreensão sistemática e coerente dessa experiência (filosofia). A teologia, portanto, não é puramente subjetiva nem puramente objetiva, mas uma combinação das duas.
+Em harmonia com os conceitos do livro, pode ser usada a expresão **filosofia da religião** em lugar de teologia, conforme bem definido em **<a href="javascript:showParagraph(103,1,5)" title="Abrir o parágrafo 103:1-5">103:1-5</a>**.
 
-4. A distinção que o LU faz entre teologia (estudo da própria religião) e psicologia (estudo da religião alheia) enfatiza a importância da vivência da fé para a compreensão teológica. A verdadeira teologia, na perspectiva do LU, surge da reflexão sobre a própria experiência religiosa. O estudo da religião de outros, embora valioso, seria mais propriamente classificado como psicologia da religião ou estudo comparado das religiões.
+## Metodologia para uma Teologia Urantiana
 
-## Investigação acadêmica
+Uma metodologia sistemática pode incluir os seguintes passos:
 
-Uma investigação acadêmica é um processo sistemático e rigoroso de busca por conhecimento novo ou aprofundamento do conhecimento existente sobre um determinado tema. Ela se distingue de outras formas de investigação pela sua natureza metódica, objetiva e pela busca por validação através de critérios estabelecidos pela comunidade científica.
+1. **Exegese:** Estudo cuidadoso dos textos do Livro de Urântia, levando em consideração o contexto e a linguagem.
+2. **Síntese:** Integração dos diversos ensinamentos do livro em um quadro coerente.
+3. **Comparação:** Comparação dos conceitos urantianos com outras tradições religiosas e filosóficas, buscando pontos de convergência e divergência. (Com cautela, reconhecendo a natureza revelatória do Livro de Urântia).
+4. **Aplicação:** Reflexão sobre as implicações práticas dos ensinamentos urantianos para a vida individual e a sociedade.
+5. **Adoração:** Reconhecer a importância da experiência pessoal e da busca espiritual na compreensão da verdade.
 
-Podemos decompor a definição em alguns elementos-chave:
+## Cuidado com a Dogmatização
 
-* **Sistemática:** A investigação acadêmica segue um conjunto de etapas ou procedimentos organizados, como a formulação de uma pergunta de pesquisa, a revisão da literatura existente, a coleta e análise de dados, e a interpretação dos resultados. Não é uma busca aleatória por informações, mas um processo planejado e estruturado.
-* **Rigorosa:** A investigação acadêmica exige precisão e cuidado em todas as etapas, desde a definição do problema de pesquisa até a apresentação dos resultados. Os métodos utilizados devem ser adequados ao objeto de estudo e os dados devem ser coletados e analisados de forma criteriosa. A objetividade é um princípio fundamental, buscando minimizar vieses e interpretações subjetivas.
-* **Busca por conhecimento novo ou aprofundamento:** A investigação acadêmica pode ter como objetivo descobrir algo inédito, testar uma teoria existente, ou analisar um fenômeno sob uma nova perspectiva. Em qualquer caso, ela busca contribuir para o avanço do conhecimento em determinada área.
-* **Validação pela comunidade científica:** Os resultados de uma investigação acadêmica geralmente são submetidos à avaliação de outros pesquisadores da área (revisão por pares) antes de serem publicados em revistas científicas ou apresentados em congressos. Este processo de validação busca garantir a qualidade e a credibilidade do trabalho.
+É importante evitar a dogmatização rígida dos ensinamentos do Livro de Urântia. O livro incentiva a busca individual pela verdade e a experiência pessoal com Deus. Uma abordagem sistemática deve servir para aprofundar a compreensão, não para criar um sistema fechado e inflexível.
 
-### Diferenças entre investigação acadêmica e outros tipos de investigação
+## Exemplo de Aplicação Sistemática
 
-É importante distinguir a investigação acadêmica de outras formas de busca por informação, como a pesquisa jornalística, a investigação policial ou a busca por informações na internet. Algumas diferenças importantes incluem:
+Para ilustrar, podemos pegar o tema da **personalidade**. Uma abordagem sistemática envolveria:
 
-* **Objetivo:** A investigação acadêmica busca gerar conhecimento científico, enquanto outras formas de investigação podem ter objetivos diferentes, como informar o público, solucionar um crime ou satisfazer uma curiosidade pessoal.
-* **Método:** A investigação acadêmica utiliza métodos específicos e rigorosos, enquanto outras formas de investigação podem ser mais informais ou baseadas em evidências menos confiáveis.
-* **Validação:** A investigação acadêmica passa por um processo de validação pela comunidade científica, enquanto outras formas de investigação não necessariamente.
+*   **Exegese:** Examinar todas as passagens do Livro de Urântia que falam sobre a natureza da personalidade, sua origem, atributos, desenvolvimento e sobrevivência.
+*   **Síntese:** Reunir essas informações para formar uma compreensão abrangente do conceito urantiano de personalidade.
+*   **Comparação:** Comparar essa compreensão com as visões da psicologia, filosofia e outras tradições religiosas sobre a natureza da pessoa humana.
+*   **Aplicação:** Refletir sobre as implicações desse entendimento para a ética, os relacionamentos interpessoais e a busca espiritual.
 
-### Tipos de investigação acadêmica
-
-Existem diversos tipos de investigação acadêmica, que podem ser classificados de acordo com diferentes critérios, como:
-
-* **Natureza dos dados:** Pesquisa qualitativa (foca em interpretações e significados) ou quantitativa (foca em dados numéricos e estatísticas).
-* **Objetivo:** Pesquisa básica (busca gerar conhecimento novo) ou aplicada (busca solucionar problemas práticos).
-* **Abordagem:** Pesquisa experimental (manipula variáveis para testar hipóteses), observacional (observa fenômenos sem interferir neles), bibliográfica (analisa a literatura existente sobre um tema), entre outras.
-
-**Em resumo:** A investigação acadêmica é um processo complexo e rigoroso que busca gerar conhecimento válido e confiável. Ela se caracteriza pela sua natureza sistemática, objetiva e pela busca por validação pela comunidade científica. É um pilar fundamental para o avanço da ciência e do conhecimento humano.
-
-## Uma teologia urantiana
-
-O Livro de Urântia, uma obra complexa e abrangente que apresenta uma cosmologia detalhada, uma história da Terra e uma revelação expandida da vida e ensinamentos de Jesus, oferece um rico campo para a investigação teológica. Sua natureza singular, que se apresenta como uma revelação de seres celestiais, convida a uma análise cuidadosa e criteriosa. Este conjunto de artigos tem como objetivo explorar diversas facetas da teologia presente no Livro de Urântia, utilizando uma abordagem investigativa que busca:
-
-* **Compreender a natureza de Deus conforme apresentada no Livro de Urântia:** Explorando os conceitos de Deus como Pai Universal, as Trindades, as Personalidades do Paraíso e a relação entre eles.
-* **Analisar a cosmologia urantiana:** Investigando a estrutura do universo, a hierarquia dos seres celestiais e o plano divino para a criação.
-* **Estudar a revelação de Jesus no Livro de Urântia:** Examinando seus ensinamentos, sua vida e seu significado para a humanidade, comparando-os com outras tradições cristãs e religiosas.
-* **Explorar as implicações éticas e morais dos ensinamentos do Livro de Urântia:** Analisando seus conceitos de livre-arbítrio, propósito da vida, evolução espiritual e destino final do homem.
-* **Contextualizar o Livro de Urântia no cenário religioso e filosófico contemporâneo:** Examinando suas relações com outras tradições de pensamento e buscando identificar suas contribuições para o diálogo inter-religioso e a busca por significado na era moderna.
-
-Este conjunto de artigos não pretende oferecer respostas definitivas ou dogmáticas, mas sim estimular o debate e a reflexão crítica sobre os temas abordados. Acreditamos que a investigação teológica rigorosa e aberta ao diálogo é essencial para uma compreensão mais profunda do Livro de Urântia e de suas implicações para a fé e a vida humana. Convidamos o leitor a se juntar a nós nesta jornada de exploração e descoberta.
+Em resumo, uma forma sistemática de fazer teologia com base no Livro de Urântia envolve um estudo cuidadoso e abrangente do livro, a identificação de seus temas centrais, a aplicação de uma metodologia rigorosa e a abertura para a experiência pessoal com Deus. O objetivo não é criar um sistema dogmático, mas sim aprofundar a compreensão da verdade revelada e aplicá-la à vida.
 
 ## Áreas de trabalho
 
@@ -68,6 +50,12 @@ Os trabalhos aqui apresentados podem ser das seguintes formas:
 * **Análises exegéticas:** Estudos que se debruçam sobre a interpretação e explicação de passagens específicas do livro.
 * **Estudos comparativos:** Trabalhos que comparam as doutrinas do Livro de Urântia com outras tradições religiosas, filosóficas ou científicas.
 * **Investigações temáticas:** Artigos que exploram temas específicos abordados no livro, como a natureza de Deus, a personalidade, a vida após a morte, a organização do universo, entre outros.
+
+## Tradução do texto do livro
+
+Ao clicar num link dentro de um artigo, abre-se um texto bilingue inglês-português do Brasil. Para uma análise do tipo aqui proposto é fundamental consultar o texto original uma vez que traduções, qualquer uma, já são por si só interpretações. O texto em Português aqui usado é uma tradução dinâmica, nunca impressa, que pode ser modificada a qualquer momento sempre que haja concenso entra leitores. Para saber mais sobre esta tradução, veja em [Português Alternativo](https://github.com/Rogreis/PtAlternative).
+
+
 
 ## Como Contribuir
 
