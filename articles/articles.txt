@@ -5,3 +5,7 @@ Link: README.html
 Título: Moral
 Sumário: Uma investigação sobre o entendimento da ética e da moral no Livro de Urântia.
 Link: moral.html
+
+Título: Diferenças entre "insight" e "discernimento"
+Sumário: Possibilidades para tradução dde "insight" e seu significado na época da escrita do LU.
+Link: insight.html

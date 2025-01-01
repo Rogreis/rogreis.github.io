@@ -55,8 +55,6 @@ Os trabalhos aqui apresentados podem ser das seguintes formas:
 
 Ao clicar num link dentro de um artigo, abre-se um texto bilingue inglês-português do Brasil. Para uma análise do tipo aqui proposto é fundamental consultar o texto original uma vez que traduções, qualquer uma, já são por si só interpretações. O texto em Português aqui usado é uma tradução dinâmica, nunca impressa, que pode ser modificada a qualquer momento sempre que haja concenso entra leitores. Para saber mais sobre esta tradução, veja em [Português Alternativo](https://github.com/Rogreis/PtAlternative).
 
-
-
 ## Como Contribuir
 
 Esta lista é um projeto em construção e agradecemos contribuições da comunidade. Se conhece algum artigo de investigação relevante que não esteja incluído, por favor, envie o texto ou um link para o <a href="mailto:rogreis&#64;gmail&#46;com">responsável pelo projeto</a>
