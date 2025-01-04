@@ -112,19 +112,32 @@ function expandCurrentTocElement()
     }
     if (paper > 0 && paper < 32) {
       const part1 = document.getElementById("part1");
+      if (part1)
+        {
+          toggleCaret(part1);
+        }
       toggleCaret(part1);
     }
     if (paper > 31 && paper < 57) {
       const part2 = document.getElementById("part2");
-      toggleCaret(part2);
+      if (part2)
+        {
+          toggleCaret(part2);
+        }
     }
     if (paper > 56 && paper < 120) {
       const part3 = document.getElementById("part3");
-      if (!part3)
-      toggleCaret(part3);
+      if (part3)
+      {
+        toggleCaret(part3);
+      }
     }
     if (paper > 119) {
       const part4 = document.getElementById("part4");
+      if (part4)
+        {
+          toggleCaret(part4);
+        }
       toggleCaret(part4);
     }
 
@@ -152,16 +165,12 @@ async function loadDocByPaperSectionParagraph(paper, section, paragraph)
         // Assuming the anchor ID is within the loaded content
         //hash = `U${paper}_${section}_${paragraph}`;
         hash = `p${paper.toString().padStart(3, '0')}_${section.toString().padStart(3, '0')}_${paragraph.toString().padStart(3, '0')}`;
-        console.log("hash= " + hash);
-
 
         // Check if the anchor is present before setting the hash
         setTimeout(() => {
-          console.log("vai tentar");
           var divelement = document.getElementById(hash);
           if (divelement)
           {
-            console.log("achou o div");
             divelement.scrollIntoView({ block: 'start' });
           }
         }, 300); // Adjust the timeout as needed
@@ -170,7 +179,6 @@ async function loadDocByPaperSectionParagraph(paper, section, paragraph)
     setCookie("section", section, 180)
     setCookie("paragraph", paragraph, 180)
     url= `content/Doc${paper.toString().padStart(3, '0')}.html`;
-    console.log("url= " + url);
     xhttp.open("GET", url);
     xhttp.send();
 }
@@ -184,12 +192,9 @@ function isMobile() {
 // Legacy loadDoc function
 function loadDoc(url, hash)
 {
-  console.log("loadDoc url: " + url);
-  console.log("loadDoc hash: " + hash);
   if (typeof hash !== 'string') {
     return;
   }
-  console.log("loadDoc hash: " + hash);
   const parts = hash.split('_');
   const paper = parseInt(parts[0].substring(1), 10); // Remove 'p' and parse
   const section = parseInt(parts[1], 10);

@@ -14,7 +14,6 @@ function getAnchor(url) {
 function hasAnchor() {
     const currentUrl = window.location.href;
     const hasHash = currentUrl.indexOf('#') !== -1;
-    console.log('hasAnchor: ' + hasHash);
     return hasHash;
   }
   

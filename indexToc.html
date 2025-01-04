@@ -16,9 +16,12 @@
  <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.10.1/jszip.min.js" crossorigin="anonymous"></script>  
   
 <link href="css/tub_pt_br.css" rel="stylesheet">  
+<link href="css/indexToc.css" rel="stylesheet">
 <script src="js/tub_pt_br.js"></script>  
 <script src="js/indexToc.js"></script> 
 </head> 
+<html>  
+<body onload="StartPage()">  
   <nav class="navbar navbar-expand-lg bg-primary navbar-dark">  
     <div class="container-fluid">  
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse"   
@@ -38,9 +41,10 @@
           </li>  
 		</ul>     
         <div class="navbar-nav ms-auto ">  
-          <spam class= "navinactive">O Livro de Urântia - Tradução PT BR - 01/01/2025</spam>  
+          <spam class= "navinactive">O Livro de Urântia - Tradução Dinâmica PT BR - 04/01/2025</spam>  
         </div>  
         <div class="navbar-nav ms-auto">  
+			<button class="btn btn-primary" onclick="window.print()" title="Imprime o texto do artigo selecionado." >Imprimir</button> 
 			    <button class="btn btn-primary" data-bs-toggle="modal"  
 				    data-bs-target="#myModal" title="Clique para entender o significado das cores de fundo de cada parágrafo.">Cores</button>  
         </div>  
@@ -48,8 +52,6 @@
     </div>  
   </nav>  
  
-<html>  
-<body onload="StartPage()">  
 	<div id="leftColumn" class="black splitLeft left mt-2 p-2 overflow-auto">  
 	</div>  
 	<div id="rightColumn" class="black splitRight right mt-0 overflow-auto">  
@@ -85,7 +87,7 @@
 								<td>  
 									<div class="badge badgeWorking">Em trabalho</div>  
 								</td>  
-								<td>12390 Parágrafo(s) com tradução em andamento.</td>  
+								<td>12246 Parágrafo(s) com tradução em andamento.</td>  
 							</tr>  
 							<tr>  
 								<td>  
@@ -103,7 +105,7 @@
 								<td>  
 									<div class="badge badgeClosed">Fechado</div>  
 								</td>  
-								<td>3083 Parágrafo(s) fechado(s).</td>  
+								<td>3227 Parágrafo(s) fechado(s).</td>  
 							</tr>  
 						</tbody>  
 					</table>  

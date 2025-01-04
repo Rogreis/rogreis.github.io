@@ -1,0 +1,37 @@
+@media print {
+    body * {
+      visibility: hidden;
+      scrollbar-width: none;
+      color: black;
+      background-color: white;
+    }
+    
+    #rightColumn, #rightColumn * {
+      visibility: visible;
+    }
+
+    sup  {font-size: 9px; color: black}  
+
+    i, b, em  {  
+    color: black;
+    font-weight: normal;  
+    } 
+   
+    #rightColumn {
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 100%; /* Ocupa toda a largura da página impressa */
+      height: auto !important; /* Força a altura automática para imprimir todo o conteúdo */
+      overflow: visible !important; /* Impede o corte do conteúdo */
+    }
+    ::-webkit-scrollbar {
+      display: none;
+    }
+
+    #rightColumn .parClosed {
+        color: black !important;
+        background-color: white !important;
+      }
+  
+  }
