@@ -34,10 +34,6 @@ async function verifyAnchor()
       const paper = parseInt(parts[0].substring(1), 10); // Remove 'p' and parse
       const section = parseInt(parts[1], 10);
       const paragraph = parseInt(parts[2], 10);
-      console.log("verifyAnchor anchor: " + anchor);
-      console.log("verifyAnchor paper: " + paper);
-      console.log("verifyAnchor section: " + section);
-      console.log("verifyAnchor paragraph: " + paragraph);
       setCookie("paper", paper, 180)
       setCookie("section", section, 180)
       setCookie("paragraph", paragraph, 180)
@@ -74,7 +70,6 @@ async function ExpandIndex() {
             this.classList.toggle("caret-down");
         });
     }
-    console.log("ExpandIndex");
     expandCurrentTocElement(); 
     await loadDocFromCookie()
   }
@@ -85,18 +80,13 @@ function toggleCaret(partElement) {
   // We use querySelector here, which finds the *first* matching element.
   // If you have multiple spans and need a specific one, you might need
   // to adjust the selector (e.g., using a class or other attribute).
-  console.log("toggleCaret: " + partElement);
   const spanElement = partElement.querySelector('span'); // Or a more specific selector like 'span.my-caret'
-  console.log("toggleCaret: " + spanElement);
 
   // Check if the span element exists before trying to toggle the class.
   if (spanElement) {
     // 2. Toggle the 'caret-down' class.
     spanElement.parentElement.querySelector(".nested").classList.toggle("active");
     spanElement.classList.toggle('caret-down');
-    console.log("achou o span");
-  } else {
-    console.error("Span element not found within partElement.");
   }
 }
 
@@ -110,12 +100,10 @@ function expandCurrentTocElement()
     if (anchor) {
       const parts = anchor.split('_');
       paper = parseInt(parts[0].substring(1), 10); // Remove 'p' and parse
-      console.log("expandCurrentTocElement1 paper: " + paper);
     }
      else
      {
         paper = parseInt(getCookie("paper"), 10);
-        console.log("expandCurrentTocElement2 paper: " + paper);
      }
 
      if (paper == 0) {
@@ -133,7 +121,6 @@ function expandCurrentTocElement()
     if (paper > 56 && paper < 120) {
       const part3 = document.getElementById("part3");
       if (!part3)
-        console.log("part3 não encontrado");
       toggleCaret(part3);
     }
     if (paper > 119) {
@@ -142,11 +129,9 @@ function expandCurrentTocElement()
     }
 
     toc_element_id= `toc_${paper.toString().padStart(3, '0')}_${section.toString().padStart(3, '0')}`;
-    console.log("expandCurrentTocElement toc_element_id: " + toc_element_id);
     const toc_element= document.getElementById(toc_element_id);
     if (toc_element)
     {
-      console.log("expandCurrentTocElement achou toc_element: " + toc_element);
       toggleCaret(toc_element);
       toc_element.scrollIntoView({
         behavior: 'smooth', // Para rolagem suave (opcional)
@@ -154,12 +139,6 @@ function expandCurrentTocElement()
       });
   
     }
-    else
-    {
-      console.log("expandCurrentTocElement toc_element não encontrado");
-    }
-
-
 }
 
 
@@ -174,20 +153,24 @@ async function loadDocByPaperSectionParagraph(paper, section, paragraph)
         //hash = `U${paper}_${section}_${paragraph}`;
         hash = `p${paper.toString().padStart(3, '0')}_${section.toString().padStart(3, '0')}_${paragraph.toString().padStart(3, '0')}`;
         console.log("hash= " + hash);
-        var anchor = document.getElementById(hash);
-      
-        // Scroll to the anchor smoothly (optional)
-        if (anchor) {
-          anchor.scrollIntoView({ behavior: 'smooth' });
-        } else {
-          // If the anchor is not found, try direct hash navigation
-          location.hash = "#" + hash;
-        }
+
+
+        // Check if the anchor is present before setting the hash
+        setTimeout(() => {
+          console.log("vai tentar");
+          var divelement = document.getElementById(hash);
+          if (divelement)
+          {
+            console.log("achou o div");
+            divelement.scrollIntoView({ block: 'start' });
+          }
+        }, 300); // Adjust the timeout as needed
     }
     setCookie("paper", paper, 180)
     setCookie("section", section, 180)
     setCookie("paragraph", paragraph, 180)
     url= `content/Doc${paper.toString().padStart(3, '0')}.html`;
+    console.log("url= " + url);
     xhttp.open("GET", url);
     xhttp.send();
 }
@@ -211,14 +194,9 @@ function loadDoc(url, hash)
   const paper = parseInt(parts[0].substring(1), 10); // Remove 'p' and parse
   const section = parseInt(parts[1], 10);
   const paragraph = parseInt(parts[2], 10);
-  console.log("loadDoc paper: " + paper + " section: " + section + " paragraph: " + paragraph);
   if (isMobile()) {
-    console.log("Running on a mobile device.");
     const currentUrl = 'https://rogreis.github.io/indexToc.html';
     window.location.href= currentUrl;
-  } else {
-    console.log("Not running on a mobile device.");
-    // Desktop/other code here
   }  
   loadDocByPaperSectionParagraph(paper, section, paragraph) ;
 }

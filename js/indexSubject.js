@@ -226,7 +226,7 @@ function loadDocByPaperSectionParagraph(paper, section, paragraph)
       
         // Scroll to the anchor smoothly (optional)
         if (anchor) {
-          anchor.scrollIntoView({ behavior: 'smooth' });
+          anchor.scrollIntoView({ block: 'start' });
         } else {
           // If the anchor is not found, try direct hash navigation
           location.hash = "#" + hash;

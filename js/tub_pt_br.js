@@ -18,6 +18,12 @@ function hasAnchor() {
     return hasHash;
   }
   
+// Find an anchor by name
+function findAnchorByName(anchorName) {
+  const anchors = document.querySelectorAll(`a[name="${anchorName}"]`);
+  return anchors; // Returns a NodeList (can have zero, one, or multiple elements)
+}  
+  
 // Work with the first initial data loaded
 function LoadStartPage() {
   var page_name = getCookie("PAGE");
@@ -82,3 +88,57 @@ function getCookie(cname) {
     }
     return "";
 }
+
+// Get a dictionary from a query string
+function getQueryStringParams(queryString) {
+  // Use window.location.search if no queryString is provided
+  queryString = queryString || window.location.search;
+
+  // Remove the leading "?" if present
+  if (queryString.startsWith("?")) {
+    queryString = queryString.substring(1);
+  }
+
+  const params = {};
+
+  if (!queryString) {
+    return params; // Return empty object if no query string
+  }
+
+  const pairs = queryString.split("&");
+
+  for (const pair of pairs) {
+    const [name, value] = pair.split("=");
+
+    if (name) { // Check if name exists after splitting
+      try {
+        // Decode URI components to handle special characters
+        params[decodeURIComponent(name)] = value ? decodeURIComponent(value) : "";
+      } catch (error) {
+          console.error("Error decoding URI component:", error);
+          params[name] = value || ""; // Fallback to raw value if decoding fails
+      }
+    }
+  }
+
+  return params;
+}
+
+
+function findImmediateParentDiv(element) {
+  if (!element) {
+    return null; // Handle null or undefined input
+  }
+
+  let parent = element.parentNode;
+
+  while (parent) {
+    if (parent.tagName.toLowerCase() === 'div') {
+      return parent; // Found the immediate parent div
+    }
+    parent = parent.parentNode; // Go up the DOM tree
+  }
+
+  return null; // No parent div found
+}
+

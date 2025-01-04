@@ -153,3 +153,20 @@ font-weight: normal;
     display: none;
   }
 }
+
+/* Estilos adicionais tabelas vindas do markdown */
+table {
+  font-family: Arial, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+td, th {
+  border: 1px solid #ccc;
+  text-align: left;
+  padding: 8px;
+}
+
+th {
+    font-weight: bold;
+}
