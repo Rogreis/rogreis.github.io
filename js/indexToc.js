@@ -1,9 +1,13 @@
 // ----------------  Funções específicas para página de documentos ----------------
 
+var toc_loaded= false;
+
 async function StartPage() {
-    await LoadTableOfContentsData();
-    verifyAnchor();
-    setCookie("PAGE", "indexToc", 180)
+  toc_loaded= false;
+  verifyAnchor();
+  console.log('na Página toc');
+  await LoadTableOfContentsData();
+  setCookie("PAGE", "indexToc", 180)
 }
 
 async function loadDocFromCookie() {
@@ -44,10 +48,14 @@ async function verifyAnchor()
 }
 
 async function LoadTableOfContentsData() {
+    console.log('LoadTableOfContentsData');
     const xhttp = new XMLHttpRequest();
     xhttp.onload = function() {
         document.getElementById('leftColumn').innerHTML = this.responseText;
-        ExpandIndex();
+        setTimeout(() => {
+          toc_loaded= true;
+          ExpandIndex();
+        }, 300); // Adjust the timeout as needed
     }
     xhttp.open("GET", 'content/TocTable.html');
     xhttp.send();
@@ -55,7 +63,8 @@ async function LoadTableOfContentsData() {
 
 
 async function ExpandIndex() {
-    var toggler = document.getElementsByClassName("caret");
+  console.log('ExpandIndex');
+  var toggler = document.getElementsByClassName("caret");
     //var expandables = document.getElementsByClassName("expandable");
     var i;
 
@@ -93,37 +102,36 @@ function toggleCaret(partElement) {
 // Expand the current TOC element based on the current URL or cookies
 function expandCurrentTocElement() 
 {
-    const currentUrl = window.location.href;
-    anchor= getAnchor(currentUrl)
-    paper= -1;
-    section= 0;
-    if (anchor) {
-      const parts = anchor.split('_');
-      paper = parseInt(parts[0].substring(1), 10); // Remove 'p' and parse
-    }
-     else
-     {
-        paper = parseInt(getCookie("paper"), 10);
-     }
+  console.log('expandCurrentTocElement');
 
-     if (paper == 0) {
+    const paper = getCookie("paper");
+    const section = getCookie("section");
+    const paragraph = getCookie("paragraph");
+    if (typeof paper !== 'string' || paper.trim() === '' ||
+      typeof section !== 'string' || section.trim() === '' ||
+      typeof paragraph !== 'string' || paragraph.trim() === '') {
+      return;
+    }
+    console.log('expandCurrentTocElement: ' + paper + ' ' + section + ' ' + paragraph);
+
+    if (paper == 0) {
       const intro = document.getElementById("toc_000_000");
       toggleCaret(intro);
     }
     if (paper > 0 && paper < 32) {
       const part1 = document.getElementById("part1");
       if (part1)
-        {
-          toggleCaret(part1);
-        }
-      toggleCaret(part1);
+      {
+        console.log('expandCurrentTocElement: achou part1');
+        toggleCaret(part1);
+      }
     }
     if (paper > 31 && paper < 57) {
       const part2 = document.getElementById("part2");
       if (part2)
-        {
-          toggleCaret(part2);
-        }
+      {
+        toggleCaret(part2);
+      }
     }
     if (paper > 56 && paper < 120) {
       const part3 = document.getElementById("part3");
@@ -141,15 +149,20 @@ function expandCurrentTocElement()
       toggleCaret(part4);
     }
 
-    toc_element_id= `toc_${paper.toString().padStart(3, '0')}_${section.toString().padStart(3, '0')}`;
+    toc_element_id= `toc_${paper.toString().padStart(3, '0')}_000}`;
+    console.log('expandCurrentTocElement: ' + toc_element_id);  
     const toc_element= document.getElementById(toc_element_id);
     if (toc_element)
     {
-      toggleCaret(toc_element);
-      toc_element.scrollIntoView({
-        behavior: 'smooth', // Para rolagem suave (opcional)
-        block: 'start' // Para alinhar o topo do elemento ao topo da tela
-      });
+      console.log('Achour o : ' + toc_element_id);  
+      setTimeout(() => {
+        toggleCaret(toc_element);
+        toc_element.scrollIntoView({
+          behavior: 'smooth', // Para rolagem suave (opcional)
+          block: 'start' // Para alinhar o topo do elemento ao topo da tela
+        });
+      }, 300); // Adjust the timeout as needed
+
   
     }
 }

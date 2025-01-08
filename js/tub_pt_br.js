@@ -14,7 +14,7 @@ function getAnchor(url) {
 function hasAnchor() {
     const currentUrl = window.location.href;
     const hasHash = currentUrl.indexOf('#') !== -1;
-    return hasHash;
+    return hasHash;Do
   }
   
 // Find an anchor by name
@@ -39,6 +39,20 @@ function open_page(page_name)
 }
 
 
+function generate_url(paper, section, paragraph)
+{
+  const protocol = window.location.protocol;
+  const currentDomain = window.location.hostname;
+  const currentPage = window.location.pathname;
+
+  setCookie("paper", paper, 180)
+  setCookie("section", section, 180)
+  setCookie("paragraph", paragraph, 180)
+  hash = `p${paper.toString().padStart(3, '0')}_${section.toString().padStart(3, '0')}_${paragraph.toString().padStart(3, '0')}`;
+  const fullUrl = `${protocol}//${currentDomain}/${currentPage}#${hash}`;
+  console.log('Full reference url: ' + fullUrl);
+  return fullUrl;
+}
 
 // Open a github page enabling the edition of the paragraph
 function generateUrlAndOpen(codeString) {
@@ -60,8 +74,19 @@ function generateUrlAndOpen(codeString) {
   setCookie("paper", paper, 180)
   setCookie("section", section, 180)
   setCookie("paragraph", paragraph, 180)
-    
+  // url= generate_url(paper, section, paragraph)
+  // window.location.href = url;
   window.open(urlGithub, '_blank');
+
+  const protocol = window.location.protocol;
+  const currentDomain = window.location.hostname;
+  const currentPage = window.location.pathname;
+
+  // Change the current URL's query string
+  const newQueryString = `?paper=${paper}&section=${section}&paragraph=${paragraph}`;
+  const newUrl = `${protocol}//${currentDomain}${currentPage}${newQueryString}`;
+  window.history.pushState({ path: newUrl }, '', newUrl);
+
 }
 
 

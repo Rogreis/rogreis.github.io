@@ -46,17 +46,16 @@ function loadArticle(article)
   xhttp.send();
 }
 
-
 function showParagraph(paper, section, paragraph) {
-  const currentDomain = window.location.hostname;
+  url= generate_url(paper, section, paragraph)
   const protocol = window.location.protocol;
+  const currentDomain = window.location.hostname;
+  const currentPage = "indexToc.html";
 
   setCookie("paper", paper, 180)
   setCookie("section", section, 180)
   setCookie("paragraph", paragraph, 180)
-  partialUrl = "indexToc.html"; 
   hash = `p${paper.toString().padStart(3, '0')}_${section.toString().padStart(3, '0')}_${paragraph.toString().padStart(3, '0')}`;
-  const fullUrl = `${protocol}//${currentDomain}/${partialUrl}#${hash}`;
-  console.log('Full reference url: ' + fullUrl);
+  const fullUrl = `${protocol}//${currentDomain}/${currentPage}#${hash}`;
   window.open(fullUrl, '_blank');
 }
