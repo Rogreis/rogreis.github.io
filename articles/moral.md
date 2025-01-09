@@ -1,9 +1,8 @@
 # Conceito de moral no LU
 
-> **Trabalho em andamento!**
+> Data da última atualização: 2/1/2025
 
 ## Diferenças entre a Teologia Moral e a Ética Filosófica
-
 
 O Livro de Urântia não aborda diretamente a distinção entre "Teologia Moral" e "Ética Filosófica" como campos de estudo separados. No entanto, ele oferece conceitos que nos permitem entender as nuances entre as duas, especialmente no contexto da revelação e da experiência religiosa. Podemos analisar as diferenças sob algumas perspectivas principais, usando os ensinamentos do Livro de Urântia:
 
@@ -24,14 +23,55 @@ O Livro de Urântia não aborda diretamente a distinção entre "Teologia Moral"
 
 **4. Universalidade vs. Relatividade:**
 
-*   **Ética Filosófica:** Embora busque princípios universais, reconhece a influência do contexto cultural e histórico na formulação de valores éticos.
-*   **Teologia Moral (conforme entendida à luz do Livro de Urântia):** Postula a existência de valores morais absolutos, derivados da natureza imutável de Deus. No entanto, reconhece a necessidade de adaptar a aplicação desses valores às diferentes circunstâncias e níveis de desenvolvimento espiritual.
+* **Ética Filosófica:** Embora busque princípios universais, reconhece a influência do contexto cultural e histórico na formulação de valores éticos.
+* **Teologia Moral (conforme entendida à luz do Livro de Urântia):** Postula a existência de valores morais absolutos, derivados da natureza imutável de Deus. No entanto, reconhece a necessidade de adaptar a aplicação desses valores às diferentes circunstâncias e níveis de desenvolvimento espiritual.
 
 **Em resumo,** enquanto a Ética Filosófica se concentra na razão e na experiência humana para derivar princípios de conduta, a perspectiva que podemos extrair do Livro de Urântia sobre a Teologia Moral enfatiza a revelação divina, a experiência religiosa e a busca da perfeição espiritual como guias para a ação. A moralidade, neste contexto, não é apenas uma questão de seguir regras, mas sim um processo de transformação interior que leva à semelhança com Deus.
 
 É importante notar que o Livro de Urântia não rejeita a importância da razão e da filosofia. Pelo contrário, ele as considera complementares à revelação, ajudando a compreender e aplicar os ensinamentos divinos. A fé e a razão, a revelação e a filosofia, trabalham juntas na busca pela verdade e pela retidão.
 
-## Definição dentro do LU
+---
+
+## Diferenças entre a Teologia Moral e a Ética Filosófica - nova redação
+
+O Livro de Urântia não apresenta uma sistematização da ética filosófica nos moldes tradicionais da filosofia ocidental, no entanto, ele oferece uma rica teia de conceitos que se entrelaçam para formar uma ética abrangente, com forte ênfase na espiritualidade e na relação com Deus. Podemos extrair alguns exemplos de conceitos que se alinham com preocupações da ética filosófica, mas com a perspectiva única do Livro de Urântia:
+
+### Conceito ético: O Valor da Personalidade
+
+* **Conceito:** O Livro de Urântia eleva a personalidade a um nível cósmico, definindo-a como um dom divino, único e inviolável - **<a href="javascript:showParagraph(16,8,1)" title="Abrir o parágrafo 16:8-1">16:8-1</a>**. Cada personalidade é um centro de consciência, vontade - **<a href="javascript:showParagraph(101,6,3)" title="Abrir o parágrafo 101:6-3">101:6-3</a>** - e potencialidade para a comunhão com Deus - **<a href="javascript:showParagraph(1,7,1)" title="Abrir o parágrafo 1:7-1">1:7-1</a>**. A moral é inerente à pesonalidade humana - **<a href="javascript:showParagraph(16,7,1)" title="Abrir o parágrafo 16:7-1">16:7-1</a>**.
+* **Conexão com a Ética Filosófica:** Remete ao [conceito kantiano da dignidade humana](https://www.jusbrasil.com.br/artigos/immanuel-kant-e-a-dignidade-da-pessoa-humana/594553696) e ao imperativo categórico de tratar a humanidade sempre como um fim em si mesma e nunca apenas como um meio. [Immanuel Kant](https://pt.wikipedia.org/wiki/Immanuel_Kant) via a origem disto tudo no senso de **dever** do ser humano, ver o final do item 2.1 [deste artigo já citado](https://www.jusbrasil.com.br/artigos/immanuel-kant-e-a-dignidade-da-pessoa-humana/594553696), mas para o LU o **dever** é um sentido pré-existente no homem - **<a href="javascript:showParagraph(101,1,6)" title="Abrir o parágrafo 101:1-6">101:1-6</a>**.
+
+### Conceito ético: A Realidade do Livre-Arbítrio
+
+* **Conceito:** O Livro de Urântia enfatiza a importância crucial do livre-arbítrio na jornada evolutiva do indivíduo - **<a href="javascript:showParagraph(5,6,12)" title="Abrir o parágrafo 5:6-12">5:6-12</a>**. A capacidade de escolher entre o bem e o mal, entre o egoísmo e o altruísmo, é fundamental para o desenvolvimento do caráter, que é o capital acumulado pela criatura por meio de decisões - **<a href="javascript:showParagraph(117,5,13)" title="Abrir o parágrafo 117:5-13">117:5-13</a>**, e a ascensão espiritual.
+* **Conexão com a Ética Filosófica:** Encerra-se o debate sobre o determinismo versus o livre-arbítrio, central para a ética desde a antiguidade, pois a experiência religiosa depende dele - **<a href="javascript:showParagraph(103,2,8)" title="Abrir o parágrafo 103:2-8">103:2-8</a>** -  O Livro de Urântia defende enfaticamente o livre-arbítrio como condição para a reponsabilidade moral e entrada no sétimo círculo de desenvolvimento psíquico - **<a href="javascript:showParagraph(110,6,13)" title="Abrir o parágrafo 110:6-13">110:6-13</a>**.
+
+**3. A Lei do Amor:**
+
+* **Conceito:** O amor, especialmente o amor incondicional exemplificado por Jesus, é apresentado como o princípio ético supremo. O amor transcende a justiça - **<a href="javascript:showParagraph(54,5,3)" title="Abrir o parágrafo 54:5-3">54:5-3</a>** - e a retribuição, buscando o bem do outro - **<a href="javascript:showParagraph(142,1,4)" title="Abrir o parágrafo 142:1-4">142:1-4</a>** - independentemente de seus méritos. Até o conceito de estado ideal releva o amor fraterno - **<a href="javascript:showParagraph(71,3,4)" title="Abrir o parágrafo 71:3-4">71:3-4</a>**.
+* **Conexão com a Ética Filosófica:** Aproxima-se das éticas da virtude, que enfatizam o desenvolvimento de qualidades morais como a compaixão e a benevolência. No entanto, o Livro de Urântia radicaliza o conceito de amor, elevando-o a um princípio cósmico e divino.
+
+**4. A Busca da Verdade, Beleza e Bondade:**
+
+* **Conceito:** O Livro de Urântia apresenta a busca desses três valores transcendentais - **<a href="javascript:showParagraph(44,7,4)" title="Abrir o parágrafo 44:7-4">44:7-4</a>** - como inerente à natureza humana e como um caminho para a aproximação de Deus - **<a href="javascript:showParagraph(56,10,9)" title="Abrir o parágrafo 56:10-9">56:10-9</a>**. A verdade, a beleza e a bondade são interdependentes e se complementam - **<a href="javascript:showParagraph(44,7,2)" title="Abrir o parágrafo 44:7-2">44:7-2</a>**. Ao colocar como objetivo principal do livro a ampliação da consciência cósmica do ser humano, apresenta-se como resultado um aumento da sensibilidade ética - **<a href="javascript:showParagraph(56,10,8)" title="Abrir o parágrafo 56:10-8">56:10-8</a>**.
+* **Conexão com a Ética Filosófica:** Remete à filosofia platônica, que associava o belo e o bom ao Bem supremo. O Livro de Urântia expande essa concepção, incluindo a busca pela verdade como um componente essencial da jornada moral e espiritual.
+
+**5. O Crescimento Moral como um Processo Evolutivo:**
+
+*   **Conceito:** O Livro de Urântia descreve o desenvolvimento moral como um processo gradual e contínuo, que se estende por múltiplas vidas e culmina na união com Deus. A moralidade não é estática, mas dinâmica e progressiva.
+*   **Conexão com a Ética Filosófica:** Dialoga com as éticas do desenvolvimento moral, como a de Lawrence Kohlberg, que descrevem estágios de desenvolvimento do raciocínio moral. O Livro de Urântia expande essa perspectiva, inserindo-a em um contexto cósmico e evolutivo.
+
+**6. A Importância do Serviço Altruísta:**
+
+*   **Conceito:** O Livro de Urântia enfatiza a importância do serviço ao próximo como uma expressão prática do amor e um meio de crescimento espiritual. O serviço altruísta contribui para o bem-estar da sociedade e para a progressão individual.
+*   **Conexão com a Ética Filosófica:** Aproxima-se das éticas utilitaristas, que valorizam as ações que promovem o maior bem para o maior número de pessoas. No entanto, o Livro de Urântia motiva o serviço não apenas pelo bem-estar social, mas também pela dimensão espiritual do ato de servir.
+
+É crucial entender que o Livro de Urântia não se limita a repetir ou parafrasear conceitos da ética filosófica. Ele os transcende, integrando-os em uma visão cosmológica abrangente que inclui a natureza de Deus, a origem e o destino do homem, e a realidade dos mundos habitados. A ética, no Livro de Urântia, é inseparável da religião e da espiritualidade, buscando a transformação do indivíduo e sua união com o Criador.
+
+
+---
+
+## Definição de moral no LU
 
 Em  **<a href="javascript:showParagraph(16,7,10)" title="Abrir o parágrafo 16:7-10">16:7-10</a>** o LU oferece uma definição concisa e abrangente de moralidade, ligando-a intrinsecamente à inteligência, à escolha consciente e à busca pela vontade divina. Aqui uma análise mais detalhada:
 
