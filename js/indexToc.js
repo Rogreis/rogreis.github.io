@@ -5,7 +5,6 @@ var toc_loaded= false;
 async function StartPage() {
   toc_loaded= false;
   verifyAnchor();
-  console.log('na Página toc');
   await LoadTableOfContentsData();
   setCookie("PAGE", "indexToc", 180)
 }
@@ -48,7 +47,6 @@ async function verifyAnchor()
 }
 
 async function LoadTableOfContentsData() {
-    console.log('LoadTableOfContentsData');
     const xhttp = new XMLHttpRequest();
     xhttp.onload = function() {
         document.getElementById('leftColumn').innerHTML = this.responseText;
@@ -63,7 +61,6 @@ async function LoadTableOfContentsData() {
 
 
 async function ExpandIndex() {
-  console.log('ExpandIndex');
   var toggler = document.getElementsByClassName("caret");
     //var expandables = document.getElementsByClassName("expandable");
     var i;
@@ -102,8 +99,6 @@ function toggleCaret(partElement) {
 // Expand the current TOC element based on the current URL or cookies
 function expandCurrentTocElement() 
 {
-  console.log('expandCurrentTocElement');
-
     const paper = getCookie("paper");
     const section = getCookie("section");
     const paragraph = getCookie("paragraph");
@@ -112,7 +107,6 @@ function expandCurrentTocElement()
       typeof paragraph !== 'string' || paragraph.trim() === '') {
       return;
     }
-    console.log('expandCurrentTocElement: ' + paper + ' ' + section + ' ' + paragraph);
 
     if (paper == 0) {
       const intro = document.getElementById("toc_000_000");
@@ -122,7 +116,6 @@ function expandCurrentTocElement()
       const part1 = document.getElementById("part1");
       if (part1)
       {
-        console.log('expandCurrentTocElement: achou part1');
         toggleCaret(part1);
       }
     }
@@ -149,18 +142,21 @@ function expandCurrentTocElement()
       toggleCaret(part4);
     }
 
-    toc_element_id= `toc_${paper.toString().padStart(3, '0')}_000}`;
-    console.log('expandCurrentTocElement: ' + toc_element_id);  
-    const toc_element= document.getElementById(toc_element_id);
+    toc_element_id= `toc_${paper.toString().padStart(3, '0')}_000`;
+    toc_element= document.getElementById(toc_element_id);
     if (toc_element)
     {
-      console.log('Achour o : ' + toc_element_id);  
       setTimeout(() => {
         toggleCaret(toc_element);
-        toc_element.scrollIntoView({
-          behavior: 'smooth', // Para rolagem suave (opcional)
-          block: 'start' // Para alinhar o topo do elemento ao topo da tela
-        });
+        toc_element_div_id= `${toc_element_id}_div`; // _div is added as a suffix
+        toc_element= document.getElementById(toc_element_div_id);
+        if (toc_element)
+        {
+          toc_element.scrollIntoView({
+            behavior: 'smooth', // Para rolagem suave (opcional)
+            block: 'start' // Para alinhar o topo do elemento ao topo da tela
+          });
+        }
       }, 300); // Adjust the timeout as needed
 
   

@@ -50,7 +50,6 @@ function generate_url(paper, section, paragraph)
   setCookie("paragraph", paragraph, 180)
   hash = `p${paper.toString().padStart(3, '0')}_${section.toString().padStart(3, '0')}_${paragraph.toString().padStart(3, '0')}`;
   const fullUrl = `${protocol}//${currentDomain}/${currentPage}#${hash}`;
-  console.log('Full reference url: ' + fullUrl);
   return fullUrl;
 }
 

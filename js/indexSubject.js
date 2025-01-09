@@ -245,14 +245,11 @@ function loadDocByPaperSectionParagraph(paper, section, paragraph)
 document.addEventListener("DOMContentLoaded", () => { 
     const inputBox = document.getElementById("searchInputBox"); 
     const listBox = document.getElementById("listBoxAssuntos"); 
-    console.log("addEventListener", inputBox);
-    console.log("addEventListener", listBox);
 
     if (inputBox) {
         inputBox.addEventListener("input", function handleInput(event) {
             // Get the value of the input box
             const value = searchInputBox.value;
-            console.log("Valor do inputBox:", value);
 
             // Check if the value has at least 3 characters
             if (value.length >= 3) {
@@ -271,10 +268,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 findTitlesContainingSubstring(event.target.value); 
             } 
         }); 
-        } else {
-                console.log("Elemento inputBox não encontrado")
-    }
-    console.log("vai para a list box");
+        }
 
     // Evento de seleção em um listbox (select)
     if (listBox) {
@@ -282,9 +276,5 @@ document.addEventListener("DOMContentLoaded", () => {
             const selectedText = event.target.options[event.target.selectedIndex].text; // Obtém o texto da opção selecionada
             showSubjectDetails(selectedText); 
         });
-    } else {
-        console.log("Elemento myListbox não encontrado")
     }
-
-
-}); 
+});
