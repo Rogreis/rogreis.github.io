@@ -1,6 +1,99 @@
 # Conceito de moral no LU
 
-> Data da última atualização: 2/1/2025
+> Data da última atualização: 11/1/2025
+
+## Uma nova introdução
+
+A busca por uma sociedade justa e harmoniosa é um desejo da humanidade e o livro de Urântia aponta objetivos de extrema importância a serem perseguidos como pré-requisitos. Este texto  busca tratar da questão da moralidade dentro da perspectiva singular com implicações profundas para a esfera pública e, em particular, para o papel dos governantes, juízes e legisladores.
+
+Embora exista uma forma divina e ideal de governo, **<a href="javascript:showParagraph(70,12,20)" title="Abrir o parágrafo 70:12-20">70:12-20</a>**, ela não pode ser revelada e deverá ser uma conquista evolutiva humana, mas começa pela sugestão da eficácia e equidade dos seus tribunais, **<a href="javascript:showParagraph(70,11,14)" title="Abrir o parágrafo 70:11-14">70:11-14</a>**, com uma lei magna bem elaborada, poderes executivos, legislativo e judiciário compostos por pessoas de comprovada capacidade intelectual, juízes experientes. A qualificação moral de alto nível é uma condição a todos os cargos: **<a href="javascript:showParagraph(70,12,5)" title="Abrir o parágrafo 70:12-5">70:12-5</a>** ou **<a href="javascript:showParagraph(71,2,19)" title="Abrir o parágrafo 71:2-19">71:2-19</a>**.
+
+Como conseguimos líderes com elevado padrão ético? Em **<a href="javascript:showParagraph(71,3,1)" title="Abrir o parágrafo 71:3-1">71:3-1</a>** fica claro que nenhum estado ou governo pode transcerder os valores morais dos seus cidadãos. Este é, portanto, o começo.
+
+No Livro de Urântia a moralidade não é entendida como um conjunto de regras externas ou convenções sociais, mas como uma expressão da natureza divina que reside em cada indivíduo. Disto decorre ser de extrema importância a experiência religiosa individual e há advertâncias sobre os perigos da institucionalização da religião, especialmente quando esta se envolve com questões políticas ou seculares, **<a href="javascript:showParagraph(99,2,3)" title="Abrir o parágrafo 99:2-3">99:2-3</a>**.
+
+## Origem da Imoralidade
+
+O que Jesus teria escrito na areia no episódio da mulher surpreendida em adultério narrado em **<a href="javascript:showParagraph(162,3,5)" title="Abrir o parágrafo 162:3-5">162:3-5</a>**? Tanto o marido, como os fariseus acusadores e o parceiro dela no episódio foram embora ao lerem algo que ele escreveu na areia. Não relatarem o que foi escrito, por mais curiosidade que possa gerar, é algo revelador da pouca importância dada aos atos da imoralidade pessoal. Isto é um convite a se dar pouca atenção a atos de imoralidade e falar neles aomente à medida que atrapalham o progresso espitirual.
+
+O homem não pode ser criado com uma grande capacidade de autocontrole, pois isto iria ferir o princípio da evolução biológica, **<a href="javascript:showParagraph(118,8,5)" title="Abrir o parágrafo 118:8-5">118:8-5</a>**. Os atos de maior ou menor imoralidade perceptíveis nas pessoas e mais facilmente em pessoas públicas deve-se a:
+
+* **Autocontrole interno insuficiente**, pouca capacidade desenvolvida, conforme já visto em **<a href="javascript:showParagraph(118,8,5)" title="Abrir o parágrafo 118:8-5">118:8-5</a>**
+
+* **Controle externo deficitário** conforme **<a href="javascript:showParagraph(70,12,6)" title="Abrir o parágrafo 70:12-6">70:12-6</a>** e seguintes, destacando-se **<a href="javascript:showParagraph(70,12,12)" title="Abrir o parágrafo 70:12-12">70:12-12</a>**.
+
+A falta de autocontrole predispõe ao erro, mas é a persistência nele que configura o pecado, uma grave falha moral. Conforme o Livro de Urântia (**<a href="javascript:showParagraph(195,7,13)" title="Abrir o parágrafo 195:7-13">195:7-13</a>** e **<a href="javascript:showParagraph(3,5,15)" title="Abrir o parágrafo 3:5-15">3:5-15</a>**), a imoralidade pressupõe uma base moral prévia, e a escolha deliberada por um ato imoral transforma o erro em pecado.
+
+Todo erro um dias será sanado, pois há seconafins especialmente capacitados para detectar qualquer possivel erro e "guiar os passos dos peregrinos ansiosos nos momentos de grande perplexidade e incerteza espiritual" (**<a href="javascript:showParagraph(28,7,3)" title="Abrir o parágrafo 28:7-3">28:7-3</a>**), pois "o desapontamento e a tristeza advêm do erro porque", enquanto "a felicidade resulta do reconhecimento da verdade" (**<a href="javascript:showParagraph(2,7,6)" title="Abrir o parágrafo 2:7-6">2:7-6</a>**).
+
+A possibilidade do erro, como já dito causada pela falta de controle, abre a oportunidade para uma pessoa desenvolver um amor à verdade (**<a href="javascript:showParagraph(3,5,10)" title="Abrir o parágrafo 3:5-10">3:5-10</a>**), mas o erro em si não é uma criação dos Deuses, apenas algo possivel on hajam seres "dotados com a capacidade da escolha entre o bem e o mal" (**<a href="javascript:showParagraph(54,0,2)" title="Abrir o parágrafo 54:0-2">54:0-2</a>**) e esta possibilidade existe até mesmo em mundos avançados em luz e vida (**<a href="javascript:showParagraph(55,3,10)" title="Abrir o parágrafo 55:3-10">55:3-10</a>**).
+
+O maior erro que se pode cometer é o de enganar a si próprio (**<a href="javascript:showParagraph(54,1,8)" title="Abrir o parágrafo 54:1-8">54:1-8</a>**).
+
+## Evitar erros
+
+Ao se perceber que alguem está em erro pode-se cometer também o grande erro, até maior, de apontar diretamente isto à pessoa. Jesus, no entanto, nao dava atenção ao erro, mas embelezava e iluminava as verdades que percebia nestas pessoaas o que acabava por expulsar o erro da mente destas pessoas (**<a href="javascript:showParagraph(132,0,4)" title="Abrir o parágrafo 132:0-4">132:0-4</a>**).
+
+>AQUI FALTA DESENVOLVER MELHOR O PROCESSO DE OBTENÇÃO DO AUTOCONTROLE INTERNO MEDIANTE A RELIGIÃO PESSOAL.
+
+## Caminhos para a humanidade
+
+Para o mundo atual, a saída da imoralidade ainda é um longo processo habilmente descrito na secção 6 do documento 52 ao expor o trabalho de transformação pessoal e ajustes planetários a ser feito pela humanidade após a outorga de Michael:
+
+1. Fraternidade social mundial **<a href="javascript:showParagraph(52,6,3)" title="Abrir o parágrafo 52:6-3">52:6-3</a>**.
+2. Intercâmbio Cultural e Fraternidade **<a href="javascript:showParagraph(52,6,4)" title="Abrir o parágrafo 52:6-4">52:6-4</a>**.
+3. Despertar ético **<a href="javascript:showParagraph(52,6,5)" title="Abrir o parágrafo 52:6-5">52:6-5</a>**.
+4. Sabedoria política **<a href="javascript:showParagraph(52,6,6)" title="Abrir o parágrafo 52:6-6">52:6-6</a>**.
+5. Discernimento espiritual **<a href="javascript:showParagraph(52,6,7)" title="Abrir o parágrafo 52:6-7">52:6-7</a>**.
+
+---
+
+O Livro de Urântia não apresenta um conceito de imoralidade radicalmente diferente das concepções éticas mais abrangentes, mas o insere dentro de sua cosmologia e filosofia peculiares. Para entender a imoralidade no contexto do Livro de Urântia, é crucial compreender alguns conceitos fundamentais da obra:
+
+* **A natureza tríplice do ser humano:** O Livro de Urântia descreve o ser humano como composto por três partes: o corpo físico (material), a mente (intelecto e emoções) e o espírito (a presença do Ajustador do Pensamento, uma centelha divina). A moralidade, portanto, abrange as ações e escolhas que afetam essas três dimensões.
+
+* **O propósito da vida:** O objetivo da vida humana, segundo o livro, é a ascensão espiritual, a progressiva aproximação a Deus, o Pai Universal. A moralidade, então, está ligada ao progresso nessa jornada. Ações que promovem o crescimento espiritual são consideradas moralmente boas, enquanto aquelas que o dificultam são moralmente ruins.
+
+* **A lei do amor:** O amor é apresentado como a lei fundamental do universo e o principal guia para a conduta moral. O amor altruísta, a compaixão e a busca pelo bem-estar dos outros são valores centrais.
+
+> Violações desta lei são ações que demonstram falta de amor ao próximo, como
+>
+> * causar dano intencional
+> * explorar outros
+> * mentir, enganar ou agir com egoísmo
+
+* **Livre-arbítrio e responsabilidade:** O Livro de Urântia enfatiza o livre-arbítrio do ser humano, a capacidade de escolher entre diferentes caminhos. Com essa liberdade, vem a responsabilidade pelas consequências de suas escolhas.
+
+**Com base nesses conceitos, podemos entender a imoralidade no Livro de Urântia como:**
+
+* **Ações que prejudicam o desenvolvimento espiritual:** Qualquer ação que dificulte a progressão da alma em direção a Deus é considerada imoral. Isso inclui comportamentos que prejudicam o corpo físico (abuso de substâncias, negligência da saúde), a mente (pensamentos negativos, falta de busca por conhecimento e verdade) ou o espírito (rejeição dos valores espirituais, egoísmo).
+
+* **Violação da lei do amor:**
+
+* **Escolhas contrárias à vontade de Deus:** Embora o Livro de Urântia não apresente uma lista detalhada de mandamentos, ele enfatiza a importância de buscar a vontade de Deus e viver em harmonia com os valores espirituais. Escolhas que se afastam desse caminho são consideradas imorais.
+
+* **Desarmonia entre as partes do ser:** A imoralidade também pode ser vista como um desequilíbrio entre as diferentes partes do ser humano. Quando os desejos materiais ou as paixões descontroladas dominam a mente e o espírito, o indivíduo se afasta de seu potencial espiritual e age de forma imoral.
+
+**Exemplos de imoralidade no contexto do Livro de Urântia:**
+
+* **Egoísmo extremo:** Vontade própria incontida, auto-expressão não regrada levam a priorizar os próprios interesses acima do bem-estar dos outros, conduzind a uma falsa concepção de liberdade, ver em **<a href="javascript:showParagraph(54,1,5)" title="Abrir o parágrafo 54:1-5">54:1-5</a>**.
+* **Mentira e engano:** Distorcer a verdade para obter vantagens pessoais ou prejudicar outros. Novamente a falsa liberdade é um exemplo de engano, **<a href="javascript:showParagraph(54,1,2)" title="Abrir o parágrafo 54:1-2">54:1-2</a>**, ou o amor despojado de beleza, verdade e bondade, **<a href="javascript:showParagraph(196,3,29)" title="Abrir o parágrafo 196:3-29">196:3-29</a>** e ainda os enganos dos primeiros cristãos que distorceram o evangelho de Michael, **<a href="javascript:showParagraph(149,2,4)" title="Abrir o parágrafo 149:2-4">149:2-4</a>**.
+* **Violência e agressão:** Causar dano físico ou emocional a outras pessoas, o que é uma lei da natureza **<a href="javascript:showParagraph(70,1,1)" title="Abrir o parágrafo 70:1-1">70:1-1</a>**.
+* **Abuso de substâncias:** Prejudicar o corpo físico de alguma forma e perturbar o equlíbrio mental, **<a href="javascript:showParagraph(110,6,4)" title="Abrir o parágrafo 110:6-4">110:6-4</a>**.
+*   **Negligência do desenvolvimento espiritual:** Não manter uma conexão viva com as forças espirituais,**<a href="javascript:showParagraph(100,2,1)" title="Abrir o parágrafo 100:2-1">100:2-1</a>**.
+* **Rejeição da verdade:** Recusar-se a buscar o conhecimento e a verdade, preferindo a ignorância e a ilusão, ou seja, o erro, **<a href="javascript:showParagraph(54,0,2)" title="Abrir o parágrafo 54:0-2">54:0-2</a>**.
+
+---
+
+### Possíveis próximos tópicos (se formos nos orientar em direção à moral na política)
+
+* A natureza da moralidade segundo o Livro de Urântia.
+* O papel dos Ajustadores do Pensamento na consciência moral.
+* As qualidades morais essenciais para governantes, juízes e legisladores.
+* A relação entre moralidade e justiça na perspectiva do Livro de Urântia.
+* Implicações práticas da moralidade na liderança para a sociedade contemporânea.
+
+---
 
 ## Diferenças entre a Teologia Moral e a Ética Filosófica
 
@@ -165,47 +258,3 @@ A evolução deve seguir em sua lenta velocidade condicionada pelos freios mecan
 
 Esta avançada forma de moral apresenta as versões transcendidas dos freios necessários à manutenção de uma desejada estabilidade físico-psocológica sem prejudicar a expansão humana nos mais diversos aspectos, e estas versões são: **conceitos de justiça e ideais de irmandade**, **<a href="javascript:showParagraph(118,8,10)" title="Abrir o parágrafo 118:8-10">118:8-10</a>**.
 
-## Imoralidade
-
-Para cometer atos imorais, alguem tem que antes ser moral <a href="javascript:showParagraph(195,7,13)">195:7-13</a> e é pela adoção deliberada de um ato imoral que um erro se transforma em pecado <a href="javascript:showParagraph(3,5,15)">3:5-15</a>.
-
-Na evolução do conceito de Deus entre os hebreus e pela primeira vez no mundo, Amós proclamou os malefícios da imoralidade, **<a href="javascript:showParagraph(97,4,1)" title="Abrir o parágrafo 97:4-1">97:4-1</a>**, usando uma linguage compreensível na época. Exortou o povo a um comportamento melhor ou Deus os "castigaria" indo atrás deles em qualquer lugar - **<a href="javascript:showParagraph(97,4,3)" title="Abrir o parágrafo 97:4-3">97:4-3</a>**.
-
-Para o mundo atual, a saída da imoralidade ainda é um longo processo habilmente descrito na secção 6 do documento 52 ao expor o trabalho de transformação pessoal e ajustes planetários a ser feito pela humanidade após a outorga de Michael:
-
-1. Fraternidade social mundial **<a href="javascript:showParagraph(52,6,3)" title="Abrir o parágrafo 52:6-3">52:6-3</a>**.
-2. Intercâmbio Cultural e Fraternidade **<a href="javascript:showParagraph(52,6,4)" title="Abrir o parágrafo 52:6-4">52:6-4</a>**.
-3. Despertar ético **<a href="javascript:showParagraph(52,6,5)" title="Abrir o parágrafo 52:6-5">52:6-5</a>**.
-4. Sabedoria política **<a href="javascript:showParagraph(52,6,6)" title="Abrir o parágrafo 52:6-6">52:6-6</a>**.
-5. Discernimento espiritual **<a href="javascript:showParagraph(52,6,7)" title="Abrir o parágrafo 52:6-7">52:6-7</a>**.
-
-O que Jesus teria escrito na areia no episódio da mulher surpreendida em adultério narrado no documento 162, seção 3? Tanto o marido, como os fariseus acusadores e o parceiro dela no episódio foram embora ao lerem algo que Jesus escreveu na areia. Não relatarem o que foi escrito, por mais curiosidade que possa gerar, é algo revelador da pouca importância de imoralidade pessoal-
-
-O Livro de Urântia não apresenta um conceito de imoralidade radicalmente diferente das concepções éticas mais abrangentes, mas o insere dentro de sua cosmologia e filosofia peculiares. Para entender a imoralidade no contexto do Livro de Urântia, é crucial compreender alguns conceitos fundamentais da obra:
-
-* **A natureza tríplice do ser humano:** O Livro de Urântia descreve o ser humano como composto por três partes: o corpo físico (material), a mente (intelecto e emoções) e o espírito (a presença do Ajustador do Pensamento, uma centelha divina). A moralidade, portanto, abrange as ações e escolhas que afetam essas três dimensões.
-
-* **O propósito da vida:** O objetivo da vida humana, segundo o livro, é a ascensão espiritual, a progressiva aproximação a Deus, o Pai Universal. A moralidade, então, está ligada ao progresso nessa jornada. Ações que promovem o crescimento espiritual são consideradas moralmente boas, enquanto aquelas que o dificultam são moralmente ruins.
-
-* **A lei do amor:** O amor é apresentado como a lei fundamental do universo e o principal guia para a conduta moral. O amor altruísta, a compaixão e a busca pelo bem-estar dos outros são valores centrais.
-
-* **Livre-arbítrio e responsabilidade:** O Livro de Urântia enfatiza o livre-arbítrio do ser humano, a capacidade de escolher entre diferentes caminhos. Com essa liberdade, vem a responsabilidade pelas consequências de suas escolhas.
-
-**Com base nesses conceitos, podemos entender a imoralidade no Livro de Urântia como:**
-
-* **Ações que prejudicam o desenvolvimento espiritual:** Qualquer ação que dificulte a progressão da alma em direção a Deus é considerada imoral. Isso inclui comportamentos que prejudicam o corpo físico (abuso de substâncias, negligência da saúde), a mente (pensamentos negativos, falta de busca por conhecimento e verdade) ou o espírito (rejeição dos valores espirituais, egoísmo).
-
-* **Violação da lei do amor:** Ações que demonstram falta de amor ao próximo, como causar dano intencional, explorar outros, mentir, enganar ou agir com egoísmo, são consideradas imorais.
-
-* **Escolhas contrárias à vontade de Deus:** Embora o Livro de Urântia não apresente uma lista detalhada de mandamentos, ele enfatiza a importância de buscar a vontade de Deus e viver em harmonia com os valores espirituais. Escolhas que se afastam desse caminho são consideradas imorais.
-
-* **Desarmonia entre as partes do ser:** A imoralidade também pode ser vista como um desequilíbrio entre as diferentes partes do ser humano. Quando os desejos materiais ou as paixões descontroladas dominam a mente e o espírito, o indivíduo se afasta de seu potencial espiritual e age de forma imoral.
-
-**Exemplos de imoralidade no contexto do Livro de Urântia:**
-
-* **Egoísmo extremo:** Vontade própria incontida, auto-expressão não regrada levam a priorizar os próprios interesses acima do bem-estar dos outros, conduzind a uma falsa concepção de liberdade, ver em **<a href="javascript:showParagraph(54,1,5)" title="Abrir o parágrafo 54:1-5">54:1-5</a>**.
-* **Mentira e engano:** Distorcer a verdade para obter vantagens pessoais ou prejudicar outros. Novamente a falsa liberdade é um exemplo de engano, **<a href="javascript:showParagraph(54,1,2)" title="Abrir o parágrafo 54:1-2">54:1-2</a>**, ou o amor despojado de beleza, verdade e bondade, **<a href="javascript:showParagraph(196,3,29)" title="Abrir o parágrafo 196:3-29">196:3-29</a>** e ainda os enganos dos primeiros cristãos que distorceram o evangelho de Michael, **<a href="javascript:showParagraph(149,2,4)" title="Abrir o parágrafo 149:2-4">149:2-4</a>**.
-* **Violência e agressão:** Causar dano físico ou emocional a outras pessoas, o que é uma lei da natureza **<a href="javascript:showParagraph(70,1,1)" title="Abrir o parágrafo 70:1-1">70:1-1</a>**.
-* **Abuso de substâncias:** Prejudicar o corpo físico de alguma forma e perturbar o equlíbrio mental, **<a href="javascript:showParagraph(110,6,4)" title="Abrir o parágrafo 110:6-4">110:6-4</a>**.
-*   **Negligência do desenvolvimento espiritual:** Não manter uma conexão viva com as forças espirituais,**<a href="javascript:showParagraph(100,2,1)" title="Abrir o parágrafo 100:2-1">100:2-1</a>**.
-* **Rejeição da verdade:** Recusar-se a buscar o conhecimento e a verdade, preferindo a ignorância e a ilusão, ou seja, o erro, **<a href="javascript:showParagraph(54,0,2)" title="Abrir o parágrafo 54:0-2">54:0-2</a>**.
