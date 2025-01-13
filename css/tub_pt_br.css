@@ -43,14 +43,11 @@ h3
 }
 
 .navactive {
-    font-family: var(--font); /* Consistent font */
-    font-weight: 700; /* Bold headings */
+    background-color: #0000FF;
     color: gold;
 }
 
 .navinactive {
-    font-family: var(--font); /* Consistent font */
-    font-weight: 700; /* Bold headings */
     color: white;
 }
 
@@ -192,7 +189,7 @@ ul li {
 }
 
 .splitLeft {
-    height: 95%;
+    height: 96%;
     width: 25%;
     position: fixed;
     z-index: 1;
@@ -202,7 +199,7 @@ ul li {
 }
 
 .splitRight {
-    height: 95%;
+    height: 96%;
     width: 75%;
     position: fixed;
     z-index: 1;

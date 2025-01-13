@@ -40,9 +40,29 @@
             <a class="nav-link" aria-current="page" href="javascript:open_page('indexStudy')"><spam class="navinactive">Artigos</spam></a> 
           </li>  
 		</ul>     
-        <div class="navbar-nav ms-auto ">  
+        <div >  
           <spam class= "navinactive">O Livro de Urântia - Tradução Dinâmica PT BR - 12/01/2025</spam>  
         </div>  
+
+		<style>
+			#comboTrack {
+				width: 80px;
+				font-size: small;
+			}
+		</style>
+	
+
+        <div class="mb-1">
+            <div class="input-group">
+                <input type="text" class="form-control" id="comboTrack" list="suggestions" placeholder="Parágrafo">
+            </div>
+            <datalist id="suggestions">
+                <option value="Apple">
+                <option value="Banana">
+                <option value="Orange">
+            </datalist>
+        </div>
+
         <div class="navbar-nav ms-auto">  
 			<button class="btn btn-primary" onclick="window.print()" title="Imprime o texto do artigo selecionado." >Imprimir</button> 
 			    <button class="btn btn-primary" data-bs-toggle="modal"  
@@ -119,6 +139,36 @@
 			</div>  
 		</div>  
 	</div>  
- 
+
+    <script>
+        const combobox = document.getElementById('comboTrack');
+        const datalist = document.getElementById('suggestions');
+        const MAX_ITEMS = 25;
+
+        combobox.addEventListener('click', () => {
+            const inputValue = combobox.value.trim();
+            if (inputValue !== "") {
+                addItem(inputValue);
+                combobox.value = ""; // Clear the input field
+            }
+        });
+
+        function addItem(value) {
+            let options = datalist.querySelectorAll('option');
+            let values = Array.from(options).map(o => o.value);
+
+            if (!values.includes(value)) {
+                let newOption = document.createElement('option');
+                newOption.value = value;
+                datalist.appendChild(newOption);
+
+                if (datalist.children.length > MAX_ITEMS) {
+                    datalist.removeChild(datalist.firstChild); // Remove the oldest item
+                }
+            }
+        }
+    </script>
+	
+
 </body>
 </html>
