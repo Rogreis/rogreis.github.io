@@ -2,9 +2,95 @@
 
 > Data da última atualização: 11/1/2025
 
-## Uma nova introdução
+## Assunto Moral por ordem de referência
 
-A busca por uma sociedade justa e harmoniosa é um desejo da humanidade e o livro de Urântia aponta objetivos de extrema importância a serem perseguidos como pré-requisitos. Este texto  busca tratar da questão da moralidade dentro da perspectiva singular com implicações profundas para a esfera pública e, em particular, para o papel dos governantes, juízes e legisladores.
+1. duty man's consciousness of a value level - **<a href="javascript:showParagraph(0,2,1)" title="Abrir o parágrafo 0:2-1">0:2-1</a>**
+2. personality of and Universal Father - **<a href="javascript:showParagraph(0,3,19)" title="Abrir o parágrafo 0:3-19">0:3-19</a>**
+3. being(s) fragment of God indwells - **<a href="javascript:showParagraph(1,4,3)" title="Abrir o parágrafo 1:4-3">1:4-3</a>**
+4. affinity an essential to friendship - **<a href="javascript:showParagraph(1,6,5)" title="Abrir o parágrafo 1:6-5">1:6-5</a>**
+5. God the source of - **<a href="javascript:showParagraph(2,6,5)" title="Abrir o parágrafo 2:6-5">2:6-5</a>**
+6. status a factor in Adjuster communion - **<a href="javascript:showParagraph(5,2,6)" title="Abrir o parágrafo 5:2-6">5:2-6</a>**
+7. God as a vindicator of - **<a href="javascript:showParagraph(5,4,11)" title="Abrir o parágrafo 5:4-11">5:4-11</a>**
+8. Zoroastrianism a religion of - **<a href="javascript:showParagraph(5,4,7)" title="Abrir o parágrafo 5:4-7">5:4-7</a>**
+9. situations choices necessitated by - **<a href="javascript:showParagraph(5,5,1)" title="Abrir o parágrafo 5:5-1">5:5-1</a>**
+10. relation of to religion - **<a href="javascript:showParagraph(5,5,4)" title="Abrir o parágrafo 5:5-4">5:5-4</a>**
+11. thinking social service based on - **<a href="javascript:showParagraph(5,5,4)" title="Abrir o parágrafo 5:5-4">5:5-4</a>**
+12. and philosophical satisfaction secured from religious experience - **<a href="javascript:showParagraph(5,5,9)" title="Abrir o parágrafo 5:5-9">5:5-9</a>**
+13. duty man's consciousness of a value level - **<a href="javascript:showParagraph(16,6,10)" title="Abrir o parágrafo 16:6-10">16:6-10</a>**
+14. virtue and personality - **<a href="javascript:showParagraph(16,7,0)" title="Abrir o parágrafo 16:7-0">16:7-0</a>**
+15. nature character of the - **<a href="javascript:showParagraph(16,7,1)" title="Abrir o parágrafo 16:7-1">16:7-1</a>**
+16. acts definition - **<a href="javascript:showParagraph(16,7,10)" title="Abrir o parágrafo 16:7-10">16:7-10</a>**
+17. function of insight of - **<a href="javascript:showParagraph(16,7,4)" title="Abrir o parágrafo 16:7-4">16:7-4</a>**
+18. evidence of possession of - **<a href="javascript:showParagraph(16,7,6)" title="Abrir o parágrafo 16:7-6">16:7-6</a>**
+19. keenness of a factor in choosing between good and evil - **<a href="javascript:showParagraph(16,7,7)" title="Abrir o parágrafo 16:7-7">16:7-7</a>**
+20. values a definition - **<a href="javascript:showParagraph(16,9,11)" title="Abrir o parágrafo 16:9-11">16:9-11</a>**
+21. power of a characteristic of will - **<a href="javascript:showParagraph(36,3,8)" title="Abrir o parágrafo 36:3-8">36:3-8</a>**
+22. stamina intellectual root of - **<a href="javascript:showParagraph(36,5,8)" title="Abrir o parágrafo 36:5-8">36:5-8</a>**
+23. choice the highest definition - **<a href="javascript:showParagraph(39,4,14)" title="Abrir o parágrafo 39:4-14">39:4-14</a>**
+24. will definition - **<a href="javascript:showParagraph(52,1,6)" title="Abrir o parágrafo 52:1-6">52:1-6</a>**
+25. insight a part of the ancestry of true religion - **<a href="javascript:showParagraph(52,6,7)" title="Abrir o parágrafo 52:6-7">52:6-7</a>**
+26. satisfaction a fruit of divinity - **<a href="javascript:showParagraph(56,10,20)" title="Abrir o parágrafo 56:10-20">56:10-20</a>**
+27. Hap's - **<a href="javascript:showParagraph(66,7,8)" title="Abrir o parágrafo 66:7-8">66:7-8</a>**
+28. affairs supremacy of man's free will in - **<a href="javascript:showParagraph(66,8,6)" title="Abrir o parágrafo 66:8-6">66:8-6</a>**
+29. steadfastness basis of Van's - **<a href="javascript:showParagraph(67,3,6)" title="Abrir o parágrafo 67:3-6">67:3-6</a>**
+30. guilt personal nature of sin as to - **<a href="javascript:showParagraph(67,7,7)" title="Abrir o parágrafo 67:7-7">67:7-7</a>**
+31. law of Eden vs. seven commandments of Dalamatia - **<a href="javascript:showParagraph(74,7,20)" title="Abrir o parágrafo 74:7-20">74:7-20</a>**
+32. standard-bearer woman the - **<a href="javascript:showParagraph(84,6,4)" title="Abrir o parágrafo 84:6-4">84:6-4</a>**
+33. growth and a cult's survival - **<a href="javascript:showParagraph(87,7,10)" title="Abrir o parágrafo 87:7-10">87:7-10</a>**
+34. dignity man's final acquirement of - **<a href="javascript:showParagraph(89,8,6)" title="Abrir o parágrafo 89:8-6">89:8-6</a>**
+35. progress and prayer - **<a href="javascript:showParagraph(91,1,2)" title="Abrir o parágrafo 91:1-2">91:1-2</a>**
+36. progress and prayer - **<a href="javascript:showParagraph(91,6,3)" title="Abrir o parágrafo 91:6-3">91:6-3</a>**
+37. culture early development of in Egypt - **<a href="javascript:showParagraph(95,3,1)" title="Abrir o parágrafo 95:3-1">95:3-1</a>**
+38. evolution nondependence of on revelation - **<a href="javascript:showParagraph(95,3,2)" title="Abrir o parágrafo 95:3-2">95:3-2</a>**
+39. the Jewish religion's conservation of - **<a href="javascript:showParagraph(97,10,5)" title="Abrir o parágrafo 97:10-5">97:10-5</a>**
+40. depravity of the Greeks under the mystery cults - **<a href="javascript:showParagraph(98,2,11)" title="Abrir o parágrafo 98:2-11">98:2-11</a>**
+41. stability religion's necessary influence for in the changing world - **<a href="javascript:showParagraph(99,1,2)" title="Abrir o parágrafo 99:1-2">99:1-2</a>**
+42. insight a part of the ancestry of true religion - **<a href="javascript:showParagraph(101,1,6)" title="Abrir o parágrafo 101:1-6">101:1-6</a>**
+43. the persistence of the - **<a href="javascript:showParagraph(101,3,1)" title="Abrir o parágrafo 101:3-1">101:3-1</a>**
+44. spiritual faith - **<a href="javascript:showParagraph(101,3,4)" title="Abrir o parágrafo 101:3-4">101:3-4</a>**
+45. trends influence of on man's philosophy of religion - **<a href="javascript:showParagraph(101,7,1)" title="Abrir o parágrafo 101:7-1">101:7-1</a>**
+46. consciousness a definition - **<a href="javascript:showParagraph(101,9,5)" title="Abrir o parágrafo 101:9-5">101:9-5</a>**
+47. man's importance of - **<a href="javascript:showParagraph(103,2,3)" title="Abrir o parágrafo 103:2-3">103:2-3</a>**
+48. impulses emergence of the arrival of the Thought Adjuster and the - **<a href="javascript:showParagraph(103,2,5)" title="Abrir o parágrafo 103:2-5">103:2-5</a>**
+49. importance of the creature's ability to make - **<a href="javascript:showParagraph(103,2,7)" title="Abrir o parágrafo 103:2-7">103:2-7</a>**
+50. vs. magic in the evolution of religion - **<a href="javascript:showParagraph(103,3,4)" title="Abrir o parágrafo 103:3-4">103:3-4</a>**
+51. and social meanings paramount religious experience is the feeling regarding - **<a href="javascript:showParagraph(103,3,4)" title="Abrir o parágrafo 103:3-4">103:3-4</a>**
+52. ideals man's highest comparison of with the will of God - **<a href="javascript:showParagraph(103,4,3)" title="Abrir o parágrafo 103:4-3">103:4-3</a>**
+53. importance of the creature's ability to make - **<a href="javascript:showParagraph(108,2,2)" title="Abrir o parágrafo 108:2-2">108:2-2</a>**
+54. decision Adjuster's inability to invade a mortal mind prior to its making a - **<a href="javascript:showParagraph(108,2,4)" title="Abrir o parágrafo 108:2-4">108:2-4</a>**
+55. choosing(s) human's effect of on Adjuster function - **<a href="javascript:showParagraph(110,6,5)" title="Abrir o parágrafo 110:6-5">110:6-5</a>**
+56. attitude of Paul's Christianity toward - **<a href="javascript:showParagraph(121,5,17)" title="Abrir o parágrafo 121:5-17">121:5-17</a>**
+57. Jesus' first significance of - **<a href="javascript:showParagraph(123,2,1)" title="Abrir o parágrafo 123:2-1">123:2-1</a>**
+58. nonnecessity of the actuality of evil to - **<a href="javascript:showParagraph(132,2,10)" title="Abrir o parágrafo 132:2-10">132:2-10</a>**
+59. importance of the creature's ability to make - **<a href="javascript:showParagraph(133,6,5)" title="Abrir o parágrafo 133:6-5">133:6-5</a>**
+60. the soul's dependence on - **<a href="javascript:showParagraph(133,6,5)" title="Abrir o parágrafo 133:6-5">133:6-5</a>**
+61. possibility of modification of the - **<a href="javascript:showParagraph(140,4,8)" title="Abrir o parágrafo 140:4-8">140:4-8</a>**
+62. reformer Jesus not a - **<a href="javascript:showParagraph(140,8,21)" title="Abrir o parágrafo 140:8-21">140:8-21</a>**
+63. the measure of - **<a href="javascript:showParagraph(143,2,3)" title="Abrir o parágrafo 143:2-3">143:2-3</a>**
+64. level of the golden rule - **<a href="javascript:showParagraph(147,4,8)" title="Abrir o parágrafo 147:4-8">147:4-8</a>**
+65. immaturity evidences of - **<a href="javascript:showParagraph(160,1,6)" title="Abrir o parágrafo 160:1-6">160:1-6</a>**
+66. conduct basis of - **<a href="javascript:showParagraph(170,2,18)" title="Abrir o parágrafo 170:2-18">170:2-18</a>**
+67. the kingdom of heaven as a new standard of - **<a href="javascript:showParagraph(170,2,4)" title="Abrir o parágrafo 170:2-4">170:2-4</a>**
+68. unfolding means of - **<a href="javascript:showParagraph(170,3,10)" title="Abrir o parágrafo 170:3-10">170:3-10</a>**
+69. conduct basis of - **<a href="javascript:showParagraph(170,3,7)" title="Abrir o parágrafo 170:3-7">170:3-7</a>**
+70. human Christianity's higher influence on - **<a href="javascript:showParagraph(195,0,14)" title="Abrir o parágrafo 195:0-14">195:0-14</a>**
+71. attitude of Paul's Christianity toward - **<a href="javascript:showParagraph(195,0,3)" title="Abrir o parágrafo 195:0-3">195:0-3</a>**
+72. of Rome Christianity the - **<a href="javascript:showParagraph(195,2,5)" title="Abrir o parágrafo 195:2-5">195:2-5</a>**
+73. decline of Rome Christianity's arrival too late to prevent the - **<a href="javascript:showParagraph(195,3,8)" title="Abrir o parágrafo 195:3-8">195:3-8</a>**
+74. convictions reality and certainty of - **<a href="javascript:showParagraph(195,6,12)" title="Abrir o parágrafo 195:6-12">195:6-12</a>**
+75. discipline vs. self-gratification and education - **<a href="javascript:showParagraph(195,10,17)" title="Abrir o parágrafo 195:10-17">195:10-17</a>**
+76. impossibility of measuring - **<a href="javascript:showParagraph(196,3,18)" title="Abrir o parágrafo 196:3-18">196:3-18</a>**
+77. importance of the creature's ability to make - **<a href="javascript:showParagraph(196,3,20)" title="Abrir o parágrafo 196:3-20">196:3-20</a>**
+78. nature character of the - **<a href="javascript:showParagraph(196,3,25)" title="Abrir o parágrafo 196:3-25">196:3-25</a>**
+79. influence of religion on - **<a href="javascript:showParagraph(196,3,27)" title="Abrir o parágrafo 196:3-27">196:3-27</a>**
+80. relation of religion and human experience to - **<a href="javascript:showParagraph(196,3,28)" title="Abrir o parágrafo 196:3-28">196:3-28</a>**
+
+
+---
+
+
+
+
 
 Embora exista uma forma divina e ideal de governo, **<a href="javascript:showParagraph(70,12,20)" title="Abrir o parágrafo 70:12-20">70:12-20</a>**, ela não pode ser revelada e deverá ser uma conquista evolutiva humana, mas começa pela sugestão da eficácia e equidade dos seus tribunais, **<a href="javascript:showParagraph(70,11,14)" title="Abrir o parágrafo 70:11-14">70:11-14</a>**, com uma lei magna bem elaborada, poderes executivos, legislativo e judiciário compostos por pessoas de comprovada capacidade intelectual, juízes experientes. A qualificação moral de alto nível é uma condição a todos os cargos: **<a href="javascript:showParagraph(70,12,5)" title="Abrir o parágrafo 70:12-5">70:12-5</a>** ou **<a href="javascript:showParagraph(71,2,19)" title="Abrir o parágrafo 71:2-19">71:2-19</a>**.
 
