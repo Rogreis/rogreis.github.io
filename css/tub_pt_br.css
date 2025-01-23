@@ -25,11 +25,81 @@ body {
     font-size: var(--fontSize);
     line-height: var(--lineHeight);
     transition: background-color 0.3s ease, color 0.3s ease; /* Smooth transitions for mode switching */
+
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh; /* Garante que o body ocupa a altura total da viewport */
+    margin: 0; /* Remove as margens padrão do body */
+
 }
 
 
+main {
+    flex: 1; /* Permite que o main cresça para preencher o espaço restante */
+    display: flex;
+}
+
+#leftColumn {
+    width: 25%;
+    padding: 10px;
+}
+
+#rightColumn {
+    width: 75%;
+    padding: 10px;
+}
+
+#leftColumn, #rightColumn
+{
+    overflow-y: auto; /* Adiciona a barra de rolagem vertical quando necessário */
+    max-height: calc(100vh - /* altura navbar */ 80px); /* Ajuste a altura máxima conforme necessário, subtraindo a altura da navbar */
+    padding: 20px;
+}
+
+
+#divisor {
+    width: 5px; /* Largura do divisor */
+    background-color: #ccc;
+    cursor: ew-resize; /* Muda o cursor para indicar redimensionamento */
+    touch-action: none; /* Impede o comportamento padrão de toque, para evitar conflitos com o arrastar */
+}
+
+#divisor[aria-orientation="vertical"] {
+    height: 100%;
+    width: 5px;
+    cursor: ns-resize;
+}
+
+.titulo
+{
+    font-size: 1.5em;
+    font-weight: bold;
+    padding-left: 30px;
+}
+
+.track_entry {
+    max-height: 2rem; /* 32px */
+    max-width: 6.25rem; /* 100px */
+    margin-top: 0.4rem;
+}
+
+.small-text-container {
+    padding-top: 1.0rem; 
+    margin-left: 1.5rem;
+    margin-right: 2.0rem;
+}
+
+.small-text {
+    font-size: 0.7rem; /* Very small font size */
+    line-height: 1.2; /* Adjust line height for readability */
+    color: white; /* Slightly darker gray for better contrast */
+    font-family: sans-serif; /* Use a clear, readable font */
+}
+
+
+
 h1, h2, h3, h4, h5, h6 {
-    font-family: 'Playfair Display', serif; /* Use Playfair Display for h1 */
+    font-family: sans-serif; /* Use a clear, readable font */
     font-weight: 700; /* Bold weight for emphasis */
     line-height: 1.2; /* Adjust line height for larger text */
     letter-spacing: 0.05em; /* Slightly wider letter spacing for display text */
@@ -43,15 +113,15 @@ h3
 }
 
 .navactive {
-    font-family: var(--font); /* Consistent font */
-    font-weight: 700; /* Bold headings */
-    color: gold;
+    background-color: #000066;
 }
 
 .navinactive {
-    font-family: var(--font); /* Consistent font */
-    font-weight: 700; /* Bold headings */
     color: white;
+}
+
+.active {
+    display: block;
 }
 
 h4
@@ -162,37 +232,9 @@ textarea {
     -webkit-overflow-scrolling: touch;
 }
 
-.liIndex {
-    font-family: var(--font);
-    font-size: var(--fontSize);
-}
-
-a.liIndex:link {
-    text-decoration: none;
-    color: var(--textColorDark);
-}
-
-a.liIndex:visited {
-    text-decoration: none;
-    color: var(--textColorDark);
-}
-
-a.liIndex:hover {
-    text-decoration: underline;
-    color: var(--textColorDark);
-}
-
-a.liIndex:active {
-    text-decoration: none;
-    color: var(--textColorDark);
-}
-
-ul li {
-    padding: 1px;
-}
 
 .splitLeft {
-    height: 95%;
+    height: 96%;
     width: 25%;
     position: fixed;
     z-index: 1;
@@ -202,7 +244,7 @@ ul li {
 }
 
 .splitRight {
-    height: 95%;
+    height: 96%;
     width: 75%;
     position: fixed;
     z-index: 1;
@@ -261,10 +303,6 @@ ul,
 
 .nested {
     display: none;
-}
-
-.active {
-    display: block;
 }
 
 

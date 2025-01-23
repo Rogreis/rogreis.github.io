@@ -15,6 +15,10 @@ async function StartPage()
   {
     loadArticle(article)
   }
+
+  initSlider();
+  initComboTrack();
+
 }
 
 function getArticleValue(queryString) {
@@ -55,6 +59,7 @@ function showParagraph(paper, section, paragraph) {
   setCookie("paper", paper, 180)
   setCookie("section", section, 180)
   setCookie("paragraph", paragraph, 180)
+  addTocEntry(paper, section, paragraph);
   hash = `p${paper.toString().padStart(3, '0')}_${section.toString().padStart(3, '0')}_${paragraph.toString().padStart(3, '0')}`;
   const fullUrl = `${protocol}//${currentDomain}/${currentPage}#${hash}`;
   window.open(fullUrl, '_blank');

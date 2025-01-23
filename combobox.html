@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Editable trackCombo</title>
+
+    <title>Bootstrap Example</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+    <style>
+        .trackCombo {
+          position: relative;
+          display: inline-block;
+        }
+      
+        .trackCombo-input-wrapper { /* Wrapper for input and button */
+          display: flex;
+          align-items: center; /* Vertically align input and button */
+          border: 1px solid #ccc;
+          box-sizing: border-box;
+        }
+      
+        .trackCombo-input {
+          padding: 5px;
+          border: none; /* Remove border from input */
+          flex-grow: 1; /* Allow input to expand */
+          outline: none; /* Remove default focus outline */
+          box-sizing: border-box;
+        }
+      
+        .trackCombo-button {
+          background-color: transparent;
+          border: none;
+          cursor: pointer;
+          padding: 5px;
+          padding-left: 0;
+          padding-right: 8px;
+        }
+      
+        .trackCombo-button:after { /* Down arrow */
+          content: "\25BE"; /* Unicode down arrow character */
+          font-size: 12px;
+        }
+      
+        .trackCombo-options {
+          position: absolute;
+          top: calc(100% + 1px); /* Position below the wrapper */
+          left: 0;
+          width: 100%;
+          border: 1px solid #ccc;
+          border-top: none;
+          max-height: 150px;
+          overflow-y: auto;
+          display: none;
+          z-index: 10;
+          background-color: white;
+          box-sizing: border-box;
+        }
+      
+        .trackCombo-options div {
+          padding: 5px;
+          cursor: pointer;
+          border-bottom: 1px solid #eee;
+        }
+        .trackCombo-options div:last-child{
+          border-bottom:none;
+        }
+      
+        .trackCombo-options div:hover {
+          background-color: #f0f0f0;
+        }
+      </style>
+      </head>
+      <body>
+      
+      <div class="trackCombo">
+        <div class="trackCombo-input-wrapper">
+          <input type="text" class="trackCombo-input" id="mytrackCombo" autocomplete="off">
+          <button class="trackCombo-button" id="mytrackComboButton"></button>
+        </div>
+        <div class="trackCombo-options" id="mytrackComboOptions"></div>
+      </div>
+      
+      <script>
+
+  const trackComboInput = document.getElementById('mytrackCombo');
+  const trackComboOptions = document.getElementById('mytrackComboOptions');
+  let options = []; // Initial options (can be populated from a data source)
+  updateOptionsDisplay();
+
+  trackComboInput.addEventListener('keyup', function(event) {
+    if (event.key === 'Enter') {
+      const newOption = trackComboInput.value.trim();
+      if (newOption !== "" && !options.includes(newOption)) {
+        options.push(newOption);
+        updateOptionsDisplay();
+        trackComboInput.value = ''; // Clear the input field
+      }
+    } else {
+      filterOptions(trackComboInput.value);
+    }
+  });
+
+  function updateOptionsDisplay() {
+      trackComboOptions.innerHTML = ""; // Clear existing options
+      options.forEach(option => {
+          const optionDiv = document.createElement('div');
+          optionDiv.textContent = option;
+          optionDiv.addEventListener('click', () => {
+              trackComboInput.value = option;
+              trackComboOptions.style.display = 'none';
+          });
+          trackComboOptions.appendChild(optionDiv);
+      });
+      if(options.length>0){
+        trackComboOptions.style.display = 'block';
+      }else{
+        trackComboOptions.style.display = 'none';
+      }
+  }
+
+  function filterOptions(filterText) {
+      if (filterText.trim() === "") {
+        updateOptionsDisplay();
+        return;
+      }
+      const filteredOptions = options.filter(option =>
+          option.toLowerCase().includes(filterText.toLowerCase())
+      );
+      trackComboOptions.innerHTML = "";
+      filteredOptions.forEach(option => {
+        const optionDiv = document.createElement('div');
+        optionDiv.textContent = option;
+        optionDiv.addEventListener('click', () => {
+            trackComboInput.value = option;
+            trackComboOptions.style.display = 'none';
+        });
+        trackComboOptions.appendChild(optionDiv);
+      });
+      if(filteredOptions.length>0){
+        trackComboOptions.style.display = 'block';
+      }else{
+        trackComboOptions.style.display = 'none';
+      }
+
+  }
+
+  trackComboInput.addEventListener('blur', function() {
+    setTimeout(() => {
+      trackComboOptions.style.display = 'none';
+    }, 200); // Small delay to allow click event to fire
+  });
+
+  trackComboInput.addEventListener('focus', function(){
+    if(options.length>0){
+      trackComboOptions.style.display = 'block';
+    }
+  })
+
+
+
+        const trackComboButton = document.getElementById('mytrackComboButton');
+      
+        trackComboButton.addEventListener('click', function() {
+            if (trackComboOptions.style.display === 'block') {
+                trackComboOptions.style.display = 'none';
+            } else {
+                updateOptionsDisplay();
+                trackComboOptions.style.display = 'block';
+            }
+            trackComboInput.focus();
+        });
+      
+        trackComboInput.addEventListener('focus', function(){
+          if(options.length>0 && trackComboOptions.style.display !== 'block'){
+            trackComboOptions.style.display = 'block';
+          }
+        });
+      
+      
+      </script>
+      
+      </body>
+      </html>

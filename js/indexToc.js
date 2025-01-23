@@ -1,12 +1,11 @@
 // ----------------  Funções específicas para página de documentos ----------------
 
-var toc_loaded= false;
-
 async function StartPage() {
-  toc_loaded= false;
   verifyAnchor();
   await LoadTableOfContentsData();
   setCookie("PAGE", "indexToc", 180)
+  initSlider();
+  initComboTrack();
 }
 
 async function loadDocFromCookie() {
@@ -42,58 +41,37 @@ async function verifyAnchor()
       setCookie("paragraph", paragraph, 180)
     }
   }
-
-  //expandCurrentTocElement(); 
 }
 
 async function LoadTableOfContentsData() {
     const xhttp = new XMLHttpRequest();
     xhttp.onload = function() {
-        document.getElementById('leftColumn').innerHTML = this.responseText;
+      document.getElementById('leftColumn').innerHTML = this.responseText;
         setTimeout(() => {
-          toc_loaded= true;
-          ExpandIndex();
-        }, 300); // Adjust the timeout as needed
+          initializeTocTable();
+        }, 300); // timeout
     }
     xhttp.open("GET", 'content/TocTable.html');
     xhttp.send();
 }
 
 
-async function ExpandIndex() {
-  var toggler = document.getElementsByClassName("caret");
-    //var expandables = document.getElementsByClassName("expandable");
-    var i;
-
-    // for (i = 0; i < expandables.length; i++) {
-    //     expandables[i].parentElement.querySelector(".nested").classList.toggle("active");
-    //     expandables[i].classList.toggle("caret-down");
-    // }
-
-    for (i = 0; i < toggler.length; i++) {
-        toggler[i].addEventListener("click", function() {
-            this.parentElement.querySelector(".nested").classList.toggle("active");
-            this.classList.toggle("caret-down");
-        });
-    }
+async function initializeTocTable() {
+    var toggler = document.getElementsByClassName("caret"); 
+    var i; 
+    for (i = 0; i < toggler.length; i++) { 
+        toggler[i].addEventListener("click", function () { 
+            this.parentElement.querySelector(".nested").classList.toggle("active"); 
+            this.classList.toggle("active"); 
+        }); 
+    } 
     expandCurrentTocElement(); 
     await loadDocFromCookie()
   }
 
-
 function toggleCaret(partElement) {
-  // 1. Find the span element within partElement.
-  // We use querySelector here, which finds the *first* matching element.
-  // If you have multiple spans and need a specific one, you might need
-  // to adjust the selector (e.g., using a class or other attribute).
-  const spanElement = partElement.querySelector('span'); // Or a more specific selector like 'span.my-caret'
-
-  // Check if the span element exists before trying to toggle the class.
-  if (spanElement) {
-    // 2. Toggle the 'caret-down' class.
-    spanElement.parentElement.querySelector(".nested").classList.toggle("active");
-    spanElement.classList.toggle('caret-down');
-  }
+  partElement.querySelector(".nested").classList.toggle("active");
+  partElement.classList.toggle("active");
 }
 
 // Expand the current TOC element based on the current URL or cookies
@@ -113,28 +91,28 @@ function expandCurrentTocElement()
       toggleCaret(intro);
     }
     if (paper > 0 && paper < 32) {
-      const part1 = document.getElementById("part1");
+      const part1 = document.getElementById("part1_div");
       if (part1)
       {
         toggleCaret(part1);
       }
     }
     if (paper > 31 && paper < 57) {
-      const part2 = document.getElementById("part2");
+      const part2 = document.getElementById("part2_div");
       if (part2)
       {
         toggleCaret(part2);
       }
     }
     if (paper > 56 && paper < 120) {
-      const part3 = document.getElementById("part3");
+      const part3 = document.getElementById("part3_div");
       if (part3)
       {
         toggleCaret(part3);
       }
     }
     if (paper > 119) {
-      const part4 = document.getElementById("part4");
+      const part4 = document.getElementById("part4_div");
       if (part4)
         {
           toggleCaret(part4);
@@ -148,7 +126,7 @@ function expandCurrentTocElement()
     {
       setTimeout(() => {
         toggleCaret(toc_element);
-        toc_element_div_id= `${toc_element_id}_div`; // _div is added as a suffix
+        toc_element_div_id= `${toc_element_id}_div`;
         toc_element= document.getElementById(toc_element_div_id);
         if (toc_element)
         {

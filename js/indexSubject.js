@@ -21,7 +21,9 @@ SubjectItems = [];
 function StartPage() {
     loadAndUnzipJSON('subject.zip', SubjectPageCallback)
     verifyAnchor();
-}
+    initSlider();
+    initComboTrack();
+  }
 
 function verifyAnchor() 
 { 
@@ -235,6 +237,8 @@ function loadDocByPaperSectionParagraph(paper, section, paragraph)
     setCookie("papersub", paper, 180)
     setCookie("sectionsub", section, 180)
     setCookie("paragraphsub", paragraph, 180)
+    addTocEntry(paper, section, paragraph);
+
     url= `content/Doc${paper.toString().padStart(3, '0')}.html`;
     xhttp.open("GET", url);
     xhttp.send();
