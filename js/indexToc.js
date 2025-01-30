@@ -70,8 +70,10 @@ async function initializeTocTable() {
   }
 
 function toggleCaret(partElement) {
-  partElement.querySelector(".nested").classList.toggle("active");
-  partElement.classList.toggle("active");
+  setTimeout(() => {
+    partElement.querySelector(".nested").classList.toggle("active");
+    partElement.classList.toggle("active");
+  }, 300);
 }
 
 // Expand the current TOC element based on the current URL or cookies
@@ -87,7 +89,8 @@ function expandCurrentTocElement()
     }
 
     if (paper == 0) {
-      const intro = document.getElementById("toc_000_000");
+      const intro = document.getElementById("toc_000_000_div");
+      //console.log(intro);
       toggleCaret(intro);
     }
     if (paper > 0 && paper < 32) {
