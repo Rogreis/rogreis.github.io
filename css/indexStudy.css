@@ -99,7 +99,7 @@ font-weight: normal;
 #divartigo {
   margin: 2em auto; /* Centraliza o artigo na página */
   padding: 1em;
-  font-family: serif; /* Ou uma fonte serifada de sua preferência */
+  font-family: var(--font);
   font-size: var(--baseFontSize);
   line-height: 1.6;
 }
@@ -156,7 +156,7 @@ font-weight: normal;
 
 /* Estilos adicionais tabelas vindas do markdown */
 table {
-  font-family: Arial, sans-serif;
+  font-family: var(--font);
   border-collapse: collapse;
   width: 100%;
 }

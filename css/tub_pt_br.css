@@ -1,8 +1,8 @@
 :root {
     --font: 'Roboto Slab', serif;
     --fontSize: 18px;
-    --fontPaperTitle: 24px;
-    --fontSectionTitle: 20px;
+    --fontSizePaperTitle: 24px;
+    --fontSizeSectionTitle: 20px;
     --lineHeight: 1.6; /* Important for readability */
     --textColorLight: #333; /* Dark gray for light mode */
     --textColorDark: #eee; /* Light gray/off-white for dark mode */
@@ -93,13 +93,13 @@ main {
     font-size: 0.7rem; /* Very small font size */
     line-height: 1.2; /* Adjust line height for readability */
     color: white; /* Slightly darker gray for better contrast */
-    font-family: sans-serif; /* Use a clear, readable font */
+    font-family: var(--font);
 }
 
 
 
 h1, h2, h3, h4, h5, h6 {
-    font-family: sans-serif; /* Use a clear, readable font */
+    font-family: var(--font);
     font-weight: 700; /* Bold weight for emphasis */
     line-height: 1.2; /* Adjust line height for larger text */
     letter-spacing: 0.05em; /* Slightly wider letter spacing for display text */
@@ -109,7 +109,7 @@ h1, h2, h3, h4, h5, h6 {
 
 h3
 {
-    font-size: var(--fontPaperTitle);
+    font-size: var(--fontSizePaperTitle);
 }
 
 .navactive {
@@ -126,7 +126,7 @@ h3
 
 h4
 {
-    font-size: var(--fontSectionTitle);
+    font-size: var(--fontSizeSectionTitle);
 }
 
 

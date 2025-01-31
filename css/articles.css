@@ -1,0 +1,92 @@
+
+/* Styles for articles */
+blockquote {
+    margin: 1em 0;
+    padding: 1em 2em;
+    border-left: none;
+    position: relative;
+    font-size: var(--fontSize);
+    font-family: var(--font);
+    font-style: italic;
+    color: #555;
+    display: flex;
+    align-items: flex-start; /* Key: Align to the top */
+  }
+  
+  /* Quote mark */
+  blockquote::before {
+    content: "\201C"; /* Unicode for left double quotation mark */
+    font-size: 3em;
+    position: relative;
+    left: 0;
+    top: -0.25em; /* Adjust this value to move the quote mark up or down */
+    color: #6495ED; /* Cornflower Blue */
+    font-family: serif;
+    margin-right: 0.5em;
+  }
+  
+  /* Dark mode styles */
+  @media (prefers-color-scheme: dark) {
+    blockquote {
+      color: #aaa;
+    }
+  
+    blockquote::before {
+      color: #ADD8E6; /* Light Blue for Dark mode */
+    }
+  }
+  
+  /* Nested blockquotes */
+  blockquote blockquote {
+    margin-left: 2em;
+  }
+  
+  blockquote blockquote::before {
+    margin-left: -0.75em;
+    top: -0.25em; /* Maintain consistent vertical alignment */
+  }
+  
+  @media (prefers-color-scheme: dark) {
+    blockquote blockquote {
+      color: #999;
+    }
+  }
+  
+  /* Styling for different levels of nesting */
+  blockquote blockquote blockquote {
+    margin-left: 4em;
+  }
+  
+  blockquote blockquote blockquote::before {
+    margin-left: -1.75em;
+    top: -0.55em; /* Maintain consistent vertical alignment */
+  }
+  
+  @media (prefers-color-scheme: dark) {
+    blockquote blockquote blockquote {
+      color: #bbb;
+    }
+  }
+  
+  blockquote blockquote blockquote blockquote {
+    margin-left: 6em;
+  }
+  
+  blockquote blockquote blockquote blockquote::before {
+    margin-left: -2.75em;
+    top: -0.55em; /* Maintain consistent vertical alignment */
+  }
+  
+  @media (prefers-color-scheme: dark) {
+    blockquote blockquote blockquote blockquote {
+      color: #ddd;
+    }
+  }
+  
+  /* Reset paragraph styles within blockquote */
+  blockquote p {
+    font-style: normal;
+    color: inherit;
+    margin: 0;
+  }
+  
