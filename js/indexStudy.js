@@ -28,24 +28,41 @@ function getArticleValue(queryString) {
 
 function loadArticle(article)
 {
+  console.log("Loading article: " + article);
   if (typeof name !== 'string') {
     return;
   }
 
   const xhttp = new XMLHttpRequest();
   xhttp.onload = function() {
-
-    if (this.status >= 200 && this.status < 300) { // Check for successful status codes (200-299)
-      document.getElementById('divartigo').innerHTML = this.responseText;
-    } else {
-      document.getElementById('divartigo').innerHTML = "<p>Erro ao carregar o conteúdo. Código de status: " + this.status + "</p>"; // Display an error message to the user
+    try {
+        console.log("Chegou");
+        if (this.status >= 200 && this.status < 300) { // Check for successful status codes (200-299)
+            console.log("Status ok");
+            var artigo = document.getElementById('divartigo');
+            console.log("artigo: " + artigo);
+            if (artigo === null) {
+                console.log("Artigo não encontrado");
+                return;
+            }
+            console.log("Vai preencher: " + this.responseText);
+            artigo.innerHTML = this.responseText;
+            document.getElementById('divartigo').innerHTML = this.responseText;
+        } else {
+            console.log("Not OK");
+            document.getElementById('divartigo').innerHTML = "<p>Erro ao carregar o conteúdo. Código de status: " + this.status + "</p>"; // Display an error message to the user
+        }
+    } catch (error) {
+        console.error("An error occurred:", error);
+        document.getElementById('divartigo').innerHTML = "<p>Erro ao processar a resposta.</p>"; // Display a generic error message to the user
     }
-  }
+  } 
   setCookie("ARTICLE", article, 180)
   if (!article.toLowerCase().endsWith(".html")) {
     article += ".html";
   }  
   url= `articles/${article}`;
+  console.log("Vai buscar " + url);
   xhttp.open("GET", url);
   xhttp.send();
 }

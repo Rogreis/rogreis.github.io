@@ -4,12 +4,6 @@
 
 Uma exploração das nuances entre "actual," "real" e "factual" em inglês, considerando tanto o uso comum quanto a perspectiva da filosofia aristotélico-tomista, com explicações em português e suas variações entre Portugal (pt-pt) e Brasil (pt-br).
 
-## Autor
-
-Rogério Reis ds Silva.
-
-Primeira edição em Dezembro-2024.
-
 ### Actual
 
 #### Significado comum
