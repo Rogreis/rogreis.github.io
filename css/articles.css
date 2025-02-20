@@ -1,92 +1,90 @@
-
 /* Styles for articles */
-blockquote {
-    margin: 1em 0;
-    padding: 1em 2em;
-    border-left: none;
-    position: relative;
-    font-size: var(--fontSize);
-    font-family: var(--font);
-    font-style: italic;
-    color: #555;
-    display: flex;
-    align-items: flex-start; /* Key: Align to the top */
-  }
-  
-  /* Quote mark */
-  blockquote::before {
-    content: "\201C"; /* Unicode for left double quotation mark */
-    font-size: 3em;
-    position: relative;
-    left: 0;
-    top: -0.25em; /* Adjust this value to move the quote mark up or down */
-    color: #6495ED; /* Cornflower Blue */
-    font-family: serif;
-    margin-right: 0.5em;
-  }
-  
-  /* Dark mode styles */
-  @media (prefers-color-scheme: dark) {
-    blockquote {
+#articles blockquote {
+  margin: 1em 0;
+  padding: 1em 2em;
+  border-left: none;
+  position: relative;
+  font-size: var(--fontSize);
+  font-family: var(--font);
+  font-style: italic;
+  color: #555;
+  display: flex;
+  align-items: flex-start; /* Key: Align to the top */
+}
+
+/* Quote mark */
+#articles blockquote::before {
+  content: "\201C"; /* Unicode for left double quotation mark */
+  font-size: 3em;
+  position: relative;
+  left: 0;
+  top: -0.25em; /* Adjust this value to move the quote mark up or down */
+  color: #6495ED; /* Cornflower Blue */
+  font-family: serif;
+  margin-right: 0.5em;
+}
+
+/* Dark mode styles */
+@media (prefers-color-scheme: dark) {
+  #articles blockquote {
       color: #aaa;
-    }
-  
-    blockquote::before {
+  }
+
+  #articles blockquote::before {
       color: #ADD8E6; /* Light Blue for Dark mode */
-    }
   }
-  
-  /* Nested blockquotes */
-  blockquote blockquote {
-    margin-left: 2em;
-  }
-  
-  blockquote blockquote::before {
-    margin-left: -0.75em;
-    top: -0.25em; /* Maintain consistent vertical alignment */
-  }
-  
-  @media (prefers-color-scheme: dark) {
-    blockquote blockquote {
+}
+
+/* Nested blockquotes */
+#articles blockquote blockquote {
+  margin-left: 2em;
+}
+
+#articles blockquote blockquote::before {
+  margin-left: -0.75em;
+  top: -0.25em; /* Maintain consistent vertical alignment */
+}
+
+@media (prefers-color-scheme: dark) {
+  #articles blockquote blockquote {
       color: #999;
-    }
   }
-  
-  /* Styling for different levels of nesting */
-  blockquote blockquote blockquote {
-    margin-left: 4em;
-  }
-  
-  blockquote blockquote blockquote::before {
-    margin-left: -1.75em;
-    top: -0.55em; /* Maintain consistent vertical alignment */
-  }
-  
-  @media (prefers-color-scheme: dark) {
-    blockquote blockquote blockquote {
+}
+
+/* Styling for different levels of nesting */
+#articles blockquote blockquote blockquote {
+  margin-left: 4em;
+}
+
+#articles blockquote blockquote blockquote::before {
+  margin-left: -1.75em;
+  top: -0.55em; /* Maintain consistent vertical alignment */
+}
+
+@media (prefers-color-scheme: dark) {
+  #articles blockquote blockquote blockquote {
       color: #bbb;
-    }
   }
-  
-  blockquote blockquote blockquote blockquote {
-    margin-left: 6em;
-  }
-  
-  blockquote blockquote blockquote blockquote::before {
-    margin-left: -2.75em;
-    top: -0.55em; /* Maintain consistent vertical alignment */
-  }
-  
-  @media (prefers-color-scheme: dark) {
-    blockquote blockquote blockquote blockquote {
+}
+
+#articles blockquote blockquote blockquote blockquote {
+  margin-left: 6em;
+}
+
+#articles blockquote blockquote blockquote blockquote::before {
+  margin-left: -2.75em;
+  top: -0.55em; /* Maintain consistent vertical alignment */
+}
+
+@media (prefers-color-scheme: dark) {
+  #articles blockquote blockquote blockquote blockquote {
       color: #ddd;
-    }
   }
-  
-  /* Reset paragraph styles within blockquote */
-  blockquote p {
-    font-style: normal;
-    color: inherit;
-    margin: 0;
-  }
-  
+}
+
+/* Reset paragraph styles within blockquote */
+#articles blockquote p {
+  font-style: normal;
+  color: inherit;
+  margin: 0;
+}

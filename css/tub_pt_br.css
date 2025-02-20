@@ -1,6 +1,6 @@
 :root {
-    --font: 'Roboto Slab', serif;
-    --fontSize: 18px;
+    --font: 'Lato', sans-serif;
+    --fontSize: 20px;
     --fontSizePaperTitle: 24px;
     --fontSizeSectionTitle: 20px;
     --lineHeight: 1.6; /* Important for readability */
