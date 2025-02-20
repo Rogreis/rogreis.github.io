@@ -19,13 +19,11 @@
   }
   
 #divsumario h3 {
-    font-size: 1.2em;
     font-weight: bold;
     color: var(--highlight_color)
   }
   
 #divsumario h4 {
-    font-size: 1em;
     color: var(--highlight_color)
 }
 
@@ -37,12 +35,16 @@
     padding-left: 20px;
     width: 95%;
     box-sizing: border-box; /* Important: Include padding in width calculation */
-}
-
+    font-family: var(--font);
+    font-size: var(--fontSize);
+    line-height: var(--lineHeight);
+    margin: 2em auto; /* Centraliza o artigo na página */
+  }
 
 #divartigo a {
     text-decoration: none;
     color: var(--linkColor);
+    color: var(--textColorDark);
   }
   
 #divartigo a:hover {
@@ -58,51 +60,34 @@
   
 
 #divartigo h1 {
-  font-size: calc(var(--baseFontSize) * 2.5); /* Tamanho maior para o título principal */
   margin-bottom: 1em; /* Espaçamento superior para separar o título do conteúdo anterior */
 }
 
 #divartigo h2 {
-  font-size: calc(var(--baseFontSize) * 2);
   margin-top: 0.8em;
 }
 
 #divartigo h3 {
-  font-size: calc(var(--baseFontSize) * 1.75);
   margin-top: 0.6em;
 }
 
 #divartigo h4 {
-  font-size: calc(var(--baseFontSize) * 1.5);
   margin-top: 0.4em;
 }
 
 #divartigo h5 {
-  font-size: calc(var(--baseFontSize) * 1.25);
   margin-top: 0.2em;
 }
 
 #divartigo h6 {
-  font-size: var(--baseFontSize); /* Tamanho base para o menor cabeçalho */
   font-style: italic; /* Adiciona itálico para diferenciar */
 }
 
-#divartigo i, b, em  {  
-font-family: var(--font);
-font-size: var(--fontSize);
-color: var(--textColorDark);
-font-weight: normal;
-
-} 
-
-/* Estilos adicionais para melhor apresentação em artigos filosóficos */
-#divartigo {
-  margin: 2em auto; /* Centraliza o artigo na página */
-  padding: 1em;
-  font-family: var(--font);
-  font-size: var(--baseFontSize);
-  line-height: 1.6;
+#divartigo i, b, em  {
+  color: var(--textColorDark);
+  font-weight: normal;
 }
+
 
 #divartigo p, ul, ol {
     margin-bottom: 1em;

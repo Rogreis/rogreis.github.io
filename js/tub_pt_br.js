@@ -349,7 +349,6 @@ function addTocEntry(paper, section, paragraph) {
         if (datalist.children.length > MAX_ITEMS) {
             datalist.removeChild(datalist.firstChild); // Remove the oldest item
         }
-        console.log('addTocEntry:', datalist.children);
     }
 }
 

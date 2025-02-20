@@ -6,7 +6,6 @@
     --lineHeight: 1.6; /* Important for readability */
     --textColorLight: #333; /* Dark gray for light mode */
     --textColorDark: #eee; /* Light gray/off-white for dark mode */
-    --baseFontSize: 1.0rem; /* Tamanho base da fonte, facilita o ajuste proporcional */
     --backgroundColorLight: #fff; /* White for light mode */
     /* --backgroundColorDark: #121212; Dark background */
     --background-color: rgba(var(--bs-dark-rgb), var(--bs-bg-opacity))!important;
