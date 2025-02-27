@@ -60,7 +60,7 @@
   
 
 #divartigo h1 {
-  margin-bottom: 1em; /* Espaçamento superior para separar o título do conteúdo anterior */
+  margin-bottom: 1em;
 }
 
 #divartigo h2 {
@@ -93,6 +93,23 @@
     margin-bottom: 1em;
 }
 
+/* Estilos adicionais tabelas vindas do markdown */
+table {
+  font-family: var(--font);
+  border-collapse: collapse;
+  width: 100%;
+}
+
+td, th {
+  border: 1px solid #ccc;
+  text-align: left;
+  padding: 8px;
+}
+
+th {
+    font-weight: bold;
+}
+
 /* Pequeno ajuste para telas menores */
 @media (max-width: 768px) {
   article {
@@ -110,8 +127,6 @@
   }
   #divartigo  h1, h2, h3, h4, h5, h6 {
     font-weight: bold;
-    color: black;
-    background-color: white;
     line-height: 1.2; /* Melhora a legibilidade com espaçamento entre linhas */
   }
 
@@ -130,28 +145,54 @@
     position: absolute;
     left: 0;
     top: 0;
-    width: 100%; /* Ocupa toda a largura da página impressa */
+    width: 100%;
     height: auto !important; /* Força a altura automática para imprimir todo o conteúdo */
     overflow: visible !important; /* Impede o corte do conteúdo */
   }
+
+  td, th {
+    color: black;
+    background-color: white;
+    border: 1px solid black;
+  }  
+
+  hr {
+    color: black;
+    background-color: black;
+    border: 1px solid black;
+  }  
+
+  .separator {
+    height: 20px; /* Adjust height as needed */
+    background-image: url("path/to/your/image.png"); /* Replace with your image path */
+    background-repeat: no-repeat; /* Prevent image tiling */
+    background-position: center; /* Center the image */
+    width: 100%; /* Make the separator span the full width */
+    margin: 20px 0;  /* Adjust top and bottom margins as needed */
+  }
+
+  /* Alternative: Use a gradient for the separator */
+  .separator.gradient {
+      height: 5px; /* Adjust height as needed */
+      background-image: linear-gradient(to right, #000, #ccc, #000); /* Example gradient */
+      margin: 20px 0;
+  }
+
+
+  sup, i, b, em, blockquote, body, p, ul, ol, li, h1, h2, h3, h4, h5, h6 {
+    color: black;
+    background-color: white;
+  }
+
+  a {
+    font-size: calc(var(--fontSize) * 0.75);
+    text-decoration: none;
+    color: black;
+    background-color: white;
+  }
+  
   ::-webkit-scrollbar {
     display: none;
   }
 }
 
-/* Estilos adicionais tabelas vindas do markdown */
-table {
-  font-family: var(--font);
-  border-collapse: collapse;
-  width: 100%;
-}
-
-td, th {
-  border: 1px solid #ccc;
-  text-align: left;
-  padding: 8px;
-}
-
-th {
-    font-weight: bold;
-}

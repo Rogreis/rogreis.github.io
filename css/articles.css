@@ -1,90 +1,100 @@
-/* Styles for articles */
-#articles blockquote {
-  margin: 1em 0;
-  padding: 1em 2em;
+/* Styles for divartigo */
+#divartigo blockquote {
+  padding: 15px 15px;
   border-left: none;
   position: relative;
   font-size: var(--fontSize);
   font-family: var(--font);
   font-style: italic;
-  color: #555;
   display: flex;
   align-items: flex-start; /* Key: Align to the top */
 }
 
 /* Quote mark */
-#articles blockquote::before {
+#divartigo blockquote::before {
   content: "\201C"; /* Unicode for left double quotation mark */
   font-size: 3em;
   position: relative;
   left: 0;
   top: -0.25em; /* Adjust this value to move the quote mark up or down */
-  color: #6495ED; /* Cornflower Blue */
   font-family: serif;
   margin-right: 0.5em;
 }
 
 /* Dark mode styles */
 @media (prefers-color-scheme: dark) {
-  #articles blockquote {
+  #divartigo blockquote {
       color: #aaa;
   }
 
-  #articles blockquote::before {
+  #divartigo blockquote::before {
       color: #ADD8E6; /* Light Blue for Dark mode */
   }
 }
 
 /* Nested blockquotes */
-#articles blockquote blockquote {
+#divartigo blockquote blockquote {
   margin-left: 2em;
 }
 
-#articles blockquote blockquote::before {
+#divartigo blockquote blockquote::before {
   margin-left: -0.75em;
   top: -0.25em; /* Maintain consistent vertical alignment */
 }
 
+#divartigo blockquote a {
+  font-size: calc(var(--fontSize) * 0.75);
+}
+
+
 @media (prefers-color-scheme: dark) {
-  #articles blockquote blockquote {
+  #divartigo blockquote blockquote {
       color: #999;
   }
 }
 
 /* Styling for different levels of nesting */
-#articles blockquote blockquote blockquote {
+#divartigo blockquote blockquote blockquote {
   margin-left: 4em;
 }
 
-#articles blockquote blockquote blockquote::before {
+#divartigo blockquote blockquote blockquote::before {
   margin-left: -1.75em;
   top: -0.55em; /* Maintain consistent vertical alignment */
 }
 
 @media (prefers-color-scheme: dark) {
-  #articles blockquote blockquote blockquote {
+  #divartigo blockquote blockquote blockquote {
       color: #bbb;
   }
 }
 
-#articles blockquote blockquote blockquote blockquote {
+#divartigo blockquote blockquote blockquote blockquote {
   margin-left: 6em;
 }
 
-#articles blockquote blockquote blockquote blockquote::before {
+#divartigo blockquote blockquote blockquote blockquote::before {
   margin-left: -2.75em;
   top: -0.55em; /* Maintain consistent vertical alignment */
 }
 
+#divartigo hr {
+  border: none;
+  height: 3px;
+  color: var(--textColorDark);
+  background-color: var(--textColorDark);
+}
+
+
 @media (prefers-color-scheme: dark) {
-  #articles blockquote blockquote blockquote blockquote {
+  #divartigo blockquote blockquote blockquote blockquote {
       color: #ddd;
   }
 }
 
 /* Reset paragraph styles within blockquote */
-#articles blockquote p {
+#divartigo blockquote p {
+  color: var(--textColorDark);
   font-style: normal;
-  color: inherit;
   margin: 0;
 }
