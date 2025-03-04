@@ -15,10 +15,7 @@ async function StartPage()
   {
     loadArticle(article)
   }
-
   initSlider();
-  initComboTrack();
-
 }
 
 function getArticleValue(queryString) {
@@ -60,17 +57,43 @@ function loadArticle(article)
   xhttp.send();
 }
 
-function showParagraph(paper, section, paragraph) {
+async function showParagraph(paper, section, paragraph) {
   url= generate_url(paper, section, paragraph)
   const protocol = window.location.protocol;
   const currentDomain = window.location.hostname;
-  const currentPage = "indexToc.html";
 
   setCookie("paper", paper, 180)
   setCookie("section", section, 180)
   setCookie("paragraph", paragraph, 180)
   addTocEntry(paper, section, paragraph);
   hash = `p${paper.toString().padStart(3, '0')}_${section.toString().padStart(3, '0')}_${paragraph.toString().padStart(3, '0')}`;
-  const fullUrl = `${protocol}//${currentDomain}/${currentPage}#${hash}`;
-  window.open(fullUrl, '_blank');
+  const fullUrl = `${protocol}//${currentDomain}/content/Doc${paper.toString().padStart(3, '0')}.html`;
+
+  try {
+      const response = await fetch(fullUrl);
+      if (!response.ok) {
+        throw new Error(`HTTP error! status: ${response.status}`);
+      }
+      htmlText = await response.text();
+      htmlText = htmlText.replace(/id="p/g, 'id="modal');
+      document.getElementById('divParagrafo').innerHTML = htmlText;
+      const modal = new bootstrap.Modal(document.getElementById('modalText'));
+      modal.show();
+      setTimeout(() => {
+        hash = `modal${paper.toString().padStart(3, '0')}_${section.toString().padStart(3, '0')}_${paragraph.toString().padStart(3, '0')}`;
+        const divToCenter = document.getElementById(hash);
+        if (divToCenter) {
+          divToCenter.style.border = '1px solid gold';
+          divToCenter.scrollIntoView({ block: 'center' });
+        }
+      }, 300); // timeout
+    } catch (error) {
+    console.error("An error occurred while loading the paragraph:", error);
+    document.getElementById('divParagrafo').innerHTML = "<p>Erro ao carregar o conteúdo.</p>";
+  }
+}
+
+function showParagraphFromComboEntry(newOption)
+{
+    console.log("showParagraphFromComboEntry study: ", newOption);
 }

@@ -60,6 +60,11 @@ function generate_url(paper, section, paragraph)
   const currentDomain = window.location.hostname;
   const currentPage = window.location.pathname;
 
+  if (!Number.isInteger(paper) || !Number.isInteger(section) || !Number.isInteger(paragraph)) {
+    const fullUrl = `${protocol}//${currentDomain}/${currentPage}`;
+    return fullUrl;
+  }
+
   setCookie("paper", paper, 180)
   setCookie("section", section, 180)
   setCookie("paragraph", paragraph, 180)
@@ -159,7 +164,6 @@ function getQueryStringParams(queryString) {
       }
     }
   }
-
   return params;
 }
 
@@ -218,137 +222,41 @@ function initSlider()
 }
 
 
-
-function initComboTrack() 
-{
-  combobox = document.getElementById('comboTrack');
-
-  combobox.addEventListener('click', () => {
-    const inputValue = combobox.value.trim();
-    if (inputValue !== "") {
-        addTocEntryFromString(inputValue);
-        combobox.value = ""; // Clear the input field
-    }
-  });
-}
-
-function parsePaperSectionParagraph(inputString) {
-  if (typeof inputString !== 'string') {
-    return { error: "Input must be a string." };
-  }
-
-  // Regular expression to split the string by any of the allowed separators
-  const parts = inputString.split(/[:\s\-\;.]+/);
-
-  if (parts.length !== 3) {
-    return { error: "Input must contain three values separated by ':', ' ', '-', ';' or '.'." };
-  }
-
-  const paper = parseInt(parts[0], 10);
-  const section = parseInt(parts[1], 10);
-  const paragraph = parseInt(parts[2], 10);
-
-  if (isNaN(paper) || isNaN(section) || isNaN(paragraph)) {
-    return { error: "All values must be integers." };
-  }
-
-  if (paper < 0 || paper > 196) {
-    return { error: "Paper value must be between 0 and 196." };
-  }
-
-  return { paper, section, paragraph };
-}
-
-// // Test cases
-// console.log(parsePaperSectionParagraph("10:5-2")); // { paper: 10, section: 5, paragraph: 2 }
-// console.log(parsePaperSectionParagraph("10 5;2")); // { paper: 10, section: 5, paragraph: 2 }
-// console.log(parsePaperSectionParagraph("10.5.2")); // { paper: 10, section: 5, paragraph: 2 }
-// console.log(parsePaperSectionParagraph("10-5 2")); // { paper: 10, section: 5, paragraph: 2 }
-// console.log(parsePaperSectionParagraph("10;5.2")); // { paper: 10, section: 5, paragraph: 2 }
-// console.log(parsePaperSectionParagraph("200:5:2")); // { error: "Paper value must be between 0 and 196." }
-// console.log(parsePaperSectionParagraph("10:a:2")); // { error: "All values must be integers." }
-// console.log(parsePaperSectionParagraph("10:5"));    // { error: "Input must contain three values separated by ':', ' ', '-', ';' or '.'." }
-// console.log(parsePaperSectionParagraph(123));     // { error: "Input must be a string." }
-// console.log(parsePaperSectionParagraph("10:5:2:4")); // { error: "Input must contain three values separated by ':', ' ', '-', ';' or '.'." }
-
-function addTocEntryFromString(inputValue) 
-{
-  var result= parsePaperSectionParagraph(inputValue);
-  addTocEntry(result.paper, result.section, result.paragraph);
-}
-
-
-function saveCollectionToCookie() {
-  const collection = document.getElementById('myCollection').children;
-  const dataToSave = [];
-
-  for (let i = 0; i < collection.length; i++) {
-      let dataValue = collection[i].getAttribute("data-value");
-      if(dataValue){
-          dataToSave.push(dataValue);
-      }
-  }
-
-  const cookieValue = JSON.stringify(dataToSave); // Convert to JSON string
-  document.cookie = "myCollectionData=" + cookieValue + "; expires=Fri, 31 Dec 9999 23:59:59 GMT; path=/"; // Set cookie
-  alert("Collection saved to cookie!");
-}
-
-function rebuildCollectionFromCookie() {
-  const cookieName = "myCollectionData=";
-  const decodedCookie = decodeURIComponent(document.cookie);
-  const cookieArray = decodedCookie.split(';');
-
-  let cookieValue = null;
-  for(let i = 0; i < cookieArray.length; i++) {
-    let c = cookieArray[i];
-    while (c.charAt(0) == ' ') {
-      c = c.substring(1);
-    }
-    if (c.indexOf(cookieName) == 0) {
-      cookieValue = c.substring(cookieName.length, c.length);
-      break;
-    }
-  }
-
-  if (cookieValue) {
-    try {
-      const dataFromCookie = JSON.parse(cookieValue); // Parse JSON string
-      const collectionDiv = document.getElementById('myCollection');
-      collectionDiv.innerHTML = ''; // Clear existing content
-
-      for (let i = 0; i < dataFromCookie.length; i++) {
-        const newItem = document.createElement('div');
-        newItem.className = "item";
-        newItem.setAttribute("data-value", dataFromCookie[i]);
-        newItem.textContent = dataFromCookie[i].charAt(0).toUpperCase() + dataFromCookie[i].slice(1); // Capitalize first letter
-        collectionDiv.appendChild(newItem);
-      }
-        alert("Collection rebuilded from cookie!");
-    } catch (error) {
-      console.error("Error parsing cookie data:", error);
-        alert("Error rebuilding collection from cookie!");
-    }
-  } else {
-    alert("No collection data found in cookie!");
-  }
-}
-
 // Add an item to the combo track
 function addTocEntry(paper, section, paragraph) {
-    let datalist = document.getElementById('suggestions');
-    let options = datalist.querySelectorAll('option');
-    let values = Array.from(options).map(o => o.value);
-    entry = `${paper}:${section}-${paragraph}`;
-
-    if (!values.includes(entry)) {
-        let newOption = document.createElement('option');
-        newOption.value = entry;
-        datalist.appendChild(newOption);
-
-        if (datalist.children.length > MAX_ITEMS) {
-            datalist.removeChild(datalist.firstChild); // Remove the oldest item
-        }
-    }
+    newEntry = `${paper}:${section}-${paragraph}`;
+    addNewEntryOption(newEntry)
 }
 
+
+function referenceFromString(href) {
+  const entry = { paper: 0, section: 0, paragraph: 1 };
+  try {
+      const sep = /[;:.\-_ ]/;
+      const parts = href.split(sep).filter(part => part.trim() !== '');
+
+      switch (parts.length) {
+          case 0:
+              break;
+          case 1:
+              entry.paper = parseInt(parts[0], 10);
+              entry.section = 0;
+              entry.paragraph = 1;
+              break;
+          case 2:
+              entry.paper = parseInt(parts[0], 10);
+              entry.section = parseInt(parts[1], 10);
+              entry.paragraph = 1;
+              break;
+          default:
+              entry.paper = parseInt(parts[0], 10);
+              entry.section = parseInt(parts[1], 10);
+              entry.paragraph = parseInt(parts[2], 10);
+              break;
+      }
+  } catch (error) {
+      console.error("An error occurred while parsing href:", error);
+      // In case of exception, the entry is returned with what it already has
+  }
+  return entry;
+}
