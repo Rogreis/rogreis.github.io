@@ -12,6 +12,7 @@
     --highlight_color: gold;
     --linkColor: gold;
     --linkColorDark: #64b5f6; /* Lighter link color for dark mode */
+    --bs-navbar-active-color: rgba(var(--bs-dark-rgb), var(--bs-bg-opacity))!important;
 }
 
 .text-primary {
@@ -112,7 +113,8 @@ h3
 }
 
 .navactive {
-    background-color: #000066;
+    background-color: var(--highlight_color);
+    color: black!important;
 }
 
 .navinactive {
@@ -326,4 +328,70 @@ textarea {
 #searchData {
     margin-bottom: 10px; /* Add margin to separate the search box from the list */
     box-sizing: border-box; /* Ensures padding is included in the total width/height */
+}
+
+
+.trackCombo {
+  position: relative;
+  display: inline-block;
+}
+
+.trackCombo-input-wrapper { /* Wrapper for input and button */
+  display: flex;
+  align-items: center; /* Vertically align input and button */
+  border: 1px solid #ccc;
+  box-sizing: border-box;
+}
+
+.trackCombo-input {
+  padding: 5px;
+  border: none; /* Remove border from input */
+  flex-grow: 1; /* Allow input to expand */
+  outline: none; /* Remove default focus outline */
+  box-sizing: border-box;
+}
+
+.trackCombo-button {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 5px;
+  padding-left: 0;
+  padding-right: 8px;
+}
+
+.trackCombo-button:after { /* Down arrow */
+  content: "\25BE"; /* Unicode down arrow character */
+  font-size: 12px;
+}
+
+.trackCombo-options {
+  position: absolute;
+  top: calc(100% + 1px); /* Position below the wrapper */
+  left: 0;
+  width: 100%;
+  border: 1px solid #ccc;
+  border-top: none;
+  max-height: 150px;
+  overflow-y: auto;
+  display: none;
+  z-index: 10;
+  background-color: transparent;
+  color:var(--textColorDark);
+  box-sizing: border-box;
+}
+
+.trackCombo-options div {
+  padding: 5px;
+  cursor: pointer;
+  border-bottom: 1px solid #eee;
+}
+.trackCombo-options div:last-child{
+  border-bottom:none;
+}
+
+.trackCombo-options div:hover {
+  background-color: var(--textColorDark);
+  /* color: var(--background-color); */
+    color: var(--textColorLight);
 }

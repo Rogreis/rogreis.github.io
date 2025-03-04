@@ -22,7 +22,6 @@ function StartPage() {
     loadAndUnzipJSON('subject.zip', SubjectPageCallback)
     verifyAnchor();
     initSlider();
-    initComboTrack();
   }
 
 function verifyAnchor() 
@@ -30,16 +29,16 @@ function verifyAnchor()
   if (!hasAnchor())
     {
       // Load the document at the right column from cookies
-      var paper = getCookie("papersub");
-      var section = getCookie("sectionsub");
-      var paragraph = getCookie("paragraphsub");
+      var paper = getCookie("paper");
+      var section = getCookie("section");
+      var paragraph = getCookie("paragraph");
       if (typeof paper !== 'string' || paper.trim() === '' ||
       typeof section !== 'string' || section.trim() === '' ||
       typeof paragraph !== 'string' || paragraph.trim() === '') 
       {
         return;
       }
-    loadDocByPaperSectionParagraph(paper, section, paragraph);
+    loadDocByPaperSectionParagraph(paper, section, paragraph, true);
   }
 }
 
@@ -209,13 +208,13 @@ function loadDoc(url, hash)
   const paper = parseInt(parts[0].substring(1), 10); // Remove 'p' and parse
   const section = parseInt(parts[1], 10);
   const paragraph = parseInt(parts[2], 10);
-  loadDocByPaperSectionParagraph(paper, section, paragraph) ;
+  loadDocByPaperSectionParagraph(paper, section, paragraph, true) ;
 }
 
 
 
 // Load the document at the right column
-function loadDocByPaperSectionParagraph(paper, section, paragraph) 
+function loadDocByPaperSectionParagraph(paper, section, paragraph, isToAddTocEntry) 
 {
     const xhttp = new XMLHttpRequest();
     xhttp.onload = function() {
@@ -234,10 +233,11 @@ function loadDocByPaperSectionParagraph(paper, section, paragraph)
           location.hash = "#" + hash;
         }
     }
-    setCookie("papersub", paper, 180)
-    setCookie("sectionsub", section, 180)
-    setCookie("paragraphsub", paragraph, 180)
-    addTocEntry(paper, section, paragraph);
+    setCookie("paper", paper, 180)
+    setCookie("section", section, 180)
+    setCookie("paragraph", paragraph, 180)
+
+    if (isToAddTocEntry) addTocEntry(paper, section, paragraph);
 
     url= `content/Doc${paper.toString().padStart(3, '0')}.html`;
     xhttp.open("GET", url);
@@ -282,3 +282,14 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     }
 });
+
+async function showParagraphFromDataEntry(paper, section, paragraph) {
+    await loadDocByPaperSectionParagraph(paper, section, paragraph, false);
+}
+
+function showParagraphFromComboEntry(referenceString)
+{
+    entry= referenceFromString(referenceString);
+    loadDocByPaperSectionParagraph(entry.paper, entry.section, entry.paragraph, false);
+}
+  

@@ -1,0 +1,102 @@
+.trackCombo {
+    position: relative;
+    display: inline-block;
+    font-size: 0.8rem; /* Smaller text font */
+    width: 150px; /* Less width */
+}
+
+.trackCombo-input-wrapper { /* Wrapper for input and button */
+    display: flex;
+    align-items: center; /* Vertically align input and button */
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+    border-radius: 5px; /* Rounded corners */
+}
+
+.trackCombo-input {
+    padding: 5px;
+    border: none; /* Remove border from input */
+    flex-grow: 1; /* Allow input to expand */
+    outline: none; /* Remove default focus outline */
+    box-sizing: border-box;
+    height: 30px; /* Less height */
+    border-radius: 5px 0 0 5px; /* Rounded corners for input */
+}
+
+.trackCombo-button {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 5px;
+    padding-left: 0;
+    padding-right: 8px;
+    border-radius: 0 5px 5px 0; /* Rounded corners for button */
+}
+
+.trackCombo-button:after { /* Down arrow */
+    content: "\25BE"; /* Unicode down arrow character */
+    font-size: 12px;
+}
+
+.trackCombo-options {
+    position: absolute;
+    top: calc(100% + 1px); /* Position below the wrapper */
+    left: 0;
+    width: 100%;
+    border: 1px solid #ccc;
+    border-top: none;
+    max-height: 300px; /* Less height */
+    overflow-y: auto;
+    display: none;
+    z-index: 10;
+    background-color: white;
+    box-sizing: border-box;
+    border-radius: 0 0 5px 5px; /* Rounded corners for options */
+}
+
+.trackCombo-options div {
+    padding: 5px;
+    cursor: pointer;
+    border-bottom: 1px solid #eee;
+}
+
+.trackCombo-options div:last-child {
+    border-bottom: none;
+}
+
+.trackCombo-options div:hover {
+    background-color: #f0f0f0;
+    color: var(--textColorLight);
+  }
+
+/* Dark mode styles */
+@media (prefers-color-scheme: dark) {
+    .trackCombo-input-wrapper {
+        border: 1px solid #444;
+        background-color: #333;
+    }
+
+    .trackCombo-input {
+        background-color: #333;
+        color: #fff;
+    }
+
+    .trackCombo-button {
+        color: #fff;
+    }
+
+    .trackCombo-options {
+        background-color: #333;
+        border: 1px solid #444;
+    }
+
+    .trackCombo-options div {
+        color: #fff;
+        border-bottom: 1px solid #555;
+    }
+
+    .trackCombo-options div:hover {
+        background-color: #555;
+        color: var(--textColorLight);
+    }
+}

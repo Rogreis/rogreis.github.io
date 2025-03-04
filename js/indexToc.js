@@ -5,20 +5,28 @@ async function StartPage() {
   await LoadTableOfContentsData();
   setCookie("PAGE", "indexToc", 180)
   initSlider();
-  initComboTrack();
 }
 
 async function loadDocFromCookie() {
-    const paper = getCookie("paper");
-    const section = getCookie("section");
-    const paragraph = getCookie("paragraph");
-    if (typeof paper !== 'string' || paper.trim() === '' ||
-      typeof section !== 'string' || section.trim() === '' ||
-      typeof paragraph !== 'string' || paragraph.trim() === '') {
-      return;
+  try {
+    let paper = parseInt(getCookie("paper"), 10);
+    let section = parseInt(getCookie("section"), 10);
+    let paragraph = parseInt(getCookie("paragraph"), 10);
+
+    if (isNaN(paper) || isNaN(section) || isNaN(paragraph)) {
+        paper = 0;
+        section = 0;
+        paragraph = 1;
+        setCookie("paper", paper, 180);
+        setCookie("section", section, 180);
+        setCookie("paragraph", paragraph, 180);
     }
+
     await loadDocByPaperSectionParagraph(paper, section, paragraph);
+    } catch (error) {
+        console.error("An error occurred while loading document from cookies:", error);
   }
+}
 
 async function verifyAnchor() 
 { 
@@ -90,7 +98,6 @@ function expandCurrentTocElement()
 
     if (paper == 0) {
       const intro = document.getElementById("toc_000_000_div");
-      //console.log(intro);
       toggleCaret(intro);
     }
     if (paper > 0 && paper < 32) {
@@ -139,8 +146,6 @@ function expandCurrentTocElement()
           });
         }
       }, 300); // Adjust the timeout as needed
-
-  
     }
 }
 
@@ -148,29 +153,33 @@ function expandCurrentTocElement()
 // Load the document at the right column
 async function loadDocByPaperSectionParagraph(paper, section, paragraph) 
 {
-    const xhttp = new XMLHttpRequest();
-    xhttp.onload = function() {
-        document.getElementById('rightColumn').innerHTML = this.responseText;
+  if (!Number.isInteger(paper) || !Number.isInteger(section) || !Number.isInteger(paragraph)) {
+    console.error("Invalid input: paper, section, and paragraph must be integers.");
+    paper= 0;
+    section= 0;
+    paragraph= 1;
+  }
 
-        // Assuming the anchor ID is within the loaded content
-        //hash = `U${paper}_${section}_${paragraph}`;
-        hash = `p${paper.toString().padStart(3, '0')}_${section.toString().padStart(3, '0')}_${paragraph.toString().padStart(3, '0')}`;
+  const xhttp = new XMLHttpRequest();
+  xhttp.onload = function() {
+      document.getElementById('rightColumn').innerHTML = this.responseText;
+      hash = `p${paper.toString().padStart(3, '0')}_${section.toString().padStart(3, '0')}_${paragraph.toString().padStart(3, '0')}`;
 
-        // Check if the anchor is present before setting the hash
-        setTimeout(() => {
-          var divelement = document.getElementById(hash);
-          if (divelement)
-          {
-            divelement.scrollIntoView({ block: 'start' });
-          }
-        }, 300); // Adjust the timeout as needed
-    }
-    setCookie("paper", paper, 180)
-    setCookie("section", section, 180)
-    setCookie("paragraph", paragraph, 180)
-    url= `content/Doc${paper.toString().padStart(3, '0')}.html`;
-    xhttp.open("GET", url);
-    xhttp.send();
+      // Check if the anchor is present before setting the hash
+      setTimeout(() => {
+        var divelement = document.getElementById(hash);
+        if (divelement)
+        {
+          divelement.scrollIntoView({ block: 'start' });
+        }
+      }, 300); // Adjust the timeout as needed
+  }
+  setCookie("paper", paper, 180)
+  setCookie("section", section, 180)
+  setCookie("paragraph", paragraph, 180)
+  url= `content/Doc${paper.toString().padStart(3, '0')}.html`;
+  xhttp.open("GET", url);
+  xhttp.send();
 }
 
 function isMobile() {
@@ -192,6 +201,17 @@ function loadDoc(url, hash)
   if (isMobile()) {
     const currentUrl = 'https://rogreis.github.io/indexToc.html';
     window.location.href= currentUrl;
-  }  
+  } 
   loadDocByPaperSectionParagraph(paper, section, paragraph) ;
+  addTocEntry(paper, section, paragraph);
+}
+
+async function showParagraph(paper, section, paragraph) {
+  await loadDocByPaperSectionParagraph(paper, section, paragraph);
+}
+
+function showParagraphFromComboEntry(referenceString)
+{
+    entry= referenceFromString(referenceString);
+    loadDocByPaperSectionParagraph(entry.paper, entry.section, entry.paragraph, false);
 }
