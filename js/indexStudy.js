@@ -93,7 +93,9 @@ async function showParagraph(paper, section, paragraph) {
   }
 }
 
-function showParagraphFromComboEntry(newOption)
+function showParagraphFromComboEntry(referenceString)
 {
-    console.log("showParagraphFromComboEntry study: ", newOption);
+    console.log("showParagraphFromComboEntry study: ", referenceString);
+    entry= referenceFromString(referenceString);
+    showParagraph(entry.paper, entry.section, entry.paragraph);
 }

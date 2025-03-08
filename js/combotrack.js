@@ -1,3 +1,12 @@
+// For the modal windiw for the paragraph, we need to change the id of the div to modalText
+document.getElementById('modalText').addEventListener('hidden.bs.modal', function () {
+  const backdrop = document.querySelector('.modal-backdrop');
+  if (backdrop) {
+      backdrop.remove();
+  }
+});
+
+
 const trackComboInput = document.getElementById('mytrackCombo');
 const trackComboOptions = document.getElementById('mytrackComboOptions');
 // Load the collection from the cookie
