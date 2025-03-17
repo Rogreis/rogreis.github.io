@@ -1,12 +1,12 @@
 /* Styles for divartigo */
 #divartigo blockquote {
-  padding: 15px 15px;
+  padding: 5px 25px 7px 25px;
   border-left: none;
   position: relative;
   font-size: var(--fontSize);
   font-family: var(--font);
-  font-style: italic;
   display: flex;
+  margin: 0px;
   align-items: flex-start; /* Key: Align to the top */
 }
 
@@ -27,7 +27,11 @@
       color: #aaa;
   }
 
-  #divartigo blockquote::before {
+  #divartigo blockquote p {
+    color: black;
+}
+
+#divartigo blockquote::before {
       color: #ADD8E6; /* Light Blue for Dark mode */
   }
 }
@@ -96,5 +100,6 @@
 #divartigo blockquote p {
   color: var(--textColorDark);
   font-style: normal;
+  text-align: justify;
   margin: 0;
 }

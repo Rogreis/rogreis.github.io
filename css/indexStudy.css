@@ -39,6 +39,7 @@
     font-size: var(--fontSize);
     line-height: var(--lineHeight);
     margin: 2em auto; /* Centraliza o artigo na página */
+    text-align: justify;
   }
 
 #divartigo a {

@@ -1,4 +1,4 @@
-Título: Como escrever artigos.
+Título: Objetivo.
 Sumário: Objetivos e tipo de conteúdo esperado para os artigos aqui publicados.
 Link: README.html
 
@@ -10,7 +10,7 @@ Título: Diferenças entre "insight" e "discernimento"
 Sumário: Possibilidades para tradução dde "insight" e seu significado na época da escrita do LU.
 Link: insight.html
 
-Título: Uso do termo tensão
+Título: Uso do termo "tensão"
 Sumário: O termo tensão aparece quando o texto fala no esforço do homem para alcançar Deus e também quando todos os seres no universo juntam esforços para o mesmo objectivo.
 Link: tensao.html
 
