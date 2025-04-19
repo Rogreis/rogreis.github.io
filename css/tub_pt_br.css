@@ -58,9 +58,9 @@ main {
 
 
 #divisor {
-    width: 5px; /* Largura do divisor */
+    width: 5px;
     background-color: #ccc;
-    cursor: ew-resize; /* Muda o cursor para indicar redimensionamento */
+    cursor: ew-resize;
     touch-action: none; /* Impede o comportamento padrão de toque, para evitar conflitos com o arrastar */
 }
 
@@ -112,6 +112,19 @@ h3
     font-size: var(--fontSizePaperTitle);
 }
 
+h4
+{
+    font-size: var(--fontSizeSectionTitle);
+}
+
+h5
+{
+    font-family: var(--font);
+    font-size: var(--fontSize);
+    font-weight: normal;
+    color: rgba(var(--bs-white-rgb), var(--bs-text-opacity))!important;
+}
+
 .navactive {
     background-color: var(--highlight_color);
     color: black!important;
@@ -123,11 +136,6 @@ h3
 
 .active {
     display: block;
-}
-
-h4
-{
-    font-size: var(--fontSizeSectionTitle);
 }
 
 
@@ -166,7 +174,7 @@ h4
     width: 100px
 }
 
-.parStarted, .parWorking, .parDoubt, .parOk, .parClosed
+.parStarted, .parWorking, .parDoubt, .parOk, .parClosed, .parTitle, .parSeparator
 {  
 font-family: var(--font);
 font-size: var(--fontSize);
@@ -189,7 +197,7 @@ a.parDoubt:hover { text-decoration: underline; }
 a.parOk { color:black; text-decoration: none; }
 a.parOk:hover { text-decoration: underline; }
 
-.parClosed 
+.parClosed, .parTitle, .parSeparator
 { 
     color: rgba(var(--bs-white-rgb), var(--bs-text-opacity))!important;
 }
