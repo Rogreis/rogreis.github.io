@@ -222,7 +222,7 @@ function loadDocByPaperSectionParagraph(paper, section, paragraph, isToAddTocEnt
 
         // Assuming the anchor ID is within the loaded content
         //hash = `U${paper}_${section}_${paragraph}`;
-        hash = `p${paper.toString().padStart(3, '0')}_${section.toString().padStart(3, '0')}_${paragraph.toString().padStart(3, '0')}`;
+        hash = `p${paper.toString().padStart(3, '0')}_${section.toString().padStart(3, '0')}_${paragraph.toString().padStart(3, '0')}_R`;
         var anchor = document.getElementById(hash);
       
         // Scroll to the anchor smoothly (optional)

@@ -163,7 +163,7 @@ async function loadDocByPaperSectionParagraph(paper, section, paragraph)
   const xhttp = new XMLHttpRequest();
   xhttp.onload = function() {
       document.getElementById('rightColumn').innerHTML = this.responseText;
-      hash = `p${paper.toString().padStart(3, '0')}_${section.toString().padStart(3, '0')}_${paragraph.toString().padStart(3, '0')}`;
+      hash = `p${paper.toString().padStart(3, '0')}_${section.toString().padStart(3, '0')}_${paragraph.toString().padStart(3, '0')}_R`;
 
       // Check if the anchor is present before setting the hash
       setTimeout(() => {

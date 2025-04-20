@@ -66,7 +66,7 @@ async function showParagraph(paper, section, paragraph) {
   setCookie("section", section, 180)
   setCookie("paragraph", paragraph, 180)
   addTocEntry(paper, section, paragraph);
-  hash = `p${paper.toString().padStart(3, '0')}_${section.toString().padStart(3, '0')}_${paragraph.toString().padStart(3, '0')}`;
+  hash = `p${paper.toString().padStart(3, '0')}_${section.toString().padStart(3, '0')}_${paragraph.toString().padStart(3, '0')}_R`;
   const fullUrl = `${protocol}//${currentDomain}/content/Doc${paper.toString().padStart(3, '0')}.html`;
 
   try {
@@ -80,7 +80,7 @@ async function showParagraph(paper, section, paragraph) {
       const modal = new bootstrap.Modal(document.getElementById('modalText'));
       modal.show();
       setTimeout(() => {
-        hash = `modal${paper.toString().padStart(3, '0')}_${section.toString().padStart(3, '0')}_${paragraph.toString().padStart(3, '0')}`;
+        hash = `modal${paper.toString().padStart(3, '0')}_${section.toString().padStart(3, '0')}_${paragraph.toString().padStart(3, '0')}_R`;
         const divToCenter = document.getElementById(hash);
         if (divToCenter) {
           divToCenter.style.border = '1px solid gold';
@@ -95,7 +95,6 @@ async function showParagraph(paper, section, paragraph) {
 
 function showParagraphFromComboEntry(referenceString)
 {
-    console.log("showParagraphFromComboEntry study: ", referenceString);
     entry= referenceFromString(referenceString);
     showParagraph(entry.paper, entry.section, entry.paragraph);
 }
