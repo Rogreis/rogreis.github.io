@@ -1,0 +1,99 @@
+﻿    <style> 
+        .articleToc ul { 
+            list-style: none; 
+            padding-left: 20px; /* Indentation for nested levels */ 
+        } 
+ 
+        .articleToc li { 
+            cursor: pointer; /* Make list items clickable */ 
+        } 
+        .articleToc .caret::before{ 
+            content: "279"; /* Unicode for caret-right */ 
+            display: inline-block; 
+            margin-right: 5px; 
+            font-family: bootstrap-icons !important; 
+        } 
+        .articleToc .caret.active::before{ 
+            content: "27a"; /* Unicode for caret-down */ 
+        } 
+ 
+        .nested { 
+            display: none; 
+        } 
+ 
+        .active { 
+            display: block; 
+        } 
+ 
+.articleToc liIndex { 
+    font-family: var(--font); 
+    font-size: var(--fontSize); 
+} 
+ 
+.articleToc a.liIndex:link { 
+    text-decoration: none; 
+    color: var(--textColorDark); 
+} 
+ 
+.articleToc a.liIndex:visited { 
+    text-decoration: none; 
+    color: var(--textColorDark); 
+} 
+ 
+.articleToc a.liIndex:hover { 
+    text-decoration: underline; 
+    color: var(--textColorDark); 
+} 
+ 
+.articleToc a.liIndex:active { 
+    text-decoration: none; 
+    color: var(--textColorDark); 
+} 
+ 
+    </style> 
+ 
+<button onclick="window.location.href='indexStudy.html';"  style="padding: 10px 15px; border: 1px solid #ccc; border-radius: 5px; cursor: pointer; font-size: 1em;"> 
+🏠 Índice de artigos 
+</button> 
+<div class="articleToc">
+<ul>
+   <ul class="nested">
+      <li><a class="liIndex" href="moral_textos_reservados.md#definição-de-moral-no-lu"><span class="caret">Defini&#231;&#227;o de moral no LU</span></a></li>
+      <li><a class="liIndex" href="moral_textos_reservados.md#a-escolha-entre-o-bem-e-mal"><span class="caret">A escolha entre o bem e mal</span></a></li>
+      <li><a class="liIndex" href="moral_textos_reservados.md#tópicos-a-serem-descartados-ou-melhor-desenvovidos"><span class="caret">T&#243;picos a serem descartados ou melhor desenvovidos</span></a></li>
+      <ul class="nested">
+         <li><a class="liIndex" href="moral_textos_reservados.md#formas-de-governo"><span class="caret">Formas de governo</span></a></li>
+         <li><a class="liIndex" href="moral_textos_reservados.md#origem-da-imoralidade"><span class="caret">Origem da Imoralidade</span></a></li>
+         <li><a class="liIndex" href="moral_textos_reservados.md#a-forma-positiva"><span class="caret">A forma positiva</span></a></li>
+      </ul>
+      <li><a class="liIndex" href="moral_textos_reservados.md#caminhos-para-a-humanidade"><span class="caret">Caminhos para a humanidade</span></a></li>
+      <li><a class="liIndex" href="moral_textos_reservados.md#diferenças-entre-a-teologia-moral-e-a-ética-filosófica"><span class="caret">Diferen&#231;as entre a Teologia Moral e a &#201;tica Filos&#243;fica</span></a></li>
+      <ul class="nested">
+         <li><a class="liIndex" href="moral_textos_reservados.md#conceito-ético-o-valor-da-personalidade"><span class="caret">Conceito &#233;tico: O Valor da Personalidade</span></a></li>
+         <li><a class="liIndex" href="moral_textos_reservados.md#conceito-ético-a-realidade-do-livre-arbítrio"><span class="caret">Conceito &#233;tico: A Realidade do Livre-Arb&#237;trio</span></a></li>
+      </ul>
+      <li><a class="liIndex" href="moral_textos_reservados.md#o-ato-moral"><span class="caret">O ato moral</span></a></li>
+      <li><a class="liIndex" href="moral_textos_reservados.md#os-elementos-constitutivos-do-ato-moral"><span class="caret">Os Elementos Constitutivos do Ato Moral</span></a></li>
+      <li><a class="liIndex" href="moral_textos_reservados.md#a-consciência-moral"><span class="caret">A Consci&#234;ncia Moral</span></a></li>
+      <li><a class="liIndex" href="moral_textos_reservados.md#erro-pecado-e-iniquidade"><span class="caret">Erro, Pecado e Iniquidade</span></a></li>
+      <ul class="nested">
+         <li><a class="liIndex" href="moral_textos_reservados.md#exemplo"><span class="caret">Exemplo</span></a></li>
+      </ul>
+   </ul>
+</ul>
+</div>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" 
+integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" 
+crossorigin="anonymous"></script> 
+<script> 
+var toggler = document.getElementsByClassName("caret"); 
+var i; 
+ 
+for (i = 0; i < toggler.length; i++) { 
+    toggler[i].addEventListener("click", function () { 
+        this.parentElement.querySelector(".nested").classList.toggle("active"); 
+        this.classList.toggle("active"); 
+    }); 
+} 
+</script> 
+ 

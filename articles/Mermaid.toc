@@ -1,0 +1,98 @@
+﻿    <style> 
+        .articleToc ul { 
+            list-style: none; 
+            padding-left: 20px; /* Indentation for nested levels */ 
+        } 
+ 
+        .articleToc li { 
+            cursor: pointer; /* Make list items clickable */ 
+        } 
+        .articleToc .caret::before{ 
+            content: "279"; /* Unicode for caret-right */ 
+            display: inline-block; 
+            margin-right: 5px; 
+            font-family: bootstrap-icons !important; 
+        } 
+        .articleToc .caret.active::before{ 
+            content: "27a"; /* Unicode for caret-down */ 
+        } 
+ 
+        .nested { 
+            display: none; 
+        } 
+ 
+        .active { 
+            display: block; 
+        } 
+ 
+.articleToc liIndex { 
+    font-family: var(--font); 
+    font-size: var(--fontSize); 
+} 
+ 
+.articleToc a.liIndex:link { 
+    text-decoration: none; 
+    color: var(--textColorDark); 
+} 
+ 
+.articleToc a.liIndex:visited { 
+    text-decoration: none; 
+    color: var(--textColorDark); 
+} 
+ 
+.articleToc a.liIndex:hover { 
+    text-decoration: underline; 
+    color: var(--textColorDark); 
+} 
+ 
+.articleToc a.liIndex:active { 
+    text-decoration: none; 
+    color: var(--textColorDark); 
+} 
+ 
+    </style> 
+ 
+<button onclick="window.location.href='indexStudy.html';"  style="padding: 10px 15px; border: 1px solid #ccc; border-radius: 5px; cursor: pointer; font-size: 1em;"> 
+🏠 Índice de artigos 
+</button> 
+<div class="articleToc">
+<ul>
+   <li><a class="liIndex" href="Mermaid.md#uso-do-mermaid-para-representação-de-ideias-do-livro-de-urântia"><span class="caret">Uso do Mermaid para representa&#231;&#227;o de ideias do livro de Ur&#226;ntia</span></a></li>
+   <ul class="nested">
+      <li><a class="liIndex" href="Mermaid.md#detalhes"><span class="caret">&#129534; Detalhes:</span></a></li>
+      <ul class="nested">
+         <li><a class="liIndex" href="Mermaid.md#uso"><span class="caret">&#129513; Uso:</span></a></li>
+      </ul>
+      <li><a class="liIndex" href="Mermaid.md#como-ler-um-diagrama-de-sequência"><span class="caret">Como ler um diagrama de sequ&#234;ncia</span></a></li>
+      <li><a class="liIndex" href="Mermaid.md#consciência-da-alma"><span class="caret">Consci&#234;ncia da alma</span></a></li>
+      <li><a class="liIndex" href="Mermaid.md#adoração"><span class="caret">Adora&#231;&#227;o</span></a></li>
+      <li><a class="liIndex" href="Mermaid.md#sete-círculos"><span class="caret">Sete c&#237;rculos</span></a></li>
+      <li><a class="liIndex" href="Mermaid.md#exemplos"><span class="caret">Exemplos</span></a></li>
+      <ul class="nested">
+         <li><a class="liIndex" href="Mermaid.md#participantes-objetos"><span class="caret">&#129485; Participantes / Objetos</span></a></li>
+         <li><a class="liIndex" href="Mermaid.md#️-mensagens-chamada-de-método"><span class="caret">➡️ Mensagens (chamada de m&#233;todo)</span></a></li>
+         <li><a class="liIndex" href="Mermaid.md#retorno-de-chamada"><span class="caret">&#128257; Retorno de chamada</span></a></li>
+         <li><a class="liIndex" href="Mermaid.md#ativação-implícita-com-chamadas"><span class="caret">&#128307; Ativa&#231;&#227;o (impl&#237;cita com chamadas)</span></a></li>
+         <li><a class="liIndex" href="Mermaid.md#loop"><span class="caret">&#128257; Loop</span></a></li>
+         <li><a class="liIndex" href="Mermaid.md#alternativa-condicional"><span class="caret">&#128256; Alternativa (condicional)</span></a></li>
+         <li><a class="liIndex" href="Mermaid.md#opção-tipo-if-sem-else"><span class="caret">❓ Op&#231;&#227;o (tipo if sem else)</span></a></li>
+         <li><a class="liIndex" href="Mermaid.md#criando-e-removendo-participantes"><span class="caret">Criando e removendo participantes</span></a></li>
+      </ul>
+   </ul>
+</ul>
+</div>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" 
+integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" 
+crossorigin="anonymous"></script> 
+<script> 
+var toggler = document.getElementsByClassName("caret"); 
+var i; 
+ 
+for (i = 0; i < toggler.length; i++) { 
+    toggler[i].addEventListener("click", function () { 
+        this.parentElement.querySelector(".nested").classList.toggle("active"); 
+        this.classList.toggle("active"); 
+    }); 
+} 
+</script> 
+ 

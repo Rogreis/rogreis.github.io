@@ -1,0 +1,354 @@
+﻿<a name="uso-do-mermaid-para-representação-de-ideias-do-livro-de-urântia" class="no-decoration-link"><h1>Uso do Mermaid para representação de ideias do livro de Urântia</h1></a> 
+
+<p><a href="https://mermaid.js.org" title="">Mermaid</a> é código aberto e gratuito para uso por qualquer pessoa, inclusive para fins comerciais.</p>
+
+<a name="detalhes" class="no-decoration-link"><h2>🧾 Detalhes:</h2></a> 
+
+<p>- <strong>Licença</strong>: MIT License  </p>
+<p>  - Isso significa que você pode <strong>usar, copiar, modificar, distribuir</strong> e até incorporar em projetos comerciais <strong>sem custo</strong>.</p>
+<p>  - Só é necessário manter o aviso de copyright e a licença.</p>
+<p>- <a href="https://mermaid.js.org/intro/" title="">Link para a documentação</a></p>
+<p>- <a href="https://github.com/mermaid-js/mermaid" title="">Link para o código aberto</a></p>
+
+<a name="uso" class="no-decoration-link"><h3>🧩 Uso:</h3></a> 
+
+<p>- Podemos usar para representar ideias e conceitos presentes no <strong>Livro de Urântia</strong> de modo muito simples.</p>
+<p>- Suporte nativo em muitas plataformas como GitHub, Obsidian, Notion, VS Code (via extensões), etc.</p>
+
+<a name="como-ler-um-diagrama-de-sequência" class="no-decoration-link"><h2>Como ler um diagrama de sequência</h2></a> 
+
+<p>Leia de cima para baixo como no exemplo abaixo sobre a consciência da </p>
+
+<p>- <strong>Objetos/Participantes</strong>: estão no topo, representados por retângulos com nomes. Cada um tem uma <strong>linha de vida</strong> vertical.</p>
+<p>- <strong>Mensagens</strong>: são setas horizontais entre as linhas de vida, indicando chamadas de métodos ou troca de mensagens. A ordem é de cima pra baixo (sequência temporal).</p>
+<p>- <strong>Setas cheias</strong>: chamada de método ou envio de mensagem.  </p>
+<p>- <strong>Setas tracejadas</strong>: retorno de chamada.  </p>
+<p>- <strong>Retângulos sobre a linha de vida</strong>: indicam ativação (período em que o objeto está executando algo).</p>
+<p>- <strong>Loops, condições ou blocos alternativos</strong>: aparecem com molduras (caixas retangulares com rótulos como `loop`, `alt`, `opt` etc.).</p>
+
+<a name="consciência-da-alma" class="no-decoration-link"><h2>Consciência da alma</h2></a> 
+
+<p>Segue um resumo de como representar cada elemento do <strong>diagrama de sequência UML</strong> usando <strong>Mermaid</strong>:</p>
+
+<p>Processo que se inicia num ser humano já com algum desenvolvimento espiritual até a chegada de novos potenciais na consciência da alma e sua subsequente atualização ou realização-parcial:</p>
+
+<p>intelectual, moroncial, espiritual e pessoal - a consciência da mente, da alma e do espírito e a unificação delas na personalidade.</p>
+
+<figure> 
+   <div class="col-md-8">  
+      <div class="mermaid">  
+      sequenceDiagram
+      
+         participant Supremo
+         participant Ajustador
+         participant Alma
+         participant Mente
+         actor Humano
+      
+         loop cada item
+              Ajustador->>Humano: Humano(Conquista)
+              Alma->>Ajustador: Deseja
+              Note over Alma: Na medida em que espiritualmente se desenvolveu
+              Ajustador->>Alma: Ajustador inspira uma atitude
+              Alma->>Mente: Aceita e pede autorização
+              Mente->>Humano: Aceita e pede autorização
+              Humano-->>Ajustador: Autoriza
+              Ajustador-->>Supremo: Busca um potencial
+              Note over Ajustador: Capacidade única de aceder ao Supremo
+              Supremo->>Ajustador: Informa um potencial
+              Ajustador->>Alma: Sugere ações
+              Alma-->>Alma: Consciência da alma
+              Note over Alma: Consciência da alma - a realização do ideal de Deus
+              Alma->>Mente: Quando consegue ser ouvida
+              Mente->>Humano: Deseja
+              Note over Humano: Potencial em atualização
+         end
+      </div>  
+   </div>  
+<figcaption style="font-size: 0.8em;  margin-top: 5px; margin-left: 50px;"> 
+
+</figcaption> 
+</figure> 
+
+<hr />
+
+<a name="adoração" class="no-decoration-link"><h2>Adoração</h2></a> 
+
+<p>O processo de adoração é iniciado por um desejo da alma depois de mobilizar todos os poderes da personalidade humana (<strong><a href="javascript:showParagraph(5,3,7)" title="Abrir o parágrafo 5:3-7">5:3-7</a></strong>) sob domínio dela e é descrito como <strong>"A mente mortal consente em adorar; a alma imortal anseia pela adoração e a inicia; a presença do Ajustador divino conduz essa adoração em nome da mente mortal e da alma imortal em evolução."</strong> (<strong><a href="javascript:showParagraph(5,3,8)" title="Abrir o parágrafo 5:3-8">5:3-8</a></strong>).</p>
+
+
+<p>   participant Ajustador</p>
+<p>   Note over Ajustador: Espiritual</p>
+<p>   participant Alma</p>
+<p>   Note over Alma: Moroncial</p>
+<p>   participant Mente</p>
+<p>   Note over Mente: Intelectual</p>
+<p>   actor Humano</p>
+
+
+<figure> 
+   <div class="col-md-8">  
+      <div class="mermaid">  
+         sequenceDiagram
+         participant Pai
+         participant Ajustador
+         Note over Ajustador: Espiritual
+         participant Alma
+         Note over Alma: Moroncial
+         participant Mente
+         Note over Mente: Intelectual
+         actor Pessoa
+         Note over Pessoa: Personalidade
+      
+          activate Alma
+          Alma-->>Alma: Mobilização dos poderes da personalidade
+          Alma->>Mente: Deseja
+          Note over Alma,Mente: A alma comunica o desejo<br/>A mente consegue entender 
+          deactivate Alma
+          activate Mente
+          Mente->>Ajustador: Desejo autorizado
+          deactivate Mente
+          activate Ajustador
+          Ajustador->>Pai: Conduz
+          Note over Ajustador,Pai: Ajustador conduz<br/>em nome da mente e da alma
+          deactivate Ajustador
+          Mente-->>Pai: Adoração
+      </div>  
+   </div>  
+<figcaption style="font-size: 0.8em;  margin-top: 5px; margin-left: 50px;"> 
+
+</figcaption> 
+</figure> 
+
+<a name="sete-círculos" class="no-decoration-link"><h2>Sete círculos</h2></a> 
+
+<p>cf <strong><a href="javascript:showParagraph(49,6,8)" title="Abrir o parágrafo 49:6-8">49:6-8</a></strong></p>
+
+<figure> 
+   <div class="col-md-8">  
+      <div class="mermaid">  
+      sequenceDiagram
+          participant Mortal
+          participant CírculosCósmicos
+          participant AnjoGuardião
+          participant VidaMorontial
+      
+          Mortal->>CírculosCósmicos: Inicia progressão nos sete círculos cósmicos
+          loop Para cada círculo cósmico (7 ao 1)
+              Mortal->>CírculosCósmicos: Esforça-se para alcançar o próximo círculo
+              CírculosCósmicos-->>Mortal: Avalia progresso (intelectual, social, espiritual, discernimento cósmico)
+              alt Alcançou o terceiro círculo
+                  AnjoGuardião->>Mortal: Anjo guardião pessoal do destino é designado
+                  Mortal->>VidaMorontial: Pode ser repersonalizado no terceiro dia
+              else Sobre a ressurreição
+                  alt Independente do juízo dispensacional
+                      Mortal->>VidaMorontial: Pode ser repersonalizado no terceiro dia
+                  else Ressurreição tardia
+                      Mortal->>VidaMorontial: Repersonalização especial ou com o final da dispensação
+                  end
+              end
+          end
+      </div>  
+   </div>  
+<figcaption style="font-size: 0.8em;  margin-top: 5px; margin-left: 50px;"> 
+
+</figcaption> 
+</figure> 
+
+<hr />
+
+<a name="exemplos" class="no-decoration-link"><h2>Exemplos</h2></a> 
+
+<a name="participantes-objetos" class="no-decoration-link"><h3>🧍 Participantes / Objetos</h3></a> 
+
+<figure> 
+   <div class="col-md-8">  
+      <div class="mermaid">  
+      sequenceDiagram
+          participant A
+          participant B
+      </div>  
+   </div>  
+<figcaption style="font-size: 0.8em;  margin-top: 5px; margin-left: 50px;"> 
+
+</figcaption> 
+</figure> 
+
+<a name="️-mensagens-chamada-de-método" class="no-decoration-link"><h3>➡️ Mensagens (chamada de método)</h3></a> 
+
+<figure> 
+   <div class="col-md-8">  
+      <div class="mermaid">  
+      sequenceDiagram
+          A->>B: chama método()
+      </div>  
+   </div>  
+<figcaption style="font-size: 0.8em;  margin-top: 5px; margin-left: 50px;"> 
+
+</figcaption> 
+</figure> 
+
+<p>- `->>` é uma chamada síncrona  </p>
+<p>- `-->>` é uma chamada assíncrona  </p>
+
+<a name="retorno-de-chamada" class="no-decoration-link"><h3>🔁 Retorno de chamada</h3></a> 
+
+<figure> 
+   <div class="col-md-8">  
+      <div class="mermaid">  
+         sequenceDiagram
+         B-->>A: resultado
+      </div>  
+   </div>  
+<figcaption style="font-size: 0.8em;  margin-top: 5px; margin-left: 50px;"> 
+
+</figcaption> 
+</figure> 
+
+<a name="ativação-implícita-com-chamadas" class="no-decoration-link"><h3>🔳 Ativação (implícita com chamadas)</h3></a> 
+
+<p>Mermaid mostra barras de ativação automaticamente com chamadas síncronas (`->>`).</p>
+
+<hr />
+
+<a name="loop" class="no-decoration-link"><h3>🔁 Loop</h3></a> 
+
+<figure> 
+   <div class="col-md-8">  
+      <div class="mermaid">  
+      sequenceDiagram
+          loop cada item
+              A->>B: processa(item)
+          end
+      </div>  
+   </div>  
+<figcaption style="font-size: 0.8em;  margin-top: 5px; margin-left: 50px;"> 
+
+</figcaption> 
+</figure> 
+
+<hr />
+
+<a name="alternativa-condicional" class="no-decoration-link"><h3>🔀 Alternativa (condicional)</h3></a> 
+
+<figure> 
+   <div class="col-md-8">  
+      <div class="mermaid">  
+      sequenceDiagram
+          alt condição verdadeira
+              A->>B: faz algo
+          else condição falsa
+              A->>B: faz outra coisa
+          end
+      </div>  
+   </div>  
+<figcaption style="font-size: 0.8em;  margin-top: 5px; margin-left: 50px;"> 
+
+</figcaption> 
+</figure> 
+
+<hr />
+
+<a name="opção-tipo-if-sem-else" class="no-decoration-link"><h3>❓ Opção (tipo if sem else)</h3></a> 
+
+<figure> 
+   <div class="col-md-8">  
+      <div class="mermaid">  
+      sequenceDiagram
+          opt se permitido
+              A->>B: executa ação
+          end
+      </div>  
+   </div>  
+<figcaption style="font-size: 0.8em;  margin-top: 5px; margin-left: 50px;"> 
+
+</figcaption> 
+</figure> 
+
+<hr />
+
+
+
+<figure> 
+   <div class="col-md-8">  
+      <div class="mermaid">  
+                              classDiagram
+                              Class01 <|-- AveryLongClass : Cool
+                              Class03 *-- Class04
+                              Class05 o-- Class06
+                              Class07 .. Class08
+                              Class09 --> C2 : Where am I?
+                              Class09 --* C3
+                              Class09 --|> Class07
+                              Class07 : equals()
+                              Class07 : Object[] elementData
+                              Class01 : size()
+                              Class01 : int chimp
+                              Class01 : int gorilla
+                              Class08 <--> C2: Cool label
+      </div>  
+   </div>  
+<figcaption style="font-size: 0.8em;  margin-top: 5px; margin-left: 50px;"> 
+
+</figcaption> 
+</figure> 
+<hr />
+<p>title: Simple sample</p>
+
+<figure> 
+   <div class="col-md-8">  
+      <div class="mermaid">  
+      stateDiagram-v2
+          [*] --> Ajustador
+          Ajustador --> [*]
+      
+          Ajustador --> Humano
+          Humano --> Still
+          Humano --> Crash
+          Crash --> [*]
+      </div>  
+   </div>  
+<figcaption style="font-size: 0.8em;  margin-top: 5px; margin-left: 50px;"> 
+
+</figcaption> 
+</figure> 
+
+<hr />
+<p>title: Order example</p>
+
+<figure> 
+   <div class="col-md-8">  
+      <div class="mermaid">  
+      erDiagram
+          CUSTOMER ||--o{ ORDER : places
+          ORDER ||--|{ LINE-ITEM : contains
+          CUSTOMER }|..|{ DELIVERY-ADDRESS : uses
+      </div>  
+   </div>  
+<figcaption style="font-size: 0.8em;  margin-top: 5px; margin-left: 50px;"> 
+
+</figcaption> 
+</figure> 
+
+<a name="criando-e-removendo-participantes" class="no-decoration-link"><h3>Criando e removendo participantes</h3></a> 
+
+<figure> 
+   <div class="col-md-8">  
+      <div class="mermaid">  
+      sequenceDiagram
+          Alice->>Bob: Hello Bob, how are you ?
+          Bob->>Alice: Fine, thank you. And you?
+          create participant Carl
+          Alice->>Carl: Hi Carl!
+          create actor D as Donald
+          Carl->>D: Hi!
+          destroy Carl
+          Alice-xCarl: We are too many
+          destroy Bob
+          Bob->>Alice: I agree
+      </div>  
+   </div>  
+<figcaption style="font-size: 0.8em;  margin-top: 5px; margin-left: 50px;"> 
+
+</figcaption> 
+</figure> 

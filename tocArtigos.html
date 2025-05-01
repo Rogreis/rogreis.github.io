@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en" data-bs-theme="dark">
+<head>
+<title>Editable trackCombo OLD</title>
+
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">  
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>  
+  
+<link rel="preconnect" href="https://fonts.googleapis.com"> 
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin> 
+<link href="https://fonts.googleapis.com/css2?family=Lato:wght@100;300;400;700&display=swap" rel="stylesheet"> 
+  
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.6.1/dist/jquery.min.js"></script>  
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.10.1/jszip.min.js" crossorigin="anonymous"></script>  
+  
+<link href="css/tub_pt_br.css" rel="stylesheet">  
+<link href="css/indexToc.css" rel="stylesheet">
+<link href="css/articles.css" rel="stylesheet">
+<link href="css/combotrack.css" rel="stylesheet">
+
+<script src="js/tub_pt_br.js"></script>  
+
+
+</head>
+  <body>
+
+    <style> 
+      .articleToc ul { 
+          list-style: none; 
+          padding-left: 20px; /* Indentation for nested levels */ 
+      } 
+
+      .articleToc li { 
+          cursor: pointer; /* Make list items clickable */ 
+      } 
+      .articleToc .caret::before{ 
+          content: "279"; /* Unicode for caret-right */ 
+          display: inline-block; 
+          margin-right: 5px; 
+          font-family: bootstrap-icons !important; 
+      } 
+      .articleToc .caret.active::before{ 
+          content: "27a"; /* Unicode for caret-down */ 
+      } 
+
+      .nested { 
+          display: none; 
+      } 
+
+      .active { 
+          display: block; 
+      } 
+
+.articleToc liIndex { 
+  font-family: var(--font); 
+  font-size: var(--fontSize); 
+} 
+
+.articleToc a.liIndex:link { 
+  text-decoration: none; 
+  color: var(--textColorDark); 
+} 
+
+.articleToc a.liIndex:visited { 
+  text-decoration: none; 
+  color: var(--textColorDark); 
+} 
+
+.articleToc a.liIndex:hover { 
+  text-decoration: underline; 
+  color: var(--textColorDark); 
+} 
+
+.articleToc a.liIndex:active { 
+  text-decoration: none; 
+  color: var(--textColorDark); 
+} 
+
+  </style> 
+
+<div class="articleToc">
+<ul>
+ <li><a class="liIndex" href="pageName#conceito-de-moral-no-lu"><span class="caret">Conceito de moral no LU</span></a></li>
+ <ul class="nested">
+    <li><a class="liIndex" href="pageName#objetivo"><span class="caret">Objetivo</span></a></li>
+    <li><a class="liIndex" href="pageName#definição"><span class="caret">Defini&#231;&#227;o</span></a></li>
+    <li><a class="liIndex" href="pageName#moral-e-liberdade"><span class="caret">Moral e Liberdade</span></a></li>
+    <li><a class="liIndex" href="pageName#conduta-moral"><span class="caret">Conduta moral</span></a></li>
+    <li><a class="liIndex" href="pageName#consciência-da-alma"><span class="caret">Consci&#234;ncia da alma</span></a></li>
+    <ul class="nested">
+       <li><a class="liIndex" href="pageName#processo-de-formação-da-consciência-da-alma"><span class="caret">Processo de forma&#231;&#227;o da consci&#234;ncia da alma</span></a></li>
+       <ul class="nested">
+          <li><a class="liIndex" href="pageName#etapa-inicial"><span class="caret">Etapa inicial</span></a></li>
+          <li><a class="liIndex" href="pageName#alma-começa-a-atuar"><span class="caret">Alma come&#231;a a atuar</span></a></li>
+          <li><a class="liIndex" href="pageName#consciência-do-espírito"><span class="caret">Consci&#234;ncia do esp&#237;rito</span></a></li>
+    </ul>
+    <li><a class="liIndex" href="pageName#processo-de-incremento-da-consciência-da-alma"><span class="caret">Processo de incremento da consci&#234;ncia da alma</span></a></li>
+    <ul class="nested">
+       <li><a class="liIndex" href="pageName#etapas-deste-processo"><span class="caret">Etapas deste processo</span></a></li>
+       <li><a class="liIndex" href="pageName#como-isto-acontece"><span class="caret">Como isto acontece</span></a></li>
+    </ul>
+    <li><a class="liIndex" href="pageName#material-de-pesquisa"><span class="caret">Material de pesquisa</span></a></li>
+    <ul class="nested">
+       <li><a class="liIndex" href="pageName#ato-moral"><span class="caret">Ato moral</span></a></li>
+       <li><a class="liIndex" href="pageName#consciência-moral"><span class="caret">Consci&#234;ncia moral</span></a></li>
+       <li><a class="liIndex" href="pageName#decisão-moral"><span class="caret">Decis&#227;o moral</span></a></li>
+       <li><a class="liIndex" href="pageName#níveis-morais"><span class="caret">N&#237;veis morais</span></a></li>
+       <li><a class="liIndex" href="pageName#progresso-moral"><span class="caret">Progresso moral</span></a></li>
+       <li><a class="liIndex" href="pageName#discernimento-moral"><span class="caret">Discernimento moral</span></a></li>
+       <li><a class="liIndex" href="pageName#natureza-e-valores-morais"><span class="caret">Natureza e valores morais</span></a></li>
+       <li><a class="liIndex" href="pageName#zoroastrismo"><span class="caret">Zoroastrismo</span></a></li>
+    </ul>
+ </ul>
+</ul>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+crossorigin="anonymous"></script>
+<script>
+var toggler = document.getElementsByClassName("caret");
+var i;
+
+for (i = 0; i < toggler.length; i++) {
+    toggler[i].addEventListener("click", function () {
+        this.parentElement.querySelector(".nested").classList.toggle("active");
+        this.classList.toggle("active");
+    });
+}
+</script>
+
+      
+      
+         
+  </body>
+</html>

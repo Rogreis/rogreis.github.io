@@ -16,11 +16,15 @@ async function StartPage()
     loadArticle(article)
   }
   initSlider();
+
+  mermaid.initialize({ startOnLoad: true, theme: 'dark' });
+
 }
+
 
 function getArticleValue(queryString) {
   const params = getQueryStringParams(queryString);
-  return params.article; // Access the 'article' property
+  return params.article;
 }
 
 function loadArticle(article)
@@ -29,10 +33,12 @@ function loadArticle(article)
     return;
   }
 
+  console.log("Loading article: ", article);
+
   const xhttp = new XMLHttpRequest();
   xhttp.onload = function() {
     try {
-        if (this.status >= 200 && this.status < 300) { // Check for successful status codes (200-299)
+        if (this.status >= 200 && this.status < 300) {
             var artigo = document.getElementById('divartigo');
             if (artigo === null) {
                 console.error("Artigo não encontrado no documento HTML.");
@@ -40,12 +46,18 @@ function loadArticle(article)
             }
             artigo.innerHTML = this.responseText;
             document.getElementById('divartigo').innerHTML = this.responseText;
+            try {
+              mermaid.run(); // Esta é a chamada chave!
+            } catch (e) {
+              console.error("Erro ao renderizar diagramas Mermaid:", e);
+            }
+
         } else {
-            document.getElementById('divartigo').innerHTML = "<p>Erro ao carregar o conteúdo. Código de status: " + this.status + "</p>"; // Display an error message to the user
+            document.getElementById('divartigo').innerHTML = "<p>Erro ao carregar o conteúdo. Código de status: " + this.status + "</p>";
         }
     } catch (error) {
         console.error("An error occurred:", error);
-        document.getElementById('divartigo').innerHTML = "<p>Erro ao processar a resposta.</p>"; // Display a generic error message to the user
+        document.getElementById('divartigo').innerHTML = "<p>Erro ao processar a resposta.</p>";
     }
   } 
   setCookie("ARTICLE", article, 180)

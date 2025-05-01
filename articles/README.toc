@@ -1,0 +1,86 @@
+﻿    <style> 
+        .articleToc ul { 
+            list-style: none; 
+            padding-left: 20px; /* Indentation for nested levels */ 
+        } 
+ 
+        .articleToc li { 
+            cursor: pointer; /* Make list items clickable */ 
+        } 
+        .articleToc .caret::before{ 
+            content: "279"; /* Unicode for caret-right */ 
+            display: inline-block; 
+            margin-right: 5px; 
+            font-family: bootstrap-icons !important; 
+        } 
+        .articleToc .caret.active::before{ 
+            content: "27a"; /* Unicode for caret-down */ 
+        } 
+ 
+        .nested { 
+            display: none; 
+        } 
+ 
+        .active { 
+            display: block; 
+        } 
+ 
+.articleToc liIndex { 
+    font-family: var(--font); 
+    font-size: var(--fontSize); 
+} 
+ 
+.articleToc a.liIndex:link { 
+    text-decoration: none; 
+    color: var(--textColorDark); 
+} 
+ 
+.articleToc a.liIndex:visited { 
+    text-decoration: none; 
+    color: var(--textColorDark); 
+} 
+ 
+.articleToc a.liIndex:hover { 
+    text-decoration: underline; 
+    color: var(--textColorDark); 
+} 
+ 
+.articleToc a.liIndex:active { 
+    text-decoration: none; 
+    color: var(--textColorDark); 
+} 
+ 
+    </style> 
+ 
+<button onclick="window.location.href='indexStudy.html';"  style="padding: 10px 15px; border: 1px solid #ccc; border-radius: 5px; cursor: pointer; font-size: 1em;"> 
+🏠 Índice de artigos 
+</button> 
+<div class="articleToc">
+<ul>
+   <li><a class="liIndex" href="README.md#motivação-para-exposição-de-artigos"><span class="caret">Motiva&#231;&#227;o para exposi&#231;&#227;o de artigos</span></a></li>
+   <ul class="nested">
+      <li><a class="liIndex" href="README.md#objetivo"><span class="caret">Objetivo</span></a></li>
+      <li><a class="liIndex" href="README.md#o-que-é-teologia"><span class="caret">O que &#233; Teologia?</span></a></li>
+      <li><a class="liIndex" href="README.md#evita-o-fanatismo"><span class="caret">Evita o fanatismo</span></a></li>
+      <li><a class="liIndex" href="README.md#investigação-teológica"><span class="caret">Investiga&#231;&#227;o teol&#243;gica</span></a></li>
+      <li><a class="liIndex" href="README.md#diferentes-grupos-de-estudos"><span class="caret">Diferentes grupos de estudos</span></a></li>
+      <li><a class="liIndex" href="README.md#tradução-usada"><span class="caret">Tradu&#231;&#227;o usada</span></a></li>
+      <li><a class="liIndex" href="README.md#como-contribuir"><span class="caret">Como Contribuir</span></a></li>
+   </ul>
+</ul>
+</div>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" 
+integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" 
+crossorigin="anonymous"></script> 
+<script> 
+var toggler = document.getElementsByClassName("caret"); 
+var i; 
+ 
+for (i = 0; i < toggler.length; i++) { 
+    toggler[i].addEventListener("click", function () { 
+        this.parentElement.querySelector(".nested").classList.toggle("active"); 
+        this.classList.toggle("active"); 
+    }); 
+} 
+</script> 
+ 

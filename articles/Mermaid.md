@@ -106,6 +106,34 @@ O processo de adoração é iniciado por um desejo da alma depois de mobilizar t
     Mente-->>Pai: Adoração
 ```
 
+## Sete círculos
+
+cf **<a href="javascript:showParagraph(49,6,8)" title="Abrir o parágrafo 49:6-8">49:6-8</a>**
+
+```mermaid
+sequenceDiagram
+    participant Mortal
+    participant CírculosCósmicos
+    participant AnjoGuardião
+    participant VidaMorontial
+
+    Mortal->>CírculosCósmicos: Inicia progressão nos sete círculos cósmicos
+    loop Para cada círculo cósmico (7 ao 1)
+        Mortal->>CírculosCósmicos: Esforça-se para alcançar o próximo círculo
+        CírculosCósmicos-->>Mortal: Avalia progresso (intelectual, social, espiritual, discernimento cósmico)
+        alt Alcançou o terceiro círculo
+            AnjoGuardião->>Mortal: Anjo guardião pessoal do destino é designado
+            Mortal->>VidaMorontial: Pode ser repersonalizado no terceiro dia
+        else Sobre a ressurreição
+            alt Independente do juízo dispensacional
+                Mortal->>VidaMorontial: Pode ser repersonalizado no terceiro dia
+            else Ressurreição tardia
+                Mortal->>VidaMorontial: Repersonalização especial ou com o final da dispensação
+            end
+        end
+    end
+```
+
 ---
 
 ## Exemplos

@@ -59,7 +59,7 @@ async function LoadTableOfContentsData() {
           initializeTocTable();
         }, 300); // timeout
     }
-    xhttp.open("GET", 'content/TocTable.html');
+    xhttp.open("GET", 'content/TocTable2.html');
     xhttp.send();
 }
 
