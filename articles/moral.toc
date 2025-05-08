@@ -1,100 +1,33 @@
-﻿    <style> 
-        .articleToc ul { 
-            list-style: none; 
-            padding-left: 20px; /* Indentation for nested levels */ 
-        } 
- 
-        .articleToc li { 
-            cursor: pointer; /* Make list items clickable */ 
-        } 
-        .articleToc .caret::before{ 
-            content: "279"; /* Unicode for caret-right */ 
-            display: inline-block; 
-            margin-right: 5px; 
-            font-family: bootstrap-icons !important; 
-        } 
-        .articleToc .caret.active::before{ 
-            content: "27a"; /* Unicode for caret-down */ 
-        } 
- 
-        .nested { 
-            display: none; 
-        } 
- 
-        .active { 
-            display: block; 
-        } 
- 
-.articleToc liIndex { 
-    font-family: var(--font); 
-    font-size: var(--fontSize); 
-} 
- 
-.articleToc a.liIndex:link { 
-    text-decoration: none; 
-    color: var(--textColorDark); 
-} 
- 
-.articleToc a.liIndex:visited { 
-    text-decoration: none; 
-    color: var(--textColorDark); 
-} 
- 
-.articleToc a.liIndex:hover { 
-    text-decoration: underline; 
-    color: var(--textColorDark); 
-} 
- 
-.articleToc a.liIndex:active { 
-    text-decoration: none; 
-    color: var(--textColorDark); 
-} 
- 
-    </style> 
- 
-<button onclick="window.location.href='indexStudy.html';"  style="padding: 10px 15px; border: 1px solid #ccc; border-radius: 5px; cursor: pointer; font-size: 1em;"> 
-🏠 Índice de artigos 
-</button> 
-<div class="articleToc">
-<ul>
-   <li><a class="liIndex" href="moral.md#conceito-de-moral-no-lu"><span class="caret">Conceito de moral no LU</span></a></li>
-   <ul class="nested">
-      <li><a class="liIndex" href="moral.md#objetivo"><span class="caret">Objetivo</span></a></li>
-      <li><a class="liIndex" href="moral.md#definição"><span class="caret">Defini&#231;&#227;o</span></a></li>
-      <li><a class="liIndex" href="moral.md#moral-e-liberdade"><span class="caret">Moral e Liberdade</span></a></li>
-      <li><a class="liIndex" href="moral.md#conduta-moral"><span class="caret">Conduta moral</span></a></li>
-      <li><a class="liIndex" href="moral.md#consciência-da-alma"><span class="caret">Consci&#234;ncia da alma</span></a></li>
-      <ul class="nested">
-         <li><a class="liIndex" href="moral.md#etapa-inicial---consciência-da-mente"><span class="caret">Etapa inicial - consci&#234;ncia da mente</span></a></li>
-         <li><a class="liIndex" href="moral.md#a-alma-se-torna-mais-existente"><span class="caret">A alma se torna mais existente</span></a></li>
-         <li><a class="liIndex" href="moral.md#evolui-a-consciência-da-alma"><span class="caret">Evolui a consci&#234;ncia da alma</span></a></li>
-      </ul>
-      <li><a class="liIndex" href="moral.md#material-de-pesquisa"><span class="caret">Material de pesquisa</span></a></li>
-      <ul class="nested">
-         <li><a class="liIndex" href="moral.md#ato-moral"><span class="caret">Ato moral</span></a></li>
-         <li><a class="liIndex" href="moral.md#consciência-moral"><span class="caret">Consci&#234;ncia moral</span></a></li>
-         <li><a class="liIndex" href="moral.md#decisão-moral"><span class="caret">Decis&#227;o moral</span></a></li>
-         <li><a class="liIndex" href="moral.md#níveis-morais"><span class="caret">N&#237;veis morais</span></a></li>
-         <li><a class="liIndex" href="moral.md#progresso-moral"><span class="caret">Progresso moral</span></a></li>
-         <li><a class="liIndex" href="moral.md#discernimento-moral"><span class="caret">Discernimento moral</span></a></li>
-         <li><a class="liIndex" href="moral.md#natureza-e-valores-morais"><span class="caret">Natureza e valores morais</span></a></li>
-         <li><a class="liIndex" href="moral.md#zoroastrismo"><span class="caret">Zoroastrismo</span></a></li>
-      </ul>
-   </ul>
+﻿<div class="treeview">
+<p><a href="javascript:loadArticle('README.html')" data-bs-toggle="tooltip" data-bs-placement="top" title="Página Inicial">🏠 Página Inicial</a></p>
+    <ul>
+        <li><span class="caret"><a class="liIndex" href="javascript:jumpToAnchor('conceito-de-moral-no-lu')">Conceito de moral no LU</a></span>
+        <ul class="nested">
+            <li><a class="liIndex" href="javascript:jumpToAnchor('objetivo')">Objetivo</a></li>
+            <li><a class="liIndex" href="javascript:jumpToAnchor('definição')">Defini&#231;&#227;o</a></li>
+            <li><a class="liIndex" href="javascript:jumpToAnchor('moral-e-liberdade')">Moral e Liberdade</a></li>
+            <li><a class="liIndex" href="javascript:jumpToAnchor('conduta-moral')">Conduta moral</a></li>
+            <li><span class="caret"><a class="liIndex" href="javascript:jumpToAnchor('consciência-da-alma')">Consci&#234;ncia da alma</a></span>
+            <ul class="nested">
+                <li><a class="liIndex" href="javascript:jumpToAnchor('etapa-inicial---consciência-da-mente')">Etapa inicial - consci&#234;ncia da mente</a></li>
+                <li><a class="liIndex" href="javascript:jumpToAnchor('a-alma-se-torna-mais-existente')">A alma se torna mais existente</a></li>
+                <li><a class="liIndex" href="javascript:jumpToAnchor('evolui-a-consciência-da-alma')">Evolui a consci&#234;ncia da alma</a></li>
+            </ul>
+            </li>
+            <li><span class="caret"><a class="liIndex" href="javascript:jumpToAnchor('material-de-pesquisa')">Material de pesquisa</a></span>
+            <ul class="nested">
+                <li><a class="liIndex" href="javascript:jumpToAnchor('ato-moral')">Ato moral</a></li>
+                <li><a class="liIndex" href="javascript:jumpToAnchor('consciência-moral')">Consci&#234;ncia moral</a></li>
+                <li><a class="liIndex" href="javascript:jumpToAnchor('decisão-moral')">Decis&#227;o moral</a></li>
+                <li><a class="liIndex" href="javascript:jumpToAnchor('níveis-morais')">N&#237;veis morais</a></li>
+                <li><a class="liIndex" href="javascript:jumpToAnchor('progresso-moral')">Progresso moral</a></li>
+                <li><a class="liIndex" href="javascript:jumpToAnchor('discernimento-moral')">Discernimento moral</a></li>
+                <li><a class="liIndex" href="javascript:jumpToAnchor('natureza-e-valores-morais')">Natureza e valores morais</a></li>
+                <li><a class="liIndex" href="javascript:jumpToAnchor('zoroastrismo')">Zoroastrismo</a></li>
+            </ul>
+            </li>
+        </ul>
+        </li>
+    </ul>
 </ul>
 </div>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" 
-integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" 
-crossorigin="anonymous"></script> 
-<script> 
-var toggler = document.getElementsByClassName("caret"); 
-var i; 
- 
-for (i = 0; i < toggler.length; i++) { 
-    toggler[i].addEventListener("click", function () { 
-        this.parentElement.querySelector(".nested").classList.toggle("active"); 
-        this.classList.toggle("active"); 
-    }); 
-} 
-</script> 
- 

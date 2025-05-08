@@ -27,6 +27,32 @@ function getArticleValue(queryString) {
   return params.article;
 }
 
+function initializeTreeview()
+{
+  var toggler = document.getElementsByClassName("caret");
+  var i;
+
+  for (i = 0; i < toggler.length; i++) {
+      toggler[i].addEventListener("click", function () {
+          this.parentElement.querySelector(".nested").classList.toggle("active");
+          this.classList.toggle("active");
+      });
+  }
+
+
+  //document.addEventListener('DOMContentLoaded', function () {
+      const carets = document.querySelectorAll('.treeview .caret');
+      carets.forEach(caret => {
+          const nested = caret.parentElement.querySelector('.nested');
+          if (nested) {
+              nested.classList.add('active'); // Show the nested list
+              caret.classList.add('active'); // Update the caret icon
+          }
+      });
+  //});
+
+}
+
 function loadArticle(article)
 {
   if (typeof name !== 'string') {
@@ -51,6 +77,7 @@ function loadArticle(article)
             } catch (e) {
               console.error("Erro ao renderizar diagramas Mermaid:", e);
             }
+            loadArticleIndex(article)
 
         } else {
             document.getElementById('divartigo').innerHTML = "<p>Erro ao carregar o conteúdo. Código de status: " + this.status + "</p>";
@@ -68,6 +95,51 @@ function loadArticle(article)
   xhttp.open("GET", url);
   xhttp.send();
 }
+
+
+
+function loadArticleIndex(article)
+{
+  if (typeof name !== 'string') {
+    return;
+  }
+
+  console.log("Loading article index for: ", article);
+
+  const xhttp = new XMLHttpRequest();
+  xhttp.onload = function() {
+    try {
+        if (this.status >= 200 && this.status < 300) {
+            var artigo = document.getElementById('leftColumn');
+            if (artigo === null) {
+                console.error("Artigo não encontrado no documento HTML.");
+                return;
+            }
+            artigo.innerHTML = this.responseText;
+            document.getElementById('leftColumn').innerHTML = this.responseText;
+            setTimeout(() => {
+              initializeTreeview(); // Initialize the treeview after loading the content
+            }, 300);
+        
+        } else {
+            document.getElementById('leftColumn').innerHTML = "<p>Erro ao carregar o conteúdo. Código de status: " + this.status + "</p>";
+        }
+    } catch (error) {
+        console.error("An error occurred:", error);
+        document.getElementById('leftColumn').innerHTML = "<p>Erro ao processar a resposta.</p>";
+    }
+  } 
+  setCookie("ARTICLE", article, 180)
+  if (!article.toLowerCase().endsWith(".html")) {
+    article += ".html";
+  }  
+  const article_index = article.replace(/\.html$/i, ".toc"); // Create article_index with .toc extension
+  url= `articles/${article_index}`;
+  console.log("Loading article index from: ", url);
+  xhttp.open("GET", url);
+  xhttp.send();
+}
+
 
 async function showParagraph(paper, section, paragraph) {
   url= generate_url(paper, section, paragraph)
@@ -109,4 +181,22 @@ function showParagraphFromComboEntry(referenceString)
 {
     entry= referenceFromString(referenceString);
     showParagraph(entry.paper, entry.section, entry.paragraph);
+}
+
+function jumpToAnchor(anchorId) {
+  console.log(`Jumping to anchor: ${anchorId}`);
+  const anchorElement = document.getElementById(anchorId);
+  if (anchorElement) {
+    console.log(`Jumping to anchor: ${anchorId}`);
+    anchorElement.scrollIntoView({
+      behavior: 'smooth', // Smooth scrolling
+      block: 'start' // Align the anchor to the top of the viewport
+    });
+    anchorElement.style.border = '2px solid gold'; // Optional: Highlight the anchor
+    setTimeout(() => {
+      anchorElement.style.border = ''; // Remove the highlight after a short delay
+    }, 2000);
+  } else {
+    console.error(`Anchor with ID "${anchorId}" not found.`);
+  }
 }

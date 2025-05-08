@@ -1,123 +1,66 @@
-﻿    <style> 
-        .articleToc ul { 
-            list-style: none; 
-            padding-left: 20px; /* Indentation for nested levels */ 
-        } 
- 
-        .articleToc li { 
-            cursor: pointer; /* Make list items clickable */ 
-        } 
-        .articleToc .caret::before{ 
-            content: "279"; /* Unicode for caret-right */ 
-            display: inline-block; 
-            margin-right: 5px; 
-            font-family: bootstrap-icons !important; 
-        } 
-        .articleToc .caret.active::before{ 
-            content: "27a"; /* Unicode for caret-down */ 
-        } 
- 
-        .nested { 
-            display: none; 
-        } 
- 
-        .active { 
-            display: block; 
-        } 
- 
-.articleToc liIndex { 
-    font-family: var(--font); 
-    font-size: var(--fontSize); 
-} 
- 
-.articleToc a.liIndex:link { 
-    text-decoration: none; 
-    color: var(--textColorDark); 
-} 
- 
-.articleToc a.liIndex:visited { 
-    text-decoration: none; 
-    color: var(--textColorDark); 
-} 
- 
-.articleToc a.liIndex:hover { 
-    text-decoration: underline; 
-    color: var(--textColorDark); 
-} 
- 
-.articleToc a.liIndex:active { 
-    text-decoration: none; 
-    color: var(--textColorDark); 
-} 
- 
-    </style> 
- 
-<button onclick="window.location.href='indexStudy.html';"  style="padding: 10px 15px; border: 1px solid #ccc; border-radius: 5px; cursor: pointer; font-size: 1em;"> 
-🏠 Índice de artigos 
-</button> 
-<div class="articleToc">
-<ul>
-   <li><a class="liIndex" href="atual_real_factual.md#atual-real-e-factual"><span class="caret">Atual, Real e Factual</span></a></li>
-   <ul class="nested">
-      <li><a class="liIndex" href="atual_real_factual.md#descrição"><span class="caret">Descri&#231;&#227;o</span></a></li>
-      <li><a class="liIndex" href="atual_real_factual.md#o-problema"><span class="caret">O problema</span></a></li>
-      <ul class="nested">
-         <li><a class="liIndex" href="atual_real_factual.md#parmênides-a-imutabilidade-do-ser"><span class="caret">Parm&#234;nides: A Imutabilidade do Ser</span></a></li>
-         <li><a class="liIndex" href="atual_real_factual.md#heráclito-o-fluxo-contínuo-do-devir"><span class="caret">Her&#225;clito: O Fluxo Cont&#237;nuo do Devir</span></a></li>
-         <li><a class="liIndex" href="atual_real_factual.md#o-contraste-entre-os-dois-filósofos"><span class="caret">O Contraste entre os Dois Fil&#243;sofos</span></a></li>
-         <li><a class="liIndex" href="atual_real_factual.md#implicações"><span class="caret">Implica&#231;&#245;es</span></a></li>
-         <ul class="nested">
-            <li><a class="liIndex" href="atual_real_factual.md#o-ser-supremo-no-livro-de-urântia"><span class="caret">O Ser Supremo no Livro de Ur&#226;ntia</span></a></li>
+﻿<div class="treeview">
+<p><a href="javascript:loadArticle('README.html')" data-bs-toggle="tooltip" data-bs-placement="top" title="Página Inicial">🏠 Página Inicial</a></p>
+    <ul>
+        <li><span class="caret"><a class="liIndex" href="javascript:jumpToAnchor('atual-real-e-factual')">Atual, Real e Factual</a></span>
+        <ul class="nested">
+            <li><a class="liIndex" href="javascript:jumpToAnchor('descrição')">Descri&#231;&#227;o</a></li>
+            <li><span class="caret"><a class="liIndex" href="javascript:jumpToAnchor('o-problema')">O problema</a></span>
             <ul class="nested">
-               <li><a class="liIndex" href="atual_real_factual.md#implicações-da-não-resolução-do-ser-e-não-ser"><span class="caret">Implica&#231;&#245;es da N&#227;o Resolu&#231;&#227;o do Ser e N&#227;o Ser</span></a></li>
-         </ul>
-         <li><a class="liIndex" href="atual_real_factual.md#solução-de-aristóteles"><span class="caret">Solu&#231;&#227;o de Arist&#243;teles</span></a></li>
-         <ul class="nested">
-            <li><a class="liIndex" href="atual_real_factual.md#ato-e-potência-a-chave-para-a-compreensão-da-mudança"><span class="caret">Ato e Pot&#234;ncia: A Chave para a Compreens&#227;o da Mudan&#231;a</span></a></li>
-            <li><a class="liIndex" href="atual_real_factual.md#o-desafio-filosófico-do-ser-e-não-ser"><span class="caret">O Desafio Filos&#243;fico do ser e n&#227;o ser</span></a></li>
-            <li><a class="liIndex" href="atual_real_factual.md#a-resposta-de-aristóteles"><span class="caret">A Resposta de Arist&#243;teles</span></a></li>
-         </ul>
-         <li><a class="liIndex" href="atual_real_factual.md#o-problema-do-ser-e-do-não-ser"><span class="caret">O problema do ser e do n&#227;o ser</span></a></li>
-         <ul class="nested">
-            <li><a class="liIndex" href="atual_real_factual.md#a-perspectiva-de-parmênides"><span class="caret">A Perspectiva de Parm&#234;nides</span></a></li>
-         </ul>
-         <li><a class="liIndex" href="atual_real_factual.md#o-problema-do-devir"><span class="caret">O problema do devir</span></a></li>
-         <ul class="nested">
-            <li><a class="liIndex" href="atual_real_factual.md#a-perspectiva-de-heráclito"><span class="caret">A Perspectiva de Her&#225;clito</span></a></li>
-            <li><a class="liIndex" href="atual_real_factual.md#o-desafio-filosófico-do-devir"><span class="caret">O Desafio Filos&#243;fico do devir</span></a></li>
-            <li><a class="liIndex" href="atual_real_factual.md#nova-resposta-de-aristóteles"><span class="caret">Nova Resposta de Arist&#243;teles</span></a></li>
-         </ul>
-         <li><a class="liIndex" href="atual_real_factual.md#actual"><span class="caret">Actual</span></a></li>
-         <ul class="nested">
-            <li><a class="liIndex" href="atual_real_factual.md#significado-comum"><span class="caret">Significado comum</span></a></li>
-            <li><a class="liIndex" href="atual_real_factual.md#exemplo"><span class="caret">Exemplo</span></a></li>
-            <li><a class="liIndex" href="atual_real_factual.md#filosofia-aristotélico-tomista"><span class="caret">Filosofia aristot&#233;lico-tomista</span></a></li>
-            <ul class="nested">
-               <li><a class="liIndex" href="atual_real_factual.md#explicação"><span class="caret">Explica&#231;&#227;o</span></a></li>
-               <li><a class="liIndex" href="atual_real_factual.md#exemplo-no-livro-de-urântia"><span class="caret">Exemplo no Livro de Ur&#226;ntia</span></a></li>
-               <ul class="nested">
-                  <li><a class="liIndex" href="atual_real_factual.md#exemplos-para-ilustrar-a-relação"><span class="caret">Exemplos para ilustrar a rela&#231;&#227;o</span></a></li>
-         </ul>
-         <li><a class="liIndex" href="atual_real_factual.md#real"><span class="caret">Real</span></a></li>
-         <li><a class="liIndex" href="atual_real_factual.md#factual"><span class="caret">Factual</span></a></li>
-         <li><a class="liIndex" href="atual_real_factual.md#quadro-comparativo"><span class="caret">Quadro comparativo</span></a></li>
-         <li><a class="liIndex" href="atual_real_factual.md#quando-não-usar-real-ou-factual"><span class="caret">Quando n&#227;o usar &quot;real&quot; ou &quot;factual&quot;</span></a></li>
-      </ul>
-   </ul>
+                <li><a class="liIndex" href="javascript:jumpToAnchor('parmênides-a-imutabilidade-do-ser')">Parm&#234;nides: A Imutabilidade do Ser</a></li>
+                <li><a class="liIndex" href="javascript:jumpToAnchor('heráclito-o-fluxo-contínuo-do-devir')">Her&#225;clito: O Fluxo Cont&#237;nuo do Devir</a></li>
+                <li><a class="liIndex" href="javascript:jumpToAnchor('o-contraste-entre-os-dois-filósofos')">O Contraste entre os Dois Fil&#243;sofos</a></li>
+                <li><span class="caret"><a class="liIndex" href="javascript:jumpToAnchor('implicações')">Implica&#231;&#245;es</a></span>
+                <ul class="nested">
+                    <li><span class="caret"><a class="liIndex" href="javascript:jumpToAnchor('o-ser-supremo-no-livro-de-urântia')">O Ser Supremo no Livro de Ur&#226;ntia</a></span>
+                    <ul class="nested">
+                        <li><a class="liIndex" href="javascript:jumpToAnchor('implicações-da-não-resolução-do-ser-e-não-ser')">Implica&#231;&#245;es da N&#227;o Resolu&#231;&#227;o do Ser e N&#227;o Ser</a></li>
+                        <li><span class="caret"><a class="liIndex" href="javascript:jumpToAnchor('o-problema-do-ser-e-do-não-ser')">O problema do ser e do n&#227;o ser</a></span>
+                        <ul class="nested">
+                            <li><a class="liIndex" href="javascript:jumpToAnchor('a-perspectiva-de-parmênides')">A Perspectiva de Parm&#234;nides</a></li>
+                            <li><span class="caret"><a class="liIndex" href="javascript:jumpToAnchor('actual')">Actual</a></span>
+                            <ul class="nested">
+                                <li><a class="liIndex" href="javascript:jumpToAnchor('significado-comum')">Significado comum</a></li>
+                                <li><a class="liIndex" href="javascript:jumpToAnchor('exemplo')">Exemplo</a></li>
+                                <li><span class="caret"><a class="liIndex" href="javascript:jumpToAnchor('filosofia-aristotélico-tomista')">Filosofia aristot&#233;lico-tomista</a></span>
+                                <ul class="nested">
+                                    <li><a class="liIndex" href="javascript:jumpToAnchor('explicação')">Explica&#231;&#227;o</a></li>
+                                    <li><span class="caret"><a class="liIndex" href="javascript:jumpToAnchor('exemplo-no-livro-de-urântia')">Exemplo no Livro de Ur&#226;ntia</a></span>
+                                    <ul class="nested">
+                                        <li><a class="liIndex" href="javascript:jumpToAnchor('exemplos-para-ilustrar-a-relação')">Exemplos para ilustrar a rela&#231;&#227;o</a></li>
+                                    </ul>
+                                    </li>
+                                    <li><a class="liIndex" href="javascript:jumpToAnchor('real')">Real</a></li>
+                                    <li><a class="liIndex" href="javascript:jumpToAnchor('factual')">Factual</a></li>
+                                    <li><a class="liIndex" href="javascript:jumpToAnchor('quadro-comparativo')">Quadro comparativo</a></li>
+                                    <li><a class="liIndex" href="javascript:jumpToAnchor('quando-não-usar-real-ou-factual')">Quando n&#227;o usar &quot;real&quot; ou &quot;factual&quot;</a></li>
+                                </ul>
+                                </li>
+                            </ul>
+                            </li>
+                        </ul>
+                        </li>
+                    </ul>
+                    </li>
+                </ul>
+                </li>
+                <li><span class="caret"><a class="liIndex" href="javascript:jumpToAnchor('solução-de-aristóteles')">Solu&#231;&#227;o de Arist&#243;teles</a></span>
+                <ul class="nested">
+                    <li><a class="liIndex" href="javascript:jumpToAnchor('ato-e-potência-a-chave-para-a-compreensão-da-mudança')">Ato e Pot&#234;ncia: A Chave para a Compreens&#227;o da Mudan&#231;a</a></li>
+                    <li><a class="liIndex" href="javascript:jumpToAnchor('o-desafio-filosófico-do-ser-e-não-ser')">O Desafio Filos&#243;fico do ser e n&#227;o ser</a></li>
+                    <li><a class="liIndex" href="javascript:jumpToAnchor('a-resposta-de-aristóteles')">A Resposta de Arist&#243;teles</a></li>
+                    <li><span class="caret"><a class="liIndex" href="javascript:jumpToAnchor('o-problema-do-devir')">O problema do devir</a></span>
+                    <ul class="nested">
+                        <li><a class="liIndex" href="javascript:jumpToAnchor('a-perspectiva-de-heráclito')">A Perspectiva de Her&#225;clito</a></li>
+                        <li><a class="liIndex" href="javascript:jumpToAnchor('o-desafio-filosófico-do-devir')">O Desafio Filos&#243;fico do devir</a></li>
+                        <li><a class="liIndex" href="javascript:jumpToAnchor('nova-resposta-de-aristóteles')">Nova Resposta de Arist&#243;teles</a></li>
+                    </ul>
+                    </li>
+                </ul>
+                </li>
+            </ul>
+            </li>
+        </ul>
+        </li>
+    </ul>
 </ul>
 </div>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" 
-integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" 
-crossorigin="anonymous"></script> 
-<script> 
-var toggler = document.getElementsByClassName("caret"); 
-var i; 
- 
-for (i = 0; i < toggler.length; i++) { 
-    toggler[i].addEventListener("click", function () { 
-        this.parentElement.querySelector(".nested").classList.toggle("active"); 
-        this.classList.toggle("active"); 
-    }); 
-} 
-</script> 
- 

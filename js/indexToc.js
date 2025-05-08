@@ -199,7 +199,7 @@ function loadDoc(url, hash)
   const section = parseInt(parts[1], 10);
   const paragraph = parseInt(parts[2], 10);
   if (isMobile()) {
-    const currentUrl = 'https://rogreis.github.io/indexToc.html';
+    const currentUrl = `${window.location.protocol}//${window.location.host}/indexToc.html`; // Dynamically get the current domain
     window.location.href= currentUrl;
   } 
   loadDocByPaperSectionParagraph(paper, section, paragraph) ;

@@ -1,89 +1,22 @@
-﻿    <style> 
-        .articleToc ul { 
-            list-style: none; 
-            padding-left: 20px; /* Indentation for nested levels */ 
-        } 
- 
-        .articleToc li { 
-            cursor: pointer; /* Make list items clickable */ 
-        } 
-        .articleToc .caret::before{ 
-            content: "279"; /* Unicode for caret-right */ 
-            display: inline-block; 
-            margin-right: 5px; 
-            font-family: bootstrap-icons !important; 
-        } 
-        .articleToc .caret.active::before{ 
-            content: "27a"; /* Unicode for caret-down */ 
-        } 
- 
-        .nested { 
-            display: none; 
-        } 
- 
-        .active { 
-            display: block; 
-        } 
- 
-.articleToc liIndex { 
-    font-family: var(--font); 
-    font-size: var(--fontSize); 
-} 
- 
-.articleToc a.liIndex:link { 
-    text-decoration: none; 
-    color: var(--textColorDark); 
-} 
- 
-.articleToc a.liIndex:visited { 
-    text-decoration: none; 
-    color: var(--textColorDark); 
-} 
- 
-.articleToc a.liIndex:hover { 
-    text-decoration: underline; 
-    color: var(--textColorDark); 
-} 
- 
-.articleToc a.liIndex:active { 
-    text-decoration: none; 
-    color: var(--textColorDark); 
-} 
- 
-    </style> 
- 
-<button onclick="window.location.href='indexStudy.html';"  style="padding: 10px 15px; border: 1px solid #ccc; border-radius: 5px; cursor: pointer; font-size: 1em;"> 
-🏠 Índice de artigos 
-</button> 
-<div class="articleToc">
-<ul>
-   <li><a class="liIndex" href="insight.md#diferenças-entre-insight-e-discernimento"><span class="caret">Diferen&#231;as entre &quot;insight&quot; e &quot;discernimento&quot;</span></a></li>
-   <ul class="nested">
-      <li><a class="liIndex" href="insight.md#diferenças-português-do-brasil"><span class="caret">Diferen&#231;as Portugu&#234;s do Brasil</span></a></li>
-      <ul class="nested">
-         <li><a class="liIndex" href="insight.md#exemplos-para-ilustrar-a-diferença"><span class="caret">Exemplos para ilustrar a diferen&#231;a</span></a></li>
-      </ul>
-      <li><a class="liIndex" href="insight.md#significado-de-insight-quando-o-livro-foi-escrito"><span class="caret">Significado de &quot;Insight&quot; quando o livro foi escrito</span></a></li>
-      <li><a class="liIndex" href="insight.md#conclusão"><span class="caret">Conclus&#227;o</span></a></li>
-      <ul class="nested">
-         <li><a class="liIndex" href="insight.md#insight"><span class="caret">Insight</span></a></li>
-         <li><a class="liIndex" href="insight.md#discernimento"><span class="caret">Discernimento</span></a></li>
-      </ul>
-   </ul>
+﻿<div class="treeview">
+<p><a href="javascript:loadArticle('README.html')" data-bs-toggle="tooltip" data-bs-placement="top" title="Página Inicial">🏠 Página Inicial</a></p>
+    <ul>
+        <li><span class="caret"><a class="liIndex" href="javascript:jumpToAnchor('diferenças-entre-insight-e-discernimento')">Diferen&#231;as entre &quot;insight&quot; e &quot;discernimento&quot;</a></span>
+        <ul class="nested">
+            <li><span class="caret"><a class="liIndex" href="javascript:jumpToAnchor('diferenças-português-do-brasil')">Diferen&#231;as Portugu&#234;s do Brasil</a></span>
+            <ul class="nested">
+                <li><a class="liIndex" href="javascript:jumpToAnchor('exemplos-para-ilustrar-a-diferença')">Exemplos para ilustrar a diferen&#231;a</a></li>
+            </ul>
+            </li>
+            <li><a class="liIndex" href="javascript:jumpToAnchor('significado-de-insight-quando-o-livro-foi-escrito')">Significado de &quot;Insight&quot; quando o livro foi escrito</a></li>
+            <li><span class="caret"><a class="liIndex" href="javascript:jumpToAnchor('conclusão')">Conclus&#227;o</a></span>
+            <ul class="nested">
+                <li><a class="liIndex" href="javascript:jumpToAnchor('insight')">Insight</a></li>
+                <li><a class="liIndex" href="javascript:jumpToAnchor('discernimento')">Discernimento</a></li>
+            </ul>
+            </li>
+        </ul>
+        </li>
+    </ul>
 </ul>
 </div>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" 
-integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" 
-crossorigin="anonymous"></script> 
-<script> 
-var toggler = document.getElementsByClassName("caret"); 
-var i; 
- 
-for (i = 0; i < toggler.length; i++) { 
-    toggler[i].addEventListener("click", function () { 
-        this.parentElement.querySelector(".nested").classList.toggle("active"); 
-        this.classList.toggle("active"); 
-    }); 
-} 
-</script> 
- 

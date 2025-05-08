@@ -1,0 +1,35 @@
+.treeview ul {
+    list-style: none;
+    padding-left: 20px; /* Indentation for nested levels */
+}
+
+.treeview li {
+    cursor: pointer; /* Make list items clickable */
+}
+.treeview .caret::before{
+    content: '►';
+    display: inline-block;
+    margin-right: 5px;
+    font-family: bootstrap-icons !important;
+}
+.treeview .caret.active::before{
+    content: '▼';
+}
+
+.nested {
+    display: none;
+}
+
+.active {
+    display: block;
+}
+
+.treeview a {
+    text-decoration: none; /* No text decoration by default */
+    color: var(--textColor); /* Default text color for dark mode */
+}
+
+.treeview a:hover {
+    text-decoration: underline; /* Add underline on hover */
+    color: gold; /* Optional: Change color on hover for better visibility */
+}
