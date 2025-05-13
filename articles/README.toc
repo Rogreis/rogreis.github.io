@@ -1,7 +1,7 @@
 ﻿<div class="treeview">
 <p><a href="javascript:loadArticle('README.html')" data-bs-toggle="tooltip" data-bs-placement="top" title="Página Inicial">🏠 Página Inicial</a></p>
     <ul>
-        <li><span class="caret"><a class="liIndex" href="javascript:jumpToAnchor('artigos-paesa-estudo-do-livro-de-urântia')">Artigos paesa estudo do Livro de Ur&#226;ntia</a></span>
+        <li><span class="caret"><a class="liIndex" href="javascript:jumpToAnchor('artigos-para-estudos-sobre-o-livro-de-urântia')">Artigos para estudos sobre o Livro de Ur&#226;ntia</a></span>
         <ul class="nested">
             <li><a class="liIndex" href="javascript:jumpToAnchor('objetivo')">Objetivo</a></li>
             <li><a class="liIndex" href="javascript:jumpToAnchor('grupos-de-artigos')">Grupos de artigos</a></li>
