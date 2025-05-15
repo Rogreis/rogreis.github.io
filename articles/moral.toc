@@ -12,18 +12,25 @@
                 <li><a class="liIndex" href="javascript:jumpToAnchor('etapa-inicial---consciência-da-mente')">Etapa inicial - consci&#234;ncia da mente</a></li>
                 <li><a class="liIndex" href="javascript:jumpToAnchor('a-alma-se-torna-mais-existente')">A alma se torna mais existente</a></li>
                 <li><a class="liIndex" href="javascript:jumpToAnchor('evolui-a-consciência-da-alma')">Evolui a consci&#234;ncia da alma</a></li>
-            </ul>
-            </li>
-            <li><span class="caret"><a class="liIndex" href="javascript:jumpToAnchor('material-de-pesquisa')">Material de pesquisa</a></span>
-            <ul class="nested">
-                <li><a class="liIndex" href="javascript:jumpToAnchor('ato-moral')">Ato moral</a></li>
-                <li><a class="liIndex" href="javascript:jumpToAnchor('consciência-moral')">Consci&#234;ncia moral</a></li>
-                <li><a class="liIndex" href="javascript:jumpToAnchor('decisão-moral')">Decis&#227;o moral</a></li>
-                <li><a class="liIndex" href="javascript:jumpToAnchor('níveis-morais')">N&#237;veis morais</a></li>
-                <li><a class="liIndex" href="javascript:jumpToAnchor('progresso-moral')">Progresso moral</a></li>
-                <li><a class="liIndex" href="javascript:jumpToAnchor('discernimento-moral')">Discernimento moral</a></li>
-                <li><a class="liIndex" href="javascript:jumpToAnchor('natureza-e-valores-morais')">Natureza e valores morais</a></li>
-                <li><a class="liIndex" href="javascript:jumpToAnchor('zoroastrismo')">Zoroastrismo</a></li>
+                <li><span class="caret"><a class="liIndex" href="javascript:jumpToAnchor('ato-moral')">Ato moral</a></span>
+                <ul class="nested">
+                    <li><a class="liIndex" href="javascript:jumpToAnchor('o-culto-ritual-e-o-ato-moral')">O culto (ritual) e o ato moral</a></li>
+                    <li><a class="liIndex" href="javascript:jumpToAnchor('a-mulher-e-o-ato-moral')">A mulher e o ato moral</a></li>
+                    <li><a class="liIndex" href="javascript:jumpToAnchor('afinidade-moral')">Afinidade moral</a></li>
+                    <li><a class="liIndex" href="javascript:jumpToAnchor('moral-e-inteligência')">Moral e intelig&#234;ncia</a></li>
+                </ul>
+                </li>
+                <li><span class="caret"><a class="liIndex" href="javascript:jumpToAnchor('material-de-pesquisa')">Material de pesquisa</a></span>
+                <ul class="nested">
+                    <li><a class="liIndex" href="javascript:jumpToAnchor('consciência-moral')">Consci&#234;ncia moral</a></li>
+                    <li><a class="liIndex" href="javascript:jumpToAnchor('decisão-moral')">Decis&#227;o moral</a></li>
+                    <li><a class="liIndex" href="javascript:jumpToAnchor('níveis-morais')">N&#237;veis morais</a></li>
+                    <li><a class="liIndex" href="javascript:jumpToAnchor('progresso-moral')">Progresso moral</a></li>
+                    <li><a class="liIndex" href="javascript:jumpToAnchor('discernimento-moral')">Discernimento moral</a></li>
+                    <li><a class="liIndex" href="javascript:jumpToAnchor('natureza-e-valores-morais')">Natureza e valores morais</a></li>
+                    <li><a class="liIndex" href="javascript:jumpToAnchor('zoroastrismo')">Zoroastrismo</a></li>
+                </ul>
+                </li>
             </ul>
             </li>
         </ul>
