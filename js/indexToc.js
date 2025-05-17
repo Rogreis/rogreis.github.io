@@ -1,10 +1,50 @@
 // ----------------  Funções específicas para página de documentos ----------------
 
 async function StartPage() {
-  verifyAnchor();
+  result= getParQueryValues();
+  if (result) {
+      // result.paper, result.section, result.paragraph are available
+      await loadDocByPaperSectionParagraph(result.paper, result.section, result.paragraph);
+  } else {
+      verifyAnchor();
+  }  
   await LoadTableOfContentsData();
   setCookie("PAGE", "indexToc", 180)
   initSlider();
+}
+
+// Checks if the URL contains a query string in the format par=999_999_999
+// Returns { paper, section, paragraph } as integers if valid, otherwise null
+function getParQueryValues() {
+    const params = new URLSearchParams(window.location.search);
+    const par = params.get('par');
+    if (!par) return null;
+
+    // Match exactly 3 groups of 1-3 digits (0-197), separated by underscores
+    const regex = /^(\d{1,3})_(\d{1,3})_(\d{1,3})$/;
+    const match = par.match(regex);
+    if (!match) return null;
+
+    const paper = parseInt(match[1], 10);
+    const section = parseInt(match[2], 10);
+    const paragraph = parseInt(match[3], 10);
+
+    if (isNaN(paper) || isNaN(section) || isNaN(paragraph))  return null;
+
+    setCookie("paper", paper, 180);
+    setCookie("section", section, 180);
+    setCookie("paragraph", paragraph, 180);
+
+
+    // Check if all values are in the range 0-197
+    if (
+        [paper, section, paragraph].every(
+            n => Number.isInteger(n) && n >= 0 && n <= 197
+        )
+    ) {
+        return { paper, section, paragraph };
+    }
+    return null;
 }
 
 async function loadDocFromCookie() {
@@ -79,14 +119,22 @@ async function initializeTocTable() {
 
 function toggleCaret(partElement) {
   setTimeout(() => {
+    //console.log("toggleCaret 1 ", partElement);
     partElement.querySelector(".nested").classList.toggle("active");
     partElement.classList.toggle("active");
+    //console.log("toggleCaret 2 ", partElement);
+    partElement.scrollIntoView({
+      behavior: 'smooth', // Para rolagem suave (opcional)
+      block: 'start' // Para alinhar o topo do elemento ao topo da tela
+    });
+
   }, 300);
 }
 
 // Expand the current TOC element based on the current URL or cookies
 function expandCurrentTocElement() 
 {
+    //console.log("expandCurrentTocElement");
     const paper = getCookie("paper");
     const section = getCookie("section");
     const paragraph = getCookie("paragraph");
@@ -95,6 +143,8 @@ function expandCurrentTocElement()
       typeof paragraph !== 'string' || paragraph.trim() === '') {
       return;
     }
+    //console.log("expandCurrentTocElement 2");
+    //console.log(paper, section, paragraph);
 
     if (paper == 0) {
       const intro = document.getElementById("toc_000_000_div");
@@ -124,14 +174,16 @@ function expandCurrentTocElement()
     if (paper > 119) {
       const part4 = document.getElementById("part4_div");
       if (part4)
-        {
-          toggleCaret(part4);
-        }
-      toggleCaret(part4);
+      {
+        //console.log("part4 found");
+        toggleCaret(part4);
+      }
     }
 
-    toc_element_id= `toc_${paper.toString().padStart(3, '0')}_000`;
+    toc_element_id= `toc_${paper.toString().padStart(3, '0')}_000_div`;
+    //console.log("toc_element_id", toc_element_id);
     toc_element= document.getElementById(toc_element_id);
+    //console.log("toc_element", toc_element);
     if (toc_element)
     {
       setTimeout(() => {
@@ -145,7 +197,7 @@ function expandCurrentTocElement()
             block: 'start' // Para alinhar o topo do elemento ao topo da tela
           });
         }
-      }, 300); // Adjust the timeout as needed
+      }, 500); // Adjust the timeout as needed
     }
 }
 

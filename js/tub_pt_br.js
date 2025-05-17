@@ -29,7 +29,7 @@ function getAnchor(url) {
 function hasAnchor() {
     const currentUrl = window.location.href;
     const hasHash = currentUrl.indexOf('#') !== -1;
-    return hasHash;Do
+    return hasHash;
   }
   
 // Find an anchor by name
@@ -85,7 +85,6 @@ function generateUrlAndOpen(codeString) {
 
   // Format integers to 3 digits
   const formattedParts = parts.map(part => part.toString().padStart(3, '0'));
-  const urlGithub = `https://github.com/Rogreis/PtAlternative/blob/correcoes/Doc${formattedParts[0]}/Par_${formattedParts.join('_')}.md`;
 
   const paper = parseInt(parts[0]);
   const section = parseInt(parts[1], 10);
@@ -96,6 +95,7 @@ function generateUrlAndOpen(codeString) {
   addTocEntry(paper, section, paragraph);
   // url= generate_url(paper, section, paragraph)
   // window.location.href = url;
+  const urlGithub = `https://github.com/Rogreis/PtAlternative/blob/correcoes/Doc${formattedParts[0]}/Par_${formattedParts.join('_')}.md`;
   window.open(urlGithub, '_blank');
 
   const protocol = window.location.protocol;
