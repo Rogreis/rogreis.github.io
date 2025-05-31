@@ -1,0 +1,35 @@
+﻿<div class="treeview">
+<p><a href="javascript:loadArticle('README.html')" data-bs-toggle="tooltip" data-bs-placement="top" title="Página Inicial">🏠 Página Inicial</a></p>
+    <ul>
+        <li><span class="caret"><a class="liIndex" href="javascript:jumpToAnchor('dia-a-dia-com-o-supremo')">Dia a dia com o supremo</a></span>
+        <ul class="nested">
+            <li><a class="liIndex" href="javascript:jumpToAnchor('slide-1-como-o-ser-supremo-pode-enriquecer-os-meus-dias')">Slide 1: Como o Ser Supremo pode enriquecer os meus dias?</a></li>
+            <li><span class="caret"><a class="liIndex" href="javascript:jumpToAnchor('slide-2-eventos-na-eternidade')">Slide 2: Eventos na Eternidade</a></span>
+            <ul class="nested">
+                <li><a class="liIndex" href="javascript:jumpToAnchor('eventos-eternos-e-a-mente-finita-uma-adaptação-necessária')">Eventos Eternos e a Mente Finita: Uma Adapta&#231;&#227;o Necess&#225;ria</a></li>
+                <li><a class="liIndex" href="javascript:jumpToAnchor('por-que-essa-adaptação-é-necessária')">Por que essa adapta&#231;&#227;o &#233; necess&#225;ria?</a></li>
+            </ul>
+            </li>
+            <li><a class="liIndex" href="javascript:jumpToAnchor('slide-3-potenciais-para-o-supremo')">Slide 3: Potenciais para o Supremo</a></li>
+            <li><a class="liIndex" href="javascript:jumpToAnchor('slide-4-quantos-potenciais')">Slide 4: Quantos Potenciais?</a></li>
+            <li><a class="liIndex" href="javascript:jumpToAnchor('slide-5-quantos-potenciais')">Slide 5: Quantos Potenciais?</a></li>
+            <li><a class="liIndex" href="javascript:jumpToAnchor('slide-6-ser-supremo-e-todo-poderoso')">Slide 6: Ser Supremo e Todo-Poderoso</a></li>
+            <li><a class="liIndex" href="javascript:jumpToAnchor('slide-7-o-que-é-necessário')">Slide 7: O que &#233; Necess&#225;rio?</a></li>
+            <li><a class="liIndex" href="javascript:jumpToAnchor('slide-8-transformação-repentina')">Slide 8: Transforma&#231;&#227;o Repentina?</a></li>
+            <li><a class="liIndex" href="javascript:jumpToAnchor('slide-9-transformação-repentina')">Slide 9: Transforma&#231;&#227;o Repentina?</a></li>
+            <li><a class="liIndex" href="javascript:jumpToAnchor('slide-10-transformação-repentina')">Slide 10: Transforma&#231;&#227;o Repentina?</a></li>
+            <li><a class="liIndex" href="javascript:jumpToAnchor('slide-11-transformação-contínua')">Slide 11: Transforma&#231;&#227;o Cont&#237;nua</a></li>
+            <li><a class="liIndex" href="javascript:jumpToAnchor('slide-12-crescimento')">Slide 12: Crescimento</a></li>
+            <li><a class="liIndex" href="javascript:jumpToAnchor('slide-13-como-se-dá-o-crescimento')">Slide 13: Como se d&#225; o Crescimento</a></li>
+            <li><a class="liIndex" href="javascript:jumpToAnchor('slide-14-desenvolvimento-dos-potenciais')">Slide 14: Desenvolvimento dos Potenciais</a></li>
+            <li><a class="liIndex" href="javascript:jumpToAnchor('slide-15-desenvolvimento-dos-potenciais')">Slide 15: Desenvolvimento dos Potenciais</a></li>
+            <li><a class="liIndex" href="javascript:jumpToAnchor('slide-16-desenvolvimento-dos-potenciais')">Slide 16: Desenvolvimento dos Potenciais</a></li>
+            <li><a class="liIndex" href="javascript:jumpToAnchor('slide-17-o-que-pode-atrapalhar')">Slide 17: O que pode Atrapalhar</a></li>
+            <li><a class="liIndex" href="javascript:jumpToAnchor('slide-18-como-reagir')">Slide 18: Como Reagir</a></li>
+            <li><a class="liIndex" href="javascript:jumpToAnchor('slide-19-como-participar')">Slide 19: Como Participar</a></li>
+            <li><a class="liIndex" href="javascript:jumpToAnchor('slide-20-resposta')">Slide 20: Resposta</a></li>
+        </ul>
+        </li>
+    </ul>
+</ul>
+</div>

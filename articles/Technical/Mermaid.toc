@@ -3,16 +3,21 @@
     <ul>
         <li><span class="caret"><a class="liIndex" href="javascript:jumpToAnchor('uso-do-mermaid-para-representação-de-ideias-do-livro-de-urântia')">Uso do Mermaid para representa&#231;&#227;o de ideias do livro de Ur&#226;ntia</a></span>
         <ul class="nested">
+            <li><a class="liIndex" href="javascript:jumpToAnchor('como-o-mermaid-pode-ajudar-em-apresentações-de-cunho-religioso')">Como o Mermaid pode ajudar em apresenta&#231;&#245;es de cunho religioso?</a></li>
             <li><span class="caret"><a class="liIndex" href="javascript:jumpToAnchor('detalhes')">&#129534; Detalhes:</a></span>
             <ul class="nested">
                 <li><a class="liIndex" href="javascript:jumpToAnchor('uso')">&#129513; Uso:</a></li>
             </ul>
             </li>
             <li><a class="liIndex" href="javascript:jumpToAnchor('como-ler-um-diagrama-de-sequência')">Como ler um diagrama de sequ&#234;ncia</a></li>
-            <li><a class="liIndex" href="javascript:jumpToAnchor('consciência-da-alma')">Consci&#234;ncia da alma</a></li>
-            <li><a class="liIndex" href="javascript:jumpToAnchor('adoração')">Adora&#231;&#227;o</a></li>
-            <li><a class="liIndex" href="javascript:jumpToAnchor('sete-círculos')">Sete c&#237;rculos</a></li>
             <li><span class="caret"><a class="liIndex" href="javascript:jumpToAnchor('exemplos')">Exemplos</a></span>
+            <ul class="nested">
+                <li><a class="liIndex" href="javascript:jumpToAnchor('consciência-da-alma')">Consci&#234;ncia da alma</a></li>
+                <li><a class="liIndex" href="javascript:jumpToAnchor('adoração')">Adora&#231;&#227;o</a></li>
+                <li><a class="liIndex" href="javascript:jumpToAnchor('sete-círculos')">Sete c&#237;rculos</a></li>
+            </ul>
+            </li>
+            <li><span class="caret"><a class="liIndex" href="javascript:jumpToAnchor('modelos')">Modelos</a></span>
             <ul class="nested">
                 <li><a class="liIndex" href="javascript:jumpToAnchor('participantes-objetos')">&#129485; Participantes / Objetos</a></li>
                 <li><a class="liIndex" href="javascript:jumpToAnchor('️-mensagens-chamada-de-método')">➡️ Mensagens (chamada de m&#233;todo)</a></li>

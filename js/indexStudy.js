@@ -53,48 +53,125 @@ function initializeTreeview()
 
 }
 
-function loadArticle(article)
-{
-  if (typeof name !== 'string') {
-    return;
-  }
-
-  console.log("Loading article: ", article);
-
-  const xhttp = new XMLHttpRequest();
-  xhttp.onload = function() {
-    try {
-        if (this.status >= 200 && this.status < 300) {
-            var artigo = document.getElementById('divartigo');
-            if (artigo === null) {
-                console.error("Artigo não encontrado no documento HTML.");
-                return;
+function loadUrlWithStatus(url) {
+    return new Promise((resolve, reject) => {
+        const xhttp = new XMLHttpRequest();
+        xhttp.onload = function() {
+            // this.status contains the HTTP status code
+            if (this.status >= 200 && this.status < 300) {
+                var artigo = document.getElementById('divartigo');
+                if (artigo === null) {
+                    console.error("Artigo não encontrado no documento HTML.");
+                    return;
+                }
+                artigo.innerHTML = this.responseText;
+                document.getElementById('divartigo').innerHTML = this.responseText;
+                try {
+                  mermaid.run();
+                } catch (e) {
+                  console.error("Erro ao renderizar diagramas Mermaid:", e);
+                }
+                resolve({ status: this.status, response: this.responseText });
+            } else {
+                reject({ status: this.status, response: this.responseText });
             }
-            artigo.innerHTML = this.responseText;
-            document.getElementById('divartigo').innerHTML = this.responseText;
-            try {
-              mermaid.run(); // Esta é a chamada chave!
-            } catch (e) {
-              console.error("Erro ao renderizar diagramas Mermaid:", e);
-            }
-            loadArticleIndex(article)
-
-        } else {
-            document.getElementById('divartigo').innerHTML = "<p>Erro ao carregar o conteúdo. Código de status: " + this.status + "</p>";
-        }
-    } catch (error) {
-        console.error("An error occurred:", error);
-        document.getElementById('divartigo').innerHTML = "<p>Erro ao processar a resposta.</p>";
-    }
-  } 
-  setCookie("ARTICLE", article, 180)
-  if (!article.toLowerCase().endsWith(".html")) {
-    article += ".html";
-  }  
-  url= `articles/${article}`;
-  xhttp.open("GET", url);
-  xhttp.send();
+        };
+        xhttp.onerror = function() {
+            reject({ status: this.status, response: null });
+        };
+        xhttp.open("GET", url);
+        xhttp.send();
+    });
 }
+
+
+// Usage:
+async function loadArticle(article) {
+    try {
+
+      setCookie("ARTICLE", article, 180)
+      if (!article.toLowerCase().endsWith(".html")) {
+        article += ".html";
+      }  
+      url= `articles/${article}`;
+      console.log("Loading article from: ", url);
+      // Check if the article is a valid URL
+      if (!url.startsWith('http://') && !url.startsWith('https://')) {
+        // If not, assume it's a relative path
+        url = new URL(url, window.location.href).href; // Convert to absolute URL
+      }
+      console.log("Absolute: ", url);
+
+      const result = await loadUrlWithStatus(url);
+        // result.status is the HTTP status code
+        // result.response is the response text
+        console.log("Page loaded, status:", result.status);
+        loadArticleIndex(article)
+
+    } catch (err) {
+        console.log("Failed to load page, status:", err.status);
+        if (article.toLowerCase() !== "readme.html") {
+            await loadArticle("README.html");
+            loadArticleIndex("README.html")
+        } else {
+            // Optionally, show an error message if even the fallback fails
+            document.getElementById('divartigo').innerHTML = "<p>Erro ao carregar o conteúdo.</p>";
+        }
+    }
+}
+
+// function loadArticle(article)
+// {
+//   if (typeof name !== 'string') {
+//     return;
+//   }
+
+//   console.log("Loading article: ", article);
+//   load_status= 0;
+
+//   const xhttp = new XMLHttpRequest();
+//   xhttp.onload = function() {
+//     try {
+//         load_status= this.status;
+//         console.log("Response status: ", load_status);
+//         if (this.status >= 200 && this.status < 300) {
+//             var artigo = document.getElementById('divartigo');
+//             if (artigo === null) {
+//                 console.error("Artigo não encontrado no documento HTML.");
+//                 return;
+//             }
+//             artigo.innerHTML = this.responseText;
+//             document.getElementById('divartigo').innerHTML = this.responseText;
+//             try {
+//               mermaid.run(); // Esta é a chamada chave!
+//             } catch (e) {
+//               console.error("Erro ao renderizar diagramas Mermaid:", e);
+//             }
+//             loadArticleIndex(article)
+
+//         } else {
+//             document.getElementById('divartigo').innerHTML = "<p>Erro ao carregar o conteúdo. Código de status: " + this.status + "</p>";
+//         }
+//     } catch (error) {
+//         console.error("An error occurred:", error);
+//         document.getElementById('divartigo').innerHTML = "<p>Erro ao processar a resposta.</p>";
+//     }
+//   } 
+//   setCookie("ARTICLE", article, 180)
+//   if (!article.toLowerCase().endsWith(".html")) {
+//     article += ".html";
+//   }  
+//   url= `articles/${article}`;
+//   console.log("Loading article from: ", url);
+//   // Check if the article is a valid URL
+//   if (!url.startsWith('http://') && !url.startsWith('https://')) {
+//     // If not, assume it's a relative path
+//     url = new URL(url, window.location.href).href; // Convert to absolute URL
+//   }
+//   console.log("Absolute: ", url);
+//   xhttp.open("GET", url);
+//   xhttp.send();
+// }
 
 
 

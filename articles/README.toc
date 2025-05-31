@@ -10,6 +10,9 @@
                 <li><a class="liIndex" href="javascript:jumpToAnchor('teológicos-filosóficos')">Teol&#243;gicos (Filos&#243;ficos)</a></li>
                 <li><a class="liIndex" href="javascript:jumpToAnchor('exegéticos')">Exeg&#233;ticos</a></li>
                 <li><a class="liIndex" href="javascript:jumpToAnchor('problemas-de-tradução')">Problemas de tradu&#231;&#227;o</a></li>
+                <li><a class="liIndex" href="javascript:jumpToAnchor('comentários')">Coment&#225;rios</a></li>
+                <li><a class="liIndex" href="javascript:jumpToAnchor('apresentações')">Apresenta&#231;&#245;es</a></li>
+                <li><a class="liIndex" href="javascript:jumpToAnchor('técnicos')">T&#233;cnicos</a></li>
             </ul>
             </li>
             <li><a class="liIndex" href="javascript:jumpToAnchor('tradução-usada')">Tradu&#231;&#227;o usada</a></li>
