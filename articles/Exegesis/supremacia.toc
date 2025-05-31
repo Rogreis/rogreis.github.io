@@ -1,0 +1,13 @@
+﻿<div class="treeview">
+<p><a href="javascript:loadArticle('README.html')" data-bs-toggle="tooltip" data-bs-placement="top" title="Página Inicial">🏠 Página Inicial</a></p>
+    <ul>
+        <li><span class="caret"><a class="liIndex" href="javascript:jumpToAnchor('conceito-de-supremacia')">Conceito de Supremacia</a></span>
+        <ul class="nested">
+            <li><a class="liIndex" href="javascript:jumpToAnchor('1-supremacia-na-definição-de-dicionários')">1. Supremacia na Defini&#231;&#227;o de Dicion&#225;rios</a></li>
+            <li><a class="liIndex" href="javascript:jumpToAnchor('2-supremacia-na-filosofia')">2. Supremacia na Filosofia</a></li>
+            <li><a class="liIndex" href="javascript:jumpToAnchor('3-supremacia-no-livro-de-urântia')">3. Supremacia no Livro de Ur&#226;ntia</a></li>
+        </ul>
+        </li>
+    </ul>
+</ul>
+</div>

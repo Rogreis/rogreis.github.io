@@ -8,6 +8,11 @@
             <ul class="nested">
                 <li><a class="liIndex" href="javascript:jumpToAnchor('eventos-eternos-e-a-mente-finita-uma-adaptação-necessária')">Eventos Eternos e a Mente Finita: Uma Adapta&#231;&#227;o Necess&#225;ria</a></li>
                 <li><a class="liIndex" href="javascript:jumpToAnchor('por-que-essa-adaptação-é-necessária')">Por que essa adapta&#231;&#227;o &#233; necess&#225;ria?</a></li>
+                <li><a class="liIndex" href="javascript:jumpToAnchor('eventuações-na-eternidade')">Eventua&#231;&#245;es na eternidade</a></li>
+                <li><a class="liIndex" href="javascript:jumpToAnchor('1-a-deidade-primordial-origem-do-pai-e-do-absoluto-inqualificado')">1. A Deidade Primordial: Origem do Pai e do Absoluto Inqualificado</a></li>
+                <li><a class="liIndex" href="javascript:jumpToAnchor('2-a-eventuação-do-filho-eterno-e-do-paraíso')">2. A Eventua&#231;&#227;o do Filho Eterno e do Para&#237;so</a></li>
+                <li><a class="liIndex" href="javascript:jumpToAnchor('3-a-eventuação-do-espírito-infinito')">3. A eventua&#231;&#227;o do Esp&#237;rito Infinito</a></li>
+                <li><a class="liIndex" href="javascript:jumpToAnchor('4-a-criação-do-ser-supremo')">4. A Cria&#231;&#227;o do Ser Supremo</a></li>
             </ul>
             </li>
             <li><a class="liIndex" href="javascript:jumpToAnchor('slide-3-potenciais-para-o-supremo')">Slide 3: Potenciais para o Supremo</a></li>
@@ -25,9 +30,17 @@
             <li><a class="liIndex" href="javascript:jumpToAnchor('slide-15-desenvolvimento-dos-potenciais')">Slide 15: Desenvolvimento dos Potenciais</a></li>
             <li><a class="liIndex" href="javascript:jumpToAnchor('slide-16-desenvolvimento-dos-potenciais')">Slide 16: Desenvolvimento dos Potenciais</a></li>
             <li><a class="liIndex" href="javascript:jumpToAnchor('slide-17-o-que-pode-atrapalhar')">Slide 17: O que pode Atrapalhar</a></li>
+            <li><span class="caret"><a class="liIndex" href="javascript:jumpToAnchor('o-poder-inspirador-da-vida-e-morte-de-jesus-michael-na-cruz')">O Poder Inspirador da Vida e Morte de Jesus (Michael) na Cruz</a></span>
+            <ul class="nested">
+                <li><a class="liIndex" href="javascript:jumpToAnchor('a-abrangência-universal-da-inspiração-de-jesus-na-cruz')">A abrang&#234;ncia universal da inspira&#231;&#227;o de Jesus na cruz</a></li>
+                <li><a class="liIndex" href="javascript:jumpToAnchor('o-efeito-transformador-na-perspectiva-humana')">O efeito transformador na perspectiva humana</a></li>
+            </ul>
+            </li>
             <li><a class="liIndex" href="javascript:jumpToAnchor('slide-18-como-reagir')">Slide 18: Como Reagir</a></li>
             <li><a class="liIndex" href="javascript:jumpToAnchor('slide-19-como-participar')">Slide 19: Como Participar</a></li>
             <li><a class="liIndex" href="javascript:jumpToAnchor('slide-20-resposta')">Slide 20: Resposta</a></li>
+            <li><a class="liIndex" href="javascript:jumpToAnchor('um-salmo-atual')">Um salmo atual</a></li>
+            <li><a class="liIndex" href="javascript:jumpToAnchor('local-da-apresentação')">Local da apresenta&#231;&#227;o</a></li>
         </ul>
         </li>
     </ul>

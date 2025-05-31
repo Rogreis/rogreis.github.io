@@ -66,6 +66,7 @@ function loadUrlWithStatus(url) {
                 }
                 artigo.innerHTML = this.responseText;
                 document.getElementById('divartigo').innerHTML = this.responseText;
+                window.scrollTo({ top: 0, behavior: 'auto' });
                 try {
                   mermaid.run();
                 } catch (e) {
