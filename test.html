@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>List Files</title>
+</head>
+<body>
+  <h1>Files in Function Folder</h1>
+  <button onclick="loadFiles()">Load Files</button>
+  <br/><br/>
+  <textarea id="output" rows="10" cols="60"></textarea>
+
+  <script>
+    async function loadFiles() {
+      const res = await fetch('/.netlify/functions/listFiles');
+      const textArea = document.getElementById('output');
+      if (res.ok) {
+        const data = await res.json();
+        textArea.value = data.join('\n');
+      } else {
+        const error = await res.text();
+        textArea.value = 'Error:\n' + error;
+      }
+    }
+  </script>
+</body>
+</html>

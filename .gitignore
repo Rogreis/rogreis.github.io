@@ -1,2 +1,5 @@
 *.backup
 .vscode
+
+# Local Netlify folder
+.netlify
