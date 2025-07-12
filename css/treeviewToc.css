@@ -1,0 +1,69 @@
+/* Color variables for light and dark modes */
+:root {
+    --treeview-text-color: black;
+    --treeview-hover-color: gold;
+}
+
+@media (prefers-color-scheme: dark) {
+    :root {
+        --treeview-text-color: white;
+        --treeview-hover-color: gold;
+    }
+}
+
+
+.treeview ul { 
+    list-style: none; 
+    padding-left: 20px; /* Indentation for nested levels */ 
+} 
+ 
+.treeview li { 
+    cursor: pointer; /* Make list items clickable */ 
+} 
+
+.treeview .caret::before{
+    content: '►';
+    display: inline-block;
+    margin-right: 5px;
+    font-family: bootstrap-icons !important;
+    color: var(--treeview-text-color); /* Apply color to caret icons */
+}
+.treeview .caret.active::before{
+    content: '▼';
+}
+
+
+
+.nested { 
+    display: none; 
+} 
+
+.active { 
+    display: block; 
+} 
+ 
+.treeview liIndex { 
+    font-family: var(--font); 
+    font-size: var(--fontSize); 
+} 
+ 
+.treeview a.liIndex:link { 
+    text-decoration: none; 
+    color: var(--textColorDark); 
+} 
+ 
+.treeview a.liIndex:visited { 
+    text-decoration: none; 
+    color: var(--textColorDark); 
+} 
+ 
+.treeview a.liIndex:hover { 
+    text-decoration: underline; 
+    color: var(--textColorDark); 
+} 
+ 
+.treeview a.liIndex:active { 
+    text-decoration: none; 
+    color: var(--textColorDark); 
+} 
+ 
