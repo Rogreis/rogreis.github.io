@@ -278,3 +278,26 @@ function jumpToAnchor(anchorId) {
     console.error(`Anchor with ID "${anchorId}" not found.`);
   }
 }
+
+  // Imprime apenas o conteúdo do <div id="divartigo"> da página
+  function ImprimeArtigo() {
+    var conteudo = document.getElementById('divartigo');
+    if (!conteudo) {
+      alert('Conteúdo do artigo não encontrado.');
+      return;
+    }
+    var janela = window.open('', '', 'width=900,height=700');
+    janela.document.write('<html><head></head><body>');
+    janela.document.write(conteudo.innerHTML);
+    // Adiciona rodapé com data de impressão
+    var data = new Date();
+    var dataFormatada = data.toLocaleDateString();
+    janela.document.write('<footer style="position:fixed;bottom:0;width:100%;text-align:center;font-size:12px;padding:8px 0;">Impresso em: ' + dataFormatada + '</footer>');
+    // Adiciona CSS para impressão em preto e branco e rodapé
+    janela.document.write('<style>@media print { * { color: #000 !important; background: #fff !important; box-shadow: none !important; text-shadow: none !important; } .badge, .bg-primary, .navactive, .navinactive, .btn, .modal-header, .modal-footer, .table th, .table td { background: #fff !important; color: #000 !important; border-color: #000 !important; } footer { position: fixed; bottom: 0; width: 100%; text-align: center; font-size: 12px; padding: 8px 0; } } </style>');
+    janela.document.write('</body></html>');
+    janela.document.close();
+    janela.focus();
+    janela.print();
+  }
+
