@@ -1,0 +1,12 @@
+﻿<div class="treeview">
+<p><a href="javascript:loadArticle('README.html')" data-bs-toggle="tooltip" data-bs-placement="top" title="Página Inicial">🏠 Página Inicial</a></p>
+    <ul>
+        <li><span class="caret"><a class="liIndex" href="javascript:jumpToAnchor('serafins')">Serafins</a></span>
+        <ul class="nested">
+            <li><a class="liIndex" href="javascript:jumpToAnchor('o-ministério-seráfico-e-a-interferência-na-vida-humana')">O Minist&#233;rio Ser&#225;fico e a Interfer&#234;ncia na Vida Humana</a></li>
+            <li><a class="liIndex" href="javascript:jumpToAnchor('planejamento-e-execução-da-assistência')">Planejamento e Execu&#231;&#227;o da Assist&#234;ncia</a></li>
+        </ul>
+        </li>
+    </ul>
+</ul>
+</div>
