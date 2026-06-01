@@ -1,8 +1,10 @@
 .trackCombo {
     position: relative;
-    display: inline-block;
+    display: flex;
+    align-items: center;
+    gap: 0;
     font-size: 0.8rem; /* Smaller text font */
-    width: 150px; /* Less width */
+    width: 190px;
 }
 
 .trackCombo-input-wrapper { /* Wrapper for input and button */
@@ -10,7 +12,9 @@
     align-items: center; /* Vertically align input and button */
     border: 1px solid #ccc;
     box-sizing: border-box;
-    border-radius: 5px; /* Rounded corners */
+    border-radius: 0 5px 5px 0;
+    border-left: 0;
+    flex: 1;
 }
 
 .trackCombo-input {
@@ -20,29 +24,42 @@
     outline: none; /* Remove default focus outline */
     box-sizing: border-box;
     height: 30px; /* Less height */
-    border-radius: 5px 0 0 5px; /* Rounded corners for input */
+    border-radius: 0; /* Rounded corners are handled by wrapper/buttons */
 }
 
-.trackCombo-button {
+.trackCombo-nav-btn {
     background-color: transparent;
     border: none;
     cursor: pointer;
-    padding: 5px;
-    padding-left: 0;
-    padding-right: 8px;
-    border-radius: 0 5px 5px 0; /* Rounded corners for button */
+    width: 28px;
+    height: 30px;
+    line-height: 1;
+    padding: 0;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    color: #333;
 }
 
-.trackCombo-button:after { /* Down arrow */
-    content: "\25BE"; /* Unicode down arrow character */
-    font-size: 12px;
+.trackCombo-nav-btn:hover {
+    background-color: #f0f0f0;
+}
+
+#mytrackComboPrev {
+    border-radius: 5px 0 0 5px;
+    border: 1px solid #ccc;
+    background-color: white;
+}
+
+#mytrackComboNext {
+    border-radius: 0 5px 5px 0;
 }
 
 .trackCombo-options {
     position: absolute;
     top: calc(100% + 1px); /* Position below the wrapper */
-    left: 0;
-    width: 100%;
+    left: 32px;
+    width: calc(100% - 32px);
     border: 1px solid #ccc;
     border-top: none;
     max-height: 300px; /* Less height */
@@ -52,6 +69,21 @@
     background-color: white;
     box-sizing: border-box;
     border-radius: 0 0 5px 5px; /* Rounded corners for options */
+}
+
+.nav-tools {
+    display: flex;
+    align-items: center;
+    gap: 0.45rem;
+}
+
+.icon-btn {
+    width: 36px;
+    height: 36px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
 }
 
 .trackCombo-options div {
@@ -69,6 +101,11 @@
     color: var(--textColorLight);
   }
 
+.trackCombo-options div.active-option {
+    background-color: #e6e6e6;
+    font-weight: 700;
+}
+
 /* Dark mode styles */
 @media (prefers-color-scheme: dark) {
     .trackCombo-input-wrapper {
@@ -81,8 +118,17 @@
         color: #fff;
     }
 
-    .trackCombo-button {
+    #mytrackComboPrev {
+        border-color: #444;
+        background-color: #333;
+    }
+
+    .trackCombo-nav-btn {
         color: #fff;
+    }
+
+    .trackCombo-nav-btn:hover {
+        background-color: #444;
     }
 
     .trackCombo-options {
@@ -98,5 +144,10 @@
     .trackCombo-options div:hover {
         background-color: #555;
         color: var(--textColorLight);
+    }
+
+    .trackCombo-options div.active-option {
+        background-color: #666;
+        color: #fff;
     }
 }

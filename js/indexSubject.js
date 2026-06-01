@@ -1,295 +1,237 @@
-// Javascript specific for page indexSubject.html
+// ── Funções específicas para a página de assuntos (indexSubject.html) ────────
 
 class Item {
     constructor(title, details) {
-        this.Title = title;
-        this.Details = details.map(detail => new Detail(detail.DetailType, detail.Text, detail.Links));
+        this.Title   = title;
+        this.Details = details.map(d => new Detail(d.DetailType, d.Text, d.Links));
     }
 }
 
 class Detail {
     constructor(detailType, text, links) {
         this.DetailType = detailType;
-        this.Text = text;
-        this.Links = links;
+        this.Text       = text;
+        this.Links      = links;
     }
 }
 
-SubjectItems = [];
-
+let SubjectItems = [];
 
 function StartPage() {
-    loadAndUnzipJSON('subject.zip', SubjectPageCallback)
+    loadAndUnzipJSON('subject.zip', SubjectPageCallback);
     verifyAnchor();
     initSlider();
-  }
-
-function verifyAnchor() 
-{ 
-  if (!hasAnchor())
-    {
-      // Load the document at the right column from cookies
-      var paper = getCookie("paper");
-      var section = getCookie("section");
-      var paragraph = getCookie("paragraph");
-      if (typeof paper !== 'string' || paper.trim() === '' ||
-      typeof section !== 'string' || section.trim() === '' ||
-      typeof paragraph !== 'string' || paragraph.trim() === '') 
-      {
-        return;
-      }
-    loadDocByPaperSectionParagraph(paper, section, paragraph, true);
-  }
 }
 
+function verifyAnchor() {
+    if (hasAnchor()) return;
+    const paper     = getCookie('paper');
+    const section   = getCookie('section');
+    const paragraph = getCookie('paragraph');
+    if (!paper?.trim() || !section?.trim() || !paragraph?.trim()) return;
+    loadDocByPaperSectionParagraph(parseInt(paper, 10), parseInt(section, 10), parseInt(paragraph, 10), true);
+}
 
-function get_subject_cookies() 
-{
+function get_subject_cookies() {
     const subject_titles = getCookie('subject_titles');
-
     if (typeof subject_titles === 'string' && subject_titles.trim().length >= 3) {
         document.getElementById('searchInputBox').value = subject_titles;
-        findTitlesContainingSubstring(subject_titles)
+        findTitlesContainingSubstring(subject_titles);
+    } else {
+        return;
     }
-    else return;
-
     const subject_selectedTitle = getCookie('subject_selectedTitle');
-    if (typeof subject_selectedTitle === 'string' && subject_selectedTitle.trim() !== '') {
-        showSubjectDetails(subject_selectedTitle)
-    }
+    if (subject_selectedTitle?.trim()) showSubjectDetails(subject_selectedTitle);
 }
-
-
 
 function SubjectPageCallback(error, data) {
     if (error) {
-        console.error("An error occurred while loading or parsing the JSON:", error.message);
+        console.error('Error loading JSON:', error.message);
+        return;
     }
-     else {
-        // Parse JSON data and map to Item class
-        SubjectItems = data.map(item => new Item(item.Title, item.Details));
-        // Print the total number of items in the array
-        get_subject_cookies() 
-    }
+    SubjectItems = data.map(item => new Item(item.Title, item.Details));
+    get_subject_cookies();
 }
 
-
+// Uses JSZip (loaded as a script dependency) to fetch and parse a zipped JSON file.
 function loadAndUnzipJSON(url, callback) {
-    const xhr = new XMLHttpRequest();
-
+    const xhr        = new XMLHttpRequest();
     xhr.open('GET', url, true);
-    xhr.responseType = 'arraybuffer'; // Fetch the file as binary data
+    xhr.responseType = 'arraybuffer';
     xhr.onload = async function () {
-        if (xhr.status === 200) {
-            try {
-                const zip = new JSZip();
-                const zipContent = await zip.loadAsync(xhr.response); // Load the zip content
-
-                // Assuming the zip contains one JSON file; adjust logic for multiple files
-                const fileName = Object.keys(zipContent.files)[0];
-                const jsonContent = await zip.file(fileName).async('string');
-
-                // Parse JSON into JavaScript object
-                const jsonObject = JSON.parse(jsonContent);
-
-                callback(null, jsonObject);
-            } catch (error) {
-                callback(error, null);
-            }
-        } else {
+        if (xhr.status !== 200) {
             callback(new Error(`Failed to load file: ${xhr.statusText}`), null);
+            return;
+        }
+        try {
+            const zip        = new JSZip();
+            const zipContent = await zip.loadAsync(xhr.response);
+            const fileName   = Object.keys(zipContent.files)[0];
+            const json       = await zip.file(fileName).async('string');
+            callback(null, JSON.parse(json));
+        } catch (error) {
+            callback(error, null);
         }
     };
-
-    xhr.onerror = function () {
-        callback(new Error('An error occurred during the XMLHttpRequest'), null);
-    };
-
+    xhr.onerror = () => callback(new Error('XMLHttpRequest error'), null);
     xhr.send();
 }
 
-
-
 function findTitlesContainingSubstring(searchString) {
-    if (searchString.length < 3) {
-        return;
-    }
-    setCookie("subject_titles", searchString, 180)
-    // Convert search string to lowercase for case-insensitive matching
-    const searchLower = searchString.toLowerCase();
+    if (searchString.length < 3) return;
+    setCookie('subject_titles', searchString, 180);
 
-    // Filter items based on whether the Title contains the search string
-    matchingTitles = SubjectItems
-        .filter(item => item.Title.toLowerCase().includes(searchLower))
-        .map(item => item.Title); // Extract the Title property
+    const lower   = searchString.toLowerCase();
+    const listBox = document.getElementById('listBoxAssuntos');
+    listBox.innerHTML = '';
 
-    // Clear and populate the listbox
-    const listBox = document.getElementById("listBoxAssuntos");
-    listBox.innerHTML = ""; // Clear existing options
-
-    // Add matching titles as new options
-    matchingTitles.forEach(title => {
-        const option = document.createElement("option");
-        option.text = title;
-        listBox.add(option);
-    });
+    SubjectItems
+        .filter(item => item.Title.toLowerCase().includes(lower))
+        .forEach(item => {
+            const option  = document.createElement('option');
+            option.text   = item.Title;
+            listBox.add(option);
+        });
 }
 
-// Convert links array to HTML links
-function generateLinksHtml(links) {
-    const linkRegex = /^(\d{1,3}):(\d{1,3})\.(\d{1,3})$/; // Matches PPP:SSS.XXX format
-    let htmlLinks = "";
+// Builds a document fragment with clickable reference links.
+// Uses event listeners instead of javascript: hrefs.
+function buildLinksFragment(links) {
+    const linkRegex = /^(\d{1,3}):(\d{1,3})\.(\d{1,3})$/;
+    const fragment  = document.createDocumentFragment();
 
-    // Ensure links is an array
     if (!Array.isArray(links)) {
-        console.error("Expected links to be an array, but got:", typeof links);
-        return ""; // Return an empty string if invalid input
+        console.error('Expected links to be an array, got:', typeof links);
+        return fragment;
     }
 
-    // Iterate over each link in the array
-    links.forEach(link => {
-        link = link.trim(); // Remove any leading/trailing whitespace
-        // Check if the link matches the pattern
+    links.forEach(rawLink => {
+        const link  = rawLink.trim();
         const match = link.match(linkRegex);
-        if (match) {
-            const [_, PPP, SSS, XXX] = match; // Extract PPP, SSS, and XXX
-            // Append the formatted HTML link to the result
-            //htmlLinks += `<a href="javascript:loadDoc('content/Doc${PPP}.html','p${PPP}_${SSS}_${XXX}')" class="amadon_link">${PPP}:${SSS}.${XXX}</a><br>`;
-            htmlLinks += `<a href="javascript:loadDoc('content/Doc${PPP.padStart(3, '0')}.html','p${PPP.padStart(3, '0')}_${SSS.padStart(3, '0')}_${XXX.padStart(3, '0')}')" class="amadon_link">${PPP}:${SSS}.${XXX}</a> `;
-        } else {
-            console.warn(`Invalid link format: "${link}"`);
-        }
+        if (!match) { console.warn(`Invalid link format: "${link}"`); return; }
+
+        const [, PPP, SSS, XXX] = match;
+        const paper     = parseInt(PPP, 10);
+        const section   = parseInt(SSS, 10);
+        const paragraph = parseInt(XXX, 10);
+
+        const a       = document.createElement('a');
+        a.href        = '#';
+        a.className   = 'amadon_link';
+        a.textContent = `${PPP}:${SSS}.${XXX}`;
+        a.addEventListener('click', (e) => {
+            e.preventDefault();
+            loadDocByPaperSectionParagraph(paper, section, paragraph, true);
+        });
+        fragment.appendChild(a);
+        fragment.appendChild(document.createTextNode(' '));
     });
 
-    return htmlLinks;
+    return fragment;
 }
-
 
 function showSubjectDetails(selectedTitle) {
-
-
-    // Find the item with the selected title
     const selectedItem = SubjectItems.find(item => item.Title === selectedTitle);
-    if (!selectedItem) {
-        console.error("Item not found for title:", selectedTitle);
-        return
-    }
-    setCookie("subject_selectedTitle", selectedTitle, 180)
+    if (!selectedItem) { console.error('Item not found:', selectedTitle); return; }
+    setCookie('subject_selectedTitle', selectedTitle, 180);
 
-    // Clear and populate the details list
-    const detailsList = document.getElementById("detailsList");
-    detailsList.innerHTML = "<h3 style=\"color:gold\">" + selectedTitle + "</h3><br>";
+    const detailsList = document.getElementById('detailsList');
+    detailsList.innerHTML = '';
+
+    const heading = document.createElement('h3');
+    heading.style.color = 'gold';
+    heading.textContent = selectedTitle;
+    detailsList.appendChild(heading);
 
     selectedItem.Details.forEach(detail => {
-        const detailItem = document.createElement("blockquote");
+        const block = document.createElement('blockquote');
         if (detail.DetailType === 2) {
-            // Create a link to call showSubjectDetails(selectedTitle)
-            const link = document.createElement("a");
-            link.href = "javascript:void(0)"; // Prevent default navigation
-            link.className = "amadon_link"; // Optional: Add a class for styling
-            link.textContent = "See also: "+ detail.Links[0];
-            link.onclick = () => showSubjectDetails(detail.Links[0]); // Set the click event handler
-            detailItem.appendChild(link);
+            const a       = document.createElement('a');
+            a.href        = '#';
+            a.className   = 'amadon_link';
+            a.textContent = 'See also: ' + detail.Links[0];
+            a.addEventListener('click', (e) => { e.preventDefault(); showSubjectDetails(detail.Links[0]); });
+            block.appendChild(a);
         } else {
-            // For other types, add regular text and links
-            detailItem.innerHTML = `${detail.Text}<br>${generateLinksHtml(detail.Links)}`;
+            block.innerHTML = `${detail.Text}<br>`;
+            block.appendChild(buildLinksFragment(detail.Links));
         }
-        detailsList.appendChild(detailItem);
+        detailsList.appendChild(block);
     });
 }
 
-// Legacy loadDoc function
-function loadDoc(url, hash)
-{
-  if (typeof hash !== 'string') {
-    return;
-  }
-  const parts = hash.split('_');
-  const paper = parseInt(parts[0].substring(1), 10); // Remove 'p' and parse
-  const section = parseInt(parts[1], 10);
-  const paragraph = parseInt(parts[2], 10);
-  loadDocByPaperSectionParagraph(paper, section, paragraph, true) ;
+// Legacy entry point – called from dynamically generated links in older content.
+function loadDoc(url, hash) {
+    if (typeof hash !== 'string') return;
+    const parts     = hash.split('_');
+    const paper     = parseInt(parts[0].slice(1), 10);
+    const section   = parseInt(parts[1], 10);
+    const paragraph = parseInt(parts[2], 10);
+    loadDocByPaperSectionParagraph(paper, section, paragraph, true);
 }
 
-
-
-// Load the document at the right column
-function loadDocByPaperSectionParagraph(paper, section, paragraph, isToAddTocEntry) 
-{
-    const xhttp = new XMLHttpRequest();
-    xhttp.onload = function() {
-        document.getElementById('rightColumn').innerHTML = this.responseText;
-
-        // Assuming the anchor ID is within the loaded content
-        //hash = `U${paper}_${section}_${paragraph}`;
-        hash = `p${paper.toString().padStart(3, '0')}_${section.toString().padStart(3, '0')}_${paragraph.toString().padStart(3, '0')}_R`;
-        var anchor = document.getElementById(hash);
-      
-        // Scroll to the anchor smoothly (optional)
-        if (anchor) {
-          anchor.scrollIntoView({ block: 'start' });
-        } else {
-          // If the anchor is not found, try direct hash navigation
-          location.hash = "#" + hash;
-        }
-    }
-    setCookie("paper", paper, 180)
-    setCookie("section", section, 180)
-    setCookie("paragraph", paragraph, 180)
-
+// Load a document into the right column by coordinates.
+async function loadDocByPaperSectionParagraph(paper, section, paragraph, isToAddTocEntry) {
+    setCookie('paper',     paper,     180);
+    setCookie('section',   section,   180);
+    setCookie('paragraph', paragraph, 180);
     if (isToAddTocEntry) addTocEntry(paper, section, paragraph);
 
-    url= `content/Doc${paper.toString().padStart(3, '0')}.html`;
-    xhttp.open("GET", url);
-    xhttp.send();
-}
+    const url = `content/Doc${String(paper).padStart(3, '0')}.html`;
+    try {
+        const response = await fetch(url);
+        if (!response.ok) throw new Error(`HTTP ${response.status}`);
+        document.getElementById('rightColumn').innerHTML = await response.text();
+        updateNavbarTitleFromDocument(paper, 'rightColumn');
 
-
-// Ensure this script runs after the DOM is fully loaded 
-document.addEventListener("DOMContentLoaded", () => { 
-    const inputBox = document.getElementById("searchInputBox"); 
-    const listBox = document.getElementById("listBoxAssuntos"); 
-
-    if (inputBox) {
-        inputBox.addEventListener("input", function handleInput(event) {
-            // Get the value of the input box
-            const value = searchInputBox.value;
-
-            // Check if the value has at least 3 characters
-            if (value.length >= 3) {
-                event.preventDefault(); 
-                findTitlesContainingSubstring(event.target.value); 
-            } else {
-                // Clear the list box
-                const listBox = document.getElementById('listBoxAssuntos');
-                listBox.innerHTML = '';
-            }
-        }); 
-        // Evento de tecla Enter no inputBox
-        inputBox.addEventListener("keydown", function handleEnter(event) { 
-            if (event.key === "Enter") { 
-                event.preventDefault(); 
-                findTitlesContainingSubstring(event.target.value); 
-            } 
-        }); 
+        const baseHash = `p${String(paper).padStart(3, '0')}_${String(section).padStart(3, '0')}_${String(paragraph).padStart(3, '0')}`;
+        const anchor = document.getElementById(baseHash) || document.getElementById(`${baseHash}_R`);
+        if (anchor) {
+            anchor.scrollIntoView({ block: 'start' });
+        } else {
+            location.hash = '#' + baseHash;
         }
-
-    // Evento de seleção em um listbox (select)
-    if (listBox) {
-        listBox.addEventListener("change", function handleListboxChange(event) {
-            const selectedText = event.target.options[event.target.selectedIndex].text; // Obtém o texto da opção selecionada
-            showSubjectDetails(selectedText); 
-        });
+    } catch (error) {
+        console.error('Error loading document:', error);
     }
-});
+}
 
 async function showParagraphFromDataEntry(paper, section, paragraph) {
     await loadDocByPaperSectionParagraph(paper, section, paragraph, false);
 }
 
-function showParagraphFromComboEntry(referenceString)
-{
-    entry= referenceFromString(referenceString);
+function showParagraphFromComboEntry(referenceString) {
+    const entry = referenceFromString(referenceString);
     loadDocByPaperSectionParagraph(entry.paper, entry.section, entry.paragraph, false);
 }
-  
+
+// ── DOM event wiring ─────────────────────────────────────────────────────────
+
+document.addEventListener('DOMContentLoaded', () => {
+    const inputBox = document.getElementById('searchInputBox');
+    const listBox  = document.getElementById('listBoxAssuntos');
+
+    if (inputBox) {
+        inputBox.addEventListener('input', (event) => {
+            const value = event.target.value;
+            if (value.length >= 3) {
+                findTitlesContainingSubstring(value);
+            } else {
+                document.getElementById('listBoxAssuntos').innerHTML = '';
+            }
+        });
+        inputBox.addEventListener('keydown', (event) => {
+            if (event.key === 'Enter') {
+                event.preventDefault();
+                findTitlesContainingSubstring(event.target.value);
+            }
+        });
+    }
+
+    if (listBox) {
+        listBox.addEventListener('change', (event) => {
+            const selectedText = event.target.options[event.target.selectedIndex].text;
+            showSubjectDetails(selectedText);
+        });
+    }
+});

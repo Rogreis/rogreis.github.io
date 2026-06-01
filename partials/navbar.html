@@ -1,0 +1,42 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-primary">
+    <div class="container-fluid">
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+            data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false"
+            aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav">
+                <li class="nav-item bg-primary">
+                    <a class="nav-link navinactive" data-page-link="indexToc" aria-current="page" href="javascript:open_page('indexToc')">Documentos</a>
+                </li>
+                <li class="nav-item bg-primary">
+                    <a class="nav-link navinactive" data-page-link="indexSubject" aria-current="page" href="javascript:open_page('indexSubject')">Assuntos</a>
+                </li>
+                <li class="nav-item bg-primary">
+                    <a class="nav-link navinactive" data-page-link="indexStudy" aria-current="page" href="javascript:open_page('indexStudy')">Artigos</a>
+                </li>
+                <li class="nav-item">
+                    <span class="navbar-brand mx-3 titulo">Estudos sobre "O Livro de Urântia"</span>
+                </li>
+            </ul>
+            <div class="navbar-nav ms-auto nav-tools">
+                <div class="trackCombo">
+                    <button class="trackCombo-nav-btn trackCombo-nav-btn-left" id="mytrackComboPrev" type="button" aria-label="Anterior" title="Anterior">&#9664;</button>
+                    <div class="trackCombo-input-wrapper">
+                        <input type="text" class="trackCombo-input" id="mytrackCombo" autocomplete="off">
+                        <button class="trackCombo-nav-btn" id="mytrackComboNext" type="button" aria-label="Próximo" title="Próximo">&#9654;</button>
+                    </div>
+                    <div class="trackCombo-options" id="mytrackComboOptions"></div>
+                </div>
+                <button id="navPrintButton" class="btn btn-primary icon-btn d-none" title="Imprimir" aria-label="Imprimir">
+                    <svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path fill="currentColor" d="M6 9V3h12v6h2a2 2 0 0 1 2 2v6h-4v4H6v-4H2v-6a2 2 0 0 1 2-2h2zm2-4v4h8V5H8zm8 14v-4H8v4h8zm2-8H6a1 1 0 0 0-1 1v3h2v-2h10v2h2v-3a1 1 0 0 0-1-1z"/></svg>
+                </button>
+                <button id="navColorsButton" class="btn btn-primary icon-btn" data-bs-toggle="modal"
+                    data-bs-target="#myModal" title="Cores" aria-label="Cores">
+                    <svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><path fill="currentColor" d="M12 3a9 9 0 1 0 0 18h1a3 3 0 0 0 0-6h-1a2 2 0 0 1 0-4h2a4 4 0 0 0 0-8h-2zm-4.5 8.5a1.5 1.5 0 1 1 0-3a1.5 1.5 0 0 1 0 3zm3-4a1.5 1.5 0 1 1 0-3a1.5 1.5 0 0 1 0 3zm3 0a1.5 1.5 0 1 1 0-3a1.5 1.5 0 0 1 0 3z"/></svg>
+                </button>
+            </div>
+        </div>
+    </div>
+</nav>

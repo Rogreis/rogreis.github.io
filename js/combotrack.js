@@ -1,154 +1,177 @@
-// For the modal windiw for the paragraph, we need to change the id of the div to modalText
-document.getElementById('modalText').addEventListener('hidden.bs.modal', function () {
-  const backdrop = document.querySelector('.modal-backdrop');
-  if (backdrop) {
-      backdrop.remove();
-  }
-});
+// ComboTrack – history-aware combo-box widget
+// Depends on: getCookie, setCookie, referenceFromString, showParagraphFromComboEntry
 
+const MAX_ITEMS = 25;
 
-const trackComboInput = document.getElementById('mytrackCombo');
-const trackComboOptions = document.getElementById('mytrackComboOptions');
-// Load the collection from the cookie
-let options = [];
-rebuildCollectionFromCookie(); 
-updateOptionsDisplay();
-trackComboOptions.style.display = 'none';
+let comboOptions = [];
+let visibleOptions = [];
+let activeIndex = -1;
+let comboTrackInitialized = false;
 
+function initComboTrack() {
+    if (comboTrackInitialized) return;
+    const input    = document.getElementById('mytrackCombo');
+    const dropdown = document.getElementById('mytrackComboOptions');
+    const prevBtn  = document.getElementById('mytrackComboPrev');
+    const nextBtn  = document.getElementById('mytrackComboNext');
 
+    if (!input || !dropdown || !prevBtn || !nextBtn) return;
+    comboTrackInitialized = true;
+
+    rebuildCollectionFromCookie();
+    updateOptionsDisplay();
+    dropdown.style.display = 'none';
+
+    input.addEventListener('keyup', (e) => {
+        if (e.key === 'Enter') {
+            const value = input.value.trim();
+            if (value) addNewEntryOption(value);
+        } else {
+            filterOptions(input.value);
+        }
+    });
+
+    input.addEventListener('blur', () => {
+        setTimeout(() => { dropdown.style.display = 'none'; }, 200);
+    });
+
+    input.addEventListener('focus', () => {
+        if (comboOptions.length > 0) dropdown.style.display = 'block';
+    });
+
+    prevBtn.addEventListener('click', () => {
+        navigateVisibleOptions(-1);
+        input.focus();
+    });
+
+    nextBtn.addEventListener('click', () => {
+        navigateVisibleOptions(1);
+        input.focus();
+    });
+
+    // Remove Bootstrap modal backdrop when the paragraph modal is dismissed.
+    const modalEl = document.getElementById('modalText');
+    if (modalEl) {
+        modalEl.addEventListener('hidden.bs.modal', () => {
+            document.querySelector('.modal-backdrop')?.remove();
+        });
+    }
+}
 
 function saveCollectionToCookie() {
-  const cookieValue = JSON.stringify(options); // Convert to JSON string
-  setCookie("suggestionsData", cookieValue, 180)
+    setCookie('suggestionsData', JSON.stringify(comboOptions), 180);
 }
-
 
 function rebuildCollectionFromCookie() {
-const cookieName = "suggestionsData";
-const cookieValue = getCookie(cookieName);
-if (cookieValue) {
-  try {
-    const parsedData = JSON.parse(cookieValue); // Parse the JSON string
-
-    if (Array.isArray(parsedData)) {
-      options = parsedData;
-    } else {
-        console.error("Cookie data is not an array");
+    const value = getCookie('suggestionsData');
+    if (!value) return;
+    try {
+        const parsed = JSON.parse(value);
+        if (Array.isArray(parsed)) comboOptions = parsed;
+    } catch (e) {
+        console.error('Error parsing combo cookie:', e);
     }
-  } catch (error) {
-    console.error("Error parsing cookie JSON:", error);
-  }
-  }
 }
 
+function addNewEntryOption(newEntry) {
+    if (!newEntry) return;
+    const ref   = referenceFromString(newEntry);
+    const entry = `${ref.paper}:${ref.section}-${ref.paragraph}`;
+    if (comboOptions.length > 0 && comboOptions[comboOptions.length - 1] === entry) return;
 
-function addNewEntryOption(newEntry)
-{
-    if (newEntry === "") return "";
-    //var result = parsePaperSectionParagraph(newEntry);
-    var result = referenceFromString(newEntry)
-    entry = `${result.paper}:${result.section}-${result.paragraph}`;
-    // Check if the newEntry is already the first item in the options list
-    last_index=options.length-1;
-    if (options.length > 0 && options[last_index] === entry) {
-      return;
-    }
-    options.push(entry);
-    while (options.length > MAX_ITEMS) {
-        options.shift(); // Remove the oldest item
-    }      
+    comboOptions.push(entry);
+    while (comboOptions.length > MAX_ITEMS) comboOptions.shift();
+
     showParagraphFromComboEntry(entry);
     updateOptionsDisplay();
-    trackComboInput.value = ''; // Clear the input field
-    trackComboOptions.style.display = 'none';
+
+    const input = document.getElementById('mytrackCombo');
+    if (input) input.value = '';
+
+    const dropdown = document.getElementById('mytrackComboOptions');
+    if (dropdown) dropdown.style.display = 'none';
 }
 
-
-trackComboInput.addEventListener('keyup', function(event) {
-  if (event.key === 'Enter') {
-    const newOption = trackComboInput.value.trim();
-    if (newOption !== "" && !options.includes(newOption)) {
-      addNewEntryOption(newOption)
-    }
-  } else {
-    filterOptions(trackComboInput.value);
-  }
-});
-
 function updateOptionsDisplay() {
-    trackComboOptions.innerHTML = ""; // Clear existing options
-    for (let i = options.length - 1; i >= 0; i--) {
-        const option = options[i];
-        const optionDiv = document.createElement('div');
-        optionDiv.textContent = option;
-        optionDiv.addEventListener('click', () => {
-            trackComboInput.value = option;
-            trackComboOptions.style.display = 'none';
-            showParagraphFromComboEntry(option);
-        });
-        trackComboOptions.appendChild(optionDiv);
-    }
-    if (options.length > 0) {
-        trackComboOptions.style.display = 'block';
-    } else {
-        trackComboOptions.style.display = 'none';
-    }
+    const dropdown = document.getElementById('mytrackComboOptions');
+    if (!dropdown) return;
+
+    visibleOptions = [...comboOptions].reverse();
+    activeIndex = visibleOptions.length > 0 ? 0 : -1;
+    renderOptions(dropdown, visibleOptions);
+    dropdown.style.display = comboOptions.length > 0 ? 'block' : 'none';
     saveCollectionToCookie();
 }
 
 function filterOptions(filterText) {
-    if (filterText.trim() === "") {
-      updateOptionsDisplay();
-      return;
-    }
-    const filteredOptions = options.filter(option =>
-        option.toLowerCase().includes(filterText.toLowerCase())
-    );
-    trackComboOptions.innerHTML = "";
-    filteredOptions.forEach(option => {
-      const optionDiv = document.createElement('div');
-      optionDiv.textContent = option;
-      optionDiv.addEventListener('click', () => {
-          trackComboInput.value = option;
-          trackComboOptions.style.display = 'none';
-      });
-      trackComboOptions.appendChild(optionDiv);
-    });
-    if(filteredOptions.length>0){
-      trackComboOptions.style.display = 'block';
-    }else{
-      trackComboOptions.style.display = 'none';
+    const dropdown = document.getElementById('mytrackComboOptions');
+    if (!dropdown) return;
+
+    if (!filterText.trim()) {
+        updateOptionsDisplay();
+        return;
     }
 
+    const lower = filterText.toLowerCase();
+    visibleOptions = [...comboOptions]
+        .reverse()
+        .filter(o => o.toLowerCase().includes(lower));
+    activeIndex = visibleOptions.length > 0 ? 0 : -1;
+    renderOptions(dropdown, visibleOptions);
+    dropdown.style.display = visibleOptions.length > 0 ? 'block' : 'none';
 }
 
-trackComboInput.addEventListener('blur', function() {
-  setTimeout(() => {
-    trackComboOptions.style.display = 'none';
-  }, 200); // Small delay to allow click event to fire
-});
+function renderOptions(dropdown, optionsToRender) {
+    dropdown.innerHTML = '';
+    optionsToRender.forEach((option, index) => {
+        const div = document.createElement('div');
+        div.textContent = option;
+        if (index === activeIndex) div.classList.add('active-option');
+        div.addEventListener('click', () => {
+            setActiveOption(index, true);
+            dropdown.style.display = 'none';
+        });
+        dropdown.appendChild(div);
+    });
+}
 
-trackComboInput.addEventListener('focus', function(){
-  if(options.length>0){
-    trackComboOptions.style.display = 'block';
-  }
-})
+function setActiveOption(index, shouldNavigate) {
+    if (!visibleOptions.length || index < 0 || index >= visibleOptions.length) return;
+    activeIndex = index;
+    const selected = visibleOptions[activeIndex];
 
-const trackComboButton = document.getElementById('mytrackComboButton');
+    const input = document.getElementById('mytrackCombo');
+    if (input) input.value = selected;
 
-trackComboButton.addEventListener('click', function() {
-    if (trackComboOptions.style.display === 'block') {
-        trackComboOptions.style.display = 'none';
-    } else {
-        updateOptionsDisplay();
-        trackComboOptions.style.display = 'block';
+    const dropdown = document.getElementById('mytrackComboOptions');
+    if (dropdown) renderOptions(dropdown, visibleOptions);
+
+    if (shouldNavigate) showParagraphFromComboEntry(selected);
+}
+
+function navigateVisibleOptions(step) {
+    const input = document.getElementById('mytrackCombo');
+    if (!visibleOptions.length) {
+        const filterText = input?.value?.trim() || '';
+        if (filterText) {
+            filterOptions(filterText);
+        } else {
+            updateOptionsDisplay();
+        }
     }
-    trackComboInput.focus();
-});
+    if (!visibleOptions.length) return;
 
-trackComboInput.addEventListener('focus', function(){
-  if(options.length>0 && trackComboOptions.style.display !== 'block'){
-    trackComboOptions.style.display = 'block';
-  }
-});
+    if (activeIndex < 0) {
+        activeIndex = 0;
+    } else {
+        activeIndex = (activeIndex + step + visibleOptions.length) % visibleOptions.length;
+    }
+    setActiveOption(activeIndex, true);
+}
+
+if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initComboTrack);
+} else {
+    initComboTrack();
+}
 

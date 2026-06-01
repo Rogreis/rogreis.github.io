@@ -61,8 +61,9 @@
    
                       <div class="trackCombo">
                         <div class="trackCombo-input-wrapper">
+                          <button class="trackCombo-nav-btn" id="mytrackComboPrev" type="button" aria-label="Anterior" title="Anterior">&#9664;</button>
                           <input type="text" class="trackCombo-input" id="mytrackCombo" autocomplete="off">
-                          <button class="trackCombo-button" id="mytrackComboButton"></button>
+                          <button class="trackCombo-nav-btn" id="mytrackComboNext" type="button" aria-label="Próximo" title="Próximo">&#9654;</button>
                         </div>
                         <div class="trackCombo-comboTrackOptions" id="mytrackComboOptions"></div>
                       </div>
@@ -88,12 +89,15 @@
 
 
 let comboTrackOptions = []; // Initial comboTrackOptions (can be populated from a data source)
+let visibleComboTrackOptions = [];
+let activeComboTrackIndex = -1;
 
 function initComboTrack() 
 {
   const trackComboInput = document.getElementById('mytrackCombo');
   const trackComboOptions = document.getElementById('mytrackComboOptions');
-  const trackComboButton = document.getElementById('mytrackComboButton');
+  const trackComboPrev = document.getElementById('mytrackComboPrev');
+  const trackComboNext = document.getElementById('mytrackComboNext');
 
   updateOptionsDisplay();
 
@@ -122,14 +126,14 @@ function initComboTrack()
     }
   })
 
-  trackComboButton.addEventListener('click', function() {
-      if (trackComboOptions.style.display === 'block') {
-          trackComboOptions.style.display = 'none';
-      } else {
-          updateOptionsDisplay();
-          trackComboOptions.style.display = 'block';
-      }
-      trackComboInput.focus();
+  trackComboPrev.addEventListener('click', function() {
+    navigateOptions(-1);
+    trackComboInput.focus();
+  });
+
+  trackComboNext.addEventListener('click', function() {
+    navigateOptions(1);
+    trackComboInput.focus();
   });
 
   trackComboInput.addEventListener('focus', function(){
@@ -145,11 +149,14 @@ function initComboTrack()
 function updateOptionsDisplay() {
   const trackComboInput = document.getElementById('mytrackCombo');
   const trackComboOptions = document.getElementById('mytrackComboOptions');
+  visibleComboTrackOptions = [...comboTrackOptions];
+  activeComboTrackIndex = visibleComboTrackOptions.length > 0 ? 0 : -1;
   trackComboOptions.innerHTML = ""; // Clear existing comboTrackOptions
-  comboTrackOptions.forEach(option => {
+  visibleComboTrackOptions.forEach((option, index) => {
       const optionDiv = document.createElement('div');
       optionDiv.textContent = option;
       optionDiv.addEventListener('click', () => {
+          activeComboTrackIndex = index;
           trackComboInput.value = option;
           trackComboOptions.style.display = 'none';
       });
@@ -171,11 +178,14 @@ function filterOptions(filterText) {
   const filteredOptions = comboTrackOptions.filter(option =>
       option.toLowerCase().includes(filterText.toLowerCase())
   );
+  visibleComboTrackOptions = [...filteredOptions];
+  activeComboTrackIndex = visibleComboTrackOptions.length > 0 ? 0 : -1;
   trackComboOptions.innerHTML = "";
-  filteredOptions.forEach(option => {
+  filteredOptions.forEach((option, index) => {
     const optionDiv = document.createElement('div');
     optionDiv.textContent = option;
     optionDiv.addEventListener('click', () => {
+        activeComboTrackIndex = index;
         trackComboInput.value = option;
         trackComboOptions.style.display = 'none';
     });
@@ -186,6 +196,26 @@ function filterOptions(filterText) {
   }else{
     trackComboOptions.style.display = 'none';
   }
+}
+
+function navigateOptions(step) {
+  const trackComboInput = document.getElementById('mytrackCombo');
+  if (!visibleComboTrackOptions.length) {
+    const filterText = trackComboInput.value.trim();
+    if (filterText) {
+      filterOptions(filterText);
+    } else {
+      updateOptionsDisplay();
+    }
+  }
+  if (!visibleComboTrackOptions.length) return;
+
+  if (activeComboTrackIndex < 0) {
+    activeComboTrackIndex = 0;
+  } else {
+    activeComboTrackIndex = (activeComboTrackIndex + step + visibleComboTrackOptions.length) % visibleComboTrackOptions.length;
+  }
+  trackComboInput.value = visibleComboTrackOptions[activeComboTrackIndex];
 }
       
       

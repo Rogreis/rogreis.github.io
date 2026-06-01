@@ -297,7 +297,10 @@ textarea {
 
 .trackCombo {
   position: relative;
-  display: inline-block;
+    display: flex;
+    align-items: center;
+    gap: 0;
+    width: 190px;
 }
 
 .trackCombo-input-wrapper { /* Wrapper for input and button */
@@ -305,6 +308,9 @@ textarea {
   align-items: center; /* Vertically align input and button */
   border: 1px solid #ccc;
   box-sizing: border-box;
+    border-radius: 0 5px 5px 0;
+    border-left: 0;
+    flex: 1;
 }
 
 .trackCombo-input {
@@ -315,25 +321,21 @@ textarea {
   box-sizing: border-box;
 }
 
-.trackCombo-button {
-  background-color: transparent;
-  border: none;
-  cursor: pointer;
-  padding: 5px;
-  padding-left: 0;
-  padding-right: 8px;
+#mytrackComboPrev {
+    border-radius: 5px 0 0 5px;
+    border: 1px solid #ccc;
+    background-color: white;
 }
 
-.trackCombo-button:after { /* Down arrow */
-  content: "\25BE"; /* Unicode down arrow character */
-  font-size: 12px;
+#mytrackComboNext {
+    border-radius: 0 5px 5px 0;
 }
 
 .trackCombo-options {
   position: absolute;
   top: calc(100% + 1px); /* Position below the wrapper */
-  left: 0;
-  width: 100%;
+    left: 32px;
+    width: calc(100% - 32px);
   border: 1px solid #ccc;
   border-top: none;
   max-height: 150px;
@@ -343,6 +345,21 @@ textarea {
   background-color: transparent;
   color:var(--textColorDark);
   box-sizing: border-box;
+}
+
+.nav-tools {
+    display: flex;
+    align-items: center;
+    gap: 0.45rem;
+}
+
+.icon-btn {
+    width: 36px;
+    height: 36px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
 }
 
 .trackCombo-options div {
@@ -358,6 +375,11 @@ textarea {
   background-color: var(--textColorDark);
   /* color: var(--background-color); */
     color: var(--textColorLight);
+}
+
+.trackCombo-options div.active-option {
+    background-color: #e6e6e6;
+    font-weight: 700;
 }
 
 .no-decoration-link {
