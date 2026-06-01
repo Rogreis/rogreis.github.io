@@ -4,8 +4,6 @@
     --fontSizePaperTitle: 24px;
     --fontSizeSectionTitle: 20px;
     --lineHeight: 1.6; /* Important for readability */
-    --textColorLight: #333; /* Dark gray for light mode */
-    --textColorDark: #eee; /* Light gray/off-white for dark mode */
     --backgroundColorLight: #fff; /* White for light mode */
     /* --backgroundColorDark: #121212; Dark background */
     --background-color: rgba(var(--bs-dark-rgb), var(--bs-bg-opacity))!important;
@@ -16,41 +14,25 @@
     --page-bg: var(--bs-body-bg, #ffffff);
     --page-fg: var(--bs-body-color, #111111);
     --parStartedBg: FloralWhite;
-    --parStartedColor: black;
     --parWorkingBg: LemonChiffon;
-    --parWorkingColor: black;
     --parDoubtBg: FireBrick;
-    --parDoubtColor: white;
     --parOkBg: Aquamarine;
-    --parOkColor: black;
     --parClosedBg: #2d2d2d;
-    --parClosedColor: rgba(var(--bs-white-rgb), var(--bs-text-opacity));
 }
 
 html[data-par-theme="neutral"] {
     --parStartedBg: var(--page-bg);
-    --parStartedColor: var(--page-fg);
     --parWorkingBg: var(--page-bg);
-    --parWorkingColor: var(--page-fg);
     --parDoubtBg: var(--page-bg);
-    --parDoubtColor: var(--page-fg);
     --parOkBg: var(--page-bg);
-    --parOkColor: var(--page-fg);
     --parClosedBg: var(--page-bg);
-    --parClosedColor: var(--page-fg);
 }
-
-.text-primary {
-    --bs-text-opacity: 1;
-    color: rgba(var(--bs-primary-rgb), var(--bs-text-opacity));
-  }
 
 body {
     font-family: var(--font);
     font-size: var(--fontSize);
     line-height: var(--lineHeight);
     background-color: var(--page-bg);
-    color: var(--page-fg);
     transition: background-color 0.3s ease, color 0.3s ease; /* Smooth transitions for mode switching */
 
     display: flex;
@@ -65,21 +47,18 @@ main {
     flex: 1; /* Permite que o main cresça para preencher o espaço restante */
     display: flex;
     background-color: var(--page-bg);
-    color: var(--page-fg);
 }
 
 #leftColumn {
     width: 25%;
     padding: 10px;
     background-color: var(--page-bg);
-    color: var(--page-fg);
 }
 
 #rightColumn {
     width: 75%;
     padding: 10px;
     background-color: var(--page-bg);
-    color: var(--page-fg);
 }
 
 #leftColumn, #rightColumn
@@ -125,7 +104,6 @@ main {
 .small-text {
     font-size: 0.7rem; /* Very small font size */
     line-height: 1.2; /* Adjust line height for readability */
-    color: white; /* Slightly darker gray for better contrast */
     font-family: var(--font);
 }
 
@@ -137,7 +115,6 @@ h1, h2, h3, h4, h5, h6 {
     line-height: 1.2; /* Adjust line height for larger text */
     letter-spacing: 0.05em; /* Slightly wider letter spacing for display text */
     margin-bottom: 0.5em; /* Add some bottom margin */
-    color: gold;
 }
 
 h3
@@ -155,28 +132,20 @@ h5
     font-family: var(--font);
     font-size: var(--fontSize);
     font-weight: normal;
-    color: rgba(var(--bs-white-rgb), var(--bs-text-opacity))!important;
 }
 
 .navactive {
     background-color: var(--highlight_color);
-    color: black!important;
-}
-
-.navinactive {
-    color: white;
 }
 
 
 .badgeStarted {
-    color: black;
     background-color: FloralWhite;
     display: inline-block;
     width: 100px
 }
 
 .badgeWorking {
-    color: black;
     background-color: LemonChiffon;
     display: inline-block;
     width: 100px
@@ -184,69 +153,59 @@ h5
 
 .badgeDoubt {
     background-color: FireBrick;
-    color: white;
     display: inline-block;
     width: 100px
 }
 
 .badgeOk {
-    color: black;
     background-color: Aquamarine;
     display: inline-block;
     width: 100px
 }
 
 .badgeClosed {
-    color: rgba(var(--bs-white-rgb), var(--bs-text-opacity))!important;
     display: inline-block;
     width: 100px
 }
 
-.parStarted, .parWorking, .parDoubt, .parOk, .parClosed, .parTitle, .parSeparator
+.parStarted, .parWorking, .parDoubt, .parOk, .parClosed, .parTitle, .parSeparator, .parNormal
 {  
 font-family: var(--font);
 font-size: var(--fontSize);
 text-align: justify;   
 }  
 
-.parStarted { color: var(--parStartedColor); background-color: var(--parStartedBg); }
-a.parStarted { color: var(--parStartedColor); text-decoration: none; }
+.parStarted { background-color: var(--parStartedBg); }
+a.parStarted { text-decoration: none; }
 a.parStarted:hover { text-decoration: underline; }
 
-.parWorking { color: var(--parWorkingColor); background-color: var(--parWorkingBg); }
-a.parWorking { color: var(--parWorkingColor); text-decoration: none; }
+.parWorking { background-color: var(--parWorkingBg); }
+a.parWorking { text-decoration: none; }
 a.parWorking:hover { text-decoration: underline; }
 
-.parDoubt { color: var(--parDoubtColor); background-color: var(--parDoubtBg); }
-a.parDoubt { color: var(--parDoubtColor); text-decoration: none; }
+.parDoubt { background-color: var(--parDoubtBg); }
+a.parDoubt { text-decoration: none; }
 a.parDoubt:hover { text-decoration: underline; }
 
-.parOk { color: var(--parOkColor); background-color: var(--parOkBg); }
-a.parOk { color: var(--parOkColor); text-decoration: none; }
+.parOk { background-color: var(--parOkBg); }
+a.parOk { text-decoration: none; }
 a.parOk:hover { text-decoration: underline; }
 
 .parClosed {
-    color: var(--parClosedColor) !important;
     background-color: var(--parClosedBg);
 }
 
-.parTitle, .parSeparator
-{ 
-    color: var(--parClosedColor) !important;
-}
 a.parClosed 
 { 
-    color: var(--parClosedColor) !important;
     text-decoration: none; 
 }
 a.parClosed:hover { text-decoration: underline; }
 
 
-sup  {font-size: 9px;  color: #666666;}  
+sup  {font-size: 9px;}  
 i, b, em  {  
 font-family: var(--font);
 font-size: var(--fontSize);
-color: #FF33CC;  
 font-weight: bold;  
 } 
 
@@ -257,8 +216,7 @@ table {
 
 td { padding: 15px; border: none;}
 
-.TextRemoved { color:#ff3333 } 
-.TextInserted { color:#66ff33 } 
+
 
 textarea {
     background: transparent;
@@ -306,18 +264,15 @@ textarea {
 
 
 .amadon_link {
-    color: gold;
     text-decoration: none;
  }
  
  .amadon_link:visited {
     text-decoration: underline; /* Enables text decoration on hover */
-    color: magenta;
  }
  
  .amadon_link:hover {
     text-decoration: underline; /* Enables text decoration on hover */
-    color: orange; /* Optional: Change color on hover */
 }
 
 
@@ -381,7 +336,6 @@ textarea {
   display: none;
   z-index: 10;
   background-color: transparent;
-  color:var(--textColorDark);
   box-sizing: border-box;
 }
 
@@ -414,9 +368,7 @@ textarea {
 }
 
 .trackCombo-options div:hover {
-  background-color: var(--textColorDark);
-  /* color: var(--background-color); */
-    color: var(--textColorLight);
+    background-color: var(--bs-secondary-bg);
 }
 
 .trackCombo-options div.active-option {
