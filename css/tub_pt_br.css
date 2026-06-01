@@ -13,6 +13,31 @@
     --linkColor: gold;
     --linkColorDark: #64b5f6; /* Lighter link color for dark mode */
     --bs-navbar-active-color: rgba(var(--bs-dark-rgb), var(--bs-bg-opacity))!important;
+    --page-bg: var(--bs-body-bg, #ffffff);
+    --page-fg: var(--bs-body-color, #111111);
+    --parStartedBg: FloralWhite;
+    --parStartedColor: black;
+    --parWorkingBg: LemonChiffon;
+    --parWorkingColor: black;
+    --parDoubtBg: FireBrick;
+    --parDoubtColor: white;
+    --parOkBg: Aquamarine;
+    --parOkColor: black;
+    --parClosedBg: #2d2d2d;
+    --parClosedColor: rgba(var(--bs-white-rgb), var(--bs-text-opacity));
+}
+
+html[data-par-theme="neutral"] {
+    --parStartedBg: var(--page-bg);
+    --parStartedColor: var(--page-fg);
+    --parWorkingBg: var(--page-bg);
+    --parWorkingColor: var(--page-fg);
+    --parDoubtBg: var(--page-bg);
+    --parDoubtColor: var(--page-fg);
+    --parOkBg: var(--page-bg);
+    --parOkColor: var(--page-fg);
+    --parClosedBg: var(--page-bg);
+    --parClosedColor: var(--page-fg);
 }
 
 .text-primary {
@@ -24,6 +49,8 @@ body {
     font-family: var(--font);
     font-size: var(--fontSize);
     line-height: var(--lineHeight);
+    background-color: var(--page-bg);
+    color: var(--page-fg);
     transition: background-color 0.3s ease, color 0.3s ease; /* Smooth transitions for mode switching */
 
     display: flex;
@@ -37,16 +64,22 @@ body {
 main {
     flex: 1; /* Permite que o main cresça para preencher o espaço restante */
     display: flex;
+    background-color: var(--page-bg);
+    color: var(--page-fg);
 }
 
 #leftColumn {
     width: 25%;
     padding: 10px;
+    background-color: var(--page-bg);
+    color: var(--page-fg);
 }
 
 #rightColumn {
     width: 75%;
     padding: 10px;
+    background-color: var(--page-bg);
+    color: var(--page-fg);
 }
 
 #leftColumn, #rightColumn
@@ -176,29 +209,34 @@ font-size: var(--fontSize);
 text-align: justify;   
 }  
 
-.parStarted { color:black; background-color:FloralWhite; }
-a.parStarted { color:black; text-decoration: none; }
+.parStarted { color: var(--parStartedColor); background-color: var(--parStartedBg); }
+a.parStarted { color: var(--parStartedColor); text-decoration: none; }
 a.parStarted:hover { text-decoration: underline; }
 
-.parWorking { color:black; background-color:LemonChiffon; }
-a.parWorking { color:black; text-decoration: none; }
+.parWorking { color: var(--parWorkingColor); background-color: var(--parWorkingBg); }
+a.parWorking { color: var(--parWorkingColor); text-decoration: none; }
 a.parWorking:hover { text-decoration: underline; }
 
-.parDoubt { color:white; background-color:FireBrick; }
-a.parDoubt { color:white; text-decoration: none; }
+.parDoubt { color: var(--parDoubtColor); background-color: var(--parDoubtBg); }
+a.parDoubt { color: var(--parDoubtColor); text-decoration: none; }
 a.parDoubt:hover { text-decoration: underline; }
 
-.parOk { color:black; background-color:Aquamarine; }
-a.parOk { color:black; text-decoration: none; }
+.parOk { color: var(--parOkColor); background-color: var(--parOkBg); }
+a.parOk { color: var(--parOkColor); text-decoration: none; }
 a.parOk:hover { text-decoration: underline; }
 
-.parClosed, .parTitle, .parSeparator
+.parClosed {
+    color: var(--parClosedColor) !important;
+    background-color: var(--parClosedBg);
+}
+
+.parTitle, .parSeparator
 { 
-    color: rgba(var(--bs-white-rgb), var(--bs-text-opacity))!important;
+    color: var(--parClosedColor) !important;
 }
 a.parClosed 
 { 
-    color: rgba(var(--bs-white-rgb), var(--bs-text-opacity))!important;
+    color: var(--parClosedColor) !important;
     text-decoration: none; 
 }
 a.parClosed:hover { text-decoration: underline; }
@@ -351,6 +389,10 @@ textarea {
     display: flex;
     align-items: center;
     gap: 0.45rem;
+}
+
+#shared-nav-root {
+    background-color: var(--page-bg);
 }
 
 .icon-btn {

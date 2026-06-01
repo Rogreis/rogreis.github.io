@@ -44,26 +44,21 @@
  
 .treeview liIndex { 
     font-family: var(--font); 
-    font-size: var(--fontSize); 
 } 
  
 .treeview a.liIndex:link { 
     text-decoration: none; 
-    color: var(--textColorDark); 
 } 
  
 .treeview a.liIndex:visited { 
     text-decoration: none; 
-    color: var(--textColorDark); 
 } 
  
 .treeview a.liIndex:hover { 
     text-decoration: underline; 
-    color: var(--textColorDark); 
 } 
  
 .treeview a.liIndex:active { 
     text-decoration: none; 
-    color: var(--textColorDark); 
 } 
  
