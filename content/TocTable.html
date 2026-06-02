@@ -25,23 +25,36 @@
             display: block; 
         } 
  
-.treeview liIndex { 
+.treeview .liIndex { 
     font-family: var(--font); 
 } 
  
 .treeview a.liIndex:link { 
+   color: var(--bs-body-color); 
+   background-color: var(--bs-body-bg); 
     text-decoration: none; 
 } 
  
 .treeview a.liIndex:visited { 
+   color: var(--bs-body-color); 
+   background-color: var(--bs-body-bg); 
     text-decoration: none; 
 } 
  
 .treeview a.liIndex:hover { 
+   color: var(--bs-emphasis-color); 
+   background-color: var(--bs-tertiary-bg); 
     text-decoration: underline; 
 } 
+
+.treeview a.liIndex:focus-visible {
+   color: var(--bs-emphasis-color);
+   background-color: var(--bs-tertiary-bg);
+}
  
 .treeview a.liIndex:active { 
+   color: var(--bs-emphasis-color); 
+   background-color: var(--bs-secondary-bg); 
     text-decoration: none; 
 } 
  

@@ -54,23 +54,36 @@
           display: block; 
       } 
 
-.articleToc liIndex { 
+.articleToc .liIndex { 
   font-family: var(--font); 
 } 
 
 .articleToc a.liIndex:link { 
+  color: var(--bs-body-color);
+  background-color: var(--bs-body-bg);
   text-decoration: none; 
 } 
 
 .articleToc a.liIndex:visited { 
+  color: var(--bs-body-color);
+  background-color: var(--bs-body-bg);
   text-decoration: none; 
 } 
 
 .articleToc a.liIndex:hover { 
+  color: var(--bs-emphasis-color);
+  background-color: var(--bs-tertiary-bg);
   text-decoration: underline; 
 } 
 
+.articleToc a.liIndex:focus-visible {
+  color: var(--bs-emphasis-color);
+  background-color: var(--bs-tertiary-bg);
+}
+
 .articleToc a.liIndex:active { 
+  color: var(--bs-emphasis-color);
+  background-color: var(--bs-secondary-bg);
   text-decoration: none; 
 } 
 
