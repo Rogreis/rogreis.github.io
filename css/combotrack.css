@@ -10,7 +10,7 @@
 .trackCombo-input-wrapper { /* Wrapper for input and button */
     display: flex;
     align-items: center; /* Vertically align input and button */
-    border: 1px solid #ccc;
+    border: 1px solid var(--combo-border-color);
     box-sizing: border-box;
     border-radius: 0 5px 5px 0;
     border-left: 0;
@@ -25,6 +25,8 @@
     box-sizing: border-box;
     height: 30px; /* Less height */
     border-radius: 0; /* Rounded corners are handled by wrapper/buttons */
+    background-color: var(--combo-input-bg);
+    color: var(--combo-input-fg);
 }
 
 .trackCombo-nav-btn {
@@ -38,21 +40,25 @@
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    color: #333;
+    color: var(--combo-input-fg);
 }
 
 .trackCombo-nav-btn:hover {
-    background-color: #f0f0f0;
+    background-color: var(--combo-nav-hover-bg);
 }
 
 #mytrackComboPrev {
     border-radius: 5px 0 0 5px;
-    border: 1px solid #ccc;
-    background-color: white;
+    border: 1px solid var(--combo-border-color);
+    background-color: var(--combo-input-bg);
+    color: var(--combo-input-fg);
 }
 
 #mytrackComboNext {
     border-radius: 0 5px 5px 0;
+    border-left: 1px solid var(--combo-border-color);
+    background-color: var(--combo-input-bg);
+    color: var(--combo-input-fg);
 }
 
 .trackCombo-options {
@@ -60,13 +66,14 @@
     top: calc(100% + 1px); /* Position below the wrapper */
     left: 32px;
     width: calc(100% - 32px);
-    border: 1px solid #ccc;
+    border: 1px solid var(--combo-border-color);
     border-top: none;
     max-height: 300px; /* Less height */
     overflow-y: auto;
     display: none;
     z-index: 10;
-    background-color: white;
+    background-color: var(--combo-options-bg);
+    color: var(--combo-options-fg);
     box-sizing: border-box;
     border-radius: 0 0 5px 5px; /* Rounded corners for options */
 }
@@ -89,7 +96,7 @@
 .trackCombo-options div {
     padding: 5px;
     cursor: pointer;
-    border-bottom: 1px solid #eee;
+    border-bottom: 1px solid var(--combo-border-color);
 }
 
 .trackCombo-options div:last-child {
@@ -97,62 +104,25 @@
 }
 
 .trackCombo-options div:hover {
-    background-color: #f0f0f0;
-    color: var(--textColorLight);
+    background-color: var(--combo-options-hover-bg);
+    color: var(--combo-options-hover-fg);
   }
 
 .trackCombo-options div.active-option {
-    background-color: #e6e6e6;
+    background-color: var(--combo-options-active-bg);
+    color: var(--combo-options-active-fg);
     font-weight: 700;
 }
 
-html[data-par-theme="dark"] .trackCombo-options div.active-option {
-    background-color: #666;
-    color: #fff;
-}
-
-/* Dark mode styles */
-@media (prefers-color-scheme: dark) {
-    .trackCombo-input-wrapper {
-        border: 1px solid #444;
-        background-color: #333;
-    }
-
-    .trackCombo-input {
-        background-color: #333;
-        color: #fff;
-    }
-
-    #mytrackComboPrev {
-        border-color: #444;
-        background-color: #333;
-    }
-
-    .trackCombo-nav-btn {
-        color: #fff;
-    }
-
-    .trackCombo-nav-btn:hover {
-        background-color: #444;
-    }
-
-    .trackCombo-options {
-        background-color: #333;
-        border: 1px solid #444;
-    }
-
-    .trackCombo-options div {
-        color: #fff;
-        border-bottom: 1px solid #555;
-    }
-
-    .trackCombo-options div:hover {
-        background-color: #555;
-        color: var(--textColorLight);
-    }
-
-    .trackCombo-options div.active-option {
-        background-color: #666;
-        color: #fff;
-    }
+html[data-bs-theme="dark"] {
+    --combo-input-bg: #333333;
+    --combo-input-fg: #ffffff;
+    --combo-border-color: #444444;
+    --combo-nav-hover-bg: #444444;
+    --combo-options-bg: #333333;
+    --combo-options-fg: #ffffff;
+    --combo-options-hover-bg: #555555;
+    --combo-options-hover-fg: #ffffff;
+    --combo-options-active-bg: #666666;
+    --combo-options-active-fg: #ffffff;
 }

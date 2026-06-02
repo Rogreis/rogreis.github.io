@@ -275,11 +275,125 @@ function configureSharedNavbar(pageName, printHandlerName, showColors) {
         colorsButton.onclick = toggleParagraphPalette;
         syncColorsButton(document.documentElement.getAttribute('data-par-theme') || 'light');
     }
+
+    initStudyLinksMenu();
 }
 
 function resolveGlobalFunction(path) {
     if (!path || typeof path !== 'string') return null;
     return path.split('.').reduce((obj, key) => obj?.[key], window) || null;
+}
+
+let studyLinksCache = null;
+
+async function loadStudyLinks() {
+    if (Array.isArray(studyLinksCache)) return studyLinksCache;
+    const response = await fetch('urantia_study_links.json');
+    if (!response.ok) throw new Error(`Failed to load links JSON: HTTP ${response.status}`);
+    const data = await response.json();
+    studyLinksCache = Array.isArray(data) ? data : [];
+    return studyLinksCache;
+}
+
+function createLinksMenuItem(entry) {
+    const li = document.createElement('li');
+    const a = document.createElement('a');
+    a.className = 'dropdown-item';
+    a.href = entry.url || '#';
+    a.target = '_blank';
+    a.rel = 'noopener noreferrer';
+    a.textContent = entry.title || entry.url || 'Link';
+    if (entry.description) {
+        a.title = entry.description;
+        a.setAttribute('aria-label', entry.description);
+    }
+    li.appendChild(a);
+    return li;
+}
+
+function normalizeCategory(category) {
+    const value = (category || '').trim();
+    return value || 'Outros Links';
+}
+
+async function initStudyLinksMenu() {
+    const menu = document.getElementById('studyLinksMenu');
+    const navItem = document.getElementById('studyLinksNavItem');
+    if (!menu || menu.getAttribute('data-ready') === 'true') return;
+
+    try {
+        const links = await loadStudyLinks();
+        const grouped = new Map();
+
+        for (const entry of links) {
+            if (!entry || !entry.url) continue;
+            const category = normalizeCategory(entry.category);
+            if (!grouped.has(category)) grouped.set(category, []);
+            grouped.get(category).push(entry);
+        }
+
+        menu.innerHTML = '';
+        grouped.forEach((entries, category) => {
+            if (entries.length > 1) {
+                const parentLi = document.createElement('li');
+                parentLi.className = 'dropend links-submenu';
+
+                const parentBtn = document.createElement('a');
+                parentBtn.className = 'dropdown-item dropdown-toggle';
+                parentBtn.href = '#';
+                parentBtn.textContent = category;
+                parentBtn.setAttribute('role', 'button');
+                parentBtn.setAttribute('aria-expanded', 'false');
+
+                const subMenu = document.createElement('ul');
+                subMenu.className = 'dropdown-menu links-submenu-menu';
+
+                entries.forEach(entry => {
+                    subMenu.appendChild(createLinksMenuItem(entry));
+                });
+
+                parentBtn.addEventListener('click', (event) => {
+                    event.preventDefault();
+                    event.stopPropagation();
+
+                    menu.querySelectorAll('.links-submenu').forEach(item => {
+                        if (item !== parentLi) item.classList.remove('show');
+                    });
+                    menu.querySelectorAll('.links-submenu > .dropdown-menu').forEach(item => {
+                        if (item !== subMenu) item.classList.remove('show');
+                    });
+                    menu.querySelectorAll('.links-submenu > .dropdown-toggle').forEach(item => {
+                        if (item !== parentBtn) item.setAttribute('aria-expanded', 'false');
+                    });
+
+                    const isOpen = parentLi.classList.toggle('show');
+                    subMenu.classList.toggle('show', isOpen);
+                    parentBtn.setAttribute('aria-expanded', String(isOpen));
+                });
+
+                parentLi.appendChild(parentBtn);
+                parentLi.appendChild(subMenu);
+                menu.appendChild(parentLi);
+            } else {
+                menu.appendChild(createLinksMenuItem(entries[0]));
+            }
+        });
+
+        const closeAllSubmenus = () => {
+            menu.querySelectorAll('.links-submenu.show').forEach(item => item.classList.remove('show'));
+            menu.querySelectorAll('.links-submenu > .dropdown-menu.show').forEach(item => item.classList.remove('show'));
+            menu.querySelectorAll('.links-submenu > .dropdown-toggle[aria-expanded="true"]').forEach(item => item.setAttribute('aria-expanded', 'false'));
+        };
+
+        if (navItem) {
+            navItem.addEventListener('hidden.bs.dropdown', closeAllSubmenus);
+        }
+
+        menu.setAttribute('data-ready', 'true');
+    } catch (error) {
+        console.error('Error loading study links menu:', error);
+        menu.innerHTML = '<li><span class="dropdown-item-text">Falha ao carregar links</span></li>';
+    }
 }
 
 // ── Resizable column slider ─────────────────────────────────────────────────

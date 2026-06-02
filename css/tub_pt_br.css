@@ -8,24 +8,59 @@
     /* --backgroundColorDark: #121212; Dark background */
     --background-color: rgba(var(--bs-dark-rgb), var(--bs-bg-opacity))!important;
     --highlight_color: gold;
+    --button_highlight_color: #030300; 
     --linkColor: gold;
     --linkColorDark: #64b5f6; /* Lighter link color for dark mode */
-    --bs-navbar-active-color: rgba(var(--bs-dark-rgb), var(--bs-bg-opacity))!important;
+    --bs-navbar-active-color: var(--toolbar-active-fg);
     --page-bg: var(--bs-body-bg, #ffffff);
     --page-fg: var(--bs-body-color, #111111);
+    --toolbar-active-fg: #212529;
+    --combo-input-bg: #ffffff;
+    --combo-input-fg: #212529;
+    --combo-border-color: #ccc;
+    --combo-nav-hover-bg: #f0f0f0;
+    --combo-options-bg: #ffffff;
+    --combo-options-fg: #212529;
+    --combo-options-hover-bg: #f0f0f0;
+    --combo-options-hover-fg: #212529;
+    --combo-options-active-bg: #e6e6e6;
+    --combo-options-active-fg: #212529;
     --parStartedBg: FloralWhite;
+    --parStartedFg: #000000;
     --parWorkingBg: LemonChiffon;
+    --parWorkingFg: #000000;
     --parDoubtBg: FireBrick;
+    --parDoubtFg: #ffffff;
     --parOkBg: Aquamarine;
+    --parOkFg: #000000;
     --parClosedBg: #2d2d2d;
+    --parClosedFg: rgba(var(--bs-white-rgb), var(--bs-text-opacity, 1));
 }
 
 html[data-par-theme="neutral"] {
     --parStartedBg: var(--page-bg);
+    --parStartedFg: var(--page-fg);
     --parWorkingBg: var(--page-bg);
+    --parWorkingFg: var(--page-fg);
     --parDoubtBg: var(--page-bg);
+    --parDoubtFg: var(--page-fg);
     --parOkBg: var(--page-bg);
+    --parOkFg: var(--page-fg);
     --parClosedBg: var(--page-bg);
+    --parClosedFg: var(--page-fg);
+}
+
+html[data-bs-theme="dark"] {
+    --combo-input-bg: #333333;
+    --combo-input-fg: #ffffff;
+    --combo-border-color: #444444;
+    --combo-nav-hover-bg: #444444;
+    --combo-options-bg: #333333;
+    --combo-options-fg: #ffffff;
+    --combo-options-hover-bg: #555555;
+    --combo-options-hover-fg: #ffffff;
+    --combo-options-active-bg: #666666;
+    --combo-options-active-fg: #ffffff;
 }
 
 body {
@@ -87,6 +122,7 @@ main {
     font-size: 1.5em;
     font-weight: bold;
     padding-left: 30px;
+    color: var(--backgroundColorLight);
 }
 
 .track_entry {
@@ -136,6 +172,38 @@ h5
 
 .navactive {
     background-color: var(--highlight_color);
+    color: var(--toolbar-active-fg);
+}
+
+.navbar.navbar-light {
+    --bs-navbar-active-color: var(--toolbar-active-fg);
+}
+
+#studyLinksMenu {
+    max-height: none;
+    overflow: visible;
+}
+
+#studyLinksMenu .links-submenu {
+    position: relative;
+}
+
+#studyLinksMenu .links-submenu > .links-submenu-menu {
+    position: absolute;
+    top: 0;
+    left: calc(100% + 0.15rem);
+    margin: 0;
+    min-width: 18rem;
+    display: none;
+    z-index: 1080;
+}
+
+#studyLinksMenu .links-submenu.show > .links-submenu-menu {
+    display: block;
+}
+
+#studyLinksMenu .dropdown-item {
+    white-space: normal;
 }
 
 
@@ -175,28 +243,30 @@ font-size: var(--fontSize);
 text-align: justify;   
 }  
 
-.parStarted { background-color: var(--parStartedBg); }
-a.parStarted { text-decoration: none; }
+.parStarted { color: var(--parStartedFg); background-color: var(--parStartedBg); }
+a.parStarted { color: var(--parStartedFg); text-decoration: none; }
 a.parStarted:hover { text-decoration: underline; }
 
-.parWorking { background-color: var(--parWorkingBg); }
-a.parWorking { text-decoration: none; }
+.parWorking { color: var(--parWorkingFg); background-color: var(--parWorkingBg); }
+a.parWorking { color: var(--parWorkingFg); text-decoration: none; }
 a.parWorking:hover { text-decoration: underline; }
 
-.parDoubt { background-color: var(--parDoubtBg); }
-a.parDoubt { text-decoration: none; }
+.parDoubt { color: var(--parDoubtFg); background-color: var(--parDoubtBg); }
+a.parDoubt { color: var(--parDoubtFg); text-decoration: none; }
 a.parDoubt:hover { text-decoration: underline; }
 
-.parOk { background-color: var(--parOkBg); }
-a.parOk { text-decoration: none; }
+.parOk { color: var(--parOkFg); background-color: var(--parOkBg); }
+a.parOk { color: var(--parOkFg); text-decoration: none; }
 a.parOk:hover { text-decoration: underline; }
 
 .parClosed {
+    color: var(--parClosedFg);
     background-color: var(--parClosedBg);
 }
 
 a.parClosed 
 { 
+    color: var(--parClosedFg);
     text-decoration: none; 
 }
 a.parClosed:hover { text-decoration: underline; }
@@ -299,7 +369,7 @@ textarea {
 .trackCombo-input-wrapper { /* Wrapper for input and button */
   display: flex;
   align-items: center; /* Vertically align input and button */
-  border: 1px solid #ccc;
+    border: 1px solid var(--combo-border-color);
   box-sizing: border-box;
     border-radius: 0 5px 5px 0;
     border-left: 0;
@@ -312,16 +382,22 @@ textarea {
   flex-grow: 1; /* Allow input to expand */
   outline: none; /* Remove default focus outline */
   box-sizing: border-box;
+    background-color: var(--combo-input-bg);
+    color: var(--combo-input-fg);
 }
 
 #mytrackComboPrev {
     border-radius: 5px 0 0 5px;
-    border: 1px solid #ccc;
-    background-color: white;
+        border: 1px solid var(--combo-border-color);
+        background-color: var(--combo-input-bg);
+        color: var(--combo-input-fg);
 }
 
 #mytrackComboNext {
     border-radius: 0 5px 5px 0;
+        border-left: 1px solid var(--combo-border-color);
+        background-color: var(--combo-input-bg);
+        color: var(--combo-input-fg);
 }
 
 .trackCombo-options {
@@ -329,13 +405,14 @@ textarea {
   top: calc(100% + 1px); /* Position below the wrapper */
     left: 32px;
     width: calc(100% - 32px);
-  border: 1px solid #ccc;
+    border: 1px solid var(--combo-border-color);
   border-top: none;
   max-height: 150px;
   overflow-y: auto;
   display: none;
   z-index: 10;
-  background-color: transparent;
+    background-color: var(--combo-options-bg);
+    color: var(--combo-options-fg);
   box-sizing: border-box;
 }
 
@@ -361,18 +438,20 @@ textarea {
 .trackCombo-options div {
   padding: 5px;
   cursor: pointer;
-  border-bottom: 1px solid #eee;
+    border-bottom: 1px solid var(--combo-border-color);
 }
 .trackCombo-options div:last-child{
   border-bottom:none;
 }
 
 .trackCombo-options div:hover {
-    background-color: var(--bs-secondary-bg);
+        background-color: var(--combo-options-hover-bg);
+        color: var(--combo-options-hover-fg);
 }
 
 .trackCombo-options div.active-option {
-    background-color: #e6e6e6;
+        background-color: var(--combo-options-active-bg);
+        color: var(--combo-options-active-fg);
     font-weight: 700;
 }
 

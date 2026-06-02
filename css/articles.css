@@ -105,8 +105,8 @@
 }
 
 
-/* Base typography for theological articles in dark mode */
-body {
+/* Base typography for theological articles */
+#divartigo {
   background-color: #121212;
   color: #e0e0e0;
   font-family: 'Georgia', serif;
@@ -114,47 +114,47 @@ body {
 }
 
 /* Header hierarchy for readability and structure */
-h2, h3, h4, h5, h6 {
+#divartigo h2, #divartigo h3, #divartigo h4, #divartigo h5, #divartigo h6 {
   color: #f5f5dc; /* Light parchment tone */
   margin-top: 1.5em;
   margin-bottom: 0.5em;
   font-weight: 600;
 }
 
-h1 {
+#divartigo h1 {
   font-size: 2.2rem;
   border-bottom: 2px solid #888;
   padding-bottom: 0.3em;
 }
 
-h2 {
+#divartigo h2 {
   font-size: 1.8rem;
   border-left: 4px solid #888;
   padding-left: 0.5em;
 }
 
-h3 {
+#divartigo h3 {
   font-size: 1.5rem;
   font-style: italic;
 }
 
-h4 {
+#divartigo h4 {
   font-size: 1.3rem;
   text-decoration: underline;
 }
 
-h5 {
+#divartigo h5 {
   font-size: 1.1rem;
   color: #ccccaa;
 }
 
-h6 {
+#divartigo h6 {
   font-size: 1rem;
   color: #aaa;
 }
 
 /* Highlight class for a new or emphasized section */
-.new-section-highlight {
+#divartigo .new-section-highlight {
   background-color: rgba(255, 215, 0, 0.1); /* Gold tint */
   border-left: 6px solid #ffd700;
   padding: 0.5em;

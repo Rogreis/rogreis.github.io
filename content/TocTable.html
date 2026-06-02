@@ -1,29 +1,29 @@
-﻿    <style> 
-        .treeview ul { 
-            list-style: none; 
-            padding-left: 20px; /* Indentation for nested levels */ 
-        } 
- 
-        .treeview li { 
-            cursor: pointer; /* Make list items clickable */ 
-        } 
-        .treeview .caret::before{ 
-            content: "279"; /* Unicode for caret-right */ 
-            display: inline-block; 
-            margin-right: 5px; 
-            font-family: bootstrap-icons !important; 
-        } 
-        .treeview .caret.active::before{ 
-            content: "27a"; /* Unicode for caret-down */ 
-        } 
- 
-        .nested { 
-            display: none; 
-        } 
- 
-        .active { 
-            display: block; 
-        } 
+﻿<style> 
+.treeview ul { 
+   list-style: none; 
+   padding-left: 20px; /* Indentation for nested levels */ 
+} 
+
+.treeview li { 
+   cursor: pointer; /* Make list items clickable */ 
+} 
+.treeview .caret::before{ 
+   content: "279"; /* Unicode for caret-right */ 
+   display: inline-block; 
+   margin-right: 5px; 
+   font-family: bootstrap-icons !important; 
+} 
+.treeview .caret.active::before{ 
+   content: "27a"; /* Unicode for caret-down */ 
+} 
+
+.nested { 
+   display: none; 
+} 
+
+.active { 
+   display: block; 
+} 
  
 .treeview .liIndex { 
     font-family: var(--font); 
@@ -55,10 +55,10 @@
 .treeview a.liIndex:active { 
    color: var(--bs-emphasis-color); 
    background-color: var(--bs-secondary-bg); 
-    text-decoration: none; 
+   text-decoration: none; 
 } 
  
-    </style> 
+</style> 
  
 <div class="treeview">
    <ul>
