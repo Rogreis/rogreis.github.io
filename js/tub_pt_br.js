@@ -198,10 +198,17 @@ function syncColorsButton(theme) {
 function updateNavbarTitleFromDocument(paper, containerId = 'rightColumn') {
     const titleElement = document.querySelector('.titulo');
     const container = document.getElementById(containerId);
-    if (!titleElement || !container || !Number.isInteger(paper)) return;
-
     const paperNumber = Number(paper);
+    if (!titleElement || !container || !Number.isInteger(paperNumber)) return;
+
     const paperPad = String(paperNumber).padStart(3, '0');
+    const linkUrl = `https://multilanguagebook.urantia.org/Eng/Por/papers/${paperNumber}`;
+
+    titleElement.setAttribute('href', linkUrl);
+    titleElement.setAttribute('target', '_blank');
+    titleElement.setAttribute('rel', 'noopener noreferrer');
+    titleElement.setAttribute('title', 'Abre edição bilingue no site da Fundação');
+    titleElement.setAttribute('aria-label', 'Abre edição bilingue no site da Fundação');
 
     const ptTitleLink = container.querySelector(`a[onclick*="${paperNumber}:0-0"]`);
     const ptTitle = ptTitleLink?.textContent?.trim();
