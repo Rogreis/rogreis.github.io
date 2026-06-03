@@ -33,8 +33,8 @@
     --parDoubtFg: #ffffff;
     --parOkBg: Aquamarine;
     --parOkFg: #000000;
-    --parClosedBg: #2d2d2d;
-    --parClosedFg: rgba(var(--bs-white-rgb), var(--bs-text-opacity, 1));
+    --parClosedBg: var(--bs-body-bg, #ffffff);
+    --parClosedFg: var(--bs-body-color, #111111);
 }
 
 html[data-par-theme="neutral"] {
@@ -382,8 +382,8 @@ textarea {
   flex-grow: 1; /* Allow input to expand */
   outline: none; /* Remove default focus outline */
   box-sizing: border-box;
-    background-color: var(--combo-input-bg);
-    color: var(--combo-input-fg);
+  background-color: var(--combo-input-bg);
+  color: var(--combo-input-fg);
 }
 
 #mytrackComboPrev {
