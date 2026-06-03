@@ -163,7 +163,7 @@ function toggleParagraphPalette() {
 
 function applyStoredAppearancePreferences() {
     applyUiTheme(getCookieChoice('UI_THEME', ['light', 'dark'], 'dark'), false);
-    applyParagraphPalette(getCookieChoice('PAR_THEME', ['original', 'neutral'], 'original'), false);
+    applyParagraphPalette(getCookieChoice('PAR_THEME', ['original', 'neutral'], 'neutral'), false);
 }
 
 function syncThemeButton(theme) {
@@ -262,7 +262,7 @@ function configureSharedNavbar(pageName, printHandlerName, showColors) {
         const handler = resolveGlobalFunction(printHandlerName);
         if (typeof handler === 'function') {
             printButton.classList.remove('d-none');
-            printButton.onclick = handler;
+            printButton.onclick = () => handler.call(window);
         } else {
             printButton.classList.add('d-none');
             printButton.onclick = null;
@@ -280,7 +280,7 @@ function configureSharedNavbar(pageName, printHandlerName, showColors) {
         const visible = !(showColors === false || showColors === 'false');
         colorsButton.classList.toggle('d-none', !visible);
         colorsButton.onclick = toggleParagraphPalette;
-        syncColorsButton(document.documentElement.getAttribute('data-par-theme') || 'light');
+        syncColorsButton(document.documentElement.getAttribute('data-par-theme') || 'neutral');
     }
 
     initStudyLinksMenu();
